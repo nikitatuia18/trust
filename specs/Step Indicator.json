@@ -1,0 +1,67 @@
+{
+  "component": "Step Indicator",
+  "nodeId": "655:165",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "pageId": "655:36",
+  "variantCount": 20,
+  "axes": {
+    "Step": ["1", "2", "3", "4", "5"],
+    "State": ["default", "error"],
+    "Layout": ["compact", "labeled"]
+  },
+  "variantNote": "20 of 20 combinations exist (Step 1-5 x State x Layout). Default Step=1, State=default, Layout=compact.",
+  "properties": {
+    "label-1": { "type": "TEXT", "default": "Contact Details", "ref": "labeled label of step 1" },
+    "label-2": { "type": "TEXT", "default": "Data Consent", "ref": "labeled label of step 2" },
+    "label-3": { "type": "TEXT", "default": "Scan documents", "ref": "labeled label of step 3" },
+    "label-4": { "type": "TEXT", "default": "Scan face", "ref": "labeled label of step 4" },
+    "label-5": { "type": "TEXT", "default": "Questionnaire", "ref": "labeled label of step 5" },
+    "Step": { "type": "VARIANT", "default": "1", "options": ["1", "2", "3", "4", "5"] },
+    "State": { "type": "VARIANT", "default": "default", "options": ["default", "error"] },
+    "Layout": { "type": "VARIANT", "default": "compact", "options": ["compact", "labeled"] }
+  },
+  "structure": {
+    "root": "COMPONENT per variant; layoutMode HORIZONTAL; sizing HUG/HUG; no fill, no stroke, no padding",
+    "rootGap": { "compact": "Step Indicator/gap (4)", "labeled": "Step Indicator/labeled/gap (24)" },
+    "compact": {
+      "layers": [
+        { "name": "step-1..step-5", "type": "INSTANCE", "main": "Property 1=bold (single main, all 5 instances)", "note": "instance props identical in all 20 variants, see anomalies" },
+        { "name": "connector-1..connector-4", "type": "LINE", "sizing": "between steps", "stroke": "Step Indicator/connector", "fill": "none" }
+      ],
+      "order": "step-1, connector-1, step-2, connector-2, step-3, connector-3, step-4, connector-4, step-5"
+    },
+    "labeled": {
+      "layers": [
+        { "name": "step-1..step-5", "type": "FRAME", "layout": "HORIZONTAL HUG/HUG", "gap": "Space/sm (8)", "children": [
+          { "name": "icon", "type": "FRAME", "layout": "HORIZONTAL", "sizing": "HUG/HUG for step-1 (clock instance); FIXED/FIXED for steps 2-5", "stroke": "Step Indicator/labeled/number-border (steps 2-5)", "cornerRadius": "8 RAW (steps 2-5)", "children": ["clock INSTANCE main Property 1=bold (step-1)", "number TEXT (steps 2-5)"] },
+          { "name": "label", "type": "TEXT", "font": "Inter Medium", "fill": "Step Indicator/labeled/label-current (step 1) | Step Indicator/labeled/label-pending (steps 2-5)" }
+        ] }
+      ],
+      "connectors": "none in labeled layout (not in tree)"
+    }
+  },
+  "tokenMatrix": {
+    "root": { "fill": "none", "stroke": "none", "opacity": 1 },
+    "connector stroke": { "all compact variants": "Step Indicator/connector (same in all Step/State values)" },
+    "labeled step-1 (current)": { "icon": "clock instance", "label fill": "Step Indicator/labeled/label-current" },
+    "labeled step-2..5 (pending)": { "icon stroke": "Step Indicator/labeled/number-border", "number fill": "Step Indicator/labeled/number-content", "label fill": "Step Indicator/labeled/label-pending", "icon radius": "8 RAW" },
+    "error": { "compact": "same bindings as default (only variant key differs)", "labeled": "not expanded" },
+    "gaps": { "root compact": "Step Indicator/gap", "root labeled": "Step Indicator/labeled/gap", "step-n labeled": "Space/sm" }
+  },
+  "anomalies": [
+    "RAW: labeled icon cornerRadius = 8, not bound to a radius token (steps 2-5).",
+    "Compact step-1..5 instances carry the same componentProperties (Property 1=bold) in all 20 variants, so Step and State axes do not change instance props in compact. Either the states are driven by instance overrides (not read) or the axes do not work in compact. Needs one visual check (get_screenshot of Step=3 compact) before trusting.",
+    "Connector stroke is the same token in every Step/State value (Step Indicator/connector), so connectors do not show completed vs pending progress via token.",
+    "Labeled layout has no connectors; compact has connectors. Confirm this is intended.",
+    "Step 1 in labeled uses a clock instance (current icon), steps 2-5 use number TEXT; compact steps 1-5 all use the same instance. Icon usage differs between layouts.",
+    "Icon size (FIXED) of labeled number circle not read; check it against a size token."
+  ],
+  "notRead": [
+    "step-N instance internals (main component Property 1=bold: variants complete/current/pending and icon swap)",
+    "labeled State=error visuals (only the variant key was read)",
+    "compact State=error visuals (instances identical per props, see anomalies)",
+    "icon/number text sizes and fonts beyond Inter Medium",
+    "text props label-1..5 default values only, no per-variant values",
+    "no get_screenshot taken"
+  ]
+}

@@ -1,5 +1,8 @@
 import { useState, type ReactNode } from 'react';
-import { AmountField, Button, Checkbox, Chip, Divider, List, ListItem, SegmentedControl, TextContainer, TextField, type ButtonVariant } from '../components';
+import {
+  AmountField, Button, Checkbox, Chip, Divider, FormCard, List, ListItem, OrderSummary, OrderSummaryNested,
+  SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
+} from '../components';
 
 type DocProps = { where: string[]; spacing: string[]; why: string[] };
 
@@ -346,13 +349,124 @@ function ContentDemo() {
   );
 }
 
+const STEPS = ['Contact Details', 'Data Consent', 'Scan documents', 'Scan face', 'Questionnaire'];
+
+function FrameDemo() {
+  const [tab, setTab] = useState('signin');
+  const [step, setStep] = useState(3);
+  return (
+    <>
+      <Preview title="Form Card" note="Actions: stacked | inline · header / body / footer — слоты">
+        <div className="sc-demo sc-demo--grid">
+          <FormCard
+            header={<SegmentedControl aria-label="Mode" value={tab} onChange={setTab} options={[{ value: 'signin', label: 'Sign in' }, { value: 'signup', label: 'Sign up' }]} />}
+            primaryAction={<Button>Continue</Button>}
+            secondaryAction={<Button variant="secondary">Back</Button>}
+            dividerLabel="or"
+            altActions={<Button variant="secondary">Continue with Google</Button>}
+          >
+            <TextField label="Email" placeholder="name@example.com" />
+          </FormCard>
+          <FormCard
+            actions="inline"
+            primaryAction={<Button>Continue</Button>}
+            secondaryAction={<Button variant="secondary">Back</Button>}
+          >
+            <TextField label="Email" placeholder="name@example.com" />
+          </FormCard>
+        </div>
+      </Preview>
+      <Doc
+        where={[
+          'Любая форма на экране: вход, ввод данных, подтверждение.',
+          'Внутри — Segmented Control, поля, кнопки, Divider «или».',
+        ]}
+        spacing={[
+          'Корень: padding 0, gap Space/none, радиус --c-form-card-radius.',
+          'Зоны header/body/footer: Space/2xl; body и footer — gap Space/xl.',
+          'Кнопки: gap Space/sm.',
+        ]}
+        why={[
+          'Каркас один, содержимое — слоты: reuse-first, без отдельных «карточек входа».',
+          'Зона видна, когда слот передан (show-* из Figma).',
+          'Обводка у зон header/body в Figma дублирует корень — в код не перенесена, ждём решения.',
+        ]}
+      />
+      <Preview title="Window Header + Step Indicator" note="Header: slots left/right · Step 1–5 × State × Layout">
+        <div className="sc-demo sc-demo--col">
+          <WindowHeader
+            title="Verification"
+            leftAction={<Button size="s" variant="secondary" iconOnly iconLeft="←" aria-label="Back" />}
+            rightAction={<Button size="s" variant="secondary" iconOnly iconLeft="✕" aria-label="Close" />}
+            stepIndicator={<StepIndicator step={step} labels={STEPS} />}
+          />
+          <div className="sc-demo__row">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <Chip key={n} selected={step === n} onClick={() => setStep(n)}>Step {n}</Chip>
+            ))}
+          </div>
+          <StepIndicator step={step} labels={STEPS} layout="labeled" />
+          <StepIndicator step={step} state="error" labels={STEPS} />
+          <StepIndicator step={step} state="error" labels={STEPS} layout="labeled" />
+        </div>
+      </Preview>
+      <Doc
+        where={[
+          'Window Header — верх каждого окна флоу: назад, заголовок, закрыть.',
+          'Step Indicator — прогресс верификации; compact внутри шапки, labeled — на широких экранах.',
+        ]}
+        spacing={[
+          'Header: padding --c-window-header-padding (2xl), gap xl, слоты 40×40 (Size/lg).',
+          'Step compact: gap --c-step-indicator-gap, линия 24 (--c-step-indicator-connector-width).',
+          'Step labeled: gap между шагами 24, внутри шага Space/sm.',
+        ]}
+        why={[
+          'Кнопки шапки — Button icon-only, не отдельные «иконки-кнопки».',
+          'Error подсвечивает текущий шаг; вид состояния в Figma не прочитан — собран по токенам icon-error.',
+          'Шаг передаётся числом, подписи — массивом: число шагов не зашито.',
+        ]}
+      />
+      <Preview title="Order Summary" note="Expanded: true | false · rows — слот List Item, nested — группа со смещением">
+        <div className="sc-demo sc-demo--grid">
+          <OrderSummary title="Order summary">
+            <ListItem variant="list" size="small" showDivider={false} title="Amount" rightSlot="100.00 USD" />
+            <ListItem variant="list" size="small" showDivider={false} title="Fee" rightSlot="2.00 USD" />
+            <OrderSummaryNested>
+              <ListItem variant="list" size="small" showDivider={false} title="Network" rightSlot="1.50 USD" />
+              <ListItem variant="list" size="small" showDivider={false} title="Service" rightSlot="0.50 USD" />
+            </OrderSummaryNested>
+            <ListItem variant="list" size="small" showDivider title="Total" rightSlot="102.00 USD" />
+          </OrderSummary>
+          <OrderSummary title="Order summary" defaultExpanded={false} />
+        </div>
+      </Preview>
+      <Doc
+        where={[
+          'Итог перед оплатой: сумма, комиссии, итого.',
+          'Свёрнутый вид — на мобильном, чтобы не занимать экран.',
+        ]}
+        spacing={[
+          'Корень: gap --c-summary-gap, padding 0.',
+          'Карточка: padding --c-summary-card-padding, радиус --c-summary-card-radius.',
+          'Вложенная группа: слева --c-summary-nested-padding, gap --c-summary-nested-gap.',
+        ]}
+        why={[
+          'Строки — обычные List Item small: свой «Summary Row» не нужен.',
+          'Шеврон — текстовый глиф, пока иконки не подключены.',
+          'Радиус карточки в Figma 24 без токена — в коде токен --c-summary-card-radius (в «Открыто»).',
+        ]}
+      />
+    </>
+  );
+}
+
 export function ComponentsPage() {
   return (
     <>
       <div className="sc-intro">
         <h1 className="text-heading-h1">Компоненты</h1>
         <p className="text-body-lg sc-muted">
-          Волны A и B: самое нужное для флоу верификации. Всё стилизовано только токенами, состояния — через data-атрибуты.
+          Волны A, B и C: самое нужное для флоу верификации. Всё стилизовано только токенами, состояния — через data-атрибуты.
           Иконки — отдельный этап: слоты принимают любой ReactNode.
         </p>
       </div>
@@ -364,6 +478,9 @@ export function ComponentsPage() {
       </Group>
       <Group title="Контент и списки" note="Чипы, текст, разделители, списки выбора.">
         <ContentDemo />
+      </Group>
+      <Group title="Каркас окна и шаги" note="Формы, шапка окна, прогресс, итог заказа.">
+        <FrameDemo />
       </Group>
     </>
   );

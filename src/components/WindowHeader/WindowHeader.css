@@ -1,0 +1,12 @@
+/* Window Header — Figma 656:17. Строка: слот 40 · заголовок по центру · слот 40; снизу тонкая линия. */
+.at-window-header {
+  display: flex; flex-direction: column; box-sizing: border-box; width: 100%;
+  gap: var(--c-window-header-gap); padding: var(--c-window-header-padding);
+  background: var(--c-window-header-bg);
+  box-shadow: inset 0 calc(-1 * var(--c-window-header-stroke)) 0 var(--c-window-header-border);
+}
+.at-window-header__row { display: flex; align-items: center; gap: var(--c-window-header-row-gap); }
+.at-window-header__slot { display: flex; align-items: center; justify-content: flex-start; flex: none; width: var(--size-lg); height: var(--size-lg); }
+.at-window-header__slot[data-side='right'] { justify-content: flex-end; }
+.at-window-header__title { flex: 1 1 0; min-width: 0; margin: 0; text-align: center; color: var(--c-window-header-title-content); }
+.at-window-header__steps { display: flex; justify-content: center; }

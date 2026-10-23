@@ -1,0 +1,15 @@
+/* Form Card — Figma 618:2210. Корень без padding, зоны несут Space/2xl; обводка корня — inside, как у остальных контейнеров. */
+.at-form-card {
+  display: flex; flex-direction: column; box-sizing: border-box; width: 100%;
+  gap: var(--space-none); overflow: hidden;
+  border-radius: var(--c-form-card-radius); background: var(--c-form-card-bg);
+  box-shadow: inset 0 0 0 var(--c-form-card-stroke) var(--c-form-card-border);
+}
+.at-form-card__zone { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-none); padding: var(--space-2xl); min-width: 0; }
+.at-form-card__body, .at-form-card__footer { gap: var(--space-xl); }
+.at-form-card__actions { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-sm); }
+.at-form-card__actions > * { align-self: stretch; }
+
+/* inline: основные кнопки в ряд, поровну */
+.at-form-card[data-actions='inline'] .at-form-card__actions { flex-direction: row; }
+.at-form-card[data-actions='inline'] .at-form-card__actions > * { flex: 1 1 0; min-width: 0; }

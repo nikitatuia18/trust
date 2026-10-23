@@ -1,0 +1,55 @@
+{
+  "component": "Window Header",
+  "nodeId": "656:17",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "page": "Navigation (656:16)",
+  "variantCount": 1,
+  "axes": {},
+  "variantNote": "Single COMPONENT (not a set), 522x88. No variant axes. Component property definitions NOT read (partial).",
+  "properties": {
+    "NOT_READ": "componentPropertyDefinitions of 656:17 not read. Expected from the library description (not verified): show-left-action, show-right-action, show-step-indicator; slots left-action / right-action are exposed instances of Button."
+  },
+  "structure": {
+    "root": "COMPONENT 656:17; layoutMode VERTICAL; sizing H=FIXED, V=HUG; gap Window Header/gap; padding Window Header/padding on all four sides; fill Window Header/bg; stroke Window Header/border; strokeWeight is not uniform (mixed), likely a bottom-only hairline (verify strokeBottomWeight)",
+    "layers": [
+      { "name": "row", "type": "FRAME", "layout": "HORIZONTAL, H=FILL, V=HUG, gap Window Header/row/gap, padding RAW 0", "children": [
+        { "name": "left-slot", "type": "FRAME", "layout": "HORIZONTAL, H=FIXED, V=FIXED, gap RAW 0, padding RAW 0", "children": [
+          { "name": "left-action", "type": "INSTANCE", "main": "Content=icon-only, Style=secondary, State=default, Size=s, Density=default", "props": "icon-left (swap), icon-right (swap), label, show-label=true, show-icon-left=true, show-icon-right=true" }
+        ] },
+        { "name": "title", "type": "TEXT", "fill": "Window Header/title/content", "textStyle": "styled (style name not read)" },
+        { "name": "right-slot", "type": "FRAME", "layout": "HORIZONTAL, H=FIXED, V=FIXED, gap RAW 0, padding RAW 0", "children": [
+          { "name": "right-action", "type": "INSTANCE", "vis": "HIDDEN by default", "main": "Content=icon-only, Style=secondary, State=default, Size=s, Density=default", "props": "icon-left (swap), icon-right (swap), label, show-label=true, show-icon-left=true, show-icon-right=true" }
+        ] }
+      ] },
+      { "name": "step-indicator", "type": "INSTANCE", "vis": "HIDDEN by default", "main": "Step=1, State=default, Layout=compact", "props": "label-1..5 defaults: Contact Details, Data Consent, Scan documents, Scan face, Questionnaire; Step=1, State=default, Layout=compact" }
+    ],
+    "rootPadding": "Window Header/padding (all sides)",
+    "rootGap": "Window Header/gap",
+    "rootRadius": "none"
+  },
+  "tokenMatrix": {
+    "rootFill": { "default": "Window Header/bg" },
+    "rootStroke": { "default": "Window Header/border (weight mixed, see anomalies)" },
+    "rootOpacity": { "default": "1" },
+    "title": { "fill": "Window Header/title/content", "text style": "styled, name not read" },
+    "rowGap": "Window Header/row/gap"
+  },
+  "sizes": {
+    "root": "522x88",
+    "slots": "FIXED/FIXED; intended 40x40 per library description, dimensions not read"
+  },
+  "anomalies": [
+    "RAW 0: row, left-slot and right-slot paddings and gaps are unbound literal 0 (low severity).",
+    "Root stroke weight is mixed (not a single number). Verify the hairline is bound (strokeBottomWeight) and not a raw value.",
+    "Duplicate: COMPONENT_SET 'Window Header (backup 2026-10-22, delete)' (key 4c309aa668c694f3bec7eb59bd43f9fc290e3a76) is still in library 03 - Components. Owner-decision: delete after confirming no consumers (library description says delete).",
+    "Slot sizes (40x40 per description) not verified: slots are FIXED but dimensions not read."
+  ],
+  "notRead": [
+    "componentPropertyDefinitions of 656:17 (types, defaults)",
+    "internals of left-action / right-action instances (not expanded, by brief)",
+    "exact dimensions of left-slot / right-slot",
+    "title text style name and its size",
+    "strokeBottomWeight / strokeTopWeight values",
+    "step-indicator internals (instance, not expanded)"
+  ]
+}

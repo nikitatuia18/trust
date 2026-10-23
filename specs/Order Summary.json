@@ -1,0 +1,59 @@
+{
+  "component": "Order Summary",
+  "nodeId": "667:291",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "pageId": "665:3335",
+  "variantCount": 2,
+  "axes": {
+    "Expanded": ["true", "false"]
+  },
+  "variantNote": "2 of 2 combinations exist. Expanded=true shows the card; Expanded=false hides it (chevron arrow-down). Default Expanded=true.",
+  "properties": {
+    "rows": { "type": "SLOT", "default": "empty", "note": "default content: 3 List Item instances + nested group of 2 List Item" },
+    "title": { "type": "TEXT", "default": "ORDER SUMMARY" },
+    "show-header": { "type": "BOOLEAN", "default": true, "ref": "header visibility (binding target not verified)" },
+    "Expanded": { "type": "VARIANT", "default": "true", "options": ["true", "false"] }
+  },
+  "structure": {
+    "root": "COMPONENT per variant; layoutMode VERTICAL; sizing H=FIXED 522, V=HUG (264 for Expanded=true); padding 0 (Space/none); gap Summary/gap (8)",
+    "layers": [
+      { "name": "header", "type": "FRAME", "layout": "HORIZONTAL, H=FILL, V=HUG", "gap": "not bound (0)", "children": [
+        { "name": "title", "type": "TEXT", "font": "Inter Medium", "fill": "Summary/title/content", "sizing": "W=FIXED 124 RAW inside FILL header" },
+        { "name": "chevron", "type": "INSTANCE", "main": "Property 1=outline (arrow-up/arrow-down)" }
+      ] },
+      { "name": "card", "type": "FRAME", "layout": "VERTICAL, H=FILL, V=HUG; visible when Expanded=true", "padding": "16 all sides bound Summary/card/padding", "radius": "24 RAW", "fill": "Summary/card/bg", "stroke": "Summary/card/border", "children": [
+        { "name": "rows", "type": "SLOT", "layout": "VERTICAL, H=FILL, V=HUG", "gap": "not bound (0)", "children": [
+          { "name": "row x3", "type": "INSTANCE", "main": "List Item Size=small, State=default, Selected=false, Style=list" },
+          { "name": "nested", "type": "FRAME", "layout": "VERTICAL, H=FILL, V=HUG", "gap": "Summary/nested/gap (4)", "paddingLeft": "Summary/nested/padding (16); right/top/bottom 0", "stroke": "Summary/border", "children": [
+            { "name": "row x2", "type": "INSTANCE", "main": "List Item Size=small, State=default, Selected=false, Style=list" }
+          ] }
+        ] }
+      ] }
+    ]
+  },
+  "tokenMatrix": {
+    "root": { "fill": "none", "stroke": "none", "opacity": 1 },
+    "card": { "fill": "Summary/card/bg", "stroke": "Summary/card/border", "padding": "Summary/card/padding", "radius": "24 RAW" },
+    "title": { "fill": "Summary/title/content", "font": "Inter Medium" },
+    "nested": { "gap": "Summary/nested/gap", "paddingLeft": "Summary/nested/padding", "stroke": "Summary/border" },
+    "gaps": { "root": "Summary/gap", "header": "not bound", "rows": "not bound" }
+  },
+  "anomalies": [
+    "RAW: card cornerRadius = 24, not bound to a radius token.",
+    "RAW: title width = 124 fixed inside a FILL header (text not fill-sized).",
+    "rows slot has no gap token (0): List Item rows touch each other unless the instances carry margin. Verify visually.",
+    "header has no gap token: title and chevron spacing not defined by a token (0).",
+    "nested group: only paddingLeft is bound (Summary/nested/padding); right/top/bottom = 0. Likely intended as indent, confirm.",
+    "nested group uses Summary/border stroke while card uses Summary/card/border: two different border tokens for one card.",
+    "Width 522 and nested width 490 are fixed RAW dimensions; no width token exists for this component.",
+    "show-header is exposed but its binding target was not verified."
+  ],
+  "notRead": [
+    "List Item row internals (instances, not expanded)",
+    "chevron instance internals (Property 1=outline variant set)",
+    "title font size and line height",
+    "Expanded=false header detail (only card visibility checked)",
+    "show-header target node",
+    "no get_screenshot taken"
+  ]
+}

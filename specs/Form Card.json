@@ -1,0 +1,79 @@
+{
+  "component": "Form Card",
+  "nodeId": "618:2210",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "page": "Cards (2:6)",
+  "variantCount": 2,
+  "axes": {
+    "Actions": ["stacked", "inline"]
+  },
+  "variantNote": "COMPONENT_SET 1084x517 with 2 variants. Only the default variant (Actions=stacked, 599:3) was walked for structure. inline (522x454) read for fill/stroke only.",
+  "properties": {
+    "show-header": { "type": "BOOLEAN", "default": true, "id": "618:0" },
+    "show-body": { "type": "BOOLEAN", "default": true, "id": "711:0" },
+    "show-divider": { "type": "BOOLEAN", "default": true, "id": "618:1", "ref": "divider visible (not verified)" },
+    "show-footer": { "type": "BOOLEAN", "default": true, "id": "618:3" },
+    "show-secondary-action": { "type": "BOOLEAN", "default": true, "id": "618:4", "ref": "secondary-action visible (not verified)" },
+    "show-alt-action": { "type": "BOOLEAN", "default": true, "id": "618:2", "ref": "alt-actions visible (not verified)" },
+    "header": { "type": "SLOT", "default": "Segmented Control (main Tab=first)", "id": "618:5" },
+    "body": { "type": "SLOT", "default": "TextField (Type=text, State=default, Validation=none, Content=empty; label Email)", "id": "618:6" },
+    "alt-actions": { "type": "SLOT", "default": "Button (Style=secondary, Size=m, label Continue with Google)", "id": "618:7" },
+    "Actions": { "type": "VARIANT", "default": "stacked", "values": ["stacked", "inline"], "id": "Actions" }
+  },
+  "structure": {
+    "root": "COMPONENT per variant; layoutMode VERTICAL; sizing H=FIXED, V=HUG; gap Space/none; padding 0 (unbound, RAW 0); radius Form Card/radius; fill Form Card/bg; stroke Form Card/border, strokeWeight 1 (RAW)",
+    "layers": [
+      { "name": "header", "type": "SLOT", "vis": "show-header", "sizing": "H=FILL, V=HUG", "layout": "VERTICAL, gap Space/none, padding Space/2xl (all sides)", "stroke": "Form Card/border (anomaly, see below)", "children": [
+        { "name": "Segmented Control", "type": "INSTANCE", "main": "Tab=first" }
+      ] },
+      { "name": "body", "type": "SLOT", "vis": "show-body", "sizing": "H=FILL, V=HUG", "layout": "VERTICAL, gap Space/xl, padding Space/2xl (all sides)", "stroke": "Form Card/border (anomaly, see below)", "children": [
+        { "name": "TextField", "type": "INSTANCE", "main": "Type=text, State=default, Validation=none, Content=empty" }
+      ] },
+      { "name": "footer", "type": "FRAME", "vis": "show-footer", "sizing": "H=FILL, V=HUG", "layout": "VERTICAL, gap Space/xl, padding Space/2xl (all sides)", "fill": "none", "children": [
+        { "name": "actions", "type": "FRAME", "layout": "VERTICAL, H=FILL, V=HUG, gap Space/sm, padding Space/none", "children": [
+          { "name": "primary-action", "type": "INSTANCE", "main": "Content=default, Style=primary, State=default, Size=m, Density=default", "label": "Continue" },
+          { "name": "secondary-action", "type": "INSTANCE", "vis": "show-secondary-action", "main": "Content=default, Style=secondary, State=default, Size=m, Density=default", "label": "Back" }
+        ] },
+        { "name": "divider", "type": "INSTANCE", "vis": "show-divider", "main": "Orientation=horizontal, Style=default", "props": "label=or, show-label=true" },
+        { "name": "alt-actions", "type": "SLOT", "vis": "show-alt-action", "layout": "VERTICAL, H=FILL, V=HUG, gap Space/sm, padding Space/none", "children": [
+          { "name": "Button", "type": "INSTANCE", "main": "Content=default, Style=secondary, State=default, Size=m, Density=default", "label": "Continue with Google" }
+        ] }
+      ] }
+    ],
+    "rootPadding": "Padding: none on root (RAW 0). Zones carry Space/2xl.",
+    "rootGap": "Space/none (zones stack with no gap)",
+    "rootRadius": "Form Card/radius"
+  },
+  "tokenMatrix": {
+    "rootFill": {
+      "Actions=stacked": "Form Card/bg",
+      "Actions=inline": "Form Card/bg"
+    },
+    "rootStroke": {
+      "Actions=stacked": "Form Card/border (strokeWeight RAW 1)",
+      "Actions=inline": "Form Card/border"
+    },
+    "rootOpacity": { "all": "1" },
+    "zoneStroke": { "header, body": "Form Card/border (see anomalies)", "footer": "none" },
+    "zoneFill": { "header, body, footer, actions, alt-actions": "none" }
+  },
+  "sizes": {
+    "stacked": "522x517",
+    "inline": "522x454"
+  },
+  "anomalies": [
+    "RAW: root stroke weight = 1 literal (not bound to a variable).",
+    "RAW 0: root padding top/right/bottom/left and the zero gaps in footer/actions are unbound literal 0 (low severity; zero, but not tokens).",
+    "Stroke Form Card/border is set on the header and body SLOT frames as well as on the root. Verify this is intended: it may produce extra inner borders. Not checked visually.",
+    "Inline variant children were not walked: only fill, stroke, size were read. Its footer/actions layout may differ from stacked.",
+    "show-* references (divider, secondary-action, alt-actions) are taken from property names only, not from the internal bindings."
+  ],
+  "notRead": [
+    "inline variant structure",
+    "internals of Segmented Control, TextField, Button, Divider instances (not expanded, by brief)",
+    "typography (no texts read inside Form Card itself; footer labels are instance props)",
+    "text color / typography tokens",
+    "SLOT default contents beyond their names and main components",
+    "show-* binding targets (only names)"
+  ]
+}
