@@ -38,3 +38,4 @@ button.at-list-item { cursor: pointer; }
 .at-list-item__center { display: inline-flex; flex: none; }
 .at-list-item__slot { display: inline-flex; flex: none; align-items: center; justify-content: center; height: var(--c-list-item-large-slot-left); }
 .at-list-item[data-size='small'] .at-list-item__slot { height: var(--c-list-item-small-slot-left); }
+.at-list-item__slot > .at-icon { width: var(--size-icon-md); height: var(--size-icon-md); }

@@ -1,3 +1,4 @@
+export { Icon, type IconProps, type IconDirection } from './Icon/Icon';
 export { Button, type ButtonProps, type ButtonVariant } from './Button/Button';
 export { TextField, type TextFieldProps } from './TextField/TextField';
 export { AmountField, type AmountFieldProps } from './AmountField/AmountField';

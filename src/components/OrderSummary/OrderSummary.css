@@ -10,7 +10,7 @@
 .at-summary__toggle:focus-visible {
   box-shadow: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
 }
-.at-summary__chevron { display: inline-flex; }
+.at-summary__chevron { display: inline-flex; width: var(--size-icon-lg); height: var(--size-icon-lg); }
 .at-summary[data-expanded='false'] .at-summary__chevron { transform: rotate(180deg); }
 
 .at-summary__card {

@@ -1,14 +1,14 @@
 import { useState, type ReactNode } from 'react';
 import {
   AmountField, Button, Checkbox, Chip, Divider, FormCard, List, ListItem, OrderSummary, OrderSummaryNested,
-  SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
+  Icon, SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
 } from '../components';
 
 type DocProps = { where: string[]; spacing: string[]; why: string[] };
 
 function Preview({ title, note, children }: { title: string; note?: string; children: ReactNode }) {
   return (
-    <section className="sc-card" style={{ gridColumn: 'span 2' }}>
+    <section className="sc-card sc-card--demo">
       <header className="sc-card__head">
         <h3 className="text-label-lg">{title}</h3>
         {note && <p className="text-body-xs sc-muted">{note}</p>}
@@ -43,7 +43,7 @@ function Group({ title, note, children }: { title: string; note: string; childre
         <h2 className="text-heading-h3">{title}</h2>
         <p className="text-body-sm sc-muted">{note}</p>
       </div>
-      <div className="sc-bento">{children}</div>
+      <div className="sc-bento sc-bento--paired">{children}</div>
     </>
   );
 }
@@ -56,16 +56,16 @@ function ButtonDemo() {
       <Preview title="Button" note="Style × Size × Density; состояния — hover / active / focus / disabled">
         <div className="sc-demo sc-demo--col">
           {VARIANTS.map((v) => (
-            <div key={v} className="sc-demo__row">
+            <div key={v} className="sc-demo__row sc-demo__row--stack">
               <span className="sc-demo__tag text-caption-default sc-muted">{v}</span>
               <Button variant={v}>Continue</Button>
-              <Button variant={v} iconLeft="←">Back</Button>
-              <Button variant={v} iconRight="→">Next</Button>
+              <Button variant={v} iconLeft={<Icon direction="left" />}>Back</Button>
+              <Button variant={v} iconRight={<Icon />}>Next</Button>
               <Button variant={v} iconOnly iconLeft="+" aria-label="Add" />
               <Button variant={v} disabled>Disabled</Button>
             </div>
           ))}
-          <div className="sc-demo__row">
+          <div className="sc-demo__row sc-demo__row--stack">
             <span className="sc-demo__tag text-caption-default sc-muted">size s</span>
             <Button size="s">Small</Button>
             <Button size="s" variant="secondary" density="compact">Compact</Button>
@@ -139,14 +139,14 @@ function InputDemo() {
           <AmountField
             label="You send"
             defaultValue="100.00"
-            selector={<Button variant="secondary" size="s" density="compact" iconRight="▾">USD</Button>}
+            selector={<Button variant="secondary" size="s" density="compact" iconRight={<Icon direction="down" />}>USD</Button>}
             hint="Min 10 USD"
           />
           <AmountField
             label="You get"
             error
             defaultValue="0"
-            selector={<Button variant="secondary" size="s" density="compact" iconRight="▾">EUR</Button>}
+            selector={<Button variant="secondary" size="s" density="compact" iconRight={<Icon direction="down" />}>EUR</Button>}
             hint="Amount is below the minimum"
           />
         </div>
@@ -317,14 +317,14 @@ function ContentDemo() {
                 leftSlot={dot}
                 title={`Option ${id.toUpperCase()}`}
                 subtitle="Subtitle"
-                rightSlot="›"
+                rightSlot={<Icon />}
               />
             ))}
             <ListItem disabled showDivider title="Disabled" subtitle="Not available" />
           </List>
           <List variant="list">
-            <ListItem variant="list" size="small" showDivider={false} title="Small row" rightSlot="›" />
-            <ListItem variant="list" size="small" title="Small row" rightSlot="›" />
+            <ListItem variant="list" size="small" showDivider={false} title="Small row" rightSlot={<Icon />} />
+            <ListItem variant="list" size="small" title="Small row" rightSlot={<Icon />} />
             <ListItem variant="card" size="small" showDivider={false} selected title="Card item, selected" />
           </List>
         </div>
@@ -396,7 +396,7 @@ function FrameDemo() {
         <div className="sc-demo sc-demo--col">
           <WindowHeader
             title="Verification"
-            leftAction={<Button size="s" variant="secondary" iconOnly iconLeft="←" aria-label="Back" />}
+            leftAction={<Button size="s" variant="secondary" iconOnly iconLeft={<Icon direction="left" />} aria-label="Back" />}
             rightAction={<Button size="s" variant="secondary" iconOnly iconLeft="✕" aria-label="Close" />}
             stepIndicator={<StepIndicator step={step} labels={STEPS} />}
           />
@@ -452,7 +452,7 @@ function FrameDemo() {
         ]}
         why={[
           'Строки — обычные List Item small: свой «Summary Row» не нужен.',
-          'Шеврон — текстовый глиф, пока иконки не подключены.',
+          'Шеврон — Icon (arrow-right, повёрнут), слот chevron заменяем.',
           'Радиус карточки в Figma 24 без токена — в коде токен --c-summary-card-radius (в «Открыто»).',
         ]}
       />
@@ -467,7 +467,7 @@ export function ComponentsPage() {
         <h1 className="text-heading-h1">Компоненты</h1>
         <p className="text-body-lg sc-muted">
           Волны A, B и C: самое нужное для флоу верификации. Всё стилизовано только токенами, состояния — через data-атрибуты.
-          Иконки — отдельный этап: слоты принимают любой ReactNode.
+          Иконка-прототип (arrow-right из «06 — Icons») подставлена во все стрелки и шевроны; плюс, минус, крестик, галочка и поиск пока глифы.
         </p>
       </div>
       <Group title="Действия" note="То, что запускает шаг или переключает режим.">

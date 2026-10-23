@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { cn } from '../cn';
+import { Icon } from '../Icon/Icon';
 import './OrderSummary.css';
 
 export type OrderSummaryProps = {
@@ -26,7 +27,7 @@ export function OrderSummary({
   onExpandedChange,
   showHeader = true,
   children,
-  chevron = '⌃',
+  chevron = <Icon direction="up" />,
   className,
 }: OrderSummaryProps) {
   const [inner, setInner] = useState(defaultExpanded);

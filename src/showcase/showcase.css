@@ -124,3 +124,10 @@
   .sc-bento > .sc-card[style] { grid-column: span 1 !important; }
   .sc-table__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
+
+/* Витрина компонентов: демо и Doc в паре выравниваются по высоте; метка ряда над кнопками */
+/* Демо и Doc — одна «склеенная» карточка на всю ширину: сверху демо, снизу три колонки документации */
+.sc-bento--paired > .sc-card--demo { grid-column: 1 / -1; margin-bottom: calc(-1 * var(--space-xl)); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.sc-bento--paired > .sc-doc { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl); border-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; margin-bottom: var(--space-2xl); }
+@media (max-width: 1280px) { .sc-bento--paired > .sc-doc { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
+.sc-demo__row--stack > .sc-demo__tag { width: 100%; }

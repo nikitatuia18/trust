@@ -1,0 +1,5 @@
+/* Размер задаёт слот (width/height 100%), цвет — currentColor */
+.at-icon { display: block; flex: none; width: 100%; height: 100%; }
+.at-icon[data-direction='left'] { transform: rotate(180deg); }
+.at-icon[data-direction='up'] { transform: rotate(-90deg); }
+.at-icon[data-direction='down'] { transform: rotate(90deg); }
