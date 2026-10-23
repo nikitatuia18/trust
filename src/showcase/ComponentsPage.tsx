@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import {
   AmountField, Button, Checkbox, Chip, Divider, FormCard, List, ListItem, OrderSummary, OrderSummaryNested,
-  Icon, SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
+  Icon, PlusIcon, CloseIcon, SearchIcon, DotIcon, SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
 } from '../components';
 
 type DocProps = { where: string[]; spacing: string[]; why: string[] };
@@ -61,7 +61,7 @@ function ButtonDemo() {
               <Button variant={v}>Continue</Button>
               <Button variant={v} iconLeft={<Icon direction="left" />}>Back</Button>
               <Button variant={v} iconRight={<Icon />}>Next</Button>
-              <Button variant={v} iconOnly iconLeft="+" aria-label="Add" />
+              <Button variant={v} iconOnly iconLeft={<PlusIcon />} aria-label="Add" />
               <Button variant={v} disabled>Disabled</Button>
             </div>
           ))}
@@ -69,7 +69,7 @@ function ButtonDemo() {
             <span className="sc-demo__tag text-caption-default sc-muted">size s</span>
             <Button size="s">Small</Button>
             <Button size="s" variant="secondary" density="compact">Compact</Button>
-            <Button size="s" variant="secondary" iconOnly iconLeft="+" aria-label="Add" />
+            <Button size="s" variant="secondary" iconOnly iconLeft={<PlusIcon />} aria-label="Add" />
           </div>
         </div>
       </Preview>
@@ -114,7 +114,7 @@ function InputDemo() {
             value={qty}
             onChange={(e) => setQty(e.target.value)}
           />
-          <TextField label="With slots" placeholder="Search" leftSlot="⌕" rightSlot="✕" />
+          <TextField label="With slots" placeholder="Search" leftSlot={<SearchIcon />} rightSlot={<CloseIcon />} />
         </div>
       </Preview>
       <Doc
@@ -238,7 +238,7 @@ function ContentDemo() {
   const [chip, setChip] = useState<string[]>(['eur']);
   const [row, setRow] = useState('a');
   const toggle = (id: string) => setChip((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
-  const dot = <span aria-hidden>●</span>;
+  const dot = <DotIcon />;
   return (
     <>
       <Preview title="Chip" note="Style: brand | neutral · Size: s | l · Selected · with-slots">
@@ -260,7 +260,7 @@ function ContentDemo() {
             <span className="sc-demo__tag text-caption-default sc-muted">size l</span>
             <Chip size="l">Large</Chip>
             <Chip size="l" variant="neutral" iconLeft={dot}>Large icon</Chip>
-            <Chip leadingSlot={dot} trailingSlot="✕">With slots</Chip>
+            <Chip leadingSlot={dot} trailingSlot={<CloseIcon />}>With slots</Chip>
           </div>
         </div>
       </Preview>
@@ -397,7 +397,7 @@ function FrameDemo() {
           <WindowHeader
             title="Verification"
             leftAction={<Button size="s" variant="secondary" iconOnly iconLeft={<Icon direction="left" />} aria-label="Back" />}
-            rightAction={<Button size="s" variant="secondary" iconOnly iconLeft="✕" aria-label="Close" />}
+            rightAction={<Button size="s" variant="secondary" iconOnly iconLeft={<CloseIcon />} aria-label="Close" />}
             stepIndicator={<StepIndicator step={step} labels={STEPS} />}
           />
           <div className="sc-demo__row">
@@ -467,7 +467,7 @@ export function ComponentsPage() {
         <h1 className="text-heading-h1">Компоненты</h1>
         <p className="text-body-lg sc-muted">
           Волны A, B и C: самое нужное для флоу верификации. Всё стилизовано только токенами, состояния — через data-атрибуты.
-          Иконка-прототип (arrow-right из «06 — Icons») подставлена во все стрелки и шевроны; плюс, минус, крестик, галочка и поиск пока глифы.
+          Иконка-прототип (arrow-right из «06 — Icons») подставлена во все стрелки и шевроны; плюс, минус, крестик, галочка, «!», поиск и точка — временные SVG-заглушки по центру, до выбора иконок.
         </p>
       </div>
       <Group title="Действия" note="То, что запускает шаг или переключает режим.">

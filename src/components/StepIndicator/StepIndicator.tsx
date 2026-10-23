@@ -1,4 +1,5 @@
 import { cn } from '../cn';
+import { AlertIcon, CheckIcon } from '../Icon/Glyphs';
 import './StepIndicator.css';
 
 export type StepIndicatorProps = {
@@ -22,8 +23,8 @@ export function StepIndicator({ step, state = 'default', layout = 'compact', lab
     return 'pending';
   };
   const mark = (s: Status, i: number) => {
-    if (s === 'done') return '✓';
-    if (s === 'error') return '!';
+    if (s === 'done') return <CheckIcon />;
+    if (s === 'error') return <AlertIcon />;
     return layout === 'labeled' ? i + 1 : null;
   };
 

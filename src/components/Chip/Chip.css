@@ -29,6 +29,7 @@
 .at-chip__icon > *, .at-chip__slot > * { max-width: 100%; max-height: 100%; }
 .at-chip__text { display: inline-flex; padding: var(--space-none) var(--c-chip-s-text-container-padding-x); }
 .at-chip__slot { display: inline-flex; flex: none; }
+.at-chip__slot > .at-icon { width: var(--size-icon-xs); height: var(--size-icon-xs); }
 
 .at-chip[data-size='l'] {
   gap: var(--c-chip-l-gap); min-height: var(--c-chip-l-min-height);

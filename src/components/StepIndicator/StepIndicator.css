@@ -5,6 +5,7 @@
 .at-step-indicator__step { display: flex; align-items: center; gap: var(--c-step-indicator-gap); }
 .at-step-indicator[data-layout='labeled'] .at-step-indicator__step { gap: var(--space-sm); }
 
+.at-step-indicator__marker > .at-icon { width: var(--size-icon-xs); height: var(--size-icon-xs); }
 .at-step-indicator__marker {
   position: relative; display: inline-flex; flex: none; align-items: center; justify-content: center; box-sizing: border-box;
   width: var(--c-step-indicator-icon-size); height: var(--c-step-indicator-icon-size);

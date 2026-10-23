@@ -1,6 +1,7 @@
 import { useId, useRef, type InputHTMLAttributes, type ReactNode } from 'react';
 import { cn } from '../cn';
 import { Button } from '../Button/Button';
+import { MinusIcon, PlusIcon } from '../Icon/Glyphs';
 import './TextField.css';
 
 export type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> & {
@@ -52,7 +53,7 @@ export function TextField({
       {description && <p className="at-textfield__description text-body-xs">{description}</p>}
       <div className="at-textfield__shell">
         {stepper ? (
-          <Button variant="secondary" size="s" iconOnly iconLeft="−" aria-label="Decrease" disabled={disabled} onClick={() => step(-1)} className="at-textfield__step" />
+          <Button variant="secondary" size="s" iconOnly iconLeft={<MinusIcon />} aria-label="Decrease" disabled={disabled} onClick={() => step(-1)} className="at-textfield__step" />
         ) : (
           leftSlot && <span className="at-textfield__slot">{leftSlot}</span>
         )}
@@ -68,7 +69,7 @@ export function TextField({
           />
         </span>
         {stepper ? (
-          <Button variant="secondary" size="s" iconOnly iconLeft="+" aria-label="Increase" disabled={disabled} onClick={() => step(1)} className="at-textfield__step" />
+          <Button variant="secondary" size="s" iconOnly iconLeft={<PlusIcon />} aria-label="Increase" disabled={disabled} onClick={() => step(1)} className="at-textfield__step" />
         ) : (
           rightSlot && <span className="at-textfield__slot">{rightSlot}</span>
         )}
