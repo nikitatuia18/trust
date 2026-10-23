@@ -1,0 +1,701 @@
+{
+  "$description": "Primitives — сырые значения. Источник: Figma «02 — Tokens». Не использовать в компонентах напрямую.",
+  "tokens": {
+    "Colors/Black/100": {
+      "$type": "C",
+      "$value": "#000000"
+    },
+    "Colors/Black/alpha-12": {
+      "$type": "C",
+      "$value": "#0000001f"
+    },
+    "Colors/Black/alpha-44": {
+      "$type": "C",
+      "$value": "#00000070"
+    },
+    "Colors/Black/alpha-54": {
+      "$type": "C",
+      "$value": "#0000008a"
+    },
+    "Colors/White/100": {
+      "$type": "C",
+      "$value": "#ffffff"
+    },
+    "Colors/White/alpha-54": {
+      "$type": "C",
+      "$value": "#ffffff8a"
+    },
+    "Colors/White/alpha-16": {
+      "$type": "C",
+      "$value": "#ffffff29"
+    },
+    "Colors/White/alpha-44": {
+      "$type": "C",
+      "$value": "#ffffff70"
+    },
+    "Colors/Brand/50": {
+      "$type": "C",
+      "$value": "#e6f4ff"
+    },
+    "Colors/Brand/75": {
+      "$type": "C",
+      "$value": "#d6e9f6"
+    },
+    "Colors/Brand/100": {
+      "$type": "C",
+      "$value": "#b0deff"
+    },
+    "Colors/Brand/200": {
+      "$type": "C",
+      "$value": "#8aceff"
+    },
+    "Colors/Brand/300": {
+      "$type": "C",
+      "$value": "#54b7ff"
+    },
+    "Colors/Brand/400": {
+      "$type": "C",
+      "$value": "#33a9ff"
+    },
+    "Colors/Brand/500": {
+      "$type": "C",
+      "$value": "#0094ff"
+    },
+    "Colors/Brand/600": {
+      "$type": "C",
+      "$value": "#0087e8"
+    },
+    "Colors/Brand/700": {
+      "$type": "C",
+      "$value": "#0069b5"
+    },
+    "Colors/Brand/800": {
+      "$type": "C",
+      "$value": "#00518c"
+    },
+    "Colors/Brand/900": {
+      "$type": "C",
+      "$value": "#003e6b"
+    },
+    "Colors/Brand/1000": {
+      "$type": "C",
+      "$value": "#192d3b"
+    },
+    "Colors/Brand/alpha-16": {
+      "$type": "C",
+      "$value": "#0094ff29"
+    },
+    "Colors/Gray/25": {
+      "$type": "C",
+      "$value": "#fbfbfb"
+    },
+    "Colors/Gray/75": {
+      "$type": "C",
+      "$value": "#eff0f0"
+    },
+    "Colors/Gray/100": {
+      "$type": "C",
+      "$value": "#d6d9db"
+    },
+    "Colors/Gray/200": {
+      "$type": "C",
+      "$value": "#b3b8bc"
+    },
+    "Colors/Gray/300": {
+      "$type": "C",
+      "$value": "#8d959a"
+    },
+    "Colors/Gray/400": {
+      "$type": "C",
+      "$value": "#7b848a"
+    },
+    "Colors/Gray/500": {
+      "$type": "C",
+      "$value": "#5e6469"
+    },
+    "Colors/Gray/600": {
+      "$type": "C",
+      "$value": "#555b60"
+    },
+    "Colors/Gray/700": {
+      "$type": "C",
+      "$value": "#42474b"
+    },
+    "Colors/Gray/800": {
+      "$type": "C",
+      "$value": "#33373a"
+    },
+    "Colors/Gray/900": {
+      "$type": "C",
+      "$value": "#272a2c"
+    },
+    "Colors/Gray/1000": {
+      "$type": "C",
+      "$value": "#1d1f20"
+    },
+    "Colors/Gray/alpha-16": {
+      "$type": "C",
+      "$value": "#5e646929"
+    },
+    "Colors/Green/50": {
+      "$type": "C",
+      "$value": "#e7f8e9"
+    },
+    "Colors/Green/100": {
+      "$type": "C",
+      "$value": "#c2edc8"
+    },
+    "Colors/Green/200": {
+      "$type": "C",
+      "$value": "#97e1a2"
+    },
+    "Colors/Green/300": {
+      "$type": "C",
+      "$value": "#69d379"
+    },
+    "Colors/Green/400": {
+      "$type": "C",
+      "$value": "#3dc752"
+    },
+    "Colors/Green/500": {
+      "$type": "C",
+      "$value": "#10bd2d"
+    },
+    "Colors/Green/600": {
+      "$type": "C",
+      "$value": "#0d9e25"
+    },
+    "Colors/Green/700": {
+      "$type": "C",
+      "$value": "#0a7f1e"
+    },
+    "Colors/Green/800": {
+      "$type": "C",
+      "$value": "#076117"
+    },
+    "Colors/Green/900": {
+      "$type": "C",
+      "$value": "#044210"
+    },
+    "Colors/Green/1000": {
+      "$type": "C",
+      "$value": "#022408"
+    },
+    "Colors/Green/alpha-16": {
+      "$type": "C",
+      "$value": "#10bd2d29"
+    },
+    "Colors/Red/50": {
+      "$type": "C",
+      "$value": "#feebeb"
+    },
+    "Colors/Red/100": {
+      "$type": "C",
+      "$value": "#fcd2d2"
+    },
+    "Colors/Red/200": {
+      "$type": "C",
+      "$value": "#f9a6a6"
+    },
+    "Colors/Red/300": {
+      "$type": "C",
+      "$value": "#f57878"
+    },
+    "Colors/Red/400": {
+      "$type": "C",
+      "$value": "#ed4444"
+    },
+    "Colors/Red/500": {
+      "$type": "C",
+      "$value": "#e11010"
+    },
+    "Colors/Red/600": {
+      "$type": "C",
+      "$value": "#bf0d0d"
+    },
+    "Colors/Red/700": {
+      "$type": "C",
+      "$value": "#9e0b0b"
+    },
+    "Colors/Red/800": {
+      "$type": "C",
+      "$value": "#7d0909"
+    },
+    "Colors/Red/900": {
+      "$type": "C",
+      "$value": "#5c0707"
+    },
+    "Colors/Red/1000": {
+      "$type": "C",
+      "$value": "#310404"
+    },
+    "Colors/Red/alpha-16": {
+      "$type": "C",
+      "$value": "#e1101029"
+    },
+    "Colors/Orange/50": {
+      "$type": "C",
+      "$value": "#fff4e5"
+    },
+    "Colors/Orange/100": {
+      "$type": "C",
+      "$value": "#ffe5cc"
+    },
+    "Colors/Orange/200": {
+      "$type": "C",
+      "$value": "#ffc999"
+    },
+    "Colors/Orange/300": {
+      "$type": "C",
+      "$value": "#ffae66"
+    },
+    "Colors/Orange/400": {
+      "$type": "C",
+      "$value": "#ff9a33"
+    },
+    "Colors/Orange/500": {
+      "$type": "C",
+      "$value": "#ff8a00"
+    },
+    "Colors/Orange/600": {
+      "$type": "C",
+      "$value": "#d97500"
+    },
+    "Colors/Orange/700": {
+      "$type": "C",
+      "$value": "#b36100"
+    },
+    "Colors/Orange/800": {
+      "$type": "C",
+      "$value": "#8c4c00"
+    },
+    "Colors/Orange/900": {
+      "$type": "C",
+      "$value": "#663700"
+    },
+    "Colors/Orange/1000": {
+      "$type": "C",
+      "$value": "#331c00"
+    },
+    "Colors/Orange/alpha-16": {
+      "$type": "C",
+      "$value": "#ff8a0029"
+    },
+    "Colors/Gray/50": {
+      "$type": "C",
+      "$value": "#f4f5f5"
+    },
+    "Colors/Brand/650": {
+      "$type": "C",
+      "$value": "#0079d1"
+    },
+    "Colors/Black/alpha-4": {
+      "$type": "C",
+      "$value": "#0000000a"
+    },
+    "Colors/Black/alpha-8": {
+      "$type": "C",
+      "$value": "#00000014"
+    },
+    "Radius/Radius/0": {
+      "$type": "F",
+      "$value": 0
+    },
+    "Radius/Radius/100": {
+      "$type": "F",
+      "$value": 2
+    },
+    "Radius/Radius/200": {
+      "$type": "F",
+      "$value": 4
+    },
+    "Radius/Radius/300": {
+      "$type": "F",
+      "$value": 8
+    },
+    "Radius/Radius/400": {
+      "$type": "F",
+      "$value": 12
+    },
+    "Radius/Radius/500": {
+      "$type": "F",
+      "$value": 16
+    },
+    "Radius/Radius/600": {
+      "$type": "F",
+      "$value": 24
+    },
+    "Radius/Radius/700": {
+      "$type": "F",
+      "$value": 32
+    },
+    "Radius/Radius/800": {
+      "$type": "F",
+      "$value": 36
+    },
+    "Radius/Radius/900": {
+      "$type": "F",
+      "$value": 40
+    },
+    "Radius/Radius/1000": {
+      "$type": "F",
+      "$value": 48
+    },
+    "Radius/Radius/round": {
+      "$type": "F",
+      "$value": 9999
+    },
+    "Spacing/Spacing/0": {
+      "$type": "F",
+      "$value": 0
+    },
+    "Spacing/Spacing/50": {
+      "$type": "F",
+      "$value": 2
+    },
+    "Spacing/Spacing/100": {
+      "$type": "F",
+      "$value": 4
+    },
+    "Spacing/Spacing/200": {
+      "$type": "F",
+      "$value": 8
+    },
+    "Spacing/Spacing/250": {
+      "$type": "F",
+      "$value": 10
+    },
+    "Spacing/Spacing/300": {
+      "$type": "F",
+      "$value": 12
+    },
+    "Spacing/Spacing/400": {
+      "$type": "F",
+      "$value": 16
+    },
+    "Spacing/Spacing/425": {
+      "$type": "F",
+      "$value": 18
+    },
+    "Spacing/Spacing/450": {
+      "$type": "F",
+      "$value": 20
+    },
+    "Spacing/Spacing/500": {
+      "$type": "F",
+      "$value": 24
+    },
+    "Spacing/Spacing/600": {
+      "$type": "F",
+      "$value": 32
+    },
+    "Spacing/Spacing/700": {
+      "$type": "F",
+      "$value": 36
+    },
+    "Spacing/Spacing/800": {
+      "$type": "F",
+      "$value": 40
+    },
+    "Spacing/Spacing/850": {
+      "$type": "F",
+      "$value": 44
+    },
+    "Spacing/Spacing/900": {
+      "$type": "F",
+      "$value": 48
+    },
+    "Spacing/Spacing/925": {
+      "$type": "F",
+      "$value": 52
+    },
+    "Spacing/Spacing/950": {
+      "$type": "F",
+      "$value": 56
+    },
+    "Spacing/Spacing/1000": {
+      "$type": "F",
+      "$value": 64
+    },
+    "Spacing/Spacing/1050": {
+      "$type": "F",
+      "$value": 72
+    },
+    "Spacing/Spacing/1100": {
+      "$type": "F",
+      "$value": 80
+    },
+    "Spacing/Spacing/1200": {
+      "$type": "F",
+      "$value": 88
+    },
+    "Spacing/Spacing/1300": {
+      "$type": "F",
+      "$value": 120
+    },
+    "Spacing/Spacing/1400": {
+      "$type": "F",
+      "$value": 140
+    },
+    "Spacing/Spacing/1500": {
+      "$type": "F",
+      "$value": 160
+    },
+    "Spacing/Spacing/1600": {
+      "$type": "F",
+      "$value": 400
+    },
+    "Spacing/Spacing/-100": {
+      "$type": "F",
+      "$value": -4
+    },
+    "Spacing/Spacing/1550": {
+      "$type": "F",
+      "$value": 285
+    },
+    "Stroke/Stroke/0": {
+      "$type": "F",
+      "$value": 0
+    },
+    "Stroke/Stroke/100": {
+      "$type": "F",
+      "$value": 1
+    },
+    "Stroke/Stroke/200": {
+      "$type": "F",
+      "$value": 1.5
+    },
+    "Stroke/Stroke/300": {
+      "$type": "F",
+      "$value": 2
+    },
+    "Opacity/Opacity/0": {
+      "$type": "F",
+      "$value": 0
+    },
+    "Opacity/Opacity/12": {
+      "$type": "F",
+      "$value": 12
+    },
+    "Opacity/Opacity/24": {
+      "$type": "F",
+      "$value": 24
+    },
+    "Opacity/Opacity/48": {
+      "$type": "F",
+      "$value": 48
+    },
+    "Opacity/Opacity/64": {
+      "$type": "F",
+      "$value": 64
+    },
+    "Opacity/Opacity/100": {
+      "$type": "F",
+      "$value": 100
+    },
+    "Breakpoints/Breakpoint/xs": {
+      "$type": "F",
+      "$value": 412
+    },
+    "Breakpoints/Breakpoint/sm": {
+      "$type": "F",
+      "$value": 767
+    },
+    "Breakpoints/Breakpoint/md": {
+      "$type": "F",
+      "$value": 1280
+    },
+    "Breakpoints/Breakpoint/lg": {
+      "$type": "F",
+      "$value": 1440
+    },
+    "Breakpoints/Breakpoint/xl": {
+      "$type": "F",
+      "$value": 1600
+    },
+    "Typography/Font-family/sans": {
+      "$type": "S",
+      "$value": "Inter"
+    },
+    "Typography/Font-family/mono": {
+      "$type": "S",
+      "$value": "Geist Mono"
+    },
+    "Typography/Font-size/50": {
+      "$type": "F",
+      "$value": 10
+    },
+    "Typography/Font-size/100": {
+      "$type": "F",
+      "$value": 12
+    },
+    "Typography/Font-size/200": {
+      "$type": "F",
+      "$value": 14
+    },
+    "Typography/Font-size/300": {
+      "$type": "F",
+      "$value": 16
+    },
+    "Typography/Font-size/400": {
+      "$type": "F",
+      "$value": 18
+    },
+    "Typography/Font-size/500": {
+      "$type": "F",
+      "$value": 20
+    },
+    "Typography/Font-size/600": {
+      "$type": "F",
+      "$value": 24
+    },
+    "Typography/Font-size/700": {
+      "$type": "F",
+      "$value": 28
+    },
+    "Typography/Font-size/800": {
+      "$type": "F",
+      "$value": 32
+    },
+    "Typography/Font-size/900": {
+      "$type": "F",
+      "$value": 40
+    },
+    "Typography/Font-size/1000": {
+      "$type": "F",
+      "$value": 48
+    },
+    "Typography/Font-size/1100": {
+      "$type": "F",
+      "$value": 56
+    },
+    "Typography/Font-size/1200": {
+      "$type": "F",
+      "$value": 64
+    },
+    "Typography/Font-size/1300": {
+      "$type": "F",
+      "$value": 72
+    },
+    "Typography/Font-size/1400": {
+      "$type": "F",
+      "$value": 80
+    },
+    "Typography/Font-size/1500": {
+      "$type": "F",
+      "$value": 88
+    },
+    "Typography/Font-size/1600": {
+      "$type": "F",
+      "$value": 96
+    },
+    "Typography/Font-size/1700": {
+      "$type": "F",
+      "$value": 124
+    },
+    "Typography/Font-size/1800": {
+      "$type": "F",
+      "$value": 148
+    },
+    "Typography/Line-height/50": {
+      "$type": "F",
+      "$value": 12
+    },
+    "Typography/Line-height/100": {
+      "$type": "F",
+      "$value": 16
+    },
+    "Typography/Line-height/200": {
+      "$type": "F",
+      "$value": 20
+    },
+    "Typography/Line-height/300": {
+      "$type": "F",
+      "$value": 24
+    },
+    "Typography/Line-height/400": {
+      "$type": "F",
+      "$value": 26
+    },
+    "Typography/Line-height/500": {
+      "$type": "F",
+      "$value": 28
+    },
+    "Typography/Line-height/600": {
+      "$type": "F",
+      "$value": 32
+    },
+    "Typography/Line-height/700": {
+      "$type": "F",
+      "$value": 36
+    },
+    "Typography/Line-height/800": {
+      "$type": "F",
+      "$value": 40
+    },
+    "Typography/Line-height/900": {
+      "$type": "F",
+      "$value": 48
+    },
+    "Typography/Line-height/1000": {
+      "$type": "F",
+      "$value": 56
+    },
+    "Typography/Line-height/1100": {
+      "$type": "F",
+      "$value": 64
+    },
+    "Typography/Line-height/1200": {
+      "$type": "F",
+      "$value": 72
+    },
+    "Typography/Line-height/1300": {
+      "$type": "F",
+      "$value": 80
+    },
+    "Typography/Line-height/1400": {
+      "$type": "F",
+      "$value": 88
+    },
+    "Typography/Line-height/1500": {
+      "$type": "F",
+      "$value": 96
+    },
+    "Typography/Line-height/1600": {
+      "$type": "F",
+      "$value": 104
+    },
+    "Typography/Line-height/1700": {
+      "$type": "F",
+      "$value": 128
+    },
+    "Typography/Line-height/1800": {
+      "$type": "F",
+      "$value": 154
+    },
+    "Typography/Letter-spacing/0": {
+      "$type": "F",
+      "$value": 0
+    },
+    "Typography/Letter-spacing/100": {
+      "$type": "F",
+      "$value": -1
+    },
+    "Typography/Letter-spacing/200": {
+      "$type": "F",
+      "$value": -2
+    },
+    "Typography/Letter-spacing/300": {
+      "$type": "F",
+      "$value": -3
+    },
+    "Typography/Font-weight/regular": {
+      "$type": "S",
+      "$value": "400"
+    },
+    "Typography/Font-weight/medium": {
+      "$type": "S",
+      "$value": "500"
+    }
+  }
+}

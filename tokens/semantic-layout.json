@@ -1,0 +1,555 @@
+{
+  "$description": "Semantic / Layout — отступы, размеры, радиусы, типографика. Режимы: desktop, mobile (<= 767px).",
+  "tokens": {
+    "Typography/Font-size/xs": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/100}",
+      "mobile": "{prim.Typography/Font-size/50}"
+    },
+    "Space/none": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Space/2xs": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/50}",
+      "mobile": "{prim.Spacing/Spacing/50}"
+    },
+    "Typography/Font-size/sm": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/200}",
+      "mobile": "{prim.Typography/Font-size/100}"
+    },
+    "Typography/Font-size/base": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/300}",
+      "mobile": "{prim.Typography/Font-size/200}"
+    },
+    "Typography/Font-size/md": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/400}",
+      "mobile": "{prim.Typography/Font-size/300}"
+    },
+    "Typography/Font-size/lg": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/500}",
+      "mobile": "{prim.Typography/Font-size/400}"
+    },
+    "Typography/Font-size/xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/600}",
+      "mobile": "{prim.Typography/Font-size/400}"
+    },
+    "Typography/Font-size/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/700}",
+      "mobile": "{prim.Typography/Font-size/500}"
+    },
+    "Typography/Font-size/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/800}",
+      "mobile": "{prim.Typography/Font-size/600}"
+    },
+    "Typography/Font-size/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/900}",
+      "mobile": "{prim.Typography/Font-size/700}"
+    },
+    "Typography/Font-size/5xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/1100}",
+      "mobile": "{prim.Typography/Font-size/800}"
+    },
+    "Typography/Font-size/6xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/1300}",
+      "mobile": "{prim.Typography/Font-size/900}"
+    },
+    "Typography/Font-size/7xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/1600}",
+      "mobile": "{prim.Typography/Font-size/1100}"
+    },
+    "Typography/Font-size/8xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/1700}",
+      "mobile": "{prim.Typography/Font-size/1300}"
+    },
+    "Typography/Font-size/9xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Font-size/1800}",
+      "mobile": "{prim.Typography/Font-size/1600}"
+    },
+    "Typography/Line-height/xs": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/100}",
+      "mobile": "{prim.Typography/Line-height/50}"
+    },
+    "Typography/Line-height/sm": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/200}",
+      "mobile": "{prim.Typography/Line-height/100}"
+    },
+    "Typography/Line-height/base": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/300}",
+      "mobile": "{prim.Typography/Line-height/200}"
+    },
+    "Typography/Line-height/md": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/400}",
+      "mobile": "{prim.Typography/Line-height/300}"
+    },
+    "Typography/Line-height/lg": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/500}",
+      "mobile": "{prim.Typography/Line-height/400}"
+    },
+    "Typography/Line-height/xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/600}",
+      "mobile": "{prim.Typography/Line-height/400}"
+    },
+    "Typography/Line-height/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/700}",
+      "mobile": "{prim.Typography/Line-height/500}"
+    },
+    "Typography/Line-height/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/800}",
+      "mobile": "{prim.Typography/Line-height/600}"
+    },
+    "Typography/Line-height/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/900}",
+      "mobile": "{prim.Typography/Line-height/700}"
+    },
+    "Typography/Line-height/5xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/1100}",
+      "mobile": "{prim.Typography/Line-height/800}"
+    },
+    "Typography/Line-height/6xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/1300}",
+      "mobile": "{prim.Typography/Line-height/900}"
+    },
+    "Typography/Line-height/7xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/1600}",
+      "mobile": "{prim.Typography/Line-height/1100}"
+    },
+    "Typography/Line-height/8xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/1700}",
+      "mobile": "{prim.Typography/Line-height/1300}"
+    },
+    "Typography/Line-height/9xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Line-height/1800}",
+      "mobile": "{prim.Typography/Line-height/1600}"
+    },
+    "Typography/Letter-spacing/xs": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/sm": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/base": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/md": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/lg": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/0}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/100}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/100}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/5xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/100}",
+      "mobile": "{prim.Typography/Letter-spacing/0}"
+    },
+    "Typography/Letter-spacing/6xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/100}",
+      "mobile": "{prim.Typography/Letter-spacing/100}"
+    },
+    "Typography/Letter-spacing/7xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/200}",
+      "mobile": "{prim.Typography/Letter-spacing/100}"
+    },
+    "Typography/Letter-spacing/8xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/200}",
+      "mobile": "{prim.Typography/Letter-spacing/100}"
+    },
+    "Typography/Letter-spacing/9xl": {
+      "$type": "F",
+      "desktop": "{prim.Typography/Letter-spacing/300}",
+      "mobile": "{prim.Typography/Letter-spacing/200}"
+    },
+    "Space/xs": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/100}",
+      "mobile": "{prim.Spacing/Spacing/50}"
+    },
+    "Space/sm": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/200}",
+      "mobile": "{prim.Spacing/Spacing/200}"
+    },
+    "Space/md": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/250}",
+      "mobile": "{prim.Spacing/Spacing/200}"
+    },
+    "Space/lg": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/300}",
+      "mobile": "{prim.Spacing/Spacing/200}"
+    },
+    "Space/xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/400}",
+      "mobile": "{prim.Spacing/Spacing/300}"
+    },
+    "Space/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/500}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Space/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/600}",
+      "mobile": "{prim.Spacing/Spacing/500}"
+    },
+    "Space/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/700}",
+      "mobile": "{prim.Spacing/Spacing/600}"
+    },
+    "Space/5xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/800}",
+      "mobile": "{prim.Spacing/Spacing/700}"
+    },
+    "Size/xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/850}",
+      "mobile": "{prim.Spacing/Spacing/700}"
+    },
+    "Space/6xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/900}",
+      "mobile": "{prim.Spacing/Spacing/800}"
+    },
+    "Space/7xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1000}",
+      "mobile": "{prim.Spacing/Spacing/900}"
+    },
+    "Space/8xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1100}",
+      "mobile": "{prim.Spacing/Spacing/900}"
+    },
+    "Space/9xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1200}",
+      "mobile": "{prim.Spacing/Spacing/1000}"
+    },
+    "Size/Min-width/sm": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1300}",
+      "mobile": "{prim.Spacing/Spacing/1100}"
+    },
+    "Size/Min-width/md": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1500}",
+      "mobile": "{prim.Spacing/Spacing/1300}"
+    },
+    "Radius/round": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/round}",
+      "mobile": "{prim.Radius/Radius/round}"
+    },
+    "Radius/none": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/0}",
+      "mobile": "{prim.Radius/Radius/0}"
+    },
+    "Radius/xs": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/200}",
+      "mobile": "{prim.Radius/Radius/100}"
+    },
+    "Radius/sm": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/300}",
+      "mobile": "{prim.Radius/Radius/200}"
+    },
+    "Radius/md": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/400}",
+      "mobile": "{prim.Radius/Radius/300}"
+    },
+    "Radius/lg": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/500}",
+      "mobile": "{prim.Radius/Radius/400}"
+    },
+    "Radius/xl": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/600}",
+      "mobile": "{prim.Radius/Radius/500}"
+    },
+    "Radius/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/700}",
+      "mobile": "{prim.Radius/Radius/600}"
+    },
+    "Radius/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/800}",
+      "mobile": "{prim.Radius/Radius/700}"
+    },
+    "Radius/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/900}",
+      "mobile": "{prim.Radius/Radius/800}"
+    },
+    "Radius/5xl": {
+      "$type": "F",
+      "desktop": "{prim.Radius/Radius/1000}",
+      "mobile": "{prim.Radius/Radius/900}"
+    },
+    "Size/Icon/xs": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/400}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Size/Icon/sm": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/450}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Size/Icon/md": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/500}",
+      "mobile": "{prim.Spacing/Spacing/450}"
+    },
+    "Size/Icon/lg": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/700}",
+      "mobile": "{prim.Spacing/Spacing/500}"
+    },
+    "Size/Icon/xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/800}",
+      "mobile": "{prim.Spacing/Spacing/500}"
+    },
+    "Size/Icon/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/900}",
+      "mobile": "{prim.Spacing/Spacing/700}"
+    },
+    "Size/Icon/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/950}",
+      "mobile": "{prim.Spacing/Spacing/900}"
+    },
+    "Size/Icon/4xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1300}",
+      "mobile": "{prim.Spacing/Spacing/1100}"
+    },
+    "Grid/margin": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1050}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Grid/gutter": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1000}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Grid/columns": {
+      "$type": "F",
+      "desktop": "12",
+      "mobile": "4"
+    },
+    "Size/nav-height": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/925}",
+      "mobile": "{prim.Spacing/Spacing/925}"
+    },
+    "Opacity/disabled": {
+      "$type": "F",
+      "desktop": "{prim.Opacity/Opacity/48}",
+      "mobile": "{prim.Opacity/Opacity/48}"
+    },
+    "Stroke/default": {
+      "$type": "F",
+      "desktop": "{prim.Stroke/Stroke/100}",
+      "mobile": "{prim.Stroke/Stroke/100}"
+    },
+    "Focus/blur": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Focus/ring-width": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/100}",
+      "mobile": "{prim.Spacing/Spacing/50}"
+    },
+    "Focus/offset-x": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Focus/offset-y": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Typography/Font-family/base": {
+      "$type": "S",
+      "desktop": "{prim.Typography/Font-family/sans}",
+      "mobile": "{prim.Typography/Font-family/sans}"
+    },
+    "Typography/Font-family/mono": {
+      "$type": "S",
+      "desktop": "{prim.Typography/Font-family/mono}",
+      "mobile": "{prim.Typography/Font-family/mono}"
+    },
+    "Typography/Font-weight/regular": {
+      "$type": "S",
+      "desktop": "{prim.Typography/Font-weight/regular}",
+      "mobile": "{prim.Typography/Font-weight/regular}"
+    },
+    "Typography/Font-weight/medium": {
+      "$type": "S",
+      "desktop": "{prim.Typography/Font-weight/medium}",
+      "mobile": "{prim.Typography/Font-weight/medium}"
+    },
+    "Size/xs": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/400}",
+      "mobile": "{prim.Spacing/Spacing/300}"
+    },
+    "Size/sm": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/500}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
+    "Size/md": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/600}",
+      "mobile": "{prim.Spacing/Spacing/500}"
+    },
+    "Size/lg": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/800}",
+      "mobile": "{prim.Spacing/Spacing/700}"
+    },
+    "Grid/max-width": {
+      "$type": "F",
+      "desktop": "{prim.Breakpoints/Breakpoint/lg}",
+      "mobile": "{prim.Breakpoints/Breakpoint/sm}"
+    },
+    "Size/2xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/900}",
+      "mobile": "{prim.Spacing/Spacing/800}"
+    },
+    "Size/3xl": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1000}",
+      "mobile": "{prim.Spacing/Spacing/900}"
+    },
+    "Size/Min-height/lg": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1600}",
+      "mobile": "{prim.Spacing/Spacing/1600}"
+    },
+    "Elevation/Overlay/1/offset-x": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Elevation/Overlay/1/offset-y": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/50}",
+      "mobile": "{prim.Spacing/Spacing/50}"
+    },
+    "Elevation/Overlay/1/blur": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/100}",
+      "mobile": "{prim.Spacing/Spacing/100}"
+    },
+    "Elevation/Overlay/1/spread": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Elevation/Overlay/2/offset-x": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Elevation/Overlay/2/offset-y": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/200}",
+      "mobile": "{prim.Spacing/Spacing/200}"
+    },
+    "Elevation/Overlay/2/blur": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/600}",
+      "mobile": "{prim.Spacing/Spacing/600}"
+    },
+    "Elevation/Overlay/2/spread": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/-100}",
+      "mobile": "{prim.Spacing/Spacing/-100}"
+    },
+    "Size/Min-height/md": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1550}",
+      "mobile": "{prim.Spacing/Spacing/1550}"
+    }
+  }
+}

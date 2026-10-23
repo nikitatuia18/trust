@@ -1,0 +1,309 @@
+{
+  "text": [
+    {
+      "name": "display/9xl",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/9xl",
+      "lineHeight": "Line-height/9xl",
+      "letterSpacing": "Letter-spacing/9xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "display/8xl",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/8xl",
+      "lineHeight": "Line-height/8xl",
+      "letterSpacing": "Letter-spacing/8xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "display/7xl",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/7xl",
+      "lineHeight": "Line-height/7xl",
+      "letterSpacing": "Letter-spacing/7xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "display/6xl",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/6xl",
+      "lineHeight": "Line-height/6xl",
+      "letterSpacing": "Letter-spacing/6xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "display/5xl",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/5xl",
+      "lineHeight": "Line-height/5xl",
+      "letterSpacing": "Letter-spacing/5xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "heading/h1",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/4xl",
+      "lineHeight": "Line-height/4xl",
+      "letterSpacing": "Letter-spacing/4xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "heading/h2",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/3xl",
+      "lineHeight": "Line-height/3xl",
+      "letterSpacing": "Letter-spacing/3xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "heading/h3",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/2xl",
+      "lineHeight": "Line-height/2xl",
+      "letterSpacing": "Letter-spacing/2xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "heading/h4",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/xl",
+      "lineHeight": "Line-height/xl",
+      "letterSpacing": "Letter-spacing/xl",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "body/lg",
+      "family": "Inter",
+      "style": "Regular",
+      "fontSize": "Font-size/lg",
+      "lineHeight": "Line-height/lg",
+      "letterSpacing": "Letter-spacing/lg",
+      "weight": "regular",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "body/md",
+      "family": "Inter",
+      "style": "Regular",
+      "fontSize": "Font-size/md",
+      "lineHeight": "Line-height/md",
+      "letterSpacing": "Letter-spacing/md",
+      "weight": "regular",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "body/md-mono",
+      "family": "Geist Mono",
+      "style": "Regular",
+      "fontSize": "Font-size/md",
+      "lineHeight": "Line-height/md",
+      "letterSpacing": "Letter-spacing/sm",
+      "weight": "regular",
+      "mono": true,
+      "caps": false
+    },
+    {
+      "name": "body/sm",
+      "family": "Inter",
+      "style": "Regular",
+      "fontSize": "Font-size/base",
+      "lineHeight": "Line-height/base",
+      "letterSpacing": "Letter-spacing/base",
+      "weight": "regular",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "body/sm-mono",
+      "family": "Geist Mono",
+      "style": "Regular",
+      "fontSize": "Font-size/base",
+      "lineHeight": "Line-height/base",
+      "letterSpacing": "Letter-spacing/base",
+      "weight": "regular",
+      "mono": true,
+      "caps": false
+    },
+    {
+      "name": "body/xs",
+      "family": "Inter",
+      "style": "Regular",
+      "fontSize": "Font-size/sm",
+      "lineHeight": "Line-height/sm",
+      "letterSpacing": "Letter-spacing/sm",
+      "weight": "regular",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "label/lg",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/md",
+      "lineHeight": "Line-height/md",
+      "letterSpacing": "Letter-spacing/md",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "label/md",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/base",
+      "lineHeight": "Line-height/base",
+      "letterSpacing": "Letter-spacing/base",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "label/md-caps",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/base",
+      "lineHeight": "Line-height/base",
+      "letterSpacing": "Letter-spacing/base",
+      "weight": "medium",
+      "mono": false,
+      "caps": true
+    },
+    {
+      "name": "label/sm",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/sm",
+      "lineHeight": "Line-height/sm",
+      "letterSpacing": "Letter-spacing/sm",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    },
+    {
+      "name": "label/sm-caps",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/sm",
+      "lineHeight": "Line-height/sm",
+      "letterSpacing": "Letter-spacing/sm",
+      "weight": "medium",
+      "mono": false,
+      "caps": true
+    },
+    {
+      "name": "caption/default",
+      "family": "Inter",
+      "style": "Medium",
+      "fontSize": "Font-size/xs",
+      "lineHeight": "Line-height/xs",
+      "letterSpacing": "Letter-spacing/xs",
+      "weight": "medium",
+      "mono": false,
+      "caps": false
+    }
+  ],
+  "effects": [
+    {
+      "name": "focus/primary",
+      "layers": [
+        [
+          "Focus/Brand/ring",
+          "Focus/offset-x",
+          "Focus/offset-y",
+          "Focus/blur",
+          "Focus/ring-width"
+        ]
+      ]
+    },
+    {
+      "name": "focus/tertiary",
+      "layers": [
+        [
+          "Focus/Inverse/ring",
+          "Focus/offset-x",
+          "Focus/offset-y",
+          "Focus/blur",
+          "Focus/ring-width"
+        ]
+      ]
+    },
+    {
+      "name": "focus/success",
+      "layers": [
+        [
+          "Focus/Success/ring",
+          "Focus/offset-x",
+          "Focus/offset-y",
+          "Focus/blur",
+          "Focus/ring-width"
+        ]
+      ]
+    },
+    {
+      "name": "focus/warning",
+      "layers": [
+        [
+          "Focus/Warning/ring",
+          "Focus/offset-x",
+          "Focus/offset-y",
+          "Focus/blur",
+          "Focus/ring-width"
+        ]
+      ]
+    },
+    {
+      "name": "focus/error",
+      "layers": [
+        [
+          "Focus/Error/ring",
+          "Focus/offset-x",
+          "Focus/offset-y",
+          "Focus/blur",
+          "Focus/ring-width"
+        ]
+      ]
+    },
+    {
+      "name": "elevation/overlay",
+      "layers": [
+        [
+          "Elevation/Overlay/1/shadow",
+          "Elevation/Overlay/1/offset-x",
+          "Elevation/Overlay/1/offset-y",
+          "Elevation/Overlay/1/blur",
+          "Elevation/Overlay/1/spread"
+        ]
+      ]
+    }
+  ]
+}

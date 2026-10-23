@@ -1,0 +1,29 @@
+#text=21 (name|family|style|fontSize|fontFamily-var-implied|fontSizeVar|lineHeightVar|letterSpacingVar|weightVar)
+display/9xl|Inter|Medium|Font-size/9xl|Line-height/9xl|Letter-spacing/9xl|medium
+display/8xl|Inter|Medium|Font-size/8xl|Line-height/8xl|Letter-spacing/8xl|medium
+display/7xl|Inter|Medium|Font-size/7xl|Line-height/7xl|Letter-spacing/7xl|medium
+display/6xl|Inter|Medium|Font-size/6xl|Line-height/6xl|Letter-spacing/6xl|medium
+display/5xl|Inter|Medium|Font-size/5xl|Line-height/5xl|Letter-spacing/5xl|medium
+heading/h1|Inter|Medium|Font-size/4xl|Line-height/4xl|Letter-spacing/4xl|medium
+heading/h2|Inter|Medium|Font-size/3xl|Line-height/3xl|Letter-spacing/3xl|medium
+heading/h3|Inter|Medium|Font-size/2xl|Line-height/2xl|Letter-spacing/2xl|medium
+heading/h4|Inter|Medium|Font-size/xl|Line-height/xl|Letter-spacing/xl|medium
+body/lg|Inter|Regular|Font-size/lg|Line-height/lg|Letter-spacing/lg|regular
+body/md|Inter|Regular|Font-size/md|Line-height/md|Letter-spacing/md|regular
+body/md-mono|Geist Mono|Regular|Font-size/md|Line-height/md|Letter-spacing/sm|regular
+body/sm|Inter|Regular|Font-size/base|Line-height/base|Letter-spacing/base|regular
+body/sm-mono|Geist Mono|Regular|Font-size/base|Line-height/base|Letter-spacing/base|regular
+body/xs|Inter|Regular|Font-size/sm|Line-height/sm|Letter-spacing/sm|regular
+label/lg|Inter|Medium|Font-size/md|Line-height/md|Letter-spacing/md|medium
+label/md|Inter|Medium|Font-size/base|Line-height/base|Letter-spacing/base|medium
+label/md-caps|Inter|Medium|Font-size/base|Line-height/base|Letter-spacing/base|medium
+label/sm|Inter|Medium|Font-size/sm|Line-height/sm|Letter-spacing/sm|medium
+label/sm-caps|Inter|Medium|Font-size/sm|Line-height/sm|Letter-spacing/sm|medium
+caption/default|Inter|Medium|Font-size/xs|Line-height/xs|Letter-spacing/xs|medium
+#effect=6 (name|layers separated by ||; layer = shadowColorVar~offsetXVar~offsetYVar~blurVar~spreadVar)
+focus/primary|Focus/Brand/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
+focus/tertiary|Focus/Inverse/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
+focus/success|Focus/Success/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
+focus/warning|Focus/Warning/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
+focus/error|Focus/Error/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
+elevation/overlay|Elevation/Overlay/1/shadow~Elevation/Overlay/1/offset-x~Elevation/Overlay/1/offset-y~Elevation/Overlay/1/blur~Elevation/Overlay/1/spread||Elevation/Overlay/2/shadow~Elevation/Overlay/2/offset-x~Elevation/Overlay/2/offset-y~Elevation/Overlay/2/blur~Elevation/Overlay/2/spread

@@ -1,0 +1,56 @@
+import { useEffect, useState } from 'react';
+import { TokensPage } from './TokensPage';
+
+type Page = 'tokens' | 'components' | 'rules';
+
+const NAV: { id: Page; label: string; ready: boolean }[] = [
+  { id: 'tokens', label: 'Токены', ready: true },
+  { id: 'components', label: 'Компоненты', ready: false },
+  { id: 'rules', label: 'Правила', ready: false },
+];
+
+const fromHash = (): Page => {
+  const h = window.location.hash.replace('#/', '') as Page;
+  return NAV.some((n) => n.id === h) ? h : 'tokens';
+};
+
+export function App() {
+  const [page, setPage] = useState<Page>(fromHash);
+  const [layout, setLayout] = useState<'desktop' | 'mobile'>('desktop');
+
+  useEffect(() => {
+    const on = () => setPage(fromHash());
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
+
+  // Принудительный Mobile-режим токенов (<html data-layout="mobile">)
+  useEffect(() => {
+    if (layout === 'mobile') document.documentElement.dataset.layout = 'mobile';
+    else delete document.documentElement.dataset.layout;
+  }, [layout]);
+
+  return (
+    <div className="sc-shell">
+      <aside className="sc-side">
+        <div className="sc-brand text-heading-h4">AllTrust</div>
+        <p className="text-body-xs sc-muted">Design System</p>
+        <nav className="sc-nav">
+          {NAV.map((n) => (
+            <a key={n.id} href={`#/${n.id}`} className={`sc-nav__item text-label-md ${page === n.id ? 'is-active' : ''} ${n.ready ? '' : 'is-soon'}`}>
+              {n.label}{!n.ready && <span className="text-caption-default"> · скоро</span>}
+            </a>
+          ))}
+        </nav>
+        <div className="sc-toggle" role="group" aria-label="Режим Layout">
+          <button className={layout === 'desktop' ? 'is-on' : ''} onClick={() => setLayout('desktop')}>Desktop</button>
+          <button className={layout === 'mobile' ? 'is-on' : ''} onClick={() => setLayout('mobile')}>Mobile</button>
+        </div>
+      </aside>
+      <main className="sc-main">
+        {page === 'tokens' && <TokensPage />}
+        {page !== 'tokens' && <p className="text-body-lg sc-muted">Раздел в работе.</p>}
+      </main>
+    </div>
+  );
+}

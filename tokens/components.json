@@ -1,0 +1,1265 @@
+{
+  "$description": "Components — токены компонентов. Алиасы ТОЛЬКО на Semantic (Theme/Layout).",
+  "tokens": {
+    "Button/text-container/M/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Button/text-container/S/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Button/M/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Button/M/padding-x-compact": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Button/M/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Button/M/icon-padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Button/M/icon-padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Button/M/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Button/M/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Button/M/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Button/M/min-width": {
+      "$type": "F",
+      "$value": "{layout.Size/Min-width/md}"
+    },
+    "Button/M/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Button/primary/content": {
+      "$type": "C",
+      "$value": "{theme.Content/on-brand}"
+    },
+    "Button/secondary/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Button/ghost/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Button/ghost/content-focus": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Button/ghost/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Button/ghost/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "Button/ghost/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/active}"
+    },
+    "Button/ghost/bg-focus": {
+      "$type": "C",
+      "$value": "{theme.Focus/Brand/bg}"
+    },
+    "Button/secondary/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Button/secondary/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "Button/secondary/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/active}"
+    },
+    "Button/secondary/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Button/secondary/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/hover}"
+    },
+    "Button/secondary/border-active": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/active}"
+    },
+    "Button/primary/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/default}"
+    },
+    "Button/primary/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/hover}"
+    },
+    "Button/primary/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/active}"
+    },
+    "Button/destructive/content": {
+      "$type": "C",
+      "$value": "{theme.Content/on-error}"
+    },
+    "Button/destructive/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Error/default}"
+    },
+    "Button/destructive/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Error/hover}"
+    },
+    "Button/destructive/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Error/active}"
+    },
+    "Avatar/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Button/S/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Button/S/padding-x-compact": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Button/S/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Button/S/icon-padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Button/S/icon-padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Button/S/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "Button/S/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Button/S/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Button/S/min-width": {
+      "$type": "F",
+      "$value": "{layout.Size/Min-width/sm}"
+    },
+    "Button/S/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/sm}"
+    },
+    "List Item/title/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "List Item/subtitle/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "List Item/main-container/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "List Item/large/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/lg}"
+    },
+    "List Item/small/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/md}"
+    },
+    "List Item/main-container/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "List Item/main-container/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "List Item/list/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/xl}"
+    },
+    "List Item/card/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/2xl}"
+    },
+    "List Item/large/slot-left": {
+      "$type": "F",
+      "$value": "{layout.Size/lg}"
+    },
+    "List Item/small/slot-left": {
+      "$type": "F",
+      "$value": "{layout.Size/md}"
+    },
+    "List Item/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "List Item/item-content/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "List Item/content-container/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/2xs}"
+    },
+    "List Item/content-row/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "List Item/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "List Item/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "List Item/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "List Item/bg-selected": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Segment/control/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Segment/control/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Segment/control/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "Segment/control/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Segment/control/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Segment/control/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Segment/control/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Button/tertiary/content": {
+      "$type": "C",
+      "$value": "{theme.Content/on-inverse}"
+    },
+    "Button/tertiary/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Inverse/default}"
+    },
+    "Button/tertiary/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Inverse/hover}"
+    },
+    "Button/tertiary/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Inverse/active}"
+    },
+    "Segment/item/text-container/M/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Segment/item/text-container/S/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Segment/item/M/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Segment/item/M/padding-x-compact": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Segment/item/M/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/lg}"
+    },
+    "Segment/item/M/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Segment/item/M/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Segment/item/M/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Segment/item/M/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Segment/item/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Segment/item/content-active": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Segment/item/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Segment/item/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Segment/item/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "List/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/2xl}"
+    },
+    "Switch/on/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Success/default}"
+    },
+    "Segment/item/S/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Segment/item/S/padding-x-compact": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Segment/item/S/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Segment/item/S/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "Segment/item/S/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Segment/item/S/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Segment/item/S/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/sm}"
+    },
+    "List Item/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "List Item/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/hover}"
+    },
+    "List Item/border-active": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/active}"
+    },
+    "List Item/border-selected": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/default}"
+    },
+    "List/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "List/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "List/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "List/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "List/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "List/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Switch/ball/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Switch/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/2xs}"
+    },
+    "Switch/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/2xs}"
+    },
+    "Switch/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "Switch/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Switch/ball/size": {
+      "$type": "F",
+      "$value": "{layout.Size/sm}"
+    },
+    "Switch/ball/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Switch/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Switch/off/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/muted}"
+    },
+    "Switch/off/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Header/main/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/6xl}"
+    },
+    "Header/main/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Header/main/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/none}"
+    },
+    "Header/main/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Header/main/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Header/main/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Header/content/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/6xl}"
+    },
+    "Header/navigation/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/6xl}"
+    },
+    "Header/navigation-menu/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/3xl}"
+    },
+    "Header/buttons/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "List Item/text-container/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Input/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Input/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Input/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/hover}"
+    },
+    "Input/border-error": {
+      "$type": "C",
+      "$value": "{theme.Border/Error/default}"
+    },
+    "Input/border-success": {
+      "$type": "C",
+      "$value": "{theme.Border/Success/default}"
+    },
+    "Input/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Input/placeholder": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Input/label/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Input/hint/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Input/hint/content-error": {
+      "$type": "C",
+      "$value": "{theme.Content/error}"
+    },
+    "Input/hint/content-success": {
+      "$type": "C",
+      "$value": "{theme.Content/success}"
+    },
+    "Input/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Input/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Input/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Input/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/brand/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle}"
+    },
+    "Chip/brand/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/subtle}"
+    },
+    "Chip/brand/content": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Chip/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Chip/S/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/S/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Chip/S/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Chip/M/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/M/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/M/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Chip/M/text-container/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Input/slot/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Input/description/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Input/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Form Card/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Form Card/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Form Card/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/2xl}"
+    },
+    "Footer/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Footer/divider": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Footer/link": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Footer/link-hover": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Amount Field/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Amount Field/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Amount Field/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/hover}"
+    },
+    "Amount Field/border-error": {
+      "$type": "C",
+      "$value": "{theme.Border/Error/default}"
+    },
+    "Amount Field/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Amount Field/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/xl}"
+    },
+    "Amount Field/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Amount Field/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/lg}"
+    },
+    "Amount Field/label/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Amount Field/value/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Amount Field/placeholder": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Amount Field/hint/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Select Trigger/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Select Trigger/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Select Trigger/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/hover}"
+    },
+    "Select Trigger/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Select Trigger/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/lg}"
+    },
+    "Select Trigger/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Select Trigger/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Select Trigger/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/2xl}"
+    },
+    "Select Trigger/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/xs}"
+    },
+    "Select Trigger/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Select Trigger/sub-content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Step Indicator/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/xs}"
+    },
+    "Step Indicator/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Step Indicator/connector/width": {
+      "$type": "F",
+      "$value": "{layout.Size/sm}"
+    },
+    "Step Indicator/connector/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Step Indicator/connector": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Step Indicator/icon": {
+      "$type": "C",
+      "$value": "{theme.Content/tertiary}"
+    },
+    "Step Indicator/icon-current": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Step Indicator/icon-done": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Window Header/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Window Header/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Window Header/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Window Header/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Window Header/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Window Header/row/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Window Header/title/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Summary/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Summary/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Summary/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Summary/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Summary/title/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Summary/card/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Summary/card/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Summary/card/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/xl}"
+    },
+    "Summary/card/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Summary/row/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Summary/row/label/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Summary/row/value/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Summary/row/value/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Summary/nested/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Summary/nested/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Asset Logo/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "Asset Logo/S/size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/sm}"
+    },
+    "Asset Logo/M/size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Asset Logo/L/size": {
+      "$type": "F",
+      "$value": "{layout.Size/md}"
+    },
+    "Asset Logo/badge/size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/xs}"
+    },
+    "Asset Logo/badge/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Asset Logo/badge/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/2xs}"
+    },
+    "Dropdown Menu/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Dropdown Menu/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Dropdown Menu/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Dropdown Menu/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/lg}"
+    },
+    "Dropdown Menu/item/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Dropdown Menu/item/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Dropdown Menu/item/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "Dropdown Menu/item/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Dropdown Menu/item/sub-content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Status/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/3xl}"
+    },
+    "Status/icon/size": {
+      "$type": "F",
+      "$value": "{layout.Size/3xl}"
+    },
+    "Status/icon/glyph-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/2xl}"
+    },
+    "Status/icon/bg-success": {
+      "$type": "C",
+      "$value": "{theme.Surface/Success/subtle}"
+    },
+    "Status/icon/bg-error": {
+      "$type": "C",
+      "$value": "{theme.Surface/Error/subtle}"
+    },
+    "Status/icon/content-success": {
+      "$type": "C",
+      "$value": "{theme.Content/success}"
+    },
+    "Status/icon/content-error": {
+      "$type": "C",
+      "$value": "{theme.Content/error}"
+    },
+    "Status/text/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Status/text/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Status/title/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Status/message/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Embed Placeholder/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle}"
+    },
+    "Embed Placeholder/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/default}"
+    },
+    "Embed Placeholder/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Embed Placeholder/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/xl}"
+    },
+    "Embed Placeholder/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Embed Placeholder/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/md}"
+    },
+    "Embed Placeholder/content": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Chip/neutral/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Chip/neutral/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Chip/neutral/border-selected": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/default}"
+    },
+    "Chip/neutral/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Chip/L/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/L/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Chip/L/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Chip/L/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/2xl}"
+    },
+    "Chip/L/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Chip/brand/border-selected": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/default}"
+    },
+    "Chip/pill/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Chip/pill/padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Chip/pill/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Status/spinner/track": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/canvas}"
+    },
+    "Status/spinner/indicator": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/default}"
+    },
+    "Select Trigger/S/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/lg}"
+    },
+    "Select Trigger/S/padding-left": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Select Trigger/S/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Step Indicator/icon-error": {
+      "$type": "C",
+      "$value": "{theme.Content/error}"
+    },
+    "Embed Placeholder/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/Min-height/lg}"
+    },
+    "Button/link/content": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Button/link/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle}"
+    },
+    "Button/link/bg-active": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle-active}"
+    },
+    "Method Icon/size": {
+      "$type": "F",
+      "$value": "{layout.Size/lg}"
+    },
+    "Method Icon/icon-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Icon/md}"
+    },
+    "Method Icon/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Method Icon/bank/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle}"
+    },
+    "Method Icon/bank/content": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Method Icon/cash/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Success/subtle}"
+    },
+    "Method Icon/cash/content": {
+      "$type": "C",
+      "$value": "{theme.Content/success}"
+    },
+    "Method Icon/crypto/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Warning/subtle}"
+    },
+    "Method Icon/crypto/content": {
+      "$type": "C",
+      "$value": "{theme.Content/warning}"
+    },
+    "Chip/L/text-container/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Chip/S/text-container/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Divider/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Divider/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Divider/label/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Form Card/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Asset Logo/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "List Item/check/content": {
+      "$type": "C",
+      "$value": "{theme.Content/brand}"
+    },
+    "Chip/S/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    },
+    "Popover/offset": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Embed Placeholder/compact/min-height": {
+      "$type": "F",
+      "$value": "{layout.Size/Min-height/md}"
+    },
+    "Checkbox/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/strong}"
+    },
+    "Checkbox/border-hover": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/strong-hover}"
+    },
+    "Checkbox/border-checked": {
+      "$type": "C",
+      "$value": "{theme.Border/Brand/default}"
+    },
+    "Checkbox/bg-checked": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/default}"
+    },
+    "Checkbox/bg-checked-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/hover}"
+    },
+    "Checkbox/content": {
+      "$type": "C",
+      "$value": "{theme.Content/on-brand}"
+    },
+    "Checkbox/label": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Checkbox/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/xs}"
+    },
+    "Checkbox/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Step Indicator/labeled/label-current": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Step Indicator/labeled/label-done": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Step Indicator/labeled/label-pending": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Step Indicator/labeled/number-content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Step Indicator/labeled/number-border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Step Indicator/labeled/number-radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/round}"
+    },
+    "Step Indicator/labeled/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Text Container/2xlarge/gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Text Container/2xlarge/title/content": {
+      "$type": "C",
+      "$value": "{theme.Content/primary}"
+    },
+    "Text Container/2xlarge/subtitle/content": {
+      "$type": "C",
+      "$value": "{theme.Content/secondary}"
+    },
+    "Checkbox/radius-round": {
+      "$type": "F",
+      "$value": "{prim.Radius/Radius/round}"
+    },
+    "Input/field/padding-x": {
+      "$type": "F",
+      "$value": "{layout.Space/xs}"
+    }
+  }
+}

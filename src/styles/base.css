@@ -1,0 +1,15 @@
+/* Базовый сброс. Только токены, никаких сырых значений. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface-neutral-canvas);
+  color: var(--content-primary);
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-md);
+  line-height: var(--typography-line-height-md);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }

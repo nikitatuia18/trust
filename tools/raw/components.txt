@@ -1,0 +1,316 @@
+#total=315
+Button/text-container/M/padding-x|F|@L:Space/xs
+Button/text-container/S/padding-x|F|@L:Space/xs
+Button/M/padding-x|F|@L:Space/2xl
+Button/M/padding-x-compact|F|@L:Space/xl
+Button/M/padding-y|F|@L:Space/xl
+Button/M/icon-padding-x|F|@L:Space/xl
+Button/M/icon-padding-y|F|@L:Space/xl
+Button/M/gap|F|@L:Space/xs
+Button/M/radius|F|@L:Radius/round
+Button/M/stroke|F|@L:Stroke/default
+Button/M/min-width|F|@L:Size/Min-width/md
+Button/M/icon-size|F|@L:Size/Icon/md
+Button/primary/content|C|@T:Content/on-brand
+Button/secondary/content|C|@T:Content/primary
+Button/ghost/content|C|@T:Content/primary
+Button/ghost/content-focus|C|@T:Content/brand
+Button/ghost/bg|C|@T:Surface/Neutral/base
+Button/ghost/bg-hover|C|@T:Surface/Neutral/hover
+Button/ghost/bg-active|C|@T:Surface/Neutral/active
+Button/ghost/bg-focus|C|@T:Focus/Brand/bg
+Button/secondary/bg|C|@T:Surface/Neutral/base
+Button/secondary/bg-hover|C|@T:Surface/Neutral/hover
+Button/secondary/bg-active|C|@T:Surface/Neutral/active
+Button/secondary/border|C|@T:Border/Neutral/default
+Button/secondary/border-hover|C|@T:Border/Neutral/hover
+Button/secondary/border-active|C|@T:Border/Neutral/active
+Button/primary/bg|C|@T:Surface/Brand/default
+Button/primary/bg-hover|C|@T:Surface/Brand/hover
+Button/primary/bg-active|C|@T:Surface/Brand/active
+Button/destructive/content|C|@T:Content/on-error
+Button/destructive/bg|C|@T:Surface/Error/default
+Button/destructive/bg-hover|C|@T:Surface/Error/hover
+Button/destructive/bg-active|C|@T:Surface/Error/active
+Avatar/radius|F|@L:Radius/round
+Button/S/padding-x|F|@L:Space/xl
+Button/S/padding-x-compact|F|@L:Space/md
+Button/S/padding-y|F|@L:Space/md
+Button/S/icon-padding-x|F|@L:Space/md
+Button/S/icon-padding-y|F|@L:Space/md
+Button/S/gap|F|@L:Space/none
+Button/S/radius|F|@L:Radius/round
+Button/S/stroke|F|@L:Stroke/default
+Button/S/min-width|F|@L:Size/Min-width/sm
+Button/S/icon-size|F|@L:Size/Icon/sm
+List Item/title/content|C|@T:Content/primary
+List Item/subtitle/content|C|@T:Content/secondary
+List Item/main-container/padding-x|F|@L:Space/sm
+List Item/large/min-height|F|@L:Size/lg
+List Item/small/min-height|F|@L:Size/md
+List Item/main-container/padding-y|F|@L:Space/sm
+List Item/main-container/gap|F|@L:Space/none
+List Item/list/radius|F|@L:Radius/xl
+List Item/card/radius|F|@L:Radius/2xl
+List Item/large/slot-left|F|@L:Size/lg
+List Item/small/slot-left|F|@L:Size/md
+List Item/stroke|F|@L:Stroke/default
+List Item/item-content/gap|F|@L:Space/xs
+List Item/content-container/gap|F|@L:Space/2xs
+List Item/content-row/gap|F|@L:Space/2xl
+List Item/bg|C|@T:Surface/Neutral/base
+List Item/bg-hover|C|@T:Surface/Neutral/canvas
+List Item/bg-active|C|@T:Surface/Neutral/hover
+List Item/bg-selected|C|@T:Surface/Neutral/base
+Segment/control/padding-x|F|@L:Space/xs
+Segment/control/padding-y|F|@L:Space/xs
+Segment/control/gap|F|@L:Space/none
+Segment/control/radius|F|@L:Radius/round
+Segment/control/stroke|F|@L:Stroke/default
+Segment/control/bg|C|@T:Surface/Neutral/canvas
+Segment/control/border|C|@T:Border/Neutral/default
+Button/tertiary/content|C|@T:Content/on-inverse
+Button/tertiary/bg|C|@T:Surface/Inverse/default
+Button/tertiary/bg-hover|C|@T:Surface/Inverse/hover
+Button/tertiary/bg-active|C|@T:Surface/Inverse/active
+Segment/item/text-container/M/padding-x|F|@L:Space/xs
+Segment/item/text-container/S/padding-x|F|@L:Space/xs
+Segment/item/M/padding-x|F|@L:Space/2xl
+Segment/item/M/padding-x-compact|F|@L:Space/xl
+Segment/item/M/padding-y|F|@L:Space/lg
+Segment/item/M/gap|F|@L:Space/xs
+Segment/item/M/radius|F|@L:Radius/round
+Segment/item/M/stroke|F|@L:Stroke/default
+Segment/item/M/icon-size|F|@L:Size/Icon/md
+Segment/item/content|C|@T:Content/secondary
+Segment/item/content-active|C|@T:Content/primary
+Segment/item/bg|C|@T:Surface/Neutral/canvas
+Segment/item/bg-active|C|@T:Surface/Neutral/base
+Segment/item/border|C|@T:Border/Neutral/default
+List/radius|F|@L:Radius/2xl
+Switch/on/bg|C|@T:Surface/Success/default
+Segment/item/S/padding-x|F|@L:Space/xl
+Segment/item/S/padding-x-compact|F|@L:Space/md
+Segment/item/S/padding-y|F|@L:Space/sm
+Segment/item/S/gap|F|@L:Space/none
+Segment/item/S/radius|F|@L:Radius/round
+Segment/item/S/stroke|F|@L:Stroke/default
+Segment/item/S/icon-size|F|@L:Size/Icon/sm
+List Item/border|C|@T:Border/Neutral/default
+List Item/border-hover|C|@T:Border/Neutral/hover
+List Item/border-active|C|@T:Border/Neutral/active
+List Item/border-selected|C|@T:Border/Brand/default
+List/padding-x|F|@L:Space/sm
+List/padding-y|F|@L:Space/sm
+List/gap|F|@L:Space/none
+List/stroke|F|@L:Stroke/default
+List/bg|C|@T:Surface/Neutral/base
+List/border|C|@T:Border/Neutral/default
+Switch/ball/bg|C|@T:Surface/Neutral/base
+Switch/padding-x|F|@L:Space/2xs
+Switch/padding-y|F|@L:Space/2xs
+Switch/gap|F|@L:Space/none
+Switch/radius|F|@L:Radius/round
+Switch/ball/size|F|@L:Size/sm
+Switch/ball/radius|F|@L:Radius/round
+Switch/stroke|F|@L:Stroke/default
+Switch/off/bg|C|@T:Surface/Neutral/muted
+Switch/off/border|C|@T:Border/Neutral/default
+Header/main/padding-x|F|@L:Space/6xl
+Header/main/padding-y|F|@L:Space/xl
+Header/main/gap|F|@L:Space/none
+Header/main/stroke|F|@L:Stroke/default
+Header/main/border|C|@T:Border/Neutral/default
+Header/main/bg|C|@T:Surface/Neutral/base
+Header/content/gap|F|@L:Space/6xl
+Header/navigation/gap|F|@L:Space/6xl
+Header/navigation-menu/gap|F|@L:Space/3xl
+Header/buttons/gap|F|@L:Space/sm
+List Item/text-container/padding-x|F|@L:Space/xs
+Input/bg|C|@T:Surface/Neutral/canvas
+Input/border|C|@T:Border/Neutral/default
+Input/border-hover|C|@T:Border/Neutral/hover
+Input/border-error|C|@T:Border/Error/default
+Input/border-success|C|@T:Border/Success/default
+Input/content|C|@T:Content/primary
+Input/placeholder|C|@T:Content/secondary
+Input/label/content|C|@T:Content/primary
+Input/hint/content|C|@T:Content/secondary
+Input/hint/content-error|C|@T:Content/error
+Input/hint/content-success|C|@T:Content/success
+Input/stroke|F|@L:Stroke/default
+Input/radius|F|@L:Radius/round
+Input/icon-size|F|@L:Size/Icon/md
+Input/gap|F|@L:Space/sm
+Chip/brand/bg|C|@T:Surface/Brand/subtle
+Chip/brand/border|C|@T:Border/Brand/subtle
+Chip/brand/content|C|@T:Content/brand
+Chip/stroke|F|@L:Stroke/default
+Chip/S/padding-x|F|@L:Space/sm
+Chip/S/padding-y|F|@L:Space/xs
+Chip/S/radius|F|@L:Radius/round
+Chip/M/padding-x|F|@L:Space/sm
+Chip/M/padding-y|F|@L:Space/sm
+Chip/M/radius|F|@L:Radius/round
+Chip/M/text-container/padding-x|F|@L:Space/xs
+Input/slot/radius|F|@L:Radius/round
+Input/description/content|C|@T:Content/secondary
+Input/bg-hover|C|@T:Surface/Neutral/canvas
+Form Card/bg|C|@T:Surface/Neutral/base
+Form Card/border|C|@T:Border/Neutral/default
+Form Card/radius|F|@L:Radius/2xl
+Footer/bg|C|@T:Surface/Neutral/canvas
+Footer/divider|C|@T:Border/Neutral/default
+Footer/link|C|@T:Content/secondary
+Footer/link-hover|C|@T:Content/primary
+Amount Field/bg|C|@T:Surface/Neutral/canvas
+Amount Field/border|C|@T:Border/Neutral/default
+Amount Field/border-hover|C|@T:Border/Neutral/hover
+Amount Field/border-error|C|@T:Border/Error/default
+Amount Field/stroke|F|@L:Stroke/default
+Amount Field/radius|F|@L:Radius/xl
+Amount Field/padding|F|@L:Space/xl
+Amount Field/gap|F|@L:Space/lg
+Amount Field/label/content|C|@T:Content/secondary
+Amount Field/value/content|C|@T:Content/primary
+Amount Field/placeholder|C|@T:Content/secondary
+Amount Field/hint/content|C|@T:Content/secondary
+Select Trigger/bg|C|@T:Surface/Neutral/base
+Select Trigger/border|C|@T:Border/Neutral/default
+Select Trigger/border-hover|C|@T:Border/Neutral/hover
+Select Trigger/stroke|F|@L:Stroke/default
+Select Trigger/radius|F|@L:Radius/lg
+Select Trigger/padding|F|@L:Space/sm
+Select Trigger/gap|F|@L:Space/sm
+Select Trigger/min-height|F|@L:Size/2xl
+Select Trigger/icon-size|F|@L:Size/Icon/xs
+Select Trigger/content|C|@T:Content/primary
+Select Trigger/sub-content|C|@T:Content/secondary
+Step Indicator/icon-size|F|@L:Size/Icon/xs
+Step Indicator/gap|F|@L:Space/xs
+Step Indicator/connector/width|F|@L:Size/sm
+Step Indicator/connector/stroke|F|@L:Stroke/default
+Step Indicator/connector|C|@T:Border/Neutral/default
+Step Indicator/icon|C|@T:Content/tertiary
+Step Indicator/icon-current|C|@T:Content/primary
+Step Indicator/icon-done|C|@T:Content/brand
+Window Header/bg|C|@T:Surface/Neutral/base
+Window Header/border|C|@T:Border/Neutral/default
+Window Header/stroke|F|@L:Stroke/default
+Window Header/padding|F|@L:Space/2xl
+Window Header/gap|F|@L:Space/xl
+Window Header/row/gap|F|@L:Space/xl
+Window Header/title/content|C|@T:Content/primary
+Summary/padding|F|@L:Space/2xl
+Summary/gap|F|@L:Space/sm
+Summary/border|C|@T:Border/Neutral/default
+Summary/stroke|F|@L:Stroke/default
+Summary/title/content|C|@T:Content/secondary
+Summary/card/bg|C|@T:Surface/Neutral/canvas
+Summary/card/border|C|@T:Border/Neutral/default
+Summary/card/radius|F|@L:Radius/xl
+Summary/card/padding|F|@L:Space/xl
+Summary/row/gap|F|@L:Space/2xl
+Summary/row/label/content|C|@T:Content/secondary
+Summary/row/value/content|C|@T:Content/primary
+Summary/row/value/gap|F|@L:Space/xs
+Summary/nested/padding|F|@L:Space/xl
+Summary/nested/gap|F|@L:Space/xs
+Asset Logo/bg|C|@T:Surface/Neutral/hover
+Asset Logo/S/size|F|@L:Size/Icon/sm
+Asset Logo/M/size|F|@L:Size/Icon/md
+Asset Logo/L/size|F|@L:Size/md
+Asset Logo/badge/size|F|@L:Size/Icon/xs
+Asset Logo/badge/bg|C|@T:Surface/Neutral/base
+Asset Logo/badge/padding|F|@L:Space/2xs
+Dropdown Menu/bg|C|@T:Surface/Neutral/base
+Dropdown Menu/border|C|@T:Border/Neutral/default
+Dropdown Menu/stroke|F|@L:Stroke/default
+Dropdown Menu/radius|F|@L:Radius/lg
+Dropdown Menu/item/padding|F|@L:Space/xs
+Dropdown Menu/item/gap|F|@L:Space/sm
+Dropdown Menu/item/bg-hover|C|@T:Surface/Neutral/hover
+Dropdown Menu/item/content|C|@T:Content/primary
+Dropdown Menu/item/sub-content|C|@T:Content/secondary
+Status/padding-y|F|@L:Space/3xl
+Status/icon/size|F|@L:Size/3xl
+Status/icon/glyph-size|F|@L:Size/Icon/2xl
+Status/icon/bg-success|C|@T:Surface/Success/subtle
+Status/icon/bg-error|C|@T:Surface/Error/subtle
+Status/icon/content-success|C|@T:Content/success
+Status/icon/content-error|C|@T:Content/error
+Status/text/padding-x|F|@L:Space/xl
+Status/text/gap|F|@L:Space/sm
+Status/title/content|C|@T:Content/primary
+Status/message/content|C|@T:Content/secondary
+Embed Placeholder/bg|C|@T:Surface/Brand/subtle
+Embed Placeholder/border|C|@T:Border/Brand/default
+Embed Placeholder/stroke|F|@L:Stroke/default
+Embed Placeholder/radius|F|@L:Radius/xl
+Embed Placeholder/padding|F|@L:Space/xl
+Embed Placeholder/gap|F|@L:Space/md
+Embed Placeholder/content|C|@T:Content/brand
+Chip/neutral/bg|C|@T:Surface/Neutral/base
+Chip/neutral/border|C|@T:Border/Neutral/default
+Chip/neutral/border-selected|C|@T:Border/Brand/default
+Chip/neutral/content|C|@T:Content/primary
+Chip/L/padding|F|@L:Space/sm
+Chip/L/gap|F|@L:Space/xs
+Chip/L/radius|F|@L:Radius/round
+Chip/L/min-height|F|@L:Size/2xl
+Chip/L/icon-size|F|@L:Size/Icon/md
+Chip/brand/border-selected|C|@T:Border/Brand/default
+Chip/pill/padding-x|F|@L:Space/sm
+Chip/pill/padding-y|F|@L:Space/xs
+Chip/pill/radius|F|@L:Radius/round
+Status/spinner/track|C|@T:Surface/Neutral/canvas
+Status/spinner/indicator|C|@T:Surface/Brand/default
+Select Trigger/S/min-height|F|@L:Size/lg
+Select Trigger/S/padding-left|F|@L:Space/xl
+Select Trigger/S/gap|F|@L:Space/xs
+Step Indicator/icon-error|C|@T:Content/error
+Embed Placeholder/min-height|F|@L:Size/Min-height/lg
+Button/link/content|C|@T:Content/brand
+Button/link/bg-hover|C|@T:Surface/Brand/subtle
+Button/link/bg-active|C|@T:Surface/Brand/subtle-active
+Method Icon/size|F|@L:Size/lg
+Method Icon/icon-size|F|@L:Size/Icon/md
+Method Icon/radius|F|@L:Radius/round
+Method Icon/bank/bg|C|@T:Surface/Brand/subtle
+Method Icon/bank/content|C|@T:Content/brand
+Method Icon/cash/bg|C|@T:Surface/Success/subtle
+Method Icon/cash/content|C|@T:Content/success
+Method Icon/crypto/bg|C|@T:Surface/Warning/subtle
+Method Icon/crypto/content|C|@T:Content/warning
+Chip/L/text-container/padding-x|F|@L:Space/xs
+Chip/S/text-container/padding-x|F|@L:Space/xs
+Divider/border|C|@T:Border/Neutral/default
+Divider/stroke|F|@L:Stroke/default
+Divider/label/content|C|@T:Content/secondary
+Form Card/stroke|F|@L:Stroke/default
+Asset Logo/radius|F|@L:Radius/round
+List Item/check/content|C|@T:Content/brand
+Chip/S/gap|F|@L:Space/xs
+Popover/offset|F|@L:Space/xl
+Embed Placeholder/compact/min-height|F|@L:Size/Min-height/md
+Checkbox/border|C|@T:Border/Neutral/strong
+Checkbox/border-hover|C|@T:Border/Neutral/strong-hover
+Checkbox/border-checked|C|@T:Border/Brand/default
+Checkbox/bg-checked|C|@T:Surface/Brand/default
+Checkbox/bg-checked-hover|C|@T:Surface/Brand/hover
+Checkbox/content|C|@T:Content/on-brand
+Checkbox/label|C|@T:Content/secondary
+Checkbox/radius|F|@L:Radius/xs
+Checkbox/stroke|F|@L:Stroke/default
+Step Indicator/labeled/label-current|C|@T:Content/primary
+Step Indicator/labeled/label-done|C|@T:Content/secondary
+Step Indicator/labeled/label-pending|C|@T:Content/secondary
+Step Indicator/labeled/number-content|C|@T:Content/secondary
+Step Indicator/labeled/number-border|C|@T:Border/Neutral/default
+Step Indicator/labeled/number-radius|F|@L:Radius/round
+Step Indicator/labeled/gap|F|@L:Space/2xl
+Text Container/2xlarge/gap|F|@L:Space/sm
+Text Container/2xlarge/title/content|C|@T:Content/primary
+Text Container/2xlarge/subtitle/content|C|@T:Content/secondary
+Checkbox/radius-round|F|@P:Radius/Radius/round
+Input/field/padding-x|F|@L:Space/xs

@@ -1,0 +1,150 @@
+/* СГЕНЕРИРОВАНО tools/build-tokens.mjs. Text styles Figma → классы .text-<группа>-<имя>. Руками не править. */
+.text-display-9xl {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-9xl);
+  line-height: var(--typography-line-height-9xl);
+  letter-spacing: var(--typography-letter-spacing-9xl);
+}
+.text-display-8xl {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-8xl);
+  line-height: var(--typography-line-height-8xl);
+  letter-spacing: var(--typography-letter-spacing-8xl);
+}
+.text-display-7xl {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-7xl);
+  line-height: var(--typography-line-height-7xl);
+  letter-spacing: var(--typography-letter-spacing-7xl);
+}
+.text-display-6xl {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-6xl);
+  line-height: var(--typography-line-height-6xl);
+  letter-spacing: var(--typography-letter-spacing-6xl);
+}
+.text-display-5xl {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-5xl);
+  line-height: var(--typography-line-height-5xl);
+  letter-spacing: var(--typography-letter-spacing-5xl);
+}
+.text-heading-h1 {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-4xl);
+  line-height: var(--typography-line-height-4xl);
+  letter-spacing: var(--typography-letter-spacing-4xl);
+}
+.text-heading-h2 {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-3xl);
+  line-height: var(--typography-line-height-3xl);
+  letter-spacing: var(--typography-letter-spacing-3xl);
+}
+.text-heading-h3 {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-2xl);
+  line-height: var(--typography-line-height-2xl);
+  letter-spacing: var(--typography-letter-spacing-2xl);
+}
+.text-heading-h4 {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-xl);
+  line-height: var(--typography-line-height-xl);
+  letter-spacing: var(--typography-letter-spacing-xl);
+}
+.text-body-lg {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-lg);
+  line-height: var(--typography-line-height-lg);
+  letter-spacing: var(--typography-letter-spacing-lg);
+}
+.text-body-md {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-md);
+  line-height: var(--typography-line-height-md);
+  letter-spacing: var(--typography-letter-spacing-md);
+}
+.text-body-md-mono {
+  font-family: var(--typography-font-family-mono);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-md);
+  line-height: var(--typography-line-height-md);
+  letter-spacing: var(--typography-letter-spacing-sm);
+}
+.text-body-sm {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-base);
+  line-height: var(--typography-line-height-base);
+  letter-spacing: var(--typography-letter-spacing-base);
+}
+.text-body-sm-mono {
+  font-family: var(--typography-font-family-mono);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-base);
+  line-height: var(--typography-line-height-base);
+  letter-spacing: var(--typography-letter-spacing-base);
+}
+.text-body-xs {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-regular);
+  font-size: var(--typography-font-size-sm);
+  line-height: var(--typography-line-height-sm);
+  letter-spacing: var(--typography-letter-spacing-sm);
+}
+.text-label-lg {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-md);
+  line-height: var(--typography-line-height-md);
+  letter-spacing: var(--typography-letter-spacing-md);
+}
+.text-label-md {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-base);
+  line-height: var(--typography-line-height-base);
+  letter-spacing: var(--typography-letter-spacing-base);
+}
+.text-label-md-caps {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-base);
+  line-height: var(--typography-line-height-base);
+  letter-spacing: var(--typography-letter-spacing-base);
+  text-transform: uppercase;
+}
+.text-label-sm {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-sm);
+  line-height: var(--typography-line-height-sm);
+  letter-spacing: var(--typography-letter-spacing-sm);
+}
+.text-label-sm-caps {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-sm);
+  line-height: var(--typography-line-height-sm);
+  letter-spacing: var(--typography-letter-spacing-sm);
+  text-transform: uppercase;
+}
+.text-caption-default {
+  font-family: var(--typography-font-family-base);
+  font-weight: var(--typography-font-weight-medium);
+  font-size: var(--typography-font-size-xs);
+  line-height: var(--typography-line-height-xs);
+  letter-spacing: var(--typography-letter-spacing-xs);
+}
