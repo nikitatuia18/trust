@@ -1,0 +1,49 @@
+{
+  "component": "Divider",
+  "nodeId": "363:829",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 4,
+  "axes": {
+    "Orientation": ["vertical", "horizontal"],
+    "Style": ["default", "strong"]
+  },
+  "properties": {
+    "show-label": { "type": "BOOLEAN", "default": false, "ref": "label, visible" },
+    "label": { "type": "TEXT", "default": "or", "ref": "label/label-text.characters" }
+  },
+  "structure": {
+    "horizontal": {
+      "root": "COMPONENT, layoutMode HORIZONTAL, sizing FIX/HUG, w raw 722, h raw 1",
+      "rootPadding": "top: Stroke/default (token used as padding - see anomalies); right/bottom/left: raw 0",
+      "rootGap": "Space/none",
+      "layers": [
+        { "name": "line-start", "type": "LINE", "stroke": "Divider/border", "weight": "raw 1", "sizing": "FILL/FIX" },
+        { "name": "label", "type": "FRAME", "vis": "show-label (hidden by default)", "pad": "Space/none (top/bottom), Space/xl (left/right)", "gap": "Space/none" },
+        { "name": "label/label-text", "type": "TEXT", "chars": "or", "fill": "Divider/label/content", "textStyle": "body/sm", "refs": "characters=label" },
+        { "name": "line-end", "type": "LINE", "stroke": "Divider/border", "weight": "raw 1", "sizing": "FILL/FIX" }
+      ]
+    },
+    "vertical": {
+      "root": "COMPONENT, layoutMode VERTICAL, sizing FIX/FIX, w raw 1, h raw 170",
+      "rootPadding": "raw 0",
+      "rootGap": "Space/sm",
+      "layers": [
+        { "name": "Line 2", "type": "LINE (only layer reported)", "note": "no line-start / label / line-end layers; label not available for vertical" }
+      ]
+    }
+  },
+  "tokenMatrix": {
+    "stroke": "Divider/border (both orientations), weight raw 1",
+    "labelFill": "Divider/label/content",
+    "labelTextStyle": "body/sm",
+    "Style=strong": "no differences found vs Style=default in either orientation (see anomalies)"
+  },
+  "anomalies": [
+    "Style axis has no effect: Style=strong is identical to Style=default in horizontal and vertical (no token/stroke/weight diff) - axis is either empty or the strong colour is not bound",
+    "horizontal root padding-top uses Stroke/default (a stroke token used as spacing) - wrong token type",
+    "vertical variant structure differs: single layer 'Line 2' (default name); no label support in vertical",
+    "stroke weight raw 1 unbound (both orientations)",
+    "vertical line length raw 170 fixed (no token)"
+  ],
+  "notRead": ["label internals beyond text node", "vertical line 'Line 2' stroke details beyond token/weight", "vector nodes skipped by rule"]
+}

@@ -1,0 +1,17 @@
+/* Text Container — Figma 372:1700. Цвета в Figma — токены List Item/* (у 2xlarge — Text Container/2xlarge/*). */
+.at-text { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-none); min-width: 0; }
+.at-text__row { display: flex; align-items: baseline; gap: var(--space-xs); }
+.at-text__title { color: var(--c-list-item-title-content); }
+.at-text__subtitle, .at-text__description, .at-text__caption { color: var(--c-list-item-subtitle-content); }
+
+.at-text[data-align='left'] { text-align: left; align-items: flex-start; }
+.at-text[data-align='center'] { text-align: center; align-items: center; }
+.at-text[data-align='center'] .at-text__row { justify-content: center; }
+.at-text[data-align='right'] { text-align: right; align-items: flex-end; }
+.at-text[data-align='right'] .at-text__row { justify-content: flex-end; }
+
+/* 2xlarge: заголовок и подзаголовок столбиком, свои токены */
+.at-text[data-size='2xlarge'] { gap: var(--c-text-container-2xlarge-gap); }
+.at-text[data-size='2xlarge'] .at-text__row { flex-direction: column; align-items: inherit; gap: var(--c-text-container-2xlarge-gap); width: 100%; }
+.at-text[data-size='2xlarge'] .at-text__title { color: var(--c-text-container-2xlarge-title-content); }
+.at-text[data-size='2xlarge'] .at-text__subtitle { color: var(--c-text-container-2xlarge-subtitle-content); }

@@ -1,0 +1,31 @@
+{
+  "component": "List",
+  "nodeId": "464:3379",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 2,
+  "axes": {
+    "Style": ["card", "list"]
+  },
+  "properties": {
+    "items": { "type": "SLOT", "default": "List Item instances (Size=large, State=default, Selected=false, Style=list)", "ref": "items slot (slotContentId)" }
+  },
+  "structure": {
+    "root": "COMPONENT_SET -> COMPONENT per Style; layoutMode VERTICAL; sizing H=FIXED, V=HUG; default size 298x168 (card)",
+    "layers": [
+      { "name": "items", "type": "SLOT", "sizing": "H=FILL, V=HUG; layoutMode VERTICAL; 282x152 (card)", "content": "List Item instances" }
+    ],
+    "rootPadding": "List/padding-y (top,bottom), List/padding-x (left,right)",
+    "rootGap": "List/gap",
+    "rootRadius": "List/radius (card only)"
+  },
+  "tokenMatrix": {
+    "Style=card": { "fill": "List/bg", "stroke": "List/border" },
+    "Style=list": { "fill": "- (none)", "stroke": "- (none)" },
+    "note": "padding and gap bound in both styles; radius bound only in card"
+  },
+  "anomalies": [
+    "Style=list has no radius token bound (card has List/radius) - verify whether radius is intentionally 0 for list",
+    "no Size axis: size is defined by List Item instances inside items slot"
+  ],
+  "notRead": ["slot contents beyond default List Item instances", "icon/internal layers of List Item instances (see List Item.json)"]
+}

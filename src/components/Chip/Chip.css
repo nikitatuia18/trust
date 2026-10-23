@@ -1,0 +1,47 @@
+/* Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён. */
+.at-chip {
+  --_bg: var(--c-chip-brand-bg);
+  --_border: var(--c-chip-brand-border);
+  --_content: var(--c-chip-brand-content);
+  display: inline-flex; align-items: center; gap: var(--c-chip-s-gap);
+  padding: var(--c-chip-s-padding-y) var(--c-chip-s-padding-x);
+  border: 0; border-radius: var(--c-chip-s-radius);
+  background: var(--_bg); color: var(--_content);
+  box-shadow: inset 0 0 0 var(--c-chip-stroke) var(--_border);
+  cursor: pointer; outline: 0; white-space: nowrap;
+}
+.at-chip[data-variant='neutral'] {
+  --_bg: var(--c-chip-neutral-bg); --_border: var(--c-chip-neutral-border); --_content: var(--c-chip-neutral-content);
+}
+.at-chip[data-selected] {
+  --_border: var(--c-chip-brand-border-selected);
+  box-shadow:
+    inset 0 0 0 var(--c-chip-stroke) var(--_border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
+}
+.at-chip[data-variant='neutral'][data-selected] { --_border: var(--c-chip-neutral-border-selected); }
+.at-chip:focus-visible {
+  box-shadow:
+    inset 0 0 0 var(--c-chip-stroke) var(--focus-brand-border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
+}
+.at-chip__icon { display: inline-flex; flex: none; width: var(--size-icon-xs); height: var(--size-icon-xs); }
+.at-chip__icon > *, .at-chip__slot > * { max-width: 100%; max-height: 100%; }
+.at-chip__text { display: inline-flex; padding: var(--space-none) var(--c-chip-s-text-container-padding-x); }
+.at-chip__slot { display: inline-flex; flex: none; }
+
+.at-chip[data-size='l'] {
+  gap: var(--c-chip-l-gap); min-height: var(--c-chip-l-min-height);
+  padding: var(--c-chip-l-padding); border-radius: var(--c-chip-l-radius);
+}
+.at-chip[data-size='l'] .at-chip__icon { width: var(--c-chip-l-icon-size); height: var(--c-chip-l-icon-size); }
+.at-chip[data-size='l'] .at-chip__text { padding-inline: var(--c-chip-l-text-container-padding-x); }
+
+/* Content=with-slots: токены Chip/M/*, зазор 0 (слоты несут свои отступы) */
+.at-chip[data-content='slots'] {
+  gap: var(--space-none);
+  padding: var(--c-chip-m-padding-y) var(--c-chip-m-padding-x); border-radius: var(--c-chip-m-radius);
+}
+.at-chip[data-content='slots'] .at-chip__text { padding-inline: var(--c-chip-m-text-container-padding-x); }
+
+.at-chip:disabled { opacity: var(--opacity-disabled); cursor: not-allowed; }

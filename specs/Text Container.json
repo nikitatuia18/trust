@@ -1,0 +1,60 @@
+{
+  "component": "Text Container",
+  "nodeId": "372:1700",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 12,
+  "axes": {
+    "Alignment": ["left-aligned", "right-aligned", "center-aligned"],
+    "Size": ["default", "large", "xlarge", "2xlarge"]
+  },
+  "properties": {
+    "title": { "type": "TEXT", "default": "Title", "ref": "title-row/Title.characters" },
+    "subtitle": { "type": "TEXT", "default": "Subtitle", "ref": "title-row/Subtitle.characters" },
+    "description": { "type": "TEXT", "default": "Description", "ref": "Description.characters" },
+    "caption": { "type": "TEXT", "default": "Caption", "ref": "Caption.characters" },
+    "show-title": { "type": "BOOLEAN", "default": true, "ref": "title-row/Title, visible" },
+    "show-subtitle": { "type": "BOOLEAN", "default": true, "ref": "title-row/Subtitle, visible" },
+    "show-description": { "type": "BOOLEAN", "default": true, "ref": "Description, visible" },
+    "show-caption": { "type": "BOOLEAN", "default": true, "ref": "Caption, visible" },
+    "show-title-row": { "type": "BOOLEAN", "default": true, "ref": "title-row, visible" }
+  },
+  "structure": {
+    "root": "COMPONENT per variant, layoutMode VERTICAL, sizing HUG/HUG",
+    "rootPadding": "raw 0",
+    "rootGap": "raw 0",
+    "layers": [
+      { "name": "title-row", "type": "FRAME", "vis": "show-title-row", "layout": "H HUG", "gap": "Space/xs (default/large/xlarge); Text Container/2xlarge/gap (2xlarge, layout becomes VERTICAL)", "pad": "raw 0" },
+      { "name": "title-row/Title", "type": "TEXT", "vis": "show-title", "chars": "title", "fill": "List Item/title/content (2xlarge: Text Container/2xlarge/title/content)" },
+      { "name": "title-row/Subtitle", "type": "TEXT", "vis": "show-subtitle", "chars": "subtitle", "fill": "List Item/subtitle/content (2xlarge: Text Container/2xlarge/subtitle/content)" },
+      { "name": "Description", "type": "TEXT", "vis": "show-description", "chars": "description", "fill": "List Item/subtitle/content (2xlarge: not checked)" },
+      { "name": "Caption", "type": "TEXT", "vis": "show-caption", "chars": "caption", "fill": "List Item/subtitle/content (2xlarge: not checked)" }
+    ]
+  },
+  "tokenMatrix": {
+    "base": "Alignment=left-aligned, Size=default",
+    "baseSize": { "w": "raw 90", "h": "raw 60" },
+    "textStyles": {
+      "default": { "Title": "label/md", "Subtitle": "label/sm", "Description": "body/xs", "Caption": "caption/default" },
+      "large": { "Title": "heading/h4", "Subtitle": "body/sm", "Description": "body/xs (not re-checked)", "Caption": "caption/default (not re-checked)" },
+      "xlarge": { "Title": "heading/h2", "Subtitle": "body/sm" },
+      "2xlarge": { "Title": "heading/h1", "Subtitle": "body/md" }
+    },
+    "diffs": {
+      "Alignment=right-aligned": "title-row sizing FIL/HUG (default, large, xlarge); FIL/HUG also in 2xlarge",
+      "Size=large": "w raw 114, h raw 68, title-row h raw 32",
+      "Size=xlarge": "w raw 127, h raw 76, title-row h raw 40",
+      "Size=2xlarge": "root gap Text Container/2xlarge/gap; title-row layout VERTICAL, gap Text Container/2xlarge/gap, sizing FIL/HUG; Title and Subtitle fill Text Container/2xlarge/* tokens; w raw 76, h raw 182"
+    },
+    "stroke": "none",
+    "effects": "none"
+  },
+  "anomalies": [
+    "Title/Subtitle/Description/Caption fill uses List Item/* tokens (another component namespace) instead of Text Container/* - reuse of foreign tokens",
+    "Text Container/2xlarge/* token family exists only for 2xlarge: default/large/xlarge have no Text Container tokens - inconsistent",
+    "root padding and gap are raw 0 (not tokens); title-row gap Space/xs in default sizes, raw 0 in base root",
+    "Alignment axis: text alignment (text-align) not read; no visible diff in tree for alignment other than title-row sizing - verify it actually changes text alignment",
+    "2xlarge Description/Caption fill not checked; Description and Caption have no size-specific text style diff",
+    "Description/Caption text styles identical across sizes (body/xs, caption/default) - only Title/Subtitle scale"
+  ],
+  "notRead": ["text-align and letter-spacing", "Description and Caption internals in large/xlarge/2xlarge", "vector nodes skipped by rule"]
+}

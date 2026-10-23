@@ -1,0 +1,40 @@
+/* List Item — Figma 373:1842. Hover/active/selected — через фон и (у card) обводку. Disabled — opacity. */
+.at-list-item {
+  --_bg: var(--c-list-item-bg);
+  --_border: var(--c-list-item-border);
+  display: flex; flex-direction: column; box-sizing: border-box; width: 100%;
+  gap: var(--c-list-item-main-container-gap);
+  padding: var(--c-list-item-main-container-padding-y) var(--c-list-item-main-container-padding-x);
+  min-height: var(--c-list-item-large-min-height);
+  border: 0; border-radius: var(--c-list-item-list-radius);
+  background: var(--_bg); color: inherit; font: inherit; text-align: left;
+  outline: 0;
+}
+button.at-list-item { cursor: pointer; }
+.at-list-item[data-size='small'] { min-height: var(--c-list-item-small-min-height); }
+
+/* card: свои радиус, боковые отступы Space/xl (как в Figma) и обводка */
+.at-list-item[data-variant='card'] {
+  border-radius: var(--c-list-item-card-radius);
+  padding-inline: var(--space-xl);
+  box-shadow: inset 0 0 0 var(--c-list-item-stroke) var(--_border);
+}
+
+.at-list-item:hover:not([data-disabled]) { --_bg: var(--c-list-item-bg-hover); --_border: var(--c-list-item-border-hover); }
+.at-list-item:active:not([data-disabled]) { --_bg: var(--c-list-item-bg-active); --_border: var(--c-list-item-border-active); }
+.at-list-item[data-selected] { --_bg: var(--c-list-item-bg-selected); }
+.at-list-item[data-variant='card'][data-selected] { --_border: var(--c-list-item-border-selected); }
+.at-list-item:focus-visible {
+  box-shadow:
+    inset 0 0 0 var(--c-list-item-stroke) var(--focus-brand-border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
+}
+.at-list-item[data-disabled] { opacity: var(--opacity-disabled); cursor: not-allowed; }
+
+.at-list-item__content { display: flex; align-items: center; gap: var(--c-list-item-item-content-gap); width: 100%; }
+.at-list-item__main { display: flex; flex-direction: column; flex: 1; min-width: 0; gap: var(--c-list-item-content-container-gap); }
+.at-list-item__row { display: flex; align-items: center; gap: var(--c-list-item-content-row-gap); width: 100%; }
+.at-list-item__header { display: flex; align-items: center; flex: 1; min-width: 0; gap: var(--space-none); }
+.at-list-item__center { display: inline-flex; flex: none; }
+.at-list-item__slot { display: inline-flex; flex: none; align-items: center; justify-content: center; height: var(--c-list-item-large-slot-left); }
+.at-list-item[data-size='small'] .at-list-item__slot { height: var(--c-list-item-small-slot-left); }

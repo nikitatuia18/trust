@@ -1,0 +1,8 @@
+/* Divider — Figma 363:829. Ось Style (strong) в Figma идентична default — в коде не заведена. */
+.at-divider { display: flex; align-items: center; gap: var(--space-none); }
+.at-divider[data-orientation='horizontal'] { width: 100%; }
+.at-divider[data-orientation='vertical'] { flex-direction: column; align-self: stretch; }
+.at-divider__line { flex: 1; background: var(--c-divider-border); }
+.at-divider[data-orientation='horizontal'] .at-divider__line { height: var(--c-divider-stroke); }
+.at-divider[data-orientation='vertical'] .at-divider__line { width: var(--c-divider-stroke); }
+.at-divider__label { flex: none; padding: var(--space-none) var(--space-xl); color: var(--c-divider-label-content); }

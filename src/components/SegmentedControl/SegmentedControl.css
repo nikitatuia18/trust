@@ -12,11 +12,6 @@
   background: var(--c-segment-item-bg); color: var(--c-segment-item-content);
   cursor: pointer; white-space: nowrap; outline: 0;
 }
-.at-segmented[data-size='m'] .at-segmented__item {
-  gap: var(--c-segment-item-m-gap);
-  padding: var(--c-segment-item-m-padding-y) var(--c-segment-item-m-padding-x);
-  border-radius: var(--c-segment-item-m-radius);
-}
 .at-segmented__item[data-selected] {
   background: var(--c-segment-item-bg-active); color: var(--c-segment-item-content-active);
   box-shadow: inset 0 0 0 var(--c-segment-item-s-stroke) var(--c-segment-item-border);

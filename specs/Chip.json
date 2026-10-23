@@ -1,0 +1,64 @@
+{
+  "component": "Chip",
+  "nodeId": "502:3270",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 9,
+  "variantCountNote": "Full matrix would be 16 (Style 2 x Selected 2 x Size 2 x Content 2). Existing: 9. with-slots exists only for Style=brand, Selected=false, Size=s.",
+  "axes": {
+    "Style": ["brand", "neutral"],
+    "Selected": ["false", "true"],
+    "Size": ["s", "l"],
+    "Content": ["default", "with-slots"]
+  },
+  "properties": {
+    "label": { "type": "TEXT", "default": "Новое", "ref": "text-container/Title.characters" },
+    "show-icon-left": { "type": "BOOLEAN", "default": true, "ref": "icon-left, visible (used by Size=l)" },
+    "show-icon-left-s": { "type": "BOOLEAN", "default": false, "ref": "icon-left, visible (used by Size=s)" },
+    "icon-left": { "type": "INSTANCE_SWAP", "default": "743:6718", "ref": "icon-left.mainComponent" },
+    "leading-slot": { "type": "SLOT", "ref": "with-slots variant only" },
+    "trailing-slot": { "type": "SLOT", "ref": "with-slots variant only" }
+  },
+  "structure": {
+    "root": "COMPONENT per variant, layoutMode HORIZONTAL, sizing HUG/HUG",
+    "rootFillStroke": "fill: Chip/{Style}/bg; stroke: Chip/{Style}/border (weight 1, raw, unbound)",
+    "rootRadius": "Chip/{S|L|M}/radius",
+    "rootPadding": "Chip/{S|L}/padding-y, Chip/{S|L}/padding-x (Size=l: single Chip/L/padding)",
+    "rootGap": "Chip/{S|L}/gap",
+    "layers": [
+      { "name": "icon-left", "type": "INSTANCE", "vis": "show-icon-left-s (Size=s) / show-icon-left (Size=l)", "main": "icon-left swap, default Property 1=outline", "size": "Size=s: Size/Icon/xs; Size=l: raw 24" },
+      { "name": "text-container", "type": "FRAME", "layout": "H HUG", "pad": "Space/none (top/bottom), Chip/{S|L}/text-container/padding-x (left/right)", "gap": "Space/none" },
+      { "name": "text-container/Title", "type": "TEXT", "chars": "label", "fill": "Chip/{Style}/content", "textStyle": "Size=s: caption/default; Size=l: label/md" },
+      { "name": "leading-slot / trailing-slot", "type": "SLOT", "vis": "with-slots only" },
+      { "name": "Frame 1 (+ Frame 1/Title)", "type": "FRAME", "vis": "with-slots only", "note": "unnamed frame in with-slots variant, replaces icon-left/text-container" }
+    ]
+  },
+  "tokenMatrix": {
+    "base": "Style=brand, Selected=false, Size=s, Content=default",
+    "baseFill": "Chip/brand/bg",
+    "baseStroke": "Chip/brand/border, opacity 0.16 (raw, on paint)",
+    "baseLabelFill": "Chip/brand/content",
+    "baseTextStyle": "caption/default",
+    "baseSize": { "w": "raw 64 (HUG)", "h": "raw 26", "radius": "Chip/S/radius", "pad": "Chip/S/padding-y / Chip/S/padding-x", "gap": "Chip/S/gap" },
+    "diffs": {
+      "Style=neutral": "fill Chip/neutral/bg; stroke Chip/neutral/border (no opacity); label Chip/neutral/content",
+      "Selected=true": "adds effect focus/primary = DROP_SHADOW color Focus/Brand/ring, spread Focus/ring-width, radius Focus/blur, offset Focus/offset-x/y; stroke changes to border-selected token (see anomalies)",
+      "Size=l": "radius Chip/L/radius; pad Chip/L/padding (single token); gap Chip/L/gap; text-container pad Chip/L/text-container/padding-x; label textStyle label/md; h raw 48; icon-left raw 24; no icon-left hidden",
+      "Content=with-slots (brand, false, s)": "radius Chip/M/radius; pad Chip/M/padding-y / Chip/M/padding-x; gap raw 0; h raw 40; icon-left and text-container removed; leading-slot, trailing-slot, Frame 1 added"
+    },
+    "stroke": "stroke weight 1 raw (not bound to variable) in all variants"
+  },
+  "anomalies": [
+    "Selected=true, Style=brand: stroke token is Chip/neutral/border-selected (neutral namespace used by brand variant) - confirm intent",
+    "Selected=true adds focus/primary drop shadow (Focus/* tokens): focus effect on a selected state, not on focus - confirm",
+    "two boolean props show-icon-left and show-icon-left-s both exist; icon-left visible is bound to show-icon-left-s in Size=s and show-icon-left in Size=l - duplicate, unify",
+    "with-slots variant uses Chip/M/* radius and padding while Size=s is the base size (Size=s height 26 vs with-slots height 40) - wrong token family for Size=s",
+    "with-slots variant layer named 'Frame 1' / 'Frame 1/Title' (default name, not naming.md)",
+    "with-slots exists only for brand/false/s: 7 of 16 combos missing",
+    "Size=l icon-left width/height raw 24 (no token); Size=s uses Size/Icon/xs",
+    "Size=l padding is a single Chip/L/padding token while Size=s uses split padding-y/padding-x - inconsistent pattern",
+    "stroke Chip/brand/border uses opacity 0.16 applied as raw paint opacity (not a token)",
+    "stroke weight 1 raw in all variants (unbound)",
+    "label default text is 'Новое' (not a neutral placeholder such as 'label')"
+  ],
+  "notRead": ["icon-left instance internals", "SLOT internals (with-slots children)", "text alignment and letter-spacing of Title", "Chip/M/* token values (not verified that tokens exist)", "vector nodes skipped by rule"]
+}

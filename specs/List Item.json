@@ -1,0 +1,79 @@
+{
+  "component": "List Item",
+  "nodeId": "373:1842",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 20,
+  "axes": {
+    "Size": ["large", "small"],
+    "State": ["default", "disabled", "hover", "active"],
+    "Selected": [false, true],
+    "Style": ["list", "card"]
+  },
+  "variantNote": "20 of 32 combinations exist. Selected=true only for State=default.",
+  "properties": {
+    "slot-left": { "type": "SLOT", "default": "empty" },
+    "slot-center": { "type": "SLOT", "default": "empty" },
+    "slot-right": { "type": "SLOT", "default": "empty" },
+    "show-slot-left": { "type": "BOOLEAN", "default": true, "ref": "slot-left, visible" },
+    "show-slot-center": { "type": "BOOLEAN", "default": true, "ref": "slot-center, visible" },
+    "show-slot-right": { "type": "BOOLEAN", "default": true, "ref": "slot-right, visible" },
+    "show-divider": { "type": "BOOLEAN", "default": true, "ref": "Divider, visible" }
+  },
+  "structure": {
+    "root": "COMPONENT per variant; layoutMode VERTICAL; sizing H=FIXED, V=HUG; large 282x76, small 246x48 (card, list-default)",
+    "layers": [
+      { "name": "Divider", "type": "INSTANCE", "vis": "show-divider", "sizing": "H=FIXED 266x1, V=HUG", "main": "Divider Orientation=horizontal, Style=default" },
+      { "name": "Item Content", "type": "FRAME", "layout": "HORIZONTAL, H=FILL, V=HUG; 266x60 (large)", "gap": "List Item/item-content/gap", "children": [
+        { "name": "slot-left", "type": "SLOT", "vis": "show-slot-left", "sizing": "H=HUG, V=FIXED 40", "height": "List Item/large/slot-left" },
+        { "name": "Content", "type": "FRAME", "layout": "VERTICAL, H=FILL, V=HUG", "gap": "List Item/content-container/gap", "children": [
+          { "name": "Content Row", "type": "FRAME", "layout": "HORIZONTAL, H=FILL, V=HUG", "gap": "List Item/content-row/gap", "children": [
+            { "name": "header-row", "type": "FRAME", "layout": "HORIZONTAL, H=HUG, V=HUG", "gap": "Space/none", "children": [
+              { "name": "Text Container", "type": "INSTANCE", "main": "Alignment=left-aligned, Size=default (not expanded)" },
+              { "name": "slot-center", "type": "SLOT", "vis": "show-slot-center", "sizing": "H=HUG, V=HUG; 44x44 (large)" }
+            ] },
+            { "name": "slot-right", "type": "SLOT", "vis": "show-slot-right", "sizing": "H=HUG, V=FIXED 40", "height": "List Item/large/slot-left" }
+          ] }
+        ] }
+      ] }
+    ],
+    "rootPadding": "Style=list: List Item/main-container/padding-y (top,bottom), List Item/main-container/padding-x (left,right). Style=card: padding-y, left/right = Space/xl",
+    "rootGap": "List Item/main-container/gap",
+    "rootRadius": "Style=list: List Item/list/radius; Style=card: List Item/card/radius"
+  },
+  "tokenMatrix": {
+    "rootFill": {
+      "list/default": "List Item/bg",
+      "list/hover": "List Item/bg-hover",
+      "list/active": "List Item/bg-active",
+      "list/disabled": "List Item/bg",
+      "list/selected (State=default only)": "List Item/bg-selected",
+      "card/default": "List Item/bg",
+      "card/hover": "List Item/bg-hover",
+      "card/active": "List Item/bg-active",
+      "card/disabled": "List Item/bg",
+      "card/selected (State=default only)": "List Item/bg-selected"
+    },
+    "rootStroke": {
+      "list/*": "- (none)",
+      "card/default": "List Item/border",
+      "card/hover": "List Item/border-hover",
+      "card/active": "List Item/border-active",
+      "card/disabled": "List Item/border",
+      "card/selected": "List Item/border-selected"
+    },
+    "rootOpacity": { "disabled (both styles, both sizes)": "Opacity/disabled (bound)", "others": "1" },
+    "divider": "Divider instance: paddingTop and minHeight bound to Stroke/default (see anomalies); fill not bound"
+  },
+  "sizes": {
+    "large": { "rootHeight": 76, "rootWidth": 282, "slotHeight": "List Item/large/slot-left", "slotCenter": 44 },
+    "small": { "rootHeight": 48, "rootWidth": 246, "slotHeight": "not checked" }
+  },
+  "anomalies": [
+    "Style=list Selected=true has width 262 (large) and 238 (small) instead of 282/246 - verify intent (likely unintended)",
+    "Style=card uses Space/xl for left/right padding instead of List Item/main-container/padding-x (list uses the token) - inconsistent",
+    "Divider: boundVariables paddingTop and minHeight both bound to Stroke/default (color token on a size property); Divider fill and strokes are empty - verify this is a real binding and not a dump artifact",
+    "Selected variant exists only for State=default (no selected+hover/active/disabled)",
+    "Style=list Selected=true: no stroke, same as default; card Selected uses border-selected"
+  ],
+  "notRead": ["Text Container internals (instance, not expanded)", "icon/avatar contents in slots", "small slot-left height token", "typography: texts in List Item not checked in this pass"]
+}
