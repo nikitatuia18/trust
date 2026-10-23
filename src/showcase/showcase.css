@@ -99,6 +99,16 @@
 .sc-table__row .sc-code { overflow: hidden; text-overflow: ellipsis; }
 .sc-dot { display: inline-block; width: var(--space-xl); height: var(--space-xl); border-radius: var(--radius-round); margin-right: var(--space-sm); vertical-align: middle; border: var(--stroke-default) solid var(--border-neutral-default); }
 
+/* Страница компонентов: демо + документация */
+.sc-demo { display: flex; gap: var(--space-xl); min-width: 0; }
+.sc-demo--col { flex-direction: column; align-items: flex-start; }
+.sc-demo--grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2xl) var(--space-xl); align-items: start; }
+.sc-demo__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); }
+.sc-demo__tag { width: var(--prim-spacing-1300); flex: none; }
+.sc-doc { gap: var(--space-xl); }
+.sc-doc__block { display: flex; flex-direction: column; gap: var(--space-xs); }
+.sc-doc__list { margin: 0; padding-left: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-xs); }
+
 @media (max-width: 1280px) {
   .sc-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sc-bento > .sc-card[style*="span 3"] { grid-column: span 2 !important; }

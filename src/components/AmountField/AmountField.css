@@ -1,0 +1,24 @@
+/* Amount Field — Figma 666:163. Контейнер (не pill): радиус Amount Field/radius. Hover в Figma не заведён. */
+.at-amount {
+  --_border: var(--c-amount-field-border);
+  display: flex; flex-direction: column; gap: var(--c-amount-field-gap); width: 100%;
+  padding: var(--c-amount-field-padding);
+  border-radius: var(--c-amount-field-radius); background: var(--c-amount-field-bg);
+  box-shadow: inset 0 0 0 var(--c-amount-field-stroke) var(--_border);
+}
+.at-amount[data-error] { --_border: var(--c-amount-field-border-error); }
+.at-amount:focus-within {
+  box-shadow:
+    inset 0 0 0 var(--c-amount-field-stroke) var(--focus-brand-border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
+}
+.at-amount__label { color: var(--c-amount-field-label-content); }
+.at-amount__row { display: flex; align-items: center; gap: var(--c-amount-field-gap); }
+.at-amount__selector { flex: none; }
+.at-amount__value {
+  flex: 1; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent;
+  text-align: right; color: var(--c-amount-field-value-content);
+}
+.at-amount__value::placeholder { color: var(--c-amount-field-placeholder); opacity: 1; }
+.at-amount__bottom { display: flex; align-items: center; gap: var(--space-sm); }
+.at-amount__hint { flex: 1; text-align: right; color: var(--c-amount-field-hint-content); }

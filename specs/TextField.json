@@ -1,0 +1,61 @@
+{
+  "component": "TextField",
+  "nodeId": "572:729",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 36,
+  "axes": {
+    "Type": ["text", "stepper"],
+    "State": ["default", "hover", "focus", "disabled"],
+    "Validation": ["none", "error", "success"],
+    "Content": ["empty", "filled"]
+  },
+  "note": "Content=empty/filled do not change tokens; stepper exists only as Content=filled (8 combos, not 16).",
+  "properties": {
+    "show-label": { "type": "BOOLEAN", "default": true, "ref": "Label, visible" },
+    "show-description": { "type": "BOOLEAN", "default": true, "ref": "Description, visible" },
+    "show-hint": { "type": "BOOLEAN", "default": true, "ref": "Hint, visible" },
+    "show-left-slot": { "type": "BOOLEAN", "default": false, "ref": "left-slot, visible" },
+    "show-right-slot": { "type": "BOOLEAN", "default": false, "ref": "right-slot, visible" },
+    "label": { "type": "TEXT", "default": "Label", "ref": "Label.characters" },
+    "description": { "type": "TEXT", "default": "Description", "ref": "Description.characters" },
+    "hint": { "type": "TEXT", "default": "Helper text", "ref": "Hint.characters" },
+    "placeholder": { "type": "TEXT", "default": "Placeholder", "ref": "Field/Text.characters" },
+    "value": { "type": "TEXT", "default": "Value", "note": "defined, not referenced in tree" },
+    "number": { "type": "TEXT", "default": "1", "note": "defined, not referenced in tree (stepper value?)" },
+    "left-slot": { "type": "SLOT", "default": null },
+    "right-slot": { "type": "SLOT", "default": null }
+  },
+  "structure": {
+    "root": "COMPONENT, layoutMode VERTICAL, gap Input/gap",
+    "layers": [
+      { "name": "Label", "type": "TEXT", "vis": "show-label", "fill": "Input/label/content", "textStyle": "label/sm" },
+      { "name": "Description", "type": "TEXT", "vis": "show-description", "fill": "Input/description/content", "textStyle": "body/xs" },
+      { "name": "Input Shell", "type": "FRAME", "layout": "H", "pad": "Space/sm (top/bottom) Space/xl (left/right) [text]; Space/sm all sides [stepper]", "gap": "Space/sm", "radius": "Input/radius", "fill": "Input/bg", "stroke": "Input/border (state/validation-dependent), weight 1 raw",
+        "children": [
+          { "name": "left-slot", "type": "SLOT", "vis": "show-left-slot", "sizing": "H/H", "contains": "LeadingIcon INSTANCE 24x24 (not expanded)" },
+          { "name": "Field", "type": "FRAME", "layout": "H", "pad": "Space/none top/bottom, Space/xs left/right", "minHeight": "Size/lg",
+            "children": [ { "name": "Text", "type": "TEXT", "chars": "placeholder", "fill": "Input/placeholder", "textStyle": "body/sm" } ] },
+          { "name": "right-slot", "type": "SLOT", "vis": "show-right-slot", "sizing": "H/H", "contains": "TrailingIcon INSTANCE 24x24 (not expanded)" }
+        ] },
+      { "name": "Hint", "type": "TEXT", "vis": "show-hint", "fill": "Input/hint/content (error -> Input/hint/content-error; success -> content-success)", "textStyle": "body/xs" }
+    ]
+  },
+  "tokenMatrix": {
+    "Input/bg (Shell fill)": { "default": "Input/bg", "hover": "Input/bg-hover", "focus": "Input/bg", "disabled": "Input/bg (opacity 0.48 raw)" },
+    "Input/border (Shell stroke)": {
+      "none": { "default": "Input/border", "hover": "Input/border-hover", "focus": "Focus/Brand/border", "disabled": "Input/border (opacity 0.48 raw)" },
+      "error": { "default": "Input/border-error", "hover": "Input/border-error", "focus": "Focus/Error/border", "disabled": "Input/border-error" },
+      "success": { "default": "Input/border-success", "hover": "Input/border-success", "focus": "Focus/Success/border", "disabled": "Input/border-success" }
+    },
+    "Hint fill": { "none": "Input/hint/content", "error": "Input/hint/content-error", "success": "Input/hint/content-success" }
+  },
+  "anomalies": [
+    "disabled uses raw opacity 0.48 (root) instead of Opacity/disabled token",
+    "Input Shell stroke weight 1 raw, not bound",
+    "properties value and number defined but not referenced by any layer",
+    "token prefix Input/ vs component name TextField - naming drift (confirm with naming.md)",
+    "Validation=error/success focus ring uses Focus/Error|Success/border, default uses Focus/Brand/border - consistent by design, listed for confirmation",
+    "stepper Input Shell padding is Space/sm on all sides, text type is Space/sm vertical + Space/xl horizontal - intentional? confirm"
+  ],
+  "notRead": ["LeadingIcon/TrailingIcon instance internals (not expanded)", "stepper inner controls (not present in depth-4 dump of variant 0)"]
+}

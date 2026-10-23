@@ -1,0 +1,44 @@
+{
+  "component": "Checkbox",
+  "nodeId": "760:5880",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 6,
+  "axes": {
+    "Checked": ["false", "true"],
+    "State": ["default", "hover", "disabled"]
+  },
+  "properties": {
+    "label": { "type": "TEXT", "default": "I agree to the Terms", "ref": "label.characters" },
+    "show-label": { "type": "BOOLEAN", "default": true, "ref": "label, visible" }
+  },
+  "structure": {
+    "root": "COMPONENT, layoutMode HORIZONTAL, sizing H/F, gap Space/sm",
+    "layers": [
+      { "name": "box", "type": "FRAME", "layout": "H", "sizing": "F/F", "radius": "Checkbox/radius-round", "stroke": "Checkbox/border (unchecked) / Checkbox/border-checked (checked), weight 1 raw", "fill": "none (unchecked) / Checkbox/bg-checked (checked)", "children": [
+        { "name": "check", "type": "FRAME", "sizing": "F/F", "children": [
+          { "name": "tick", "type": "VECTOR", "stroke": "Checkbox/content, weight 2 raw", "note": "vector, not read" }
+        ] }
+      ] },
+      { "name": "label", "type": "TEXT", "vis": "show-label", "chars": "label", "fill": "Checkbox/label", "textStyle": "body/xs" }
+    ]
+  },
+  "tokenMatrix": {
+    "unchecked": {
+      "default": "box stroke Checkbox/border, no fill",
+      "hover": "box stroke Checkbox/border-hover, no fill",
+      "disabled": "box stroke Checkbox/border, no fill, opacity 0.48 raw (root)"
+    },
+    "checked": {
+      "default": "box fill Checkbox/bg-checked, stroke Checkbox/border-checked",
+      "hover": "box fill Checkbox/bg-checked-hover, stroke Checkbox/border-checked",
+      "disabled": "box fill Checkbox/bg-checked, stroke Checkbox/border-checked, opacity 0.48 raw (root)"
+    }
+  },
+  "anomalies": [
+    "no focus state (only default, hover, disabled) - keyboard focus ring is missing",
+    "disabled uses raw opacity 0.48 on root instead of Opacity/disabled token",
+    "box stroke weight 1 and tick stroke weight 2 are raw, not bound",
+    "checked hover changes fill only; border stays Checkbox/border-checked (intentional? confirm)"
+  ],
+  "notRead": ["tick vector (not read by rule)"]
+}

@@ -1,0 +1,89 @@
+/* Button — Figma 91:1390. Только токены --c-button-*, семантика Focus/*, Opacity/disabled. */
+.at-button {
+  --_bg: transparent;
+  --_bg-hover: var(--_bg);
+  --_bg-active: var(--_bg-hover);
+  --_bg-focus: var(--_bg);
+  --_content: var(--content-primary);
+  --_border: transparent;
+  --_border-hover: var(--_border);
+  --_border-active: var(--_border-hover);
+  --_focus-border: var(--focus-brand-border);
+  --_focus-ring: var(--focus-brand-ring);
+
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--c-button-m-gap);
+  padding: var(--c-button-m-padding-y) var(--c-button-m-padding-x);
+  border: 0; border-radius: var(--c-button-m-radius);
+  background: var(--_bg); color: var(--_content);
+  /* Обводка «внутри» (как INSIDE в Figma): размер не меняется */
+  box-shadow: inset 0 0 0 var(--c-button-m-stroke) var(--_border);
+  cursor: pointer; text-decoration: none; white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.at-button[data-size='s'] {
+  gap: var(--c-button-s-gap);
+  padding: var(--c-button-s-padding-y) var(--c-button-s-padding-x);
+  border-radius: var(--c-button-s-radius);
+  box-shadow: inset 0 0 0 var(--c-button-s-stroke) var(--_border);
+}
+.at-button[data-density='compact'] { padding-inline: var(--c-button-m-padding-x-compact); }
+.at-button[data-size='s'][data-density='compact'] { padding-inline: var(--c-button-s-padding-x-compact); }
+.at-button[data-icon-only] { padding: var(--c-button-m-icon-padding-y) var(--c-button-m-icon-padding-x); }
+.at-button[data-icon-only][data-size='s'] { padding: var(--c-button-s-icon-padding-y) var(--c-button-s-icon-padding-x); }
+
+.at-button__icon {
+  display: inline-flex; flex: none;
+  width: var(--c-button-m-icon-size); height: var(--c-button-m-icon-size);
+}
+.at-button[data-size='s'] .at-button__icon { width: var(--c-button-s-icon-size); height: var(--c-button-s-icon-size); }
+.at-button__icon > * { width: 100%; height: 100%; }
+.at-button__text { display: inline-flex; padding-inline: var(--c-button-text-container-m-padding-x); }
+.at-button[data-size='s'] .at-button__text { padding-inline: var(--c-button-text-container-s-padding-x); }
+.at-button__label { color: var(--_content); }
+
+/* Стили */
+.at-button[data-variant='primary'] {
+  --_bg: var(--c-button-primary-bg); --_bg-hover: var(--c-button-primary-bg-hover); --_bg-active: var(--c-button-primary-bg-active);
+  --_content: var(--c-button-primary-content);
+}
+.at-button[data-variant='secondary'] {
+  --_bg: var(--c-button-secondary-bg); --_bg-hover: var(--c-button-secondary-bg-hover); --_bg-active: var(--c-button-secondary-bg-active);
+  --_border: var(--c-button-secondary-border); --_border-hover: var(--c-button-secondary-border-hover); --_border-active: var(--c-button-secondary-border-active);
+  --_content: var(--c-button-secondary-content);
+}
+.at-button[data-variant='tertiary'] {
+  --_bg: var(--c-button-tertiary-bg); --_bg-hover: var(--c-button-tertiary-bg-hover); --_bg-active: var(--c-button-tertiary-bg-active);
+  --_content: var(--c-button-tertiary-content);
+}
+.at-button[data-variant='ghost'] {
+  --_bg: transparent; --_bg-hover: var(--c-button-ghost-bg-hover); --_bg-active: var(--c-button-ghost-bg-active);
+  --_bg-focus: var(--c-button-ghost-bg-focus);
+  --_content: var(--c-button-ghost-content);
+}
+.at-button[data-variant='destructive'] {
+  --_bg: var(--c-button-destructive-bg); --_bg-hover: var(--c-button-destructive-bg-hover); --_bg-active: var(--c-button-destructive-bg-active);
+  --_content: var(--c-button-destructive-content);
+  --_focus-border: var(--focus-error-border); --_focus-ring: var(--focus-error-ring);
+}
+.at-button[data-variant='link'] {
+  --_bg: transparent; --_bg-hover: var(--c-button-link-bg-hover); --_bg-active: var(--c-button-link-bg-active);
+  --_bg-focus: var(--focus-brand-bg);
+  --_content: var(--c-button-link-content);
+}
+
+/* Состояния */
+.at-button:hover { background: var(--_bg-hover); box-shadow: inset 0 0 0 var(--c-button-m-stroke) var(--_border-hover); }
+.at-button:active { background: var(--_bg-active); box-shadow: inset 0 0 0 var(--c-button-m-stroke) var(--_border-active); }
+.at-button[data-size='s']:hover { box-shadow: inset 0 0 0 var(--c-button-s-stroke) var(--_border-hover); }
+.at-button[data-size='s']:active { box-shadow: inset 0 0 0 var(--c-button-s-stroke) var(--_border-active); }
+.at-button:focus { outline: 0; }
+/* Focus = обводка Focus/<Роль>/border + effect focus/* (кольцо) */
+.at-button:focus-visible {
+  background: var(--_bg-focus);
+  box-shadow:
+    inset 0 0 0 var(--c-button-m-stroke) var(--_focus-border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--_focus-ring);
+}
+.at-button[data-variant='ghost']:focus-visible { --_content: var(--c-button-ghost-content-focus); color: var(--_content); }
+.at-button:disabled { opacity: var(--opacity-disabled); cursor: not-allowed; pointer-events: none; }

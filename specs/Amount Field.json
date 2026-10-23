@@ -1,0 +1,45 @@
+{
+  "component": "Amount Field",
+  "nodeId": "666:163",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 3,
+  "axes": {
+    "State": ["default", "focus", "error"]
+  },
+  "properties": {
+    "top-slot": { "type": "SLOT", "default": null },
+    "bottom-slot": { "type": "SLOT", "default": null },
+    "show-top-slot": { "type": "BOOLEAN", "default": false, "ref": "top-slot, visible" },
+    "show-label": { "type": "BOOLEAN", "default": true, "ref": "label, visible" },
+    "show-bottom-slot": { "type": "BOOLEAN", "default": true, "ref": "bottom-slot, visible" },
+    "label": { "type": "TEXT", "default": "Give", "ref": "label.characters" },
+    "amount": { "type": "TEXT", "default": "30.28", "ref": "amount.characters" }
+  },
+  "structure": {
+    "root": "COMPONENT, layoutMode VERTICAL, pad Amount Field/padding (all sides), gap Amount Field/gap, radius Amount Field/radius, fill Amount Field/bg, stroke Amount Field/border weight 1 raw",
+    "layers": [
+      { "name": "top-slot", "type": "SLOT", "vis": "show-top-slot", "sizing": "F/H" },
+      { "name": "label", "type": "TEXT", "vis": "show-label", "chars": "label", "fill": "Amount Field/label/content", "textStyle": "label/sm-caps" },
+      { "name": "row", "type": "FRAME", "layout": "H", "gap": "Amount Field/gap", "children": [
+        { "name": "selector", "type": "INSTANCE", "main": "Button (Content=default, Style=secondary, State=default, Size=s, Density=compact)", "note": "DEPENDENCY on Button; not expanded" },
+        { "name": "amount", "type": "TEXT", "chars": "amount", "fill": "Amount Field/value/content", "textStyle": "heading/h2" }
+      ] },
+      { "name": "bottom-slot", "type": "SLOT", "vis": "show-bottom-slot", "layout": "H", "gap": "Space/sm", "children": [
+        { "name": "min-chip", "type": "INSTANCE", "main": "Chip (Style=neutral, Selected=false, Size=s, Content=default)", "note": "DEPENDENCY on Chip; not expanded" },
+        { "name": "hint", "type": "TEXT", "fill": "Amount Field/hint/content", "textStyle": "label/sm" }
+      ] }
+    ]
+  },
+  "tokenMatrix": {
+    "Amount Field/bg": { "default": "Amount Field/bg", "focus": "Amount Field/bg", "error": "Amount Field/bg" },
+    "stroke": { "default": "Amount Field/border", "focus": "Focus/Brand/border", "error": "Amount Field/border-error" }
+  },
+  "anomalies": [
+    "depends on Button (secondary S compact) and Chip (neutral S) instances; these are not in wave A list",
+    "no disabled state (Amount Field has only default/focus/error)",
+    "hint text in bottom-slot is the only hint layer; name 'hint' is a TEXT not a boolean-controlled element (no show-hint)",
+    "root stroke weight 1 raw, not bound",
+    "label textStyle label/sm-caps; hint textStyle label/sm - verify caps style exists in text styles"
+  ],
+  "notRead": ["selector and min-chip internals (instances, not expanded)", "top-slot/bottom-slot contents (empty in default instance)"]
+}

@@ -1,0 +1,66 @@
+{
+  "component": "Button",
+  "nodeId": "91:1390",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 240,
+  "axes": {
+    "Content": ["default", "icon-only"],
+    "Style": ["primary", "secondary", "tertiary", "ghost", "destructive", "link"],
+    "State": ["default", "hover", "active", "focus", "disabled"],
+    "Size": ["m", "s"],
+    "Density": ["default", "compact"]
+  },
+  "properties": {
+    "show-icon-right": { "type": "BOOLEAN", "default": true, "ref": "icon-right, visible" },
+    "show-icon-left": { "type": "BOOLEAN", "default": true, "ref": "icon-left, visible" },
+    "label": { "type": "TEXT", "default": "label", "ref": "label.characters" },
+    "show-label": { "type": "BOOLEAN", "default": true, "ref": "text-container, visible" },
+    "icon-right": { "type": "INSTANCE_SWAP", "default": "743:6710", "ref": "icon-right.mainComponent" },
+    "icon-left": { "type": "INSTANCE_SWAP", "default": "743:6749", "ref": "icon-left.mainComponent" }
+  },
+  "structure": {
+    "root": "COMPONENT (per variant), layoutMode HORIZONTAL, sizing HUG/HUG",
+    "rootPadding": "padV: Button/{M|S}/padding-y (top,bottom), Button/{M|S}/padding-x (left,right); compact -> Button/{M|S}/padding-x-compact; icon-only -> Button/{M|S}/icon-padding-x / icon-padding-y",
+    "rootGap": "Button/{M|S}/gap",
+    "rootRadius": "Button/{M|S}/radius (9999 raw value, token-bound)",
+    "layers": [
+      { "name": "icon-L", "type": "INSTANCE", "vis": "show-icon-left", "main": "icon-left swap, default Property 1=bold (not expanded)" },
+      { "name": "text-container", "type": "FRAME", "vis": "show-label", "layout": "H HUG", "pad": "Space/none (top/bottom), Button/text-container/{M|S}/padding-x (left/right)", "gap": "Space/none" },
+      { "name": "label", "type": "TEXT", "chars": "label", "textStyle": "label/md", "fill": "Button/{style}/content", "note": "absent in icon-only" },
+      { "name": "icon-R", "type": "INSTANCE", "vis": "show-icon-right", "main": "icon-right swap, default Property 1=bold (not expanded)" }
+    ],
+    "extraNodes": "icon-only variants: no text-container/label layers (tree 26 chars vs 74 default)"
+  },
+  "tokenMatrix": {
+    "note": "Read for Content=default, Size=m, Density=default (base). Size=s, Density=compact and icon-only differ only in padding/gap/radius tokens listed in structure.",
+    "rootFill_stroke": {
+      "primary":     { "default": "Button/primary/bg / -", "hover": "Button/primary/bg-hover / -", "active": "Button/primary/bg-active / -", "focus": "Button/primary/bg / Focus/Brand/border", "disabled": "Button/primary/bg / - (opacity 0.48 raw)" },
+      "secondary":   { "default": "Button/secondary/bg / Button/secondary/border", "hover": "Button/secondary/bg-hover / Button/secondary/border-hover", "active": "Button/secondary/bg-active / Button/secondary/border-active", "focus": "Button/secondary/bg / Focus/Brand/border", "disabled": "same as default (opacity 0.48 raw)" },
+      "tertiary":    { "default": "Button/tertiary/bg / -", "hover": "Button/tertiary/bg-hover / -", "active": "Button/tertiary/bg-active / -", "focus": "Button/tertiary/bg / - (NO focus ring)", "disabled": "same as default (opacity 0.48 raw)" },
+      "ghost":       { "default": "- / -", "hover": "Button/ghost/bg-hover / -", "active": "Button/ghost/bg-active / -", "focus": "Button/ghost/bg-focus / Focus/Brand/border", "disabled": "Button/ghost/bg / - (opacity 0.48 raw)" },
+      "destructive": { "default": "Button/destructive/bg / -", "hover": "Button/destructive/bg-hover / -", "active": "Button/destructive/bg-active / -", "focus": "Button/destructive/bg / Focus/Error/border", "disabled": "same as default (opacity 0.48 raw)" },
+      "link":        { "default": "- / -", "hover": "Button/link/bg-hover / -", "active": "Button/link/bg-active / -", "focus": "Focus/Brand/bg / Focus/Brand/border (fill is a focus token, not Button/link/*)", "disabled": "- (opacity 0.48 raw)" }
+    },
+    "labelFill": {
+      "primary": "Button/primary/content (all states)",
+      "secondary": "Button/secondary/content",
+      "tertiary": "Button/tertiary/content",
+      "ghost": "Button/ghost/content; focus: Button/ghost/content-focus",
+      "destructive": "Button/destructive/content",
+      "link": "Button/link/content"
+    },
+    "stroke": "stroke weight 1 raw (not bound to variable)"
+  },
+  "anomalies": [
+    "tertiary focus state has no focus ring (fill and stroke identical to default)",
+    "disabled state uses raw opacity 0.48 on root only (label/icon opacity 1) instead of Opacity/disabled token; opacity not bound",
+    "link focus root fill uses Focus/Brand/bg instead of a Button/link/* token; ghost focus uses Button/ghost/bg-focus - inconsistent focus pattern",
+    "destructive focus ring uses Focus/Error/border, other styles use Focus/Brand/border (intentional? confirm)",
+    "root strokeWeight 1 not bound to a variable"
+  ],
+  "sizes": {
+    "M": { "height": 56, "gap": "Button/M/gap", "radius": "Button/M/radius", "padding": "Button/M/padding-y/x", "textStyle": "label/md" },
+    "S": { "height": 40, "gap": "Button/S/gap", "radius": "Button/S/radius", "padding": "Button/S/padding-y/x" }
+  },
+  "notRead": ["icon instance internals (not expanded by rule)", "compact height and icon-only height not checked individually", "icon fill colors inside instances"]
+}

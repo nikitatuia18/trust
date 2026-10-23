@@ -1,0 +1,41 @@
+{
+  "component": "Segmented Control",
+  "nodeId": "377:3955",
+  "fileKey": "Yx54uaftsAx8GDb6qTxYLX",
+  "variantCount": 2,
+  "axes": {
+    "Tab": ["first", "second"]
+  },
+  "properties": {
+    "tabs": { "type": "SLOT", "preferredValues": 1, "note": "instances of _Segment Item (Selected/Size set per instance)" },
+    "Tab": { "type": "VARIANT", "default": "first", "note": "which item is selected: first or second" }
+  },
+  "structure": {
+    "root": "COMPONENT, layoutMode VERTICAL, sizing H/H, pad Segment/control/padding-y (top/bottom), Segment/control/padding-x (left/right), gap Segment/control/gap, radius Segment/control/radius, fill Segment/control/bg, stroke Segment/item/border (see anomalies), weight 1 raw",
+    "layers": [
+      { "name": "tabs", "type": "SLOT", "layout": "H", "sizing": "H/H", "children": [
+        { "name": "_Segment Item", "type": "INSTANCE", "main": "Segment Item (Selected=true|false, Size=s)", "size": "65x36", "note": "DEPENDENCY on Segment Item component; not expanded" },
+        { "name": "_Segment Item", "type": "INSTANCE", "main": "Segment Item (Selected=false|true, Size=s)", "size": "65x36", "note": "DEPENDENCY" }
+      ] }
+    ]
+  },
+  "tokenMatrix": {
+    "Tab=first": {
+      "tab1 (selected)": "fill Segment/item/bg-active, stroke Segment/item/border, pad Segment/item/S/padding-x",
+      "tab2 (unselected)": "fill Segment/item/bg, no stroke, pad Segment/item/S/padding-x"
+    },
+    "Tab=second": {
+      "tab1 (unselected)": "fill Segment/item/bg, no stroke",
+      "tab2 (selected)": "fill Segment/item/bg-active, stroke Segment/item/border"
+    }
+  },
+  "anomalies": [
+    "root stroke bound to Segment/item/border (item token) instead of a Segment/control/* border token",
+    "only Size=s exists; no M size",
+    "no hover/focus/disabled states on the control; focus must come from Segment Item (not checked here)",
+    "root and selected item share Segment/item/border - verify intent",
+    "root stroke weight 1 raw, not bound",
+    "only 2 variants: tab count fixed at 2 in this set; 3+ tabs need another structure (not verified)"
+  ],
+  "notRead": ["_Segment Item internals (instances, not expanded)", "Segment Item component itself (not in wave A list)"]
+}

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { TokensPage } from './TokensPage';
+import { ComponentsPage } from './ComponentsPage';
 
 type Page = 'tokens' | 'components' | 'rules';
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
   { id: 'tokens', label: 'Токены', ready: true },
-  { id: 'components', label: 'Компоненты', ready: false },
+  { id: 'components', label: 'Компоненты', ready: true },
   { id: 'rules', label: 'Правила', ready: false },
 ];
 
@@ -49,7 +50,8 @@ export function App() {
       </aside>
       <main className="sc-main">
         {page === 'tokens' && <TokensPage />}
-        {page !== 'tokens' && <p className="text-body-lg sc-muted">Раздел в работе.</p>}
+        {page === 'components' && <ComponentsPage />}
+        {page === 'rules' && <p className="text-body-lg sc-muted">Раздел в работе.</p>}
       </main>
     </div>
   );

@@ -1,0 +1,60 @@
+/* TextField — Figma 572:729. Токены --c-input-*; отступы атомов — напрямую Space/*, Size/* (решение владельца). */
+.at-textfield {
+  --_border: var(--c-input-border);
+  --_border-hover: var(--c-input-border-hover);
+  --_focus-border: var(--focus-brand-border);
+  --_focus-ring: var(--focus-brand-ring);
+  --_hint: var(--c-input-hint-content);
+  display: flex; flex-direction: column; gap: var(--c-input-gap); width: 100%;
+}
+.at-textfield[data-validation='error'] {
+  --_border: var(--c-input-border-error); --_border-hover: var(--c-input-border-error);
+  --_focus-border: var(--focus-error-border); --_focus-ring: var(--focus-error-ring);
+  --_hint: var(--c-input-hint-content-error);
+}
+.at-textfield[data-validation='success'] {
+  --_border: var(--c-input-border-success); --_border-hover: var(--c-input-border-success);
+  --_focus-border: var(--focus-success-border); --_focus-ring: var(--focus-success-ring);
+  --_hint: var(--c-input-hint-content-success);
+}
+.at-textfield__label { color: var(--c-input-label-content); }
+.at-textfield__description { color: var(--c-input-description-content); }
+.at-textfield__hint { color: var(--_hint); }
+
+.at-textfield__shell {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--c-input-radius); background: var(--c-input-bg);
+  box-shadow: inset 0 0 0 var(--c-input-stroke) var(--_border);
+}
+.at-textfield[data-type='stepper'] .at-textfield__shell { padding: var(--space-sm); }
+.at-textfield__shell:hover { background: var(--c-input-bg-hover); box-shadow: inset 0 0 0 var(--c-input-stroke) var(--_border-hover); }
+.at-textfield__shell:focus-within {
+  background: var(--c-input-bg);
+  box-shadow:
+    inset 0 0 0 var(--c-input-stroke) var(--_focus-border),
+    var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--_focus-ring);
+}
+
+.at-textfield__slot {
+  display: inline-flex; flex: none; color: var(--c-input-placeholder);
+  width: var(--c-input-icon-size); height: var(--c-input-icon-size);
+}
+.at-textfield__slot > * { width: 100%; height: 100%; }
+.at-textfield:has(.at-textfield__input:not(:placeholder-shown)) .at-textfield__slot { color: var(--c-input-content); }
+
+.at-textfield__field { flex: 1; min-width: 0; display: flex; align-items: center; min-height: var(--size-lg); padding-inline: var(--c-input-field-padding-x); }
+.at-textfield[data-type='stepper'] .at-textfield__field { justify-content: center; }
+.at-textfield__input {
+  width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent;
+  color: var(--c-input-content);
+}
+.at-textfield__input::placeholder { color: var(--c-input-placeholder); opacity: 1; }
+.at-textfield[data-type='stepper'] .at-textfield__input { text-align: center; -moz-appearance: textfield; appearance: textfield; }
+.at-textfield__input::-webkit-outer-spin-button,
+.at-textfield__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Кнопки stepper: квадрат Size/lg, радиус слота */
+.at-textfield__step.at-button { width: var(--size-lg); height: var(--size-lg); padding: 0; justify-content: center; border-radius: var(--c-input-slot-radius); }
+.at-textfield[data-disabled] { opacity: var(--opacity-disabled); }
+.at-textfield[data-disabled] .at-textfield__step.at-button { opacity: 1; }
