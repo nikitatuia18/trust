@@ -133,6 +133,32 @@
 .sc-rule__line .sc-code { white-space: normal; overflow-wrap: anywhere; }
 .sc-rule__mark { flex: none; color: var(--content-success); }
 .sc-rule__mark--bad { color: var(--content-error); }
+/* Правила — по две карточки в ряд: живым примерам нужна ширина */
+.sc-bento--rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) { .sc-bento--rules { grid-template-columns: minmax(0, 1fr); } }
+
+/* Живой пример внутри карточки правила */
+.sc-rule__demo {
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-xl);
+  padding: var(--space-xl); min-width: 0;
+  background: var(--surface-neutral-muted); border-radius: var(--radius-xl);
+}
+.sc-rule__cell { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); min-width: 0; }
+.sc-rule__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); }
+.sc-rule__col { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-lg); min-width: 0; width: 100%; }
+.sc-rule__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl); width: 100%; }
+.sc-rule__flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); width: 100%; }
+.sc-rule__arrow { display: block; flex: none; width: var(--size-xs); height: var(--size-xs); color: var(--content-tertiary); }
+.sc-rule__token { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; width: 100%; }
+.sc-rule__chip { flex: none; width: var(--size-xs); height: var(--size-xs); border-radius: var(--radius-md); border: var(--stroke-default) solid var(--border-neutral-default); }
+.sc-rule__pair { width: var(--size-md); height: var(--size-md); }
+.sc-rule__icon { display: block; width: var(--size-sm); height: var(--size-sm); }
+.sc-rule__box { display: grid; place-items: center; width: var(--size-3xl); height: var(--size-lg); background: var(--surface-neutral-base); border: var(--stroke-default) solid var(--border-neutral-default); border-radius: var(--radius-xl); }
+.sc-rule__inner { display: block; width: var(--size-xs); height: var(--size-xs); background: var(--surface-neutral-base); border-radius: var(--radius-xs); }
+.sc-rule__pad { display: inline-block; background: var(--surface-brand-default); border-radius: var(--radius-md); }
+.sc-rule__pad--token { padding: var(--space-xl); }
+/* Намеренно «плохой» пример правила 1: сырое значение вместо токена */
+.sc-rule__pad--raw { padding: 16px; }
 .sc-rule__note { padding-top: var(--space-lg); border-top: var(--stroke-default) solid var(--border-neutral-default); }
 
 /* Витрина компонентов: демо и Doc в паре выравниваются по высоте; метка ряда над кнопками */
