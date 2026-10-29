@@ -3,6 +3,20 @@
 Дизайн-система AllTrust в коде: токены → компоненты → экраны. React + TypeScript + Vite + CSS-переменные.
 Источник дизайна — Figma («02 — Tokens», «03 — Components», «06 — Icons»). Здесь — единая «правда» для разработчиков и для сборки экранов.
 
+Figma-файлы: [Tokens](https://www.figma.com/design/Qs2FvuAGGN8aGkCDwDdXRV), [Components](https://www.figma.com/design/Yx54uaftsAx8GDb6qTxYLX), [Icons](https://www.figma.com/design/4R6K06aIr2xLc1zCJXxKRA).
+Витрина: https://nikitatuia18.github.io/trust/ (токены, компоненты).
+
+## Компоненты
+
+`src/components/`, спеки из Figma — `specs/*.json`. Каждый компонент задокументирован на странице «Компоненты» витрины.
+
+| Волна | Компоненты |
+|---|---|
+| A | Button, TextField (text, stepper), AmountField, SegmentedControl, Checkbox |
+| B | Chip, Divider, TextContainer, List, ListItem |
+| C | FormCard, WindowHeader, StepIndicator, OrderSummary |
+| Иконки | Icon (arrow-right, 4 направления), Plus, Minus, Close, Check, Alert, Search, Dot — контуры из «06 — Icons» |
+
 ## Быстрый старт
 
 ```bash

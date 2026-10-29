@@ -2,25 +2,64 @@ import type { ReactNode, SVGProps } from 'react';
 import './Icon.css';
 
 /*
- * ВРЕМЕННЫЕ иконки-заглушки (геометрия по центру 24×24 вместо текстовых глифов, которые «плывут» по базовой линии).
- * Заменить на иконки из «06 — Icons», когда они будут выбраны; размер задаёт слот, как у Icon.
+ * Иконки из Figma «06 — Icons» (Property 1=outline), как arrow-right в Icon.tsx: viewBox 24, fill currentColor,
+ * размер задаёт слот, цвет — currentColor.
+ *   Plus — add (43:32063) · Minus — minus (43:32100) · Close — close-circle (43:31894) · Search — search-normal (43:24100)
+ *   Dot — record (43:46610) · Check — глиф из tick-circle (43:31776) · Alert — глиф из info-circle (43:31982)
+ * В Icons нет простых галочки и «!» без круга: у Check и Alert взят только внутренний глиф, viewBox обрезан по нему,
+ * потому что кольцо вокруг рисует сам компонент (Step Indicator).
  */
 type GlyphProps = Omit<SVGProps<SVGSVGElement>, 'children'>;
 
-const stroke = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
-
-function Glyph({ children, className, ...rest }: GlyphProps & { children: ReactNode }) {
+function Glyph({ children, className, viewBox = '0 0 24 24', ...rest }: GlyphProps & { children: ReactNode }) {
   return (
-    <svg className={className ? `at-icon ${className}` : 'at-icon'} viewBox="0 0 24 24" aria-hidden focusable="false" {...rest}>
+    <svg className={className ? `at-icon ${className}` : 'at-icon'} viewBox={viewBox} fill="currentColor" aria-hidden focusable="false" {...rest}>
       {children}
     </svg>
   );
 }
 
-export const PlusIcon = (p: GlyphProps) => <Glyph {...p}><path {...stroke} d="M12 5v14M5 12h14" /></Glyph>;
-export const MinusIcon = (p: GlyphProps) => <Glyph {...p}><path {...stroke} d="M5 12h14" /></Glyph>;
-export const CloseIcon = (p: GlyphProps) => <Glyph {...p}><path {...stroke} d="M6 6l12 12M18 6L6 18" /></Glyph>;
-export const CheckIcon = (p: GlyphProps) => <Glyph {...p}><path {...stroke} d="M5 12.5l4.5 4.5L19 7.5" /></Glyph>;
-export const AlertIcon = (p: GlyphProps) => <Glyph {...p}><path {...stroke} d="M12 6v8" /><circle cx="12" cy="18" r="1.25" fill="currentColor" /></Glyph>;
-export const SearchIcon = (p: GlyphProps) => <Glyph {...p}><circle {...stroke} cx="11" cy="11" r="6" /><path {...stroke} d="M16 16l4 4" /></Glyph>;
-export const DotIcon = (p: GlyphProps) => <Glyph {...p}><circle cx="12" cy="12" r="5" fill="currentColor" /></Glyph>;
+export const PlusIcon = (p: GlyphProps) => (
+  <Glyph {...p}>
+    <path d="M12 5.25C12.41 5.25 12.75 5.59 12.75 6V11.25H18C18.41 11.25 18.75 11.59 18.75 12C18.75 12.41 18.41 12.75 18 12.75H12.75V18C12.75 18.41 12.41 18.75 12 18.75C11.59 18.75 11.25 18.41 11.25 18V12.75H6C5.59 12.75 5.25 12.41 5.25 12C5.25 11.59 5.59 11.25 6 11.25H11.25V6C11.25 5.59 11.59 5.25 12 5.25Z" />
+  </Glyph>
+);
+
+export const MinusIcon = (p: GlyphProps) => (
+  <Glyph {...p}>
+    <path d="M18 12.75H6C5.59 12.75 5.25 12.41 5.25 12C5.25 11.59 5.59 11.25 6 11.25H18C18.41 11.25 18.75 11.59 18.75 12C18.75 12.41 18.41 12.75 18 12.75Z" />
+  </Glyph>
+);
+
+export const CloseIcon = (p: GlyphProps) => (
+  <Glyph {...p}>
+    <path d="M14.2998 8.63965C14.5898 8.3498 15.0704 8.34974 15.3604 8.63965C15.6503 8.9296 15.6502 9.41018 15.3604 9.7002L13.0605 12L15.3604 14.2998C15.6503 14.5898 15.6503 15.0704 15.3604 15.3604C15.2104 15.5103 15.02 15.5801 14.8301 15.5801C14.6401 15.5801 14.4498 15.5103 14.2998 15.3604L12 13.0605L9.7002 15.3604C9.5602 15.5103 9.35991 15.5801 9.16992 15.5801C8.97994 15.5801 8.78963 15.5103 8.63965 15.3604C8.3497 15.0704 8.34968 14.5898 8.63965 14.2998L10.9395 12L8.63965 9.7002C8.34977 9.41018 8.34969 8.92961 8.63965 8.63965C8.92961 8.34975 9.4102 8.34979 9.7002 8.63965L12 10.9395L14.2998 8.63965Z" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z" />
+  </Glyph>
+);
+
+export const CheckIcon = (p: GlyphProps) => (
+  <Glyph viewBox="5 5 14 14" {...p}>
+    <path d="M15.7197 8.62988C16.0097 8.33988 16.4903 8.33988 16.7803 8.62988C17.0702 8.91989 17.0703 9.40045 16.7803 9.69043L11.1104 15.3604C10.9704 15.5003 10.78 15.58 10.5801 15.5801C10.3801 15.5801 10.1898 15.5003 10.0498 15.3604L7.21973 12.5303C6.92975 12.2403 6.92973 11.7597 7.21973 11.4697C7.50973 11.1798 7.9903 11.1798 8.28027 11.4697L10.5801 13.7705L15.7197 8.62988Z" />
+  </Glyph>
+);
+
+export const AlertIcon = (p: GlyphProps) => (
+  <Glyph viewBox="5 5 14 14" {...p}>
+    <path d="M11.6201 15.0801C11.8601 14.9801 12.1399 14.9801 12.3799 15.0801C12.4999 15.1301 12.61 15.2 12.71 15.29C12.7999 15.39 12.8699 15.5001 12.9199 15.6201C12.9699 15.7401 13 15.8701 13 16C13 16.13 12.9699 16.2599 12.9199 16.3799C12.8699 16.5099 12.8 16.61 12.71 16.71C12.61 16.7999 12.4999 16.8699 12.3799 16.9199C12.2599 16.9699 12.13 17 12 17C11.87 17 11.7401 16.9699 11.6201 16.9199C11.5001 16.8699 11.39 16.7999 11.29 16.71C11.2 16.61 11.1301 16.5099 11.0801 16.3799C11.0301 16.2599 11 16.13 11 16C11 15.8701 11.0301 15.7401 11.0801 15.6201C11.1301 15.5001 11.2001 15.39 11.29 15.29C11.39 15.2 11.5001 15.1301 11.6201 15.0801Z" />
+    <path d="M12 7.25C12.41 7.25 12.75 7.59 12.75 8V13C12.75 13.41 12.41 13.75 12 13.75C11.59 13.75 11.25 13.41 11.25 13V8C11.25 7.59 11.59 7.25 12 7.25Z" />
+  </Glyph>
+);
+
+export const SearchIcon = (p: GlyphProps) => (
+  <Glyph {...p}>
+    <path d="M19.4697 19.4697C19.7597 19.1797 20.2403 19.1797 20.5303 19.4697L22.5303 21.4697C22.8202 21.7597 22.8203 22.2403 22.5303 22.5303C22.3803 22.6803 22.19 22.75 22 22.75C21.81 22.75 21.6197 22.6802 21.4697 22.5303L19.4697 20.5303C19.1797 20.2403 19.1797 19.7597 19.4697 19.4697Z" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z" />
+  </Glyph>
+);
+
+export const DotIcon = (p: GlyphProps) => (
+  <Glyph {...p}>
+    <path d="M12 21.75C6.62 21.75 2.25 17.38 2.25 12C2.25 6.62 6.62 2.25 12 2.25C17.38 2.25 21.75 6.62 21.75 12C21.75 17.38 17.38 21.75 12 21.75ZM12 3.75C7.45 3.75 3.75 7.45 3.75 12C3.75 16.55 7.45 20.25 12 20.25C16.55 20.25 20.25 16.55 20.25 12C20.25 7.45 16.55 3.75 12 3.75Z" />
+  </Glyph>
+);
