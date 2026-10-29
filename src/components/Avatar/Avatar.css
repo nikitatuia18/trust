@@ -1,0 +1,8 @@
+/* Avatar — Figma 373:2094. Круг 24 (Size/sm), радиус --c-avatar-radius. */
+.at-avatar {
+  display: inline-flex; flex: none; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box;
+  width: var(--size-sm); height: var(--size-sm);
+  border-radius: var(--c-avatar-radius);
+  background: var(--surface-neutral-muted); color: var(--content-primary);
+}
+.at-avatar__photo { width: 100%; height: 100%; object-fit: cover; }

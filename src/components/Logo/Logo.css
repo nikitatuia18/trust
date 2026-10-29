@@ -1,0 +1,5 @@
+/* Logo — Figma 354:2882. Высота = Size/lg (40), пропорция 150:40; знак слева, вордмарк по центру высоты. */
+.at-brand-logo { position: relative; display: inline-block; flex: none; height: var(--size-lg); aspect-ratio: 150 / 40; }
+.at-brand-logo > img { position: absolute; display: block; max-width: none; }
+.at-brand-logo__mark { inset: 0 74.03% 0 0; width: 25.97%; height: 100%; }
+.at-brand-logo__word { inset: 31.82% 0 31.81% 30.51%; width: 69.49%; height: 36.37%; }

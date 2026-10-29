@@ -1,5 +1,5 @@
 export { Icon, type IconProps, type IconDirection } from './Icon/Icon';
-export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon } from './Icon/Glyphs';
+export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon } from './Icon/Glyphs';
 export { Button, type ButtonProps, type ButtonVariant } from './Button/Button';
 export { TextField, type TextFieldProps } from './TextField/TextField';
 export { AmountField, type AmountFieldProps } from './AmountField/AmountField';
@@ -20,3 +20,9 @@ export { LogoWithBadge, type LogoWithBadgeProps } from './LogoWithBadge/LogoWith
 export { BankLogo, type BankLogoProps, type BankName } from './BankLogo/BankLogo';
 export { MethodIcon, type MethodIconProps } from './MethodIcon/MethodIcon';
 export { StatusIcon, type StatusIconProps } from './StatusIcon/StatusIcon';
+export { Switch, type SwitchProps } from './Switch/Switch';
+export { Avatar, type AvatarProps } from './Avatar/Avatar';
+export { Logo, type LogoProps } from './Logo/Logo';
+export { LanguageSelector, LANGUAGES, type LanguageSelectorProps, type Language } from './LanguageSelector/LanguageSelector';
+export { Spinner, type SpinnerProps } from './Spinner/Spinner';
+export { EmbedPlaceholder, type EmbedPlaceholderProps } from './EmbedPlaceholder/EmbedPlaceholder';

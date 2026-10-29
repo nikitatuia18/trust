@@ -1,0 +1,7 @@
+/* Spinner — Figma 669:4. Размер Status/icon/size, трек и дуга — Status/spinner/*. Толщина дуги — геометрия контура, не токен. */
+.at-spinner { display: inline-flex; flex: none; width: var(--c-status-icon-size); height: var(--c-status-icon-size); }
+.at-spinner > svg { width: 100%; height: 100%; animation: at-spin 1s linear infinite; }
+.at-spinner__track { fill: var(--c-status-spinner-track); }
+.at-spinner__indicator { fill: var(--c-status-spinner-indicator); }
+@keyframes at-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .at-spinner > svg { animation: none; } }

@@ -16,6 +16,7 @@ Figma-файлы: [Tokens](https://www.figma.com/design/Qs2FvuAGGN8aGkCDwDdXRV),
 | B | Chip, Divider, TextContainer, List, ListItem |
 | C | FormCard, WindowHeader, StepIndicator, OrderSummary |
 | D | LogoWithBadge, BankLogo, CurrencyIcon, NetworkLogo, MethodIcon, StatusIcon (знаки: TBC, Visa, Mastercard, USD, GEL, Gram, Arbitrum; BOG и Credo — буква-заглушка) |
+| E | Switch, Avatar, Logo, LanguageSelector, Spinner, EmbedPlaceholder (флаги EN, RU, GE) |
 | Иконки | Icon (arrow-right, 4 направления), Plus, Minus, Close, Check, Alert, Search, Dot — контуры из «06 — Icons» |
 
 ## Быстрый старт

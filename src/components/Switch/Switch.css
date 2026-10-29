@@ -1,0 +1,27 @@
+/* Switch — Figma 334:609. Дорожка = шар + 2×padding, ход шара = его диаметр. Токены --c-switch-*. */
+.at-switch { display: inline-flex; position: relative; flex: none; cursor: pointer; border-radius: var(--c-switch-radius); }
+.at-switch__input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; }
+.at-switch__track {
+  display: flex; box-sizing: border-box;
+  gap: var(--c-switch-gap);
+  padding: var(--c-switch-padding-y) var(--c-switch-padding-x);
+  border-radius: var(--c-switch-radius);
+  background: var(--c-switch-off-bg);
+  /* Обводка «внутри» (как INSIDE в Figma): размер не меняется */
+  box-shadow: inset 0 0 0 var(--c-switch-stroke) var(--c-switch-off-border);
+}
+.at-switch__ball-container { display: flex; align-items: center; width: calc(var(--c-switch-ball-size) * 2); }
+.at-switch__ball {
+  flex: none; width: var(--c-switch-ball-size); height: var(--c-switch-ball-size);
+  border-radius: var(--c-switch-ball-radius); background: var(--c-switch-ball-bg);
+  /* В Figma тень шара не привязана к токену — берём ближайшую Elevation/Overlay/1 */
+  box-shadow: var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);
+  transition: transform 150ms ease;
+}
+.at-switch__input:checked + .at-switch__track { background: var(--c-switch-on-bg); box-shadow: none; }
+.at-switch__input:checked + .at-switch__track .at-switch__ball { transform: translateX(var(--c-switch-ball-size)); }
+.at-switch__input:focus-visible + .at-switch__track {
+  box-shadow: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);
+}
+.at-switch[data-disabled] { opacity: var(--opacity-disabled); cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .at-switch__ball { transition: none; } }

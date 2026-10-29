@@ -1,0 +1,11 @@
+/* Embed Placeholder — Figma 669:10 / 760:6168. Пунктир — свойство компонента, не токен. Ширина — по родителю. */
+.at-embed-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box;
+  width: 100%; min-height: var(--c-embed-placeholder-min-height);
+  gap: var(--c-embed-placeholder-gap); padding: var(--c-embed-placeholder-padding);
+  border: var(--c-embed-placeholder-stroke) dashed var(--c-embed-placeholder-border);
+  border-radius: var(--c-embed-placeholder-radius);
+  background: var(--c-embed-placeholder-bg); color: var(--c-embed-placeholder-content); text-align: center;
+}
+.at-embed-placeholder[data-size='compact'] { min-height: var(--c-embed-placeholder-compact-min-height); }
+.at-embed-placeholder__title, .at-embed-placeholder__description { margin: 0; width: 100%; }
