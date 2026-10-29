@@ -73,6 +73,7 @@ Gray/50|C|#f4f5f5
 Brand/650|C|#0079d1
 Black/alpha-4|C|#0000000a
 Black/alpha-8|C|#00000014
+Black/alpha-16|C|#00000029
 ## Primitives -- Radius
 Radius/0|F|0
 Radius/100|F|2
@@ -90,6 +91,7 @@ Radius/round|F|9999
 Spacing/0|F|0
 Spacing/50|F|2
 Spacing/100|F|4
+Spacing/150|F|6
 Spacing/200|F|8
 Spacing/250|F|10
 Spacing/300|F|12

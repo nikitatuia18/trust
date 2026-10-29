@@ -313,4 +313,6 @@ Text Container/2xlarge/gap|F|@L:Space/sm
 Text Container/2xlarge/title/content|C|@T:Content/primary
 Text Container/2xlarge/subtitle/content|C|@T:Content/secondary
 Checkbox/radius-round|F|@P:Radius/Radius/round
+Checkbox/size|F|@L:Size/Indicator/box
+Checkbox/tick-size|F|@L:Size/Indicator/mark
 Input/field/padding-x|F|@L:Space/xs

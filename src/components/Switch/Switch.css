@@ -14,8 +14,8 @@
 .at-switch__ball {
   flex: none; width: var(--c-switch-ball-size); height: var(--c-switch-ball-size);
   border-radius: var(--c-switch-ball-radius); background: var(--c-switch-ball-bg);
-  /* В Figma тень шара не привязана к токену — берём ближайшую Elevation/Overlay/1 */
-  box-shadow: var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);
+  /* Тень шара — Elevation/Control/1 (0 8 6 −4, чёрный 16%), как в Figma */
+  box-shadow: var(--effect-elevation-control);
   transition: transform 150ms ease;
 }
 .at-switch__input:checked + .at-switch__track { background: var(--c-switch-on-bg); box-shadow: none; }

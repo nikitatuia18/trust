@@ -32,5 +32,8 @@
 /* Platform=mobile в Figma — заготовка: ниже брейкпоинта всё столбиком */
 @media (max-width: 767px) {
   .at-footer__container, .at-footer__main { flex-direction: column; gap: var(--space-5xl); }
-  .at-footer__columns { flex-wrap: wrap; }
+  .at-footer__columns, .at-footer__column-group { flex-direction: column; gap: var(--space-xl); }
+  /* вертикальный разделитель между столбцами при столбике не нужен */
+  .at-footer__column-group > .at-divider[data-orientation='vertical'] { display: none; }
+  .at-footer__app-links { flex-wrap: wrap; }
 }

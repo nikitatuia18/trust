@@ -1,13 +1,13 @@
-/* Checkbox (круглый) — Figma 760:5880. Box 20x20, tick 16x16. Токены --c-checkbox-*. */
+/* Checkbox (круглый) — Figma 760:5880. Box 20x20, tick 16x16 (Size/Indicator/* → --c-checkbox-size, --c-checkbox-tick-size). Токены --c-checkbox-*. */
 .at-checkbox { display: inline-flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; position: relative; }
 .at-checkbox__input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; }
 .at-checkbox__box {
   flex: none; display: inline-flex; align-items: center; justify-content: center;
-  width: var(--prim-spacing-450); height: var(--prim-spacing-450);
+  width: var(--c-checkbox-size); height: var(--c-checkbox-size);
   border-radius: var(--c-checkbox-radius-round); background: transparent;
   box-shadow: inset 0 0 0 var(--c-checkbox-stroke) var(--c-checkbox-border);
 }
-.at-checkbox__tick { width: var(--prim-spacing-400); height: var(--prim-spacing-400); color: var(--c-checkbox-content); opacity: 0; }
+.at-checkbox__tick { width: var(--c-checkbox-tick-size); height: var(--c-checkbox-tick-size); color: var(--c-checkbox-content); opacity: 0; }
 .at-checkbox:hover .at-checkbox__box { box-shadow: inset 0 0 0 var(--c-checkbox-stroke) var(--c-checkbox-border-hover); }
 .at-checkbox__input:checked + .at-checkbox__box {
   background: var(--c-checkbox-bg-checked);

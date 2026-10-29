@@ -158,7 +158,7 @@ export function RulesPage() {
           }
           good={['var(--surface-brand-default)', 'var(--c-button-m-padding-x)']}
           bad={['var(--prim-spacing-400)']}
-          note="Исключение: Checkbox берёт размеры бокса и галочки из примитивов --prim-spacing-450 и 400 — семантического токена размера под них нет."
+          note="Нет подходящего семантического токена — заводим его (так появились Size/Indicator/* для Checkbox и Elevation/Control/1 для тени шара Switch), а не берём примитив."
         />
         <Rule
           n={3}
@@ -198,7 +198,7 @@ export function RulesPage() {
             </>
           }
           good={['surface-brand-default + content-on-brand']}
-          note="Известное исключение: crypto в Method Icon — контраст 2.98, оставлено владельцем."
+          note="Сейчас ниже нормы (по расчёту генератора токенов): Content/on-brand на Surface/Brand/default — 3.14, на hover — 3.73; Content/on-success на Surface/Success/default — 3.54; crypto в Method Icon — 2.98. Решение по цветам за владельцем."
         />
         <Rule
           n={6}

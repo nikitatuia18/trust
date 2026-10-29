@@ -27,3 +27,4 @@ focus/success|Focus/Success/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/
 focus/warning|Focus/Warning/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
 focus/error|Focus/Error/ring~Focus/offset-x~Focus/offset-y~Focus/blur~Focus/ring-width
 elevation/overlay|Elevation/Overlay/1/shadow~Elevation/Overlay/1/offset-x~Elevation/Overlay/1/offset-y~Elevation/Overlay/1/blur~Elevation/Overlay/1/spread||Elevation/Overlay/2/shadow~Elevation/Overlay/2/offset-x~Elevation/Overlay/2/offset-y~Elevation/Overlay/2/blur~Elevation/Overlay/2/spread
+elevation/control|Elevation/Control/1/shadow~Elevation/Control/1/offset-x~Elevation/Control/1/offset-y~Elevation/Control/1/blur~Elevation/Control/1/spread

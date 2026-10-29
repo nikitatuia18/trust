@@ -304,6 +304,18 @@
           "Elevation/Overlay/1/spread"
         ]
       ]
+    },
+    {
+      "name": "elevation/control",
+      "layers": [
+        [
+          "Elevation/Control/1/shadow",
+          "Elevation/Control/1/offset-x",
+          "Elevation/Control/1/offset-y",
+          "Elevation/Control/1/blur",
+          "Elevation/Control/1/spread"
+        ]
+      ]
     }
   ]
 }

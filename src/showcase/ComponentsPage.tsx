@@ -223,7 +223,7 @@ function ControlsDemo() {
           'Круглый индикатор выбора в списках анкеты.',
         ]}
         spacing={[
-          'Бокс 20×20 (--prim-spacing-450), галочка 16×16.',
+          'Бокс 20×20 (--c-checkbox-size ← Size/Indicator/box), галочка 16×16 (--c-checkbox-tick-size ← Size/Indicator/mark); на Mobile не сжимаются.',
           'Отступ до подписи — Space/sm.',
           'Граница и радиус: --c-checkbox-stroke, --c-checkbox-radius-round.',
         ]}
@@ -609,7 +609,7 @@ function BrandDemo() {
         ]}
         why={[
           "Switch — нативный input role=switch: клавиатура и скринридер работают сами, подписи нет — задаётся aria-label.",
-          "Тень шара в Figma не привязана к токену — взята ближайшая Elevation/Overlay/1 (слабее оригинала), в «Открыто».",
+          "Тень шара — токен Elevation/Control/1 (0 8 6 −4, чёрный 16%, как в Figma): отдельный токен, не Overlay, потому что у подвижного элемента управления другая тень.",
           "Avatar без фото показывает инициалы (добавлено в коде, в Figma только фото); само фото — данные, не ассет системы.",
         ]}
       />
@@ -709,7 +709,7 @@ function ShellDemo() {
               actions={<><LanguageSelector value={lang} onChange={setLang} /><Button size="s">Talk to sales</Button></>}
             />
           </div>
-          <div className="sc-demo__row sc-demo__row--stack" style={{ width: '100%', paddingBottom: 'calc(var(--size-2xl) * 8)' }}>
+          <div className="sc-demo__row sc-demo__row--stack sc-menu-room" style={{ width: '100%' }}>
             <span className="sc-demo__tag text-caption-default sc-muted">mega-menu</span>
             <Header
               menu={menu} open={open} onClose={() => setOpen(false)}
@@ -735,11 +735,11 @@ function ShellDemo() {
           'Header Bar — слоты (logo, modeSwitch, links, actions): шапка собирается из Logo, Segmented Control, Button и Language Selector без отдельных копий.',
           'Mega Menu абсолютна и не сдвигает страницу; открытием управляет страница (open), закрытие по Esc и клику вне — внутри Header.',
           'Иконка в пункте — круг как у Button secondary S icon-only, но не кнопка: вся строка уже кнопка, вложенных кнопок нет.',
-          'Ширина столбца Mega Menu 298 (282 + padding списка) — в Figma токена нет, задано локально, в «Открыто».',
-          'Во втором столбце Figma дважды стоит Luxury (иконка global-search) — здесь заменено на Import / Export, как в подвале.',
+          'Ширина столбца Mega Menu 298 (282 + padding списка) — токена нет, задана локально в CSS осознанно. Ниже 767px столбцы встают друг под друга.',
+          'Второй столбец — Import / Export, как в подвале (в старом макете Figma там по ошибке стоял второй Luxury; верна версия в коде).',
         ]}
       />
-      <Preview title="Footer" note="Platform: desktop · ниже 767px — столбиком (в Figma mobile — заготовка)">
+      <Preview title="Footer" note="Ниже 767px всё встаёт столбиком: колонки ссылок, кнопки, ссылки на приложения">
         <div className="sc-demo sc-demo--col">
           <div className="sc-demo__row sc-demo__row--stack" style={{ width: '100%' }}>
             <Footer
@@ -773,7 +773,7 @@ function ShellDemo() {
           'Контент — данные (props): тексты, ссылки и кнопки подставляются, структура неизменна.',
           'Кнопки действий — обычные Button M, растянутые на ширину блока.',
           'Знаки App Store и Google Play — бренд-арт вне токенов (исключение владельца); Google Play собран из четырёх кусков, как в Figma.',
-          'В Figma ширина контента подвала указана 1600, а шапки 1440; здесь обе берут Grid/max-width, в «Открыто».',
+          'Ширина контента шапки и подвала одна и та же — Grid/max-width, и боковой отступ один (Space/6xl); так их края совпадают на любом экране.',
         ]}
       />
     </>

@@ -546,6 +546,36 @@
       "desktop": "{prim.Spacing/Spacing/-100}",
       "mobile": "{prim.Spacing/Spacing/-100}"
     },
+    "Elevation/Control/1/offset-x": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/0}",
+      "mobile": "{prim.Spacing/Spacing/0}"
+    },
+    "Elevation/Control/1/offset-y": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/200}",
+      "mobile": "{prim.Spacing/Spacing/200}"
+    },
+    "Elevation/Control/1/blur": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/150}",
+      "mobile": "{prim.Spacing/Spacing/150}"
+    },
+    "Elevation/Control/1/spread": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/-100}",
+      "mobile": "{prim.Spacing/Spacing/-100}"
+    },
+    "Size/Indicator/box": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/450}",
+      "mobile": "{prim.Spacing/Spacing/450}"
+    },
+    "Size/Indicator/mark": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/400}",
+      "mobile": "{prim.Spacing/Spacing/400}"
+    },
     "Size/Min-height/md": {
       "$type": "F",
       "desktop": "{prim.Spacing/Spacing/1550}",

@@ -133,6 +133,10 @@
 .sc-rule__line .sc-code { white-space: normal; overflow-wrap: anywhere; }
 .sc-rule__mark { flex: none; color: var(--content-success); }
 .sc-rule__mark--bad { color: var(--content-error); }
+/* Место под раскрытый Mega Menu в демо шапки: на Mobile он одним столбцом и выше */
+.sc-menu-room { padding-bottom: calc(var(--size-2xl) * 8); }
+@media (max-width: 767px) { .sc-menu-room { padding-bottom: calc(var(--size-2xl) * 14); } }
+
 /* Правила — по две карточки в ряд: живым примерам нужна ширина */
 .sc-bento--rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 767px) { .sc-bento--rules { grid-template-columns: minmax(0, 1fr); } }

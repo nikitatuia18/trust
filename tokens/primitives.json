@@ -297,6 +297,10 @@
       "$type": "C",
       "$value": "#00000014"
     },
+    "Colors/Black/alpha-16": {
+      "$type": "C",
+      "$value": "#00000029"
+    },
     "Radius/Radius/0": {
       "$type": "F",
       "$value": 0
@@ -356,6 +360,10 @@
     "Spacing/Spacing/100": {
       "$type": "F",
       "$value": 4
+    },
+    "Spacing/Spacing/150": {
+      "$type": "F",
+      "$value": 6
     },
     "Spacing/Spacing/200": {
       "$type": "F",

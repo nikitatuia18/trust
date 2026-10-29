@@ -108,4 +108,10 @@ Elevation/Overlay/2/offset-x|F|@P:Spacing/Spacing/0;@P:Spacing/Spacing/0
 Elevation/Overlay/2/offset-y|F|@P:Spacing/Spacing/200;@P:Spacing/Spacing/200
 Elevation/Overlay/2/blur|F|@P:Spacing/Spacing/600;@P:Spacing/Spacing/600
 Elevation/Overlay/2/spread|F|@P:Spacing/Spacing/-100;@P:Spacing/Spacing/-100
+Elevation/Control/1/offset-x|F|@P:Spacing/Spacing/0;@P:Spacing/Spacing/0
+Elevation/Control/1/offset-y|F|@P:Spacing/Spacing/200;@P:Spacing/Spacing/200
+Elevation/Control/1/blur|F|@P:Spacing/Spacing/150;@P:Spacing/Spacing/150
+Elevation/Control/1/spread|F|@P:Spacing/Spacing/-100;@P:Spacing/Spacing/-100
+Size/Indicator/box|F|@P:Spacing/Spacing/450;@P:Spacing/Spacing/450
+Size/Indicator/mark|F|@P:Spacing/Spacing/400;@P:Spacing/Spacing/400
 Size/Min-height/md|F|@P:Spacing/Spacing/1550;@P:Spacing/Spacing/1550

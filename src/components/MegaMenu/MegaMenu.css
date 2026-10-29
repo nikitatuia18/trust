@@ -19,3 +19,9 @@
   color: var(--c-button-secondary-content);
 }
 .at-mega-menu__icon > .at-icon { width: var(--c-button-s-icon-size); height: var(--c-button-s-icon-size); }
+
+/* Ниже Breakpoint/sm: столбцы встают друг под друга и занимают всю ширину */
+@media (max-width: 767px) {
+  .at-mega-menu__content { flex-direction: column; }
+  .at-mega-menu__column { flex: none; width: 100%; }
+}

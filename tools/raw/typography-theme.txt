@@ -123,3 +123,4 @@ Border/Neutral/strong|C|@Primitives:Colors/Gray/400
 Border/Neutral/strong-hover|C|@Primitives:Colors/Gray/500
 Elevation/Overlay/1/shadow|C|@Primitives:Colors/Black/alpha-4
 Elevation/Overlay/2/shadow|C|@Primitives:Colors/Black/alpha-8
+Elevation/Control/1/shadow|C|@Primitives:Colors/Black/alpha-16

@@ -11,3 +11,10 @@
 .at-header-bar__menu { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--c-header-navigation-menu-gap); }
 .at-header-bar__links { display: flex; align-items: center; gap: var(--space-none); }
 .at-header-bar__actions { display: flex; flex: none; align-items: flex-start; justify-content: flex-end; gap: var(--c-header-buttons-gap); }
+
+/* Ниже Breakpoint/sm: навигация на всю ширину, кнопки уходят на свою строку — ничего не налезает друг на друга */
+@media (max-width: 767px) {
+  .at-header-bar__content { flex-wrap: wrap; }
+  .at-header-bar__navigation { flex: 1 1 100%; }
+  .at-header-bar__actions { flex: 1 1 100%; flex-wrap: wrap; justify-content: flex-start; align-items: center; }
+}

@@ -1257,6 +1257,14 @@
       "$type": "F",
       "$value": "{prim.Radius/Radius/round}"
     },
+    "Checkbox/size": {
+      "$type": "F",
+      "$value": "{layout.Size/Indicator/box}"
+    },
+    "Checkbox/tick-size": {
+      "$type": "F",
+      "$value": "{layout.Size/Indicator/mark}"
+    },
     "Input/field/padding-x": {
       "$type": "F",
       "$value": "{layout.Space/xs}"

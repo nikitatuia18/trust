@@ -308,6 +308,10 @@
     "Elevation/Overlay/2/shadow": {
       "$type": "C",
       "$value": "{prim.Colors/Black/alpha-8}"
+    },
+    "Elevation/Control/1/shadow": {
+      "$type": "C",
+      "$value": "{prim.Colors/Black/alpha-16}"
     }
   }
 }

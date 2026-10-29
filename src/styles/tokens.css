@@ -76,6 +76,7 @@
   --prim-color-brand-650: #0079d1;
   --prim-color-black-alpha-4: #0000000a;
   --prim-color-black-alpha-8: #00000014;
+  --prim-color-black-alpha-16: #00000029;
   --prim-radius-0: 0;
   --prim-radius-100: 2px;
   --prim-radius-200: 4px;
@@ -91,6 +92,7 @@
   --prim-spacing-0: 0;
   --prim-spacing-50: 2px;
   --prim-spacing-100: 4px;
+  --prim-spacing-150: 6px;
   --prim-spacing-200: 8px;
   --prim-spacing-250: 10px;
   --prim-spacing-300: 12px;
@@ -255,6 +257,7 @@
   --border-neutral-strong-hover: var(--prim-color-gray-500);
   --elevation-overlay-1-shadow: var(--prim-color-black-alpha-4);
   --elevation-overlay-2-shadow: var(--prim-color-black-alpha-8);
+  --elevation-control-1-shadow: var(--prim-color-black-alpha-16);
 
   /* ===== Semantic / Layout (Desktop) ===== */
   --typography-font-size-xs: var(--prim-font-size-100);
@@ -366,6 +369,12 @@
   --elevation-overlay-2-offset-y: var(--prim-spacing-200);
   --elevation-overlay-2-blur: var(--prim-spacing-600);
   --elevation-overlay-2-spread: var(--prim-spacing-neg-100);
+  --elevation-control-1-offset-x: var(--prim-spacing-0);
+  --elevation-control-1-offset-y: var(--prim-spacing-200);
+  --elevation-control-1-blur: var(--prim-spacing-150);
+  --elevation-control-1-spread: var(--prim-spacing-neg-100);
+  --size-indicator-box: var(--prim-spacing-450);
+  --size-indicator-mark: var(--prim-spacing-400);
   --size-min-height-md: var(--prim-spacing-1550);
 
   /* ===== Components ===== */
@@ -683,6 +692,8 @@
   --c-text-container-2xlarge-title-content: var(--content-primary);
   --c-text-container-2xlarge-subtitle-content: var(--content-secondary);
   --c-checkbox-radius-round: var(--prim-radius-round);
+  --c-checkbox-size: var(--size-indicator-box);
+  --c-checkbox-tick-size: var(--size-indicator-mark);
   --c-input-field-padding-x: var(--space-xs);
 
   /* ===== Effect styles ===== */
@@ -692,6 +703,7 @@
   --effect-focus-warning: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-warning-ring);
   --effect-focus-error: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-error-ring);
   --effect-elevation-overlay: var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);
+  --effect-elevation-control: var(--elevation-control-1-offset-x) var(--elevation-control-1-offset-y) var(--elevation-control-1-blur) var(--elevation-control-1-spread) var(--elevation-control-1-shadow);
 }
 
 /* ===== Semantic / Layout (Mobile): ширина <= Breakpoint/sm = 767px; в @media нельзя var(), значение зашито ===== */
