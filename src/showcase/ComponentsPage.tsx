@@ -4,7 +4,7 @@ import {
   Icon, PlusIcon, CloseIcon, SearchIcon, DotIcon, SegmentedControl, StepIndicator, TextContainer, TextField, WindowHeader, type ButtonVariant,
   BankLogo, CurrencyIcon, LogoWithBadge, MethodIcon, NetworkLogo, StatusIcon,
   Avatar, EmbedPlaceholder, LanguageSelector, Logo, Spinner, Switch,
-  Badge, Breadcrumbs, StatTile, IconCircle, Table, WalletIcon, UsersIcon, LinkIcon, StarIcon, ProfileIcon,
+  Badge, Breadcrumbs, DropdownMenu, CopyIcon, ExportIcon, StatTile, IconCircle, Table, WalletIcon, UsersIcon, LinkIcon, StarIcon, ProfileIcon,
   AppStoreMark, BankOutlineIcon, BriefcaseIcon, BuildingsIcon, CarIcon, CoinIcon, Footer, GlobeSearchIcon, GooglePlayMark, Header, RulerPenIcon,
 } from '../components';
 
@@ -790,16 +790,24 @@ function AccountDemo() {
   ];
   return (
     <>
-      <Preview title="Badge" note="Variant: success | brand | neutral">
-        <div className="sc-demo"><div className="sc-demo__row"><Badge>Received</Badge><Badge variant="brand">New</Badge><Badge variant="neutral">Draft</Badge></div></div>
+      <Preview title="Badge" note="Variant: success | warning | error | brand | neutral">
+        <div className="sc-demo"><div className="sc-demo__row"><Badge>Received</Badge><Badge variant="warning">Pending</Badge><Badge variant="error">Failed</Badge><Badge variant="brand">New</Badge><Badge variant="neutral">Draft</Badge></div></div>
       </Preview>
       <Doc
         where={['Статус строки в таблице («Received» в Earnings history).']}
         spacing={['Padding: Space/xs по вертикали, Space/md по горизонтали; радиус Radius/round; текст Label/sm.']}
         why={[
           'Не интерактивна. Кликабельная плашка — Chip.',
-          'Заведены только три варианта; Pending / Failed появятся, когда будут нужны (нужен список статусов).',
+          'Зелёный — выполнено, оранжевый — в процессе, красный — отказ. Контраст пар: success 3.2, warning 3.0, error 5.6 (решение по исключениям — за владельцем).',
         ]}
+      />
+      <Preview title="Dropdown Menu" note="Кнопка с тремя точками (more/outline) и список действий; закрывается по выбору, Esc и клику снаружи">
+        <div className="sc-demo"><DropdownMenu label="More actions" align="start" items={[{ id: 'c', label: 'Copy link', icon: <CopyIcon />, onSelect: () => undefined }, { id: 's', label: 'Share', icon: <ExportIcon />, onSelect: () => undefined }]} /></div>
+      </Preview>
+      <Doc
+        where={['Меню действий рядом с главной кнопкой (QR-код в кабинете).']}
+        spacing={['Список — List + List Item small, зазор до кнопки Space/sm, тень Elevation/Overlay.']}
+        why={['Устроено как Language Selector: кнопка Button и список из готовых компонентов, без своих стилей строк. Пункты и колбэки — данные (items).']}
       />
       <Preview title="Breadcrumbs" note="Последний пункт — текущая страница (aria-current)">
         <div className="sc-demo"><Breadcrumbs items={[{ label: 'Home', href: '#/components' }, { label: 'Account' }]} /></div>
@@ -884,7 +892,7 @@ export function ComponentsPage() {
       <Group title="Бренд, переключатели и ожидание" note="Логотип, язык, переключатель, аватар, загрузка и заглушка внешнего блока.">
         <BrandDemo />
       </Group>
-      <Group title="Из экрана Account" note="Компоненты, которых не хватило при сборке кабинета. Плюс расширения: Segmented Control size m, Avatar size lg, Form Card fluid.">
+      <Group title="Из экрана Account" note="Компоненты, которых не хватило при сборке кабинета. Плюс расширения: Segmented Control size m, Form Card fluid.">
         <AccountDemo />
       </Group>
       <Group title="Шапка и подвал" note="Каркас страницы сайта: навигация сверху, ссылки и действия снизу.">

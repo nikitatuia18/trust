@@ -6,20 +6,10 @@ import './screens.css';
 export type SiteUser = { name: string; avatarSrc?: string };
 
 /** Шапка сайта: логотип, режим Individual | Business, ссылки, язык и главная кнопка (Figma «Auth Page» → Header).
- *  Для вошедшего пользователя (Figma «Account» → Header): четыре ссылки, язык и аватар вместо кнопки. */
+ *  Для вошедшего пользователя та же шапка системы, но вместо «Talk to sales» — Avatar. */
 export function SiteHeader({ user }: { user?: SiteUser }) {
   const [mode, setMode] = useState('individual');
   const [lang, setLang] = useState('EN');
-  if (user) {
-    return (
-      <Header
-        links={['Individual', 'Business', 'Resources', 'Contacts'].map((label) => (
-          <Button key={label} variant="ghost" size="s" density="compact">{label}</Button>
-        ))}
-        actions={<><LanguageSelector value={lang} onChange={setLang} /><Avatar size="lg" src={user.avatarSrc} name={user.name} alt={user.name} /></>}
-      />
-    );
-  }
   return (
     <Header
       modeSwitch={
@@ -31,7 +21,14 @@ export function SiteHeader({ user }: { user?: SiteUser }) {
         />
       }
       links={<><Button variant="ghost" size="s" density="compact">Resources</Button><Button variant="ghost" size="s" density="compact">Contacts</Button></>}
-      actions={<><LanguageSelector value={lang} onChange={setLang} /><Button size="s">Talk to sales</Button></>}
+      actions={
+        <>
+          <LanguageSelector value={lang} onChange={setLang} />
+          {user
+            ? <Button variant="secondary" size="s" iconOnly iconLeft={<Avatar src={user.avatarSrc} name={user.name} />} aria-label={`Account: ${user.name}`} />
+            : <Button size="s">Talk to sales</Button>}
+        </>
+      }
     />
   );
 }

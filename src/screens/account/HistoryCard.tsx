@@ -1,11 +1,17 @@
 import { Badge, Button, FormCard, SortIcon, Table, type TableColumn } from '../../components';
-import { formatCommission, formatDateTime, type ReferralEarning } from './accountData';
+import { formatCommission, formatDateTime, type EarningStatus, type ReferralEarning } from './accountData';
+
+const STATUS: Record<EarningStatus, { label: string; variant: 'success' | 'warning' | 'error' }> = {
+  received: { label: 'Received', variant: 'success' },
+  pending: { label: 'Pending', variant: 'warning' },
+  failed: { label: 'Failed', variant: 'error' },
+};
 
 const COLUMNS: TableColumn<ReferralEarning>[] = [
   { key: 'user', header: 'Referred user', grow: true, cell: (r) => r.user },
   { key: 'date', header: 'Date', cell: (r) => formatDateTime(r.date) },
-  { key: 'commission', header: 'Commission', cell: (r) => <span className="scr-positive">{formatCommission(r.commission)}</span> },
-  { key: 'status', header: 'Status', cell: () => <Badge>Received</Badge> },
+  { key: 'commission', header: 'Commission', cell: (r) => <span className={r.status === 'received' ? 'scr-positive' : undefined}>{formatCommission(r.commission)}</span> },
+  { key: 'status', header: 'Status', cell: (r) => <Badge variant={STATUS[r.status].variant}>{STATUS[r.status].label}</Badge> },
 ];
 
 type HistoryCardProps = {

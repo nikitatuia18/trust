@@ -1,5 +1,5 @@
 export { Icon, type IconProps, type IconDirection } from './Icon/Icon';
-export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon, BriefcaseIcon, BuildingsIcon, RulerPenIcon, CarIcon, CoinIcon, GlobeSearchIcon, BankOutlineIcon, VerifyIcon, ProfileIcon, ProfileFilledIcon, LockOutlineIcon, LockIcon, NotificationIcon, StarIcon, ArrowCircleLeftIcon, WalletIcon, ExportIcon, UsersIcon, LinkIcon, CopyIcon, SortIcon, DiscountShapeIcon } from './Icon/Glyphs';
+export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon, BriefcaseIcon, BuildingsIcon, RulerPenIcon, CarIcon, CoinIcon, GlobeSearchIcon, BankOutlineIcon, VerifyIcon, ProfileIcon, ProfileFilledIcon, LockOutlineIcon, LockIcon, NotificationIcon, StarIcon, ArrowCircleLeftIcon, WalletIcon, ExportIcon, UsersIcon, LinkIcon, CopyIcon, SortIcon, DiscountShapeIcon, MoreIcon } from './Icon/Glyphs';
 export { Button, type ButtonProps, type ButtonVariant } from './Button/Button';
 export { TextField, type TextFieldProps } from './TextField/TextField';
 export { AmountField, type AmountFieldProps } from './AmountField/AmountField';
@@ -35,4 +35,5 @@ export { Badge, type BadgeProps } from './Badge/Badge';
 export { Breadcrumbs, type BreadcrumbsProps, type BreadcrumbItem } from './Breadcrumbs/Breadcrumbs';
 export { StatTile, type StatTileProps } from './StatTile/StatTile';
 export { IconCircle, type IconCircleProps } from './IconCircle/IconCircle';
+export { DropdownMenu, type DropdownMenuProps, type DropdownMenuItem } from './DropdownMenu/DropdownMenu';
 export { Table, type TableProps, type TableColumn } from './Table/Table';

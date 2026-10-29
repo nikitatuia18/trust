@@ -9,6 +9,8 @@ export type AccountUser = {
   avatarSrc?: string;
 };
 
+export type EarningStatus = 'received' | 'pending' | 'failed';
+
 export type ReferralEarning = {
   id: string;
   /** E-mail приглашённого */
@@ -17,7 +19,8 @@ export type ReferralEarning = {
   date: string;
   /** Комиссия в USDT */
   commission: number;
-  status: 'received';
+  /** received — зелёный, pending — оранжевый, failed — красный */
+  status: EarningStatus;
 };
 
 export type AffiliateData = {
@@ -61,7 +64,7 @@ export const DEMO_AFFILIATE: AffiliateData = {
   commissionPercent: 15,
   history: [
     { id: '1', user: 'nikitatuia18@gmail.com', date: '2026-08-17T13:15:00', commission: 12, status: 'received' },
-    { id: '2', user: 'nikitatuia18@gmail.com', date: '2026-08-16T18:42:00', commission: 12, status: 'received' },
-    { id: '3', user: 'nikitatuia18@gmail.com', date: '2026-08-14T11:03:00', commission: 12, status: 'received' },
+    { id: '2', user: 'nikitatuia18@gmail.com', date: '2026-08-16T18:42:00', commission: 12, status: 'pending' },
+    { id: '3', user: 'nikitatuia18@gmail.com', date: '2026-08-14T11:03:00', commission: 12, status: 'failed' },
   ],
 };

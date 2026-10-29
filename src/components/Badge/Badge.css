@@ -7,5 +7,7 @@
   border-radius: var(--radius-round);
   background: var(--_bg); color: var(--_content);
 }
+.at-badge[data-variant='warning'] { --_bg: var(--surface-warning-subtle); --_content: var(--content-warning); }
+.at-badge[data-variant='error'] { --_bg: var(--surface-error-subtle); --_content: var(--content-error); }
 .at-badge[data-variant='brand'] { --_bg: var(--surface-brand-subtle); --_content: var(--content-brand); }
 .at-badge[data-variant='neutral'] { --_bg: var(--surface-neutral-muted); --_content: var(--content-secondary); }

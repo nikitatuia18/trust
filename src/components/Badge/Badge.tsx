@@ -3,8 +3,8 @@ import { cn } from '../cn';
 import './Badge.css';
 
 export type BadgeProps = {
-  /** Смысл статуса: success — выполнено, brand — акцент, neutral — без оценки */
-  variant?: 'success' | 'brand' | 'neutral';
+  /** Смысл статуса: success — выполнено (зелёный), warning — в процессе (оранжевый), error — отказ (красный), brand — акцент, neutral — без оценки */
+  variant?: 'success' | 'warning' | 'error' | 'brand' | 'neutral';
   children: ReactNode;
   className?: string;
 };

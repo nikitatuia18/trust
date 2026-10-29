@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowCircleLeftIcon, Button, FormCard, SegmentedControl } from '../../components';
+import { Button, CopyIcon, DropdownMenu, ExportIcon, FormCard, SegmentedControl } from '../../components';
 import qrUrl from './referral-qr.svg';
 
 type PromotionTab = 'qr' | 'banners' | 'scripts';
@@ -11,7 +11,9 @@ const TABS: { value: PromotionTab; label: string }[] = [
 ];
 
 type PromotionCardProps = {
+  referralLink: string;
   onDownloadQr?: () => void;
+  onCopyLink?: () => void;
   onShareQr?: () => void;
 };
 
@@ -23,7 +25,7 @@ const downloadQr = () => {
 };
 
 /** «Promotion tools»: вкладки материалов; сейчас нарисована только вкладка QR-code */
-export function PromotionCard({ onDownloadQr, onShareQr }: PromotionCardProps) {
+export function PromotionCard({ referralLink, onDownloadQr, onCopyLink, onShareQr }: PromotionCardProps) {
   const [tab, setTab] = useState<PromotionTab>('qr');
   return (
     <FormCard
@@ -38,7 +40,14 @@ export function PromotionCard({ onDownloadQr, onShareQr }: PromotionCardProps) {
         tab === 'qr' ? (
           <div className="scr-actions-row">
             <Button variant="secondary" onClick={onDownloadQr ?? downloadQr}>Download QR code</Button>
-            <Button variant="secondary" iconOnly iconLeft={<ArrowCircleLeftIcon />} aria-label="Share QR code" onClick={onShareQr} />
+            <DropdownMenu
+              label="More actions"
+              placement="top"
+              items={[
+                { id: 'copy', label: 'Copy referral link', icon: <CopyIcon />, onSelect: () => { navigator.clipboard?.writeText(referralLink).catch(() => undefined); onCopyLink?.(); } },
+                { id: 'share', label: 'Share QR code', icon: <ExportIcon />, onSelect: () => onShareQr?.() },
+              ]}
+            />
           </div>
         ) : undefined
       }

@@ -49,7 +49,7 @@ export function AccountPage({
             <div className="scr-account__content">
               <div className="scr-account__row" data-row="top">
                 <EarningsCard data={affiliate} onWithdraw={onWithdraw} onCopyLink={onCopyLink} onHowItWorks={onHowItWorks} />
-                <PromotionCard onDownloadQr={onDownloadQr} onShareQr={onShareQr} />
+                <PromotionCard referralLink={affiliate.referralLink} onDownloadQr={onDownloadQr} onCopyLink={onCopyLink} onShareQr={onShareQr} />
               </div>
               <div className="scr-account__row" data-row="bottom">
                 <HistoryCard rows={affiliate.history} onSort={onSortHistory} onViewAll={onViewAllHistory} />
