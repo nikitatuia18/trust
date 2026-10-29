@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Chip } from '../components';
-import { REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
+import { AccountPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
 
 const DOC = [
   {
@@ -28,6 +28,36 @@ const DOC = [
       'Тестовый режим: подходит любой код из 4 цифр; Continue на последнем шаге только сообщает, что данные собраны.',
       'Кнопка «Change Email» в Figma бледная, как disabled; здесь она активна — ведёт назад к e-mail.',
       'Список стран — тестовый; Google и Support service без действия.',
+    ],
+  },
+];
+
+const ACCOUNT_DOC = [
+  {
+    h: 'Из чего собрано',
+    items: [
+      'Каркас: системная шапка (Individual | Business, Resources, Contacts, язык) и подвал, Breadcrumbs, холст Surface/neutral/canvas.',
+      'Меню: Form Card + List Item card с Icon Circle; выход — Button secondary.',
+      'Earnings: Form Card, Stat Tile ×3, строка со ссылкой (Icon Circle, Chip, Button ghost), Button primary.',
+      'Promotion tools: Form Card, Segmented Control m, Button secondary и Dropdown Menu.',
+      'Earnings history: Form Card, Table и Badge (зелёный / оранжевый / красный); две карточки-подсказки.',
+    ],
+  },
+  {
+    h: 'Допущения',
+    items: [
+      'Макет Figma — только вид и логика; дизайн целиком из системы (радиусы, цвета, иконки).',
+      'Вкладки Banners и Sales Scripts не нарисованы — пустые. QR — статичная картинка, будет заменена.',
+      'Пункты меню «три точки» (Copy referral link, Share QR code) — заглушки.',
+      'Иконка у Log out — заглушка из макета, нужна нормальная из Icons.',
+    ],
+  },
+  {
+    h: 'Чего в системе не хватило',
+    items: [
+      'Новые компоненты: Badge, Breadcrumbs, Stat Tile, Icon Circle, Table, Dropdown Menu; расширения Segmented Control size m и Form Card fluid.',
+      'У новых компонентов нет component-токенов и компонентов в Figma — долг в PLAN.md.',
+      'Ошибки этой сборки — docs/SCREEN-BUILD-ERRORS.md.',
     ],
   },
 ];
@@ -64,6 +94,26 @@ export function ScreensPage() {
 
       <aside className="sc-card sc-doc sc-screens__doc">
         {DOC.map((b) => (
+          <div key={b.h} className="sc-doc__block">
+            <h4 className="text-label-sm">{b.h}</h4>
+            <ul className="sc-doc__list text-body-xs sc-muted">
+              {b.items.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+          </div>
+        ))}
+      </aside>
+
+      <div className="sc-section">
+        <h2 className="text-heading-h3">Кабинет — Affiliate program</h2>
+        <p className="text-body-sm sc-muted">
+          Тестовая сборка по макету «1.1 Account / Affiliate program». Данные демонстрационные. Отдельной страницей: <a className="sc-link" href="#/account">#/account</a>.
+        </p>
+      </div>
+      <div className="sc-screen-frame">
+        <AccountPage />
+      </div>
+      <aside className="sc-card sc-doc sc-screens__doc">
+        {ACCOUNT_DOC.map((b) => (
           <div key={b.h} className="sc-doc__block">
             <h4 className="text-label-sm">{b.h}</h4>
             <ul className="sc-doc__list text-body-xs sc-muted">
