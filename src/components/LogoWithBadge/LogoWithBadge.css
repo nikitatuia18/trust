@@ -1,0 +1,17 @@
+/* Logo with Badge — Figma 691:99. Бейдж — абсолютная обёртка справа снизу, 16 на всех размерах. */
+.at-logo {
+  position: relative; display: inline-flex; flex: none; box-sizing: border-box;
+  width: var(--c-asset-logo-m-size); height: var(--c-asset-logo-m-size);
+}
+.at-logo[data-size='s'] { width: var(--c-asset-logo-s-size); height: var(--c-asset-logo-s-size); }
+.at-logo[data-size='l'] { width: var(--c-asset-logo-l-size); height: var(--c-asset-logo-l-size); }
+
+.at-logo__main { display: flex; width: 100%; height: 100%; }
+.at-logo__badge {
+  position: absolute; right: 0; bottom: 0; display: flex; box-sizing: border-box;
+  width: var(--c-asset-logo-badge-size); height: var(--c-asset-logo-badge-size);
+  padding: var(--c-asset-logo-badge-padding);
+  border-radius: var(--c-asset-logo-radius); background: var(--c-asset-logo-badge-bg);
+}
+/* логотип в слоте заполняет его (перекрывает собственные размеры Currency Icon / Network Logo) */
+.at-logo__main > *, .at-logo__badge > * { flex: none; width: 100%; height: 100%; }

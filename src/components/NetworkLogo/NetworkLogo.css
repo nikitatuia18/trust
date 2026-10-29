@@ -1,0 +1,2 @@
+/* Network Logo — Figma 691:23 / 691:24. Размер по умолчанию — Size/Icon/xs; слот бейджа (Logo with Badge) перекрывает его. */
+:where(.at-network-logo) { display: block; flex: none; width: var(--size-icon-xs); height: var(--size-icon-xs); }

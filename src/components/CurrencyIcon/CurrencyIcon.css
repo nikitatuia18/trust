@@ -1,0 +1,3 @@
+/* Currency Icon — Figma 690:5169. Слот Logo with Badge перекрывает размер (width/height 100%). */
+:where(.at-currency) { display: block; flex: none; width: var(--c-asset-logo-m-size); height: var(--c-asset-logo-m-size); }
+:where(.at-currency[data-size='l']) { width: var(--c-asset-logo-l-size); height: var(--c-asset-logo-l-size); }

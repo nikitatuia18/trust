@@ -1,0 +1,8 @@
+/* Bank Logo — Figma 692:160. plate (FILL, Asset Logo/bg, round) → mark 16 (Size/Icon/xs) → знак; бейдж — из Logo with Badge. */
+.at-bank-logo { display: inline-flex; flex: none; }
+.at-bank-logo__plate {
+  display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 100%; height: 100%;
+  border-radius: var(--c-asset-logo-radius); background: var(--c-asset-logo-bg);
+}
+.at-bank-logo__mark { display: flex; align-items: center; justify-content: center; flex: none; width: var(--size-icon-xs); height: var(--size-icon-xs); }
+.at-bank-logo__initial { color: var(--content-secondary); line-height: 1; }

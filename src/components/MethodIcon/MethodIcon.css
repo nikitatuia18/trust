@@ -1,0 +1,10 @@
+/* Method Icon — Figma 693:77. Круг Method Icon/size, иконка Method Icon/icon-size, цвет иконки = Method Icon/<kind>/content. */
+.at-method-icon {
+  display: inline-flex; flex: none; align-items: center; justify-content: center; box-sizing: border-box;
+  width: var(--c-method-icon-size); height: var(--c-method-icon-size);
+  border-radius: var(--c-method-icon-radius);
+}
+.at-method-icon > .at-icon { width: var(--c-method-icon-icon-size); height: var(--c-method-icon-icon-size); }
+.at-method-icon[data-kind='bank'] { background: var(--c-method-icon-bank-bg); color: var(--c-method-icon-bank-content); }
+.at-method-icon[data-kind='cash'] { background: var(--c-method-icon-cash-bg); color: var(--c-method-icon-cash-content); }
+.at-method-icon[data-kind='crypto'] { background: var(--c-method-icon-crypto-bg); color: var(--c-method-icon-crypto-content); }
