@@ -133,7 +133,7 @@ Input/border-hover|C|@T:Border/Neutral/hover
 Input/border-error|C|@T:Border/Error/default
 Input/border-success|C|@T:Border/Success/default
 Input/content|C|@T:Content/primary
-Input/placeholder|C|@T:Content/secondary
+Input/placeholder|C|@T:Content/tertiary
 Input/label/content|C|@T:Content/primary
 Input/hint/content|C|@T:Content/secondary
 Input/hint/content-error|C|@T:Content/error
@@ -173,7 +173,7 @@ Amount Field/padding|F|@L:Space/xl
 Amount Field/gap|F|@L:Space/lg
 Amount Field/label/content|C|@T:Content/secondary
 Amount Field/value/content|C|@T:Content/primary
-Amount Field/placeholder|C|@T:Content/secondary
+Amount Field/placeholder|C|@T:Content/tertiary
 Amount Field/hint/content|C|@T:Content/secondary
 Select Trigger/bg|C|@T:Surface/Neutral/base
 Select Trigger/border|C|@T:Border/Neutral/default

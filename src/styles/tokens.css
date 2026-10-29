@@ -514,7 +514,7 @@
   --c-input-border-error: var(--border-error-default);
   --c-input-border-success: var(--border-success-default);
   --c-input-content: var(--content-primary);
-  --c-input-placeholder: var(--content-secondary);
+  --c-input-placeholder: var(--content-tertiary);
   --c-input-label-content: var(--content-primary);
   --c-input-hint-content: var(--content-secondary);
   --c-input-hint-content-error: var(--content-error);
@@ -554,7 +554,7 @@
   --c-amount-field-gap: var(--space-lg);
   --c-amount-field-label-content: var(--content-secondary);
   --c-amount-field-value-content: var(--content-primary);
-  --c-amount-field-placeholder: var(--content-secondary);
+  --c-amount-field-placeholder: var(--content-tertiary);
   --c-amount-field-hint-content: var(--content-secondary);
   --c-select-trigger-bg: var(--surface-neutral-base);
   --c-select-trigger-border: var(--border-neutral-default);
