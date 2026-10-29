@@ -198,7 +198,7 @@ export function RulesPage() {
             </>
           }
           good={['surface-brand-default + content-on-brand']}
-          note="Сейчас ниже нормы (по расчёту генератора токенов): Content/on-brand на Surface/Brand/default — 3.14, на hover — 3.73; Content/on-success на Surface/Success/default — 3.54; crypto в Method Icon — 2.98. Решение по цветам за владельцем."
+          note="Осознанные исключения (по расчёту генератора токенов): Content/on-brand на Surface/Brand/default — 3.14, на hover — 3.73; Content/on-success на Surface/Success/default — 3.54; crypto в Method Icon — 2.98. Оставлено владельцем."
         />
         <Rule
           n={6}
