@@ -1,0 +1,11 @@
+/* Badge — плашка статуса (из экрана Account, «Received»). Только семантические токены. */
+.at-badge {
+  --_bg: var(--surface-success-subtle);
+  --_content: var(--content-success);
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; white-space: nowrap;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-round);
+  background: var(--_bg); color: var(--_content);
+}
+.at-badge[data-variant='brand'] { --_bg: var(--surface-brand-subtle); --_content: var(--content-brand); }
+.at-badge[data-variant='neutral'] { --_bg: var(--surface-neutral-muted); --_content: var(--content-secondary); }

@@ -18,11 +18,13 @@ Figma-файлы: [Tokens](https://www.figma.com/design/Qs2FvuAGGN8aGkCDwDdXRV),
 | D | LogoWithBadge, BankLogo, CurrencyIcon, NetworkLogo, MethodIcon, StatusIcon (знаки: TBC, Visa, Mastercard, USD, GEL, Gram, Arbitrum; BOG и Credo — буква-заглушка) |
 | E | Switch, Avatar, Logo, LanguageSelector, Spinner, EmbedPlaceholder (флаги EN, RU, GE) |
 | F | HeaderBar, MegaMenu, Header, Footer (иконки меню: briefcase, buildings, ruler-pen, car, dollar-coin, global-search, bank; знаки App Store и Google Play) |
+| G (из экрана Account) | Badge, Breadcrumbs, StatTile, IconCircle, Table; расширения: SegmentedControl size m, Avatar size lg, FormCard fluid |
 | Иконки | Icon (arrow-right, 4 направления), Plus, Minus, Close, Check, Alert, Search, Dot — контуры из «06 — Icons» |
 
 ## Экраны
 
 `src/screens/` — страницы, собранные из компонентов без нового CSS поверх (только раскладка). Сейчас: **Регистрация** — три шага (Email → Code → Details) на каркасе `PageLayout` (Header + Footer). Витрина: вкладка «Экраны»; отдельной страницей — `#/registration`.
+**Кабинет, Affiliate program** (`src/screens/account/`) — меню, Earnings, Promotion tools, Earnings history, подсказки; данные и действия приходят props (`AccountPage`), демо-данные — `accountData.ts`. Отдельной страницей — `#/account`.
 
 ## Быстрый старт
 

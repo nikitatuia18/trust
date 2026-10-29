@@ -17,6 +17,8 @@
 - **Mobile** (< 768px) для Header, Mega Menu, Footer; Footer перестраивается и на средней ширине блока.
 - **Экраны**: Регистрация, 3 шага (Email → Code → Details) — вкладка «Экраны» и отдельная страница `#/registration`. Код: `src/screens/`.
 
+- **Экран Account / Affiliate program** (`src/screens/account/`, `#/account`) — тестовая сборка по макету «1.1 Account / Affiliate program»; в систему добавлены Badge, Breadcrumbs, StatTile, IconCircle, Table и расширения SegmentedControl size m, Avatar size lg, FormCard fluid.
+
 ## Следующий шаг (рекомендация)
 
 **Довести регистрацию до рабочей логики.** Владелец уже назвал:

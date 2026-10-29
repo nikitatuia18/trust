@@ -1,0 +1,9 @@
+/* Icon Circle — из экрана Account (круг 44 с иконкой 24 в пунктах меню и в строке «My referral link»). */
+.at-icon-circle {
+  display: inline-flex; flex: none; align-items: center; justify-content: center; box-sizing: border-box;
+  width: var(--size-xl); height: var(--size-xl);
+  border-radius: var(--radius-round);
+  background: var(--surface-brand-subtle); color: var(--content-brand);
+}
+.at-icon-circle[data-tone='brand'] { background: var(--surface-brand-default); color: var(--content-on-brand); }
+.at-icon-circle > * { width: var(--size-icon-md); height: var(--size-icon-md); }

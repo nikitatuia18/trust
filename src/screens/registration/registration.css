@@ -1,9 +1,5 @@
 /* Регистрация: раскладка внутри Form Card. Только токены. */
 
-/* Segmented Control в шапке карточки тянется на всю ширину, сегменты поровну (как в Figma) */
-.scr-segment-fill { display: flex; width: 100%; }
-.scr-segment-fill .at-segmented__item { flex: 1; }
-
 /* Пояснение под полями */
 .scr-note { margin: 0; padding: 0 var(--space-xl); color: var(--content-secondary); text-align: center; }
 

@@ -1,0 +1,80 @@
+/* Кабинет (Account). Раскладка страницы и мелкие обёртки; всё остальное — компоненты системы. Только токены. */
+
+/* Контейнер для container query: колонки перестраиваются по ширине блока, а не окна */
+.scr-account-wrap { container-type: inline-size; width: 100%; }
+.scr-account-page { display: flex; flex-direction: column; gap: var(--space-5xl); width: 100%; max-width: var(--grid-max-width); margin-inline: auto; }
+
+/* Меню слева (1/4) и контент справа (3/4) */
+.scr-account { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: var(--space-5xl); align-items: start; }
+.scr-account__side { align-self: start; }
+.scr-account__content { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; }
+.scr-account__row { display: grid; gap: var(--space-xl); }
+.scr-account__row[data-row='top'] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.scr-account__row[data-row='bottom'] { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.scr-account__info { display: grid; grid-auto-rows: 1fr; min-width: 0; gap: var(--space-xl); }
+
+@container (max-width: 1099px) {
+  .scr-account { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+}
+@container (max-width: 799px) {
+  .scr-account__row[data-row] { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Заголовки карточек */
+.scr-card-title { margin: 0; color: var(--content-primary); }
+.scr-card-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
+.scr-card-head[data-stack] { flex-direction: column; align-items: stretch; justify-content: flex-start; }
+.scr-card-head__actions { display: flex; flex: none; align-items: center; gap: var(--space-sm); }
+.scr-card-note { margin: 0; color: var(--content-secondary); text-align: center; }
+
+/* Меню: карточка пользователя */
+.scr-profile { display: flex; flex-direction: column; gap: var(--space-none); }
+.scr-profile__row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
+.scr-profile__name { min-width: 0; overflow: hidden; color: var(--content-primary); text-overflow: ellipsis; white-space: nowrap; }
+.scr-profile__marks { display: inline-flex; flex: none; align-items: center; gap: var(--space-xs); }
+.scr-profile__verified { display: inline-flex; width: var(--size-icon-md); height: var(--size-icon-md); color: var(--content-brand); }
+.scr-profile__kind {
+  display: inline-flex; box-sizing: border-box; padding: var(--space-xs);
+  border-radius: var(--radius-round); background: var(--surface-neutral-canvas);
+  box-shadow: inset 0 0 0 var(--stroke-default) var(--border-neutral-default); color: var(--content-primary);
+}
+.scr-profile__kind > .at-icon { width: var(--size-icon-xs); height: var(--size-icon-xs); }
+.scr-profile__verified > .at-icon { width: 100%; height: 100%; }
+.scr-profile__email { overflow: hidden; color: var(--content-tertiary); text-overflow: ellipsis; white-space: nowrap; }
+
+/* Меню: пункты */
+.scr-menu { display: flex; flex-direction: column; gap: var(--space-sm); }
+.scr-menu__chevron { display: inline-flex; width: var(--size-icon-xs); height: var(--size-icon-xs); color: var(--content-secondary); }
+.scr-menu__chevron > .at-icon { width: 100%; height: 100%; }
+
+/* Earnings */
+.scr-stats { display: flex; flex-wrap: wrap; gap: var(--space-xl); }
+.scr-ref-link {
+  display: flex; align-items: center; gap: var(--space-md);
+  padding: var(--space-sm); border-radius: var(--radius-lg);
+  background: var(--surface-neutral-base);
+  box-shadow: inset 0 0 0 var(--stroke-default) var(--border-neutral-default);
+}
+.scr-ref-link__text { display: flex; flex: 1; flex-direction: column; justify-content: center; min-width: 0; }
+.scr-ref-link__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); color: var(--content-primary); }
+.scr-ref-link__url { overflow: hidden; color: var(--content-secondary); text-overflow: ellipsis; white-space: nowrap; }
+.scr-ref-link .at-button { --_content: var(--content-brand); }
+
+/* Promotion tools */
+.scr-actions-row { display: flex; gap: var(--space-sm); }
+.scr-actions-row > .at-button:first-child { flex: 1; min-width: 0; }
+.scr-qr { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-sm); height: 100%; color: var(--content-primary); }
+.scr-qr > p { margin: 0; }
+/* Размер QR взят из макета (180). Токена под него пока нет — решаем вместе с владельцем */
+.scr-qr__image { display: block; width: 180px; max-width: 100%; height: auto; }
+.scr-empty { display: flex; flex: 1; align-items: center; justify-content: center; margin: 0; color: var(--content-secondary); }
+
+/* Earnings history */
+.scr-positive { color: var(--content-success); }
+
+/* Карточки-подсказки */
+.scr-info__icon { display: inline-flex; width: var(--size-icon-lg); height: var(--size-icon-lg); color: var(--content-brand); }
+.scr-info__icon > * { width: 100%; height: 100%; }
+.scr-info__text { display: flex; flex-direction: column; gap: var(--space-xs); }
+.scr-info__title { margin: 0; color: var(--content-primary); }
+.scr-info__body { margin: 0; color: var(--content-secondary); }

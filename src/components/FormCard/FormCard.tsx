@@ -18,6 +18,8 @@ export type FormCardProps = {
   altActions?: ReactNode;
   /** Figma: подпись divider между основными и альтернативными действиями (show-divider) */
   dividerLabel?: ReactNode;
+  /** Карточка тянется на ширину родителя (раскладка страницы), а не держит ширину окна-формы; тело забирает свободную высоту */
+  fluid?: boolean;
   className?: string;
 };
 
@@ -29,11 +31,12 @@ export function FormCard({
   secondaryAction,
   altActions,
   dividerLabel,
+  fluid = false,
   className,
 }: FormCardProps) {
   const showFooter = primaryAction || secondaryAction || altActions;
   return (
-    <section className={cn('at-form-card', className)} data-actions={actions}>
+    <section className={cn('at-form-card', className)} data-actions={actions} data-fluid={fluid || undefined}>
       {header && <div className="at-form-card__zone">{header}</div>}
       {children && <div className="at-form-card__zone at-form-card__body">{children}</div>}
       {showFooter && (

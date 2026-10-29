@@ -1,0 +1,12 @@
+/* Table — из экрана Account («Earnings history»). Заголовок secondary; строки: отступ Space/xl сверху и снизу, линия border/neutral/default; зазор колонок Space/2xl. */
+.at-table-scroll { width: 100%; overflow-x: auto; }
+.at-table { width: 100%; border-collapse: collapse; }
+.at-table__caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.at-table__head { padding: var(--space-none) var(--space-2xl) var(--space-sm) var(--space-none); color: var(--content-secondary); text-align: left; white-space: nowrap; }
+.at-table__cell { padding: var(--space-xl) var(--space-2xl) var(--space-xl) var(--space-none); color: var(--content-primary); white-space: nowrap; vertical-align: middle; }
+.at-table__head:last-child, .at-table__cell:last-child { padding-right: var(--space-none); }
+.at-table__row > .at-table__cell { border-bottom: var(--stroke-default) solid var(--border-neutral-default); }
+.at-table tbody tr:first-child > .at-table__cell { border-top: var(--stroke-default) solid var(--border-neutral-default); }
+
+/* Растягивающаяся колонка: занимает остаток, длинный текст обрезается многоточием; ниже минимальной ширины не сжимается — таблица прокручивается */
+.at-table__head[data-grow], .at-table__cell[data-grow] { width: 100%; min-width: calc(var(--size-min-width-md) * 1.5); max-width: 0; overflow: hidden; text-overflow: ellipsis; }

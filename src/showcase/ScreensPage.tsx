@@ -43,6 +43,7 @@ export function ScreensPage() {
         <p className="text-body-lg sc-muted">
           Регистрация — три экрана, собранные из готовых компонентов и токенов, без нового CSS поверх. Это живой флоу: вводите e-mail,
           любой код из 4 цифр и данные. Переключать шаги можно и чипами. Отдельной страницей: <a className="sc-link" href="#/registration">#/registration</a>.
+          Кабинет (Affiliate program) — <a className="sc-link" href="#/account">#/account</a>: меню, Earnings, Promotion tools, история начислений.
         </p>
       </div>
 

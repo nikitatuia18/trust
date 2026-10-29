@@ -8,11 +8,13 @@ export type SegmentedControlProps<T extends string> = {
   options: SegmentedOption<T>[];
   value: T;
   onChange: (value: T) => void;
+  /** Figma-ось Size сегмента: s — шапка сайта и формы, m — крупные вкладки внутри карточки */
+  size?: 's' | 'm';
   'aria-label'?: string;
   className?: string;
 };
 
-export function SegmentedControl<T extends string>({ options, value, onChange, className, ...rest }: SegmentedControlProps<T>) {
+export function SegmentedControl<T extends string>({ options, value, onChange, size = 's', className, ...rest }: SegmentedControlProps<T>) {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Стрелки переключают сегмент (паттерн tablist)
@@ -26,7 +28,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange, c
   };
 
   return (
-    <div className={cn('at-segmented', className)} role="tablist" aria-label={rest['aria-label']}>
+    <div className={cn('at-segmented', className)} role="tablist" aria-label={rest['aria-label']} data-size={size}>
       {options.map((o, i) => {
         const selected = o.value === value;
         return (
@@ -37,7 +39,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange, c
             role="tab"
             aria-selected={selected}
             tabIndex={selected ? 0 : -1}
-            className={cn('at-segmented__item', 'text-label-sm')}
+            className={cn('at-segmented__item', size === 'm' ? 'text-label-md' : 'text-label-sm')}
             data-selected={selected || undefined}
             onClick={() => onChange(o.value)}
             onKeyDown={(e) => onKey(e, i)}

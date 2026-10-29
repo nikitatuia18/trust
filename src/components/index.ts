@@ -1,5 +1,5 @@
 export { Icon, type IconProps, type IconDirection } from './Icon/Icon';
-export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon, BriefcaseIcon, BuildingsIcon, RulerPenIcon, CarIcon, CoinIcon, GlobeSearchIcon, BankOutlineIcon } from './Icon/Glyphs';
+export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon, BriefcaseIcon, BuildingsIcon, RulerPenIcon, CarIcon, CoinIcon, GlobeSearchIcon, BankOutlineIcon, VerifyIcon, ProfileIcon, ProfileFilledIcon, LockOutlineIcon, LockIcon, NotificationIcon, StarIcon, ArrowCircleLeftIcon, WalletIcon, ExportIcon, UsersIcon, LinkIcon, CopyIcon, SortIcon, DiscountShapeIcon } from './Icon/Glyphs';
 export { Button, type ButtonProps, type ButtonVariant } from './Button/Button';
 export { TextField, type TextFieldProps } from './TextField/TextField';
 export { AmountField, type AmountFieldProps } from './AmountField/AmountField';
@@ -31,3 +31,8 @@ export { MegaMenu, type MegaMenuProps, type MegaMenuItem } from './MegaMenu/Mega
 export { Header, type HeaderProps } from './Header/Header';
 export { Footer, type FooterProps, type FooterLink, type FooterAppLink } from './Footer/Footer';
 export { AppStoreMark, GooglePlayMark } from './Footer/marks';
+export { Badge, type BadgeProps } from './Badge/Badge';
+export { Breadcrumbs, type BreadcrumbsProps, type BreadcrumbItem } from './Breadcrumbs/Breadcrumbs';
+export { StatTile, type StatTileProps } from './StatTile/StatTile';
+export { IconCircle, type IconCircleProps } from './IconCircle/IconCircle';
+export { Table, type TableProps, type TableColumn } from './Table/Table';

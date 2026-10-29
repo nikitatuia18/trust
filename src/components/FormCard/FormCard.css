@@ -12,6 +12,10 @@
 .at-form-card__actions { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-sm); }
 .at-form-card__actions > * { align-self: stretch; }
 
+/* fluid: ширину задаёт родитель; если карточку растянули по высоте, лишнее место берёт тело (подвал остаётся внизу) */
+.at-form-card[data-fluid] { max-width: none; }
+.at-form-card[data-fluid] .at-form-card__body { flex: 1 1 auto; }
+
 /* inline: основные кнопки в ряд, поровну */
 .at-form-card[data-actions='inline'] .at-form-card__actions { flex-direction: row; }
 .at-form-card[data-actions='inline'] .at-form-card__actions > * { flex: 1 1 0; min-width: 0; }

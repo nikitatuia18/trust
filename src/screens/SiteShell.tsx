@@ -1,11 +1,25 @@
 import { useState, type ReactNode } from 'react';
-import { AppStoreMark, Button, Footer, GooglePlayMark, Header, LanguageSelector, SegmentedControl } from '../components';
+import { AppStoreMark, Avatar, Button, Footer, GooglePlayMark, Header, LanguageSelector, SegmentedControl } from '../components';
 import './screens.css';
 
-/** Шапка сайта: логотип, режим Individual | Business, ссылки, язык и главная кнопка (Figma «Auth Page» → Header) */
-export function SiteHeader() {
+/** Пользователь в шапке: нет фото — Avatar покажет инициалы */
+export type SiteUser = { name: string; avatarSrc?: string };
+
+/** Шапка сайта: логотип, режим Individual | Business, ссылки, язык и главная кнопка (Figma «Auth Page» → Header).
+ *  Для вошедшего пользователя (Figma «Account» → Header): четыре ссылки, язык и аватар вместо кнопки. */
+export function SiteHeader({ user }: { user?: SiteUser }) {
   const [mode, setMode] = useState('individual');
   const [lang, setLang] = useState('EN');
+  if (user) {
+    return (
+      <Header
+        links={['Individual', 'Business', 'Resources', 'Contacts'].map((label) => (
+          <Button key={label} variant="ghost" size="s" density="compact">{label}</Button>
+        ))}
+        actions={<><LanguageSelector value={lang} onChange={setLang} /><Avatar size="lg" src={user.avatarSrc} name={user.name} alt={user.name} /></>}
+      />
+    );
+  }
   return (
     <Header
       modeSwitch={
@@ -44,12 +58,12 @@ export function SiteFooter() {
   );
 }
 
-/** Каркас страницы: шапка, холст по центру, подвал */
-export function PageLayout({ children }: { children: ReactNode }) {
+/** Каркас страницы: шапка, холст, подвал. align: center — одна форма по центру (auth), start — страница с контентом от верха (кабинет) */
+export function PageLayout({ children, user, align = 'center' }: { children: ReactNode; user?: SiteUser; align?: 'center' | 'start' }) {
   return (
     <div className="scr-page">
-      <SiteHeader />
-      <main className="scr-page__main">{children}</main>
+      <SiteHeader user={user} />
+      <main className="scr-page__main" data-align={align}>{children}</main>
       <SiteFooter />
     </div>
   );

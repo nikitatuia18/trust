@@ -3,9 +3,9 @@ import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
 import { RulesPage } from './RulesPage';
 import { ScreensPage } from './ScreensPage';
-import { RegistrationFlow } from '../screens';
+import { AccountPage, RegistrationFlow } from '../screens';
 
-type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration';
+type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account';
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
   { id: 'tokens', label: 'Токены', ready: true },
@@ -16,8 +16,8 @@ const NAV: { id: Page; label: string; ready: boolean }[] = [
 
 const fromHash = (): Page => {
   const h = window.location.hash.replace('#/', '') as Page;
-  // registration — отдельная страница без оболочки витрины, в меню её нет
-  return h === 'registration' || NAV.some((n) => n.id === h) ? h : 'tokens';
+  // registration и account — отдельные страницы без оболочки витрины, в меню их нет
+  return h === 'registration' || h === 'account' || NAV.some((n) => n.id === h) ? h : 'tokens';
 };
 
 export function App() {
@@ -37,6 +37,7 @@ export function App() {
   }, [layout]);
 
   if (page === 'registration') return <RegistrationFlow />;
+  if (page === 'account') return <AccountPage />;
 
   return (
     <div className="sc-shell">

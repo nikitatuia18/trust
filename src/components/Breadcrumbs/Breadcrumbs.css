@@ -1,0 +1,8 @@
+/* Breadcrumbs — из экрана Account: пройденные пункты tertiary, текущий secondary, разделитель — стрелка 16. */
+.at-breadcrumbs__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+.at-breadcrumbs__item { display: inline-flex; align-items: center; gap: var(--space-xs); }
+.at-breadcrumbs__label { color: var(--content-secondary); white-space: nowrap; }
+.at-breadcrumbs__link { color: var(--content-tertiary); text-decoration: none; border-radius: var(--radius-xs); outline: 0; }
+.at-breadcrumbs__link:hover { color: var(--content-primary); }
+.at-breadcrumbs__link:focus-visible { box-shadow: var(--effect-focus-primary); }
+.at-breadcrumbs__separator { display: inline-flex; flex: none; width: var(--size-icon-xs); height: var(--size-icon-xs); color: var(--content-tertiary); }

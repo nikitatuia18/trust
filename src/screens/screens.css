@@ -5,6 +5,14 @@
   padding: var(--size-min-width-md) var(--space-6xl);
 }
 
+.scr-page__main[data-align='start'] { justify-content: flex-start; padding-block: var(--space-5xl) var(--space-6xl); }
+
+/* Segmented Control на всю ширину блока, сегменты поровну (шапка Form Card) */
+.scr-segment-fill { display: flex; width: 100%; }
+.scr-segment-fill .at-segmented__item { flex: 1 1 0; min-width: 0; }
+/* Крупные вкладки не должны вылезать из карточки на узком экране */
+.scr-segment-fill[data-size='m'] .at-segmented__item { padding-inline: var(--space-sm); }
+
 .scr-auth { display: flex; flex-direction: column; align-items: center; gap: var(--space-3xl); width: 100%; max-width: var(--grid-max-width); }
 .scr-auth__intro { display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); text-align: center; }
 .scr-auth__title { margin: 0; color: var(--content-primary); }
