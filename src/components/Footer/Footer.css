@@ -1,0 +1,36 @@
+/* Footer — Figma 600:185. Токены --c-footer-*; контент ограничен Grid/max-width. */
+.at-footer {
+  display: flex; flex-direction: column; align-items: center; box-sizing: border-box; width: 100%;
+  padding: var(--space-5xl) var(--space-6xl) var(--space-3xl);
+  background: var(--c-footer-bg);
+  border-top: var(--stroke-default) solid var(--c-footer-divider);
+}
+.at-footer__container { display: flex; align-items: flex-start; gap: var(--space-5xl); width: 100%; max-width: var(--grid-max-width); }
+.at-footer__main { display: flex; flex: 1; align-items: flex-start; gap: var(--space-9xl); min-width: 0; }
+.at-footer__brand { display: flex; flex: none; flex-direction: column; justify-content: space-between; align-self: stretch; gap: var(--space-5xl); }
+.at-footer__brand-top { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2xl); }
+.at-footer__description { margin: 0; max-width: calc(var(--size-lg) * 8); color: var(--content-secondary); }
+.at-footer__copyright { margin: 0; color: var(--content-secondary); white-space: nowrap; }
+
+.at-footer__columns { display: flex; align-items: flex-start; gap: var(--space-7xl); }
+.at-footer__column-group { display: flex; align-items: flex-start; align-self: stretch; gap: var(--space-7xl); }
+.at-footer__links { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
+.at-footer__link { color: var(--c-footer-link); text-decoration: none; white-space: nowrap; }
+.at-footer__link:hover { color: var(--c-footer-link-hover); }
+
+.at-footer__actions { display: flex; flex: none; flex-direction: column; align-self: stretch; gap: var(--space-9xl); }
+.at-footer__buttons { display: flex; flex-direction: column; gap: var(--space-sm); }
+.at-footer__buttons > .at-button { width: 100%; }
+.at-footer__apps { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
+.at-footer__apps-title { margin: 0; color: var(--c-footer-link); white-space: nowrap; }
+.at-footer__app-links { display: flex; align-items: flex-start; gap: var(--space-xl); }
+.at-footer__app-item { display: flex; align-items: flex-start; align-self: stretch; gap: var(--space-xl); }
+.at-footer__app-link { display: inline-flex; align-items: center; gap: var(--space-xs); color: var(--content-primary); text-decoration: none; white-space: nowrap; }
+.at-footer__app-icon { display: inline-flex; width: var(--size-sm); height: var(--size-sm); }
+.at-footer__app-icon > svg { width: 100%; height: 100%; }
+
+/* Platform=mobile в Figma — заготовка: ниже брейкпоинта всё столбиком */
+@media (max-width: 767px) {
+  .at-footer__container, .at-footer__main { flex-direction: column; gap: var(--space-5xl); }
+  .at-footer__columns { flex-wrap: wrap; }
+}

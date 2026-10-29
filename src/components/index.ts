@@ -1,5 +1,5 @@
 export { Icon, type IconProps, type IconDirection } from './Icon/Icon';
-export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon } from './Icon/Glyphs';
+export { PlusIcon, MinusIcon, CloseIcon, CheckIcon, AlertIcon, SearchIcon, DotIcon, BankIcon, CashIcon, BitcoinIcon, TickCircleIcon, CloseCircleIcon, GlobeIcon, BriefcaseIcon, BuildingsIcon, RulerPenIcon, CarIcon, CoinIcon, GlobeSearchIcon, BankOutlineIcon } from './Icon/Glyphs';
 export { Button, type ButtonProps, type ButtonVariant } from './Button/Button';
 export { TextField, type TextFieldProps } from './TextField/TextField';
 export { AmountField, type AmountFieldProps } from './AmountField/AmountField';
@@ -26,3 +26,8 @@ export { Logo, type LogoProps } from './Logo/Logo';
 export { LanguageSelector, LANGUAGES, type LanguageSelectorProps, type Language } from './LanguageSelector/LanguageSelector';
 export { Spinner, type SpinnerProps } from './Spinner/Spinner';
 export { EmbedPlaceholder, type EmbedPlaceholderProps } from './EmbedPlaceholder/EmbedPlaceholder';
+export { HeaderBar, type HeaderBarProps } from './HeaderBar/HeaderBar';
+export { MegaMenu, type MegaMenuProps, type MegaMenuItem } from './MegaMenu/MegaMenu';
+export { Header, type HeaderProps } from './Header/Header';
+export { Footer, type FooterProps, type FooterLink, type FooterAppLink } from './Footer/Footer';
+export { AppStoreMark, GooglePlayMark } from './Footer/marks';

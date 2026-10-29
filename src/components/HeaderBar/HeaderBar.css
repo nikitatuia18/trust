@@ -1,0 +1,13 @@
+/* Header Bar — Figma 391:1447. Токены --c-header-*; содержимое ограничено Grid/max-width и центрируется. */
+.at-header-bar {
+  display: flex; flex-direction: column; align-items: center; box-sizing: border-box; width: 100%;
+  gap: var(--c-header-main-gap);
+  padding: var(--c-header-main-padding-y) var(--c-header-main-padding-x);
+  background: var(--c-header-main-bg);
+  border-bottom: var(--c-header-main-stroke) solid var(--c-header-main-border);
+}
+.at-header-bar__content { display: flex; align-items: center; gap: var(--c-header-content-gap); width: 100%; max-width: var(--grid-max-width); }
+.at-header-bar__navigation { display: flex; flex: 1; flex-wrap: wrap; align-items: center; align-content: center; min-width: 0; gap: var(--c-header-navigation-gap); }
+.at-header-bar__menu { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--c-header-navigation-menu-gap); }
+.at-header-bar__links { display: flex; align-items: center; gap: var(--space-none); }
+.at-header-bar__actions { display: flex; flex: none; align-items: flex-start; justify-content: flex-end; gap: var(--c-header-buttons-gap); }
