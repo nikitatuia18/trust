@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
+import { RulesPage } from './RulesPage';
 
 type Page = 'tokens' | 'components' | 'rules';
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
   { id: 'tokens', label: 'Токены', ready: true },
   { id: 'components', label: 'Компоненты', ready: true },
-  { id: 'rules', label: 'Правила', ready: false },
+  { id: 'rules', label: 'Правила', ready: true },
 ];
 
 const fromHash = (): Page => {
@@ -51,7 +52,7 @@ export function App() {
       <main className="sc-main">
         {page === 'tokens' && <TokensPage />}
         {page === 'components' && <ComponentsPage />}
-        {page === 'rules' && <p className="text-body-lg sc-muted">Раздел в работе.</p>}
+        {page === 'rules' && <RulesPage />}
       </main>
     </div>
   );

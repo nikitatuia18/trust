@@ -126,6 +126,15 @@
   .sc-table__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 
+/* Страница правил: карточка правила, строки «верно / неверно» */
+.sc-rule { gap: var(--space-lg); }
+.sc-rule .sc-list { gap: var(--space-xs); }
+.sc-rule__line { display: flex; align-items: baseline; gap: var(--space-sm); min-width: 0; }
+.sc-rule__line .sc-code { white-space: normal; overflow-wrap: anywhere; }
+.sc-rule__mark { flex: none; color: var(--content-success); }
+.sc-rule__mark--bad { color: var(--content-error); }
+.sc-rule__note { padding-top: var(--space-lg); border-top: var(--stroke-default) solid var(--border-neutral-default); }
+
 /* Витрина компонентов: демо и Doc в паре выравниваются по высоте; метка ряда над кнопками */
 /* Демо и Doc — одна «склеенная» карточка на всю ширину: сверху демо, снизу три колонки документации */
 .sc-bento--paired > .sc-card--demo { grid-column: 1 / -1; margin-bottom: calc(-1 * var(--space-xl)); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
