@@ -40,7 +40,7 @@ export function AccountPage({
   onViewAllHistory,
 }: AccountPageProps) {
   return (
-    <PageLayout align="start" user={{ name: user.name, avatarSrc: user.avatarSrc }}>
+    <PageLayout align="start" signedIn>
       <div className="scr-account-wrap">
         <div className="scr-account-page">
           <Breadcrumbs items={[{ label: 'Home', href: '#' }, { label: 'Account' }]} />

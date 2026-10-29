@@ -17,7 +17,7 @@
 - **Mobile** (< 768px) для Header, Mega Menu, Footer; Footer перестраивается и на средней ширине блока.
 - **Экраны**: Регистрация, 3 шага (Email → Code → Details) — вкладка «Экраны» и отдельная страница `#/registration`. Код: `src/screens/`.
 
-- **Экран Account / Affiliate program** (`src/screens/account/`, `#/account`) — тестовая сборка по макету «1.1 Account / Affiliate program»; в систему добавлены Badge, Breadcrumbs, StatTile, IconCircle, DropdownMenu, Table и расширения SegmentedControl size m, FormCard fluid. Шапка — системная (как у Auth Page), вместо «Talk to sales» — Avatar.
+- **Экран Account / Affiliate program** (`src/screens/account/`, `#/account`) — тестовая сборка по макету «1.1 Account / Affiliate program»; в систему добавлены Badge, Breadcrumbs, StatTile, IconCircle, DropdownMenu, Table и расширения SegmentedControl size m, FormCard fluid. Шапка — системная (как у Auth Page), без аватара и без «Talk to sales».
 
 ## Следующий шаг (рекомендация)
 
@@ -55,7 +55,7 @@
 
 ## Договорённости и ограничения
 
-- **Экраны собираются только из наших компонентов и токенов.** Макет Figma даёт логику и вид (что где стоит, какие состояния), но не состав компонентов: если в макете шапка, кнопка или иконка нарисованы иначе, чем в системе, берём системные; недостающее — новым компонентом системы, а не одноразовой версткой. Нарушение (Account, шапка по макету) — исправлено.
+- **Экраны собираются только из наших компонентов и токенов.** Макет Figma даёт логику и вид (что где стоит, какие состояния), но не состав компонентов: если в макете шапка, кнопка или иконка нарисованы иначе, чем в системе, берём системные; недостающее — новым компонентом системы, а не одноразовой версткой. Нарушение (Account, шапка по макету) — исправлено. Журнал ошибок: `docs/SCREEN-BUILD-ERRORS.md`; черновик промта для сборки экранов: `docs/PROMPT-BUILD-SCREEN.md`.
 
 - Осознанные исключения, которые не пересматриваем: контраст Content/on-brand на Brand (3.14, hover 3.73), on-success на Success (3.54), crypto в Method Icon (2.98); подсказка в поле — Content/tertiary (≈3.7); ширина столбца Mega Menu 298 — локальное значение.
 - Spinner вращается в коде (в Figma статичен), Avatar без фото показывает инициалы, у BOG и Credo в BankLogo буква-заглушка.

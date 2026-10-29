@@ -6,7 +6,6 @@ export type AccountUser = {
   name: string;
   email: string;
   verified: boolean;
-  avatarSrc?: string;
 };
 
 export type EarningStatus = 'received' | 'pending' | 'failed';
