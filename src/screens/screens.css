@@ -1,0 +1,19 @@
+/* Экраны. Только токены; компоненты берутся из src/components, здесь — раскладка страницы и мелкие обёртки. */
+.scr-page { display: flex; flex-direction: column; min-height: 100%; background: var(--surface-neutral-canvas); }
+.scr-page__main {
+  display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box;
+  padding: var(--size-min-width-md) var(--space-6xl);
+}
+
+.scr-auth { display: flex; flex-direction: column; align-items: center; gap: var(--space-3xl); width: 100%; max-width: var(--grid-max-width); }
+.scr-auth__intro { display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); text-align: center; }
+.scr-auth__title { margin: 0; color: var(--content-primary); }
+.scr-auth__subtitle { margin: 0; color: var(--content-secondary); text-wrap: balance; }
+
+/* <form> вокруг Form Card: Enter отправляет шаг; сама карточка держит ширину по токену */
+.scr-form { display: flex; justify-content: center; width: 100%; margin: 0; }
+
+/* Ссылка внутри текста */
+.scr-link { color: var(--content-brand); text-decoration: underline; text-underline-position: from-font; }
+.scr-link:hover { color: var(--content-primary); }
+.scr-link:focus-visible { outline: 0; box-shadow: var(--effect-focus-primary); border-radius: var(--radius-xs); }

@@ -117,6 +117,7 @@
   --prim-spacing-1600: 400px;
   --prim-spacing-neg-100: -4px;
   --prim-spacing-1550: 285px;
+  --prim-spacing-1650: 522px;
   --prim-stroke-0: 0;
   --prim-stroke-100: 1px;
   --prim-stroke-200: 1.5px;
@@ -375,6 +376,7 @@
   --elevation-control-1-spread: var(--prim-spacing-neg-100);
   --size-indicator-box: var(--prim-spacing-450);
   --size-indicator-mark: var(--prim-spacing-400);
+  --size-form-card-width: var(--prim-spacing-1650);
   --size-min-height-md: var(--prim-spacing-1550);
 
   /* ===== Components ===== */
@@ -667,6 +669,7 @@
   --c-divider-stroke: var(--stroke-default);
   --c-divider-label-content: var(--content-secondary);
   --c-form-card-stroke: var(--stroke-default);
+  --c-form-card-max-width: var(--size-form-card-width);
   --c-asset-logo-radius: var(--radius-round);
   --c-list-item-check-content: var(--content-brand);
   --c-chip-s-gap: var(--space-xs);

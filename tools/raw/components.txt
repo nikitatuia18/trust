@@ -288,6 +288,7 @@ Divider/border|C|@T:Border/Neutral/default
 Divider/stroke|F|@L:Stroke/default
 Divider/label/content|C|@T:Content/secondary
 Form Card/stroke|F|@L:Stroke/default
+Form Card/max-width|F|@L:Size/Form-card/width
 Asset Logo/radius|F|@L:Radius/round
 List Item/check/content|C|@T:Content/brand
 Chip/S/gap|F|@L:Space/xs

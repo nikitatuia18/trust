@@ -2,18 +2,22 @@ import { useEffect, useState } from 'react';
 import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
 import { RulesPage } from './RulesPage';
+import { ScreensPage } from './ScreensPage';
+import { RegistrationFlow } from '../screens';
 
-type Page = 'tokens' | 'components' | 'rules';
+type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration';
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
   { id: 'tokens', label: 'Токены', ready: true },
   { id: 'components', label: 'Компоненты', ready: true },
+  { id: 'screens', label: 'Экраны', ready: true },
   { id: 'rules', label: 'Правила', ready: true },
 ];
 
 const fromHash = (): Page => {
   const h = window.location.hash.replace('#/', '') as Page;
-  return NAV.some((n) => n.id === h) ? h : 'tokens';
+  // registration — отдельная страница без оболочки витрины, в меню её нет
+  return h === 'registration' || NAV.some((n) => n.id === h) ? h : 'tokens';
 };
 
 export function App() {
@@ -31,6 +35,8 @@ export function App() {
     if (layout === 'mobile') document.documentElement.dataset.layout = 'mobile';
     else delete document.documentElement.dataset.layout;
   }, [layout]);
+
+  if (page === 'registration') return <RegistrationFlow />;
 
   return (
     <div className="sc-shell">
@@ -52,6 +58,7 @@ export function App() {
       <main className="sc-main">
         {page === 'tokens' && <TokensPage />}
         {page === 'components' && <ComponentsPage />}
+        {page === 'screens' && <ScreensPage />}
         {page === 'rules' && <RulesPage />}
       </main>
     </div>

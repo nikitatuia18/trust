@@ -116,6 +116,7 @@ Spacing/1500|F|160
 Spacing/1600|F|400
 Spacing/-100|F|-4
 Spacing/1550|F|285
+Spacing/1650|F|522
 ## Primitives -- Stroke
 Stroke/0|F|0
 Stroke/100|F|1

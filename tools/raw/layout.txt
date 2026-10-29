@@ -114,4 +114,5 @@ Elevation/Control/1/blur|F|@P:Spacing/Spacing/150;@P:Spacing/Spacing/150
 Elevation/Control/1/spread|F|@P:Spacing/Spacing/-100;@P:Spacing/Spacing/-100
 Size/Indicator/box|F|@P:Spacing/Spacing/450;@P:Spacing/Spacing/450
 Size/Indicator/mark|F|@P:Spacing/Spacing/400;@P:Spacing/Spacing/400
+Size/Form-card/width|F|@P:Spacing/Spacing/1650;@P:Spacing/Spacing/1650
 Size/Min-height/md|F|@P:Spacing/Spacing/1550;@P:Spacing/Spacing/1550

@@ -576,6 +576,11 @@
       "desktop": "{prim.Spacing/Spacing/400}",
       "mobile": "{prim.Spacing/Spacing/400}"
     },
+    "Size/Form-card/width": {
+      "$type": "F",
+      "desktop": "{prim.Spacing/Spacing/1650}",
+      "mobile": "{prim.Spacing/Spacing/1650}"
+    },
     "Size/Min-height/md": {
       "$type": "F",
       "desktop": "{prim.Spacing/Spacing/1550}",

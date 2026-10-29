@@ -1157,6 +1157,10 @@
       "$type": "F",
       "$value": "{layout.Stroke/default}"
     },
+    "Form Card/max-width": {
+      "$type": "F",
+      "$value": "{layout.Size/Form-card/width}"
+    },
     "Asset Logo/radius": {
       "$type": "F",
       "$value": "{layout.Radius/round}"

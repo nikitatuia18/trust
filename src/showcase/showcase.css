@@ -171,3 +171,11 @@
 .sc-bento--paired > .sc-doc { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl); border-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; margin-bottom: var(--space-2xl); }
 @media (max-width: 1280px) { .sc-bento--paired > .sc-doc { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
 .sc-demo__row--stack > .sc-demo__tag { width: 100%; }
+
+/* Страница экранов: рамка вокруг живого экрана, шаги, документация */
+.sc-screens__steps { margin-bottom: var(--space-xl); }
+.sc-screen-frame { overflow: hidden; border-radius: var(--radius-3xl); border: var(--stroke-default) solid var(--border-neutral-default); background: var(--surface-neutral-canvas); }
+.sc-screens__status { margin: var(--space-xl) 0 0; }
+.sc-screens__doc { margin-top: var(--space-2xl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl); }
+.sc-link { color: var(--content-brand); }
+@media (max-width: 1280px) { .sc-screens__doc { grid-template-columns: minmax(0, 1fr); } }

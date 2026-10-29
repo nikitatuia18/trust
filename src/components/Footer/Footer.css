@@ -1,5 +1,6 @@
 /* Footer — Figma 600:185. Токены --c-footer-*; контент ограничен Grid/max-width. */
 .at-footer {
+  container-type: inline-size;
   display: flex; flex-direction: column; align-items: center; box-sizing: border-box; width: 100%;
   padding: var(--space-5xl) var(--space-6xl) var(--space-3xl);
   background: var(--c-footer-bg);
@@ -29,6 +30,14 @@
 .at-footer__app-icon { display: inline-flex; width: var(--size-sm); height: var(--size-sm); }
 .at-footer__app-icon > svg { width: 100%; height: 100%; }
 
+/* Ширина самого подвала меньше Breakpoint/md (1280): бренд и ссылки в одну строку, кнопки и приложения — ниже; три блока в строку уже не помещаются.
+   Container query, а не @media: подвал может стоять в блоке уже окна (боковое меню, превью). */
+@container (max-width: 1279px) {
+  .at-footer__container { flex-direction: column; }
+  .at-footer__actions { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; align-self: stretch; gap: var(--space-xl) var(--space-5xl); }
+  .at-footer__buttons { flex-direction: row; }
+}
+
 /* Platform=mobile в Figma — заготовка: ниже брейкпоинта всё столбиком */
 @media (max-width: 767px) {
   .at-footer__container, .at-footer__main { flex-direction: column; gap: var(--space-5xl); }
@@ -36,4 +45,7 @@
   /* вертикальный разделитель между столбцами при столбике не нужен */
   .at-footer__column-group > .at-divider[data-orientation='vertical'] { display: none; }
   .at-footer__app-links { flex-wrap: wrap; }
+  /* обратно столбиком: кнопки друг под другом, приложения под ними */
+  .at-footer__actions { flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: var(--space-5xl); }
+  .at-footer__buttons { flex-direction: column; }
 }

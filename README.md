@@ -20,6 +20,10 @@ Figma-файлы: [Tokens](https://www.figma.com/design/Qs2FvuAGGN8aGkCDwDdXRV),
 | F | HeaderBar, MegaMenu, Header, Footer (иконки меню: briefcase, buildings, ruler-pen, car, dollar-coin, global-search, bank; знаки App Store и Google Play) |
 | Иконки | Icon (arrow-right, 4 направления), Plus, Minus, Close, Check, Alert, Search, Dot — контуры из «06 — Icons» |
 
+## Экраны
+
+`src/screens/` — страницы, собранные из компонентов без нового CSS поверх (только раскладка). Сейчас: **Регистрация** — три шага (Email → Code → Details) на каркасе `PageLayout` (Header + Footer). Витрина: вкладка «Экраны»; отдельной страницей — `#/registration`.
+
 ## Быстрый старт
 
 ```bash

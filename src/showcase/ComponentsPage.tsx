@@ -392,7 +392,8 @@ function FrameDemo() {
         why={[
           'Каркас один, содержимое — слоты: reuse-first, без отдельных «карточек входа».',
           'Зона видна, когда слот передан (show-* из Figma).',
-          'Обводка у зон header/body в Figma дублирует корень — в код не перенесена, ждём решения.',
+          'Зоны разделены линией Form Card/border (как на экранах Figma: между header, body и footer). Корень не обрезает содержимое — из body может открываться список (выбор страны).',
+          'Ширина — не больше 522 (Size/Form-card/width → --c-form-card-max-width), на узком экране ужимается.',
         ]}
       />
       <Preview title="Window Header + Step Indicator" note="Header: slots left/right · Step 1–5 × State × Layout">
@@ -739,7 +740,7 @@ function ShellDemo() {
           'Второй столбец — Import / Export, как в подвале (в старом макете Figma там по ошибке стоял второй Luxury; верна версия в коде).',
         ]}
       />
-      <Preview title="Footer" note="Ниже 767px всё встаёт столбиком: колонки ссылок, кнопки, ссылки на приложения">
+      <Preview title="Footer" note="Ширина подвала меньше 1280 — кнопки и приложения уходят под бренд и ссылки; ниже 767px всё столбиком">
         <div className="sc-demo sc-demo--col">
           <div className="sc-demo__row sc-demo__row--stack" style={{ width: '100%' }}>
             <Footer
