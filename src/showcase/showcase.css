@@ -121,6 +121,7 @@
   .sc-toggle { margin-top: 0; margin-left: auto; }
   .sc-main { padding: var(--space-2xl) var(--space-xl); }
   .sc-bento { grid-template-columns: minmax(0, 1fr); }
+  .sc-demo--grid { grid-template-columns: minmax(0, 1fr); }
   .sc-bento > .sc-card[style] { grid-column: span 1 !important; }
   .sc-table__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
