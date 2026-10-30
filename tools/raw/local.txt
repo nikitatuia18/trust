@@ -25,3 +25,4 @@ Modal/header-gap|F|@L:Space/xl
 Modal/actions-gap|F|@L:Space/sm
 Modal/body-gap|F|@L:Space/xl
 Form Card/header-padding-y|F|@L:Space/2xl
+Badge/radius|F|@L:Radius/sm

@@ -719,6 +719,7 @@
   --c-modal-actions-gap: var(--space-sm);
   --c-modal-body-gap: var(--space-xl);
   --c-form-card-header-padding-y: var(--space-2xl);
+  --c-badge-radius: var(--radius-sm);
 
   /* ===== Effect styles ===== */
   --effect-focus-primary: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);

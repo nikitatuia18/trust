@@ -1336,6 +1336,10 @@
     "Form Card/header-padding-y": {
       "$type": "F",
       "$value": "{layout.Space/2xl}"
+    },
+    "Badge/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/sm}"
     }
   }
 }
