@@ -3,15 +3,19 @@ import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
 import { RulesPage } from './RulesPage';
 import { ScreensPage } from './ScreensPage';
-import { AccountDetailsPage, AccountPage, RegistrationFlow, type AccountSection } from '../screens';
+import { AccountCabinet, RegistrationFlow, type AccountSection } from '../screens';
 
 type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-details';
 
 /** Разделы кабинета, у которых уже есть страница; остальные пункты меню пока без перехода */
 const ACCOUNT_ROUTES: Partial<Record<AccountSection, Page>> = { details: 'account-details', affiliate: 'account' };
+const ROUTE_SECTIONS: Partial<Record<Page, AccountSection>> = { 'account-details': 'details', account: 'affiliate' };
 const goToSection = (section: AccountSection) => {
   const route = ACCOUNT_ROUTES[section];
-  if (route) window.location.hash = `#/${route}`;
+  if (!route) return;
+  window.location.hash = `#/${route}`;
+  // Новый раздел открывается с верха, как страница: иначе у короткого раздела прокрутка «съезжает» на высоту длинного
+  window.scrollTo(0, 0);
 };
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
@@ -44,8 +48,9 @@ export function App() {
   }, [layout]);
 
   if (page === 'registration') return <RegistrationFlow />;
-  if (page === 'account') return <AccountPage onNavigate={goToSection} />;
-  if (page === 'account-details') return <AccountDetailsPage onNavigate={goToSection} />;
+  // Оба раздела кабинета — один и тот же элемент AccountCabinet: каркас не пересоздаётся, меняется только содержимое
+  const cabinetSection = ROUTE_SECTIONS[page];
+  if (cabinetSection) return <AccountCabinet section={cabinetSection} onNavigate={goToSection} />;
 
   return (
     <div className="sc-shell">

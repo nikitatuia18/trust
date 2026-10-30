@@ -12,7 +12,7 @@ export type AccountDetailsPageProps = {
   onRequestChange?: (field: ChangeableField) => void;
 };
 
-/** Кабинет, раздел «Account details» (Figma «1.2 Account / Account detalis»). Данные — снаружи, экран только раскладывает. */
+/** Кабинет, раздел «Account details» (Figma «1.2 Account / Account detalis») отдельной страницей. Данные — снаружи, экран только раскладывает. */
 export function AccountDetailsPage({ user = DEMO_USER, details = DEMO_DETAILS, onNavigate, onLogout, onRequestChange }: AccountDetailsPageProps) {
   return (
     <AccountLayout user={user} section="details" onNavigate={onNavigate} onLogout={onLogout}>

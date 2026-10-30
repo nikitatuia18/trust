@@ -1,6 +1,7 @@
 export { PageLayout, AuthPage, SiteHeader, SiteFooter } from './SiteShell';
 export { RegistrationFlow, REGISTRATION_STEPS, type RegistrationStep } from './registration/RegistrationFlow';
 export type { Details } from './registration/DetailsStep';
+export { AccountCabinet, type AccountCabinetProps } from './account/AccountCabinet';
 export { AccountPage, type AccountPageProps } from './account/AccountPage';
 export { AccountDetailsPage, type AccountDetailsPageProps } from './account-details/AccountDetailsPage';
 export { DEMO_DETAILS, type AccountDetails, type ChangeableField } from './account-details/accountDetailsData';
