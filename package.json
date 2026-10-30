@@ -7,7 +7,9 @@
     "tokens": "node tools/build-tokens.mjs",
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "node tools/check.mjs",
+    "shots": "node tools/shots.mjs"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.3.0",
@@ -20,6 +22,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "puppeteer-core": "^25.16.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }

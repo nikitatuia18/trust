@@ -12,7 +12,7 @@ Reuse-first: существующий компонент → свойство/с
 1. **Токены.** Нужен семантический токен, которого нет → завести (не примитив, не сырое значение). Компонентные `--c-*` — на семантике. Текущий порядок: Figma «02 — Tokens» через `use_figma` → строки в `tools/raw/*.txt` → `npm run tokens`. Только в raw нельзя — следующий экспорт Figma их сотрёт.
 2. **Код.** `src/components/<Name>/<Name>.tsx|css`, экспорт в `src/components/index.ts`. Только токены; состояния — data-атрибуты; focus по образцу Checkbox/Button; disabled через `--opacity-disabled`; icon-only → `aria-label`; reuse (Button, List, ListItem, Divider…).
 3. **Витрина.** Группа в `src/showcase/ComponentsPage.tsx`: `Preview` + `Doc` («Где используется / Отступы (токены) / Почему так»); строка в таблице волн README.
-4. **Проверка.** `npm run build`; скриншот страницы «Компоненты» (`#/components`); mobile, если у компонента есть адаптив; поиск сырых значений в новом CSS.
+4. **Проверка.** `npm run build`; `npm run check`; `npm run shots -- components` и посмотреть PNG (mobile 390 — там же).
 5. **Фиксация.** Если токены/компонент остались без Figma — записать долг в `PLAN.md`. Коммит и пуш сразу.
 
 ## Итог владельцу

@@ -29,6 +29,8 @@ React 19 + TypeScript + Vite + чистый CSS с переменными. То�
 npm run dev       # витрина
 npm run build     # tsc --noEmit + vite build — обязательно перед коммитом
 npm run tokens    # tools/raw/*.txt → tokens/*.json + src/styles/tokens.css + src/tokens/registry.json
+npm run check     # сырые значения, --prim-*, несуществующие var(--x), импорты мимо components, inline-цвета
+npm run shots -- account registration   # PNG 1440/1100/390 в .shots/ + проверка горизонтального переполнения
 ```
 
 ## Новые токены
@@ -43,7 +45,7 @@ npm run tokens    # tools/raw/*.txt → tokens/*.json + src/styles/tokens.css + 
 
 ## Проверка перед отчётом
 
-`npm run build` → скриншот десктопа → mobile 390px через `<iframe style="width:390px">` (headless Edge не уже ~492px) и средняя ширина ~1100 → поиск сырых значений в новом CSS (`px` кроме 0, `#hex`, `rgb(`, `--prim-`). Python в системе нет — скрипты на node. В Bash не смешивать длинные heredoc с `node -e '…'`; файлы — через Write.
+`npm run build` → `npm run check` (нарушение = исправить или явно объяснить в отчёте) → `npm run shots -- <маршрут>` и посмотреть PNG (десктоп 1440, средняя 1100, mobile 390 — настоящие, через эмуляцию viewport; переполнение скрипт считает сам). Для витрины компонентов — `npm run shots -- components`. Python в системе нет — скрипты на node. В Bash не смешивать длинные heredoc с `node -e '…'`; файлы — через Write.
 
 ## Коммит и пуш
 
