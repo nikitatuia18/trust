@@ -9,7 +9,7 @@ export default function InputDemo() {
   const [qty, setQty] = useState('1');
   return (
     <>
-      <Preview title="TextField" note="Type: text | stepper · Validation: none | error | success">
+      <Preview title="TextField" note="Type: text | stepper | password · Validation: none | error | success">
         <div className="sc-demo sc-demo--grid">
           <TextField label="Full name" description="As in your passport" placeholder="Jane Doe" hint="Latin letters only" />
           <TextField label="Email" validation="error" defaultValue="jane@" hint="Enter a valid email" />
@@ -23,6 +23,7 @@ export default function InputDemo() {
             value={qty}
             onChange={(e) => setQty(e.target.value)}
           />
+          <TextField type="password" label="Password" defaultValue="Trust-2026#" autoComplete="new-password" />
           <TextField label="With slots" placeholder="Search" leftSlot={<SearchIcon />} rightSlot={<CloseIcon />} />
           <TextField
             label="Slot with action"
@@ -36,6 +37,7 @@ export default function InputDemo() {
         where={[
           'Поля анкеты верификации (имя, e-mail, адрес), поиск.',
           'Stepper — числовые значения с шагом (количество, сумма шагами).',
+          'Password — смена пароля в кабинете (Account / Security): текущий, новый, повтор.',
         ]}
         spacing={[
           'Оболочка: Space/sm по вертикали, Space/xl по горизонтали (stepper — Space/sm).',
@@ -48,6 +50,7 @@ export default function InputDemo() {
           'Подсказка (placeholder) — --c-input-placeholder → Content/tertiary (Gray/400), светлее введённого текста (Content/primary): пустое поле не похоже на заполненное. Контраст ≈3.7 — осознанно слабее нормы, как у остальных tertiary.',
           'Состояния error/success — меняют границу и фокус-кольцо одним переключателем data-validation.',
           'Stepper = Button secondary s icon-only: нет отдельного компонента для кнопок.',
+          'Password: ввод скрыт (type=password), справа глазок — Button ghost s compact icon-only с иконками eye / eye-slash из «06 — Icons» и aria-pressed. Открытость можно задать снаружи (revealed, onRevealedChange) — так «Generate password» показывает сгенерированный пароль. В Figma оси Password и глазка нет — добавлено в коде по решению владельца 2026-10-30, перенести в Figma по npm run debt.',
           'Слот может держать кнопку-действие (Button ghost s icon-only, например карандаш «изменить»): она сохраняет свои 40×40, высота поля не растёт (8 + 40 + 8 = 56), а до правого края те же Space/sm (8), что сверху и снизу. В Figma слот рассчитан на иконку 24 — расширение записано в «Открыто».',
         ]}
       />

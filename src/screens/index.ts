@@ -5,6 +5,8 @@ export { AccountCabinet, type AccountCabinetProps } from './account/AccountCabin
 export { AccountPage, type AccountPageProps } from './account/AccountPage';
 export { AccountDetailsPage, type AccountDetailsPageProps } from './account-details/AccountDetailsPage';
 export { NotificationsPage, type NotificationsPageProps } from './account-notifications/NotificationsPage';
+export { SecurityPage, type SecurityPageProps } from './account-security/SecurityPage';
+export { generatePassword, type PasswordChange } from './account-security/securityData';
 export { DEMO_NOTIFICATIONS, type NotificationGroup, type NotificationSetting } from './account-notifications/notificationsData';
 export { DEMO_DETAILS, type AccountDetails, type ChangeableField } from './account-details/accountDetailsData';
 export { DEMO_AFFILIATE, DEMO_USER, type AccountSection, type AccountUser, type AffiliateData, type EarningStatus, type ReferralEarning } from './account/accountData';

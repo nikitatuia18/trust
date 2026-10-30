@@ -464,10 +464,12 @@ Props:
 TextField — Figma 572:729. Токены --c-input-*; отступы атомов — напрямую Space/*, Size/* (решение владельца).
 
 Группа витрины: Ввод данных.
-Где используется: Поля анкеты верификации (имя, e-mail, адрес), поиск. Stepper — числовые значения с шагом (количество, сумма шагами).
+Где используется: Поля анкеты верификации (имя, e-mail, адрес), поиск. Stepper — числовые значения с шагом (количество, сумма шагами). Password — смена пароля в кабинете (Account / Security): текущий, новый, повтор.
 
 Props:
-- `type?: 'text' | 'stepper'`
+- `type?: 'text' | 'stepper' | 'password'`
+- `revealed?: boolean`
+- `onRevealedChange?: (revealed: boolean) => void`
 - `validation?: 'none' | 'error' | 'success'`
 - `label?: ReactNode`
 - `description?: ReactNode`

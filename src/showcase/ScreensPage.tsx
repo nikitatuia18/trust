@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Chip } from '../components';
-import { AccountDetailsPage, AccountPage, NotificationsPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
+import { AccountDetailsPage, AccountPage, NotificationsPage, SecurityPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
 
 const DOC = [
   {
@@ -83,6 +83,28 @@ const DETAILS_DOC = [
   },
 ];
 
+const SECURITY_DOC = [
+  {
+    h: 'Из чего собрано',
+    items: [
+      'Каркас и меню — те же, что у остальных разделов кабинета (общий AccountLayout, раздел переключается внутри AccountCabinet).',
+      'Change password: Form Card fluid, три TextField type=password (глазок «показать / скрыть»), Button link с иконкой key («Generate password»), Button primary Save в подвале.',
+      '2FA authentication: Form Card с одной Button primary. Account: Form Card с Button destructive (иконка lock).',
+      'Из нового: TextField type=password с глазком, иконки KeyIcon, EyeIcon, EyeSlashIcon (из «06 — Icons»).',
+    ],
+  },
+  {
+    h: 'Допущения',
+    items: [
+      'Карточка «Change E-mail» из макета не собрана — по решению владельца e-mail меняется в Account details.',
+      'Save недоступен, пока три поля не заполнены и новый пароль не совпал с повтором (при несовпадении поле «Repeat» краснеет, текста ошибки нет — не придуман). Ошибку сервера показывает проп error под «Current password».',
+      '«Generate password» заполняет New и Repeat и показывает их открытым текстом; генератор тестовый, подставляется через onGeneratePassword.',
+      'Опечатка макета «Anable» исправлена на «Enable». У 2FA нарисовано только состояние «выключено»; «Block account» без подтверждения — это решают разработчики. Иконка у «Block account» (lock) выбрана владельцем вместо заглушки из макета.',
+      'Правила пароля (длина, символы) не заданы: подсказка «A-Z, 1-9, #-&» — как в макете, проверок нет.',
+    ],
+  },
+];
+
 const NOTIFICATIONS_DOC = [
   {
     h: 'Из чего собрано',
@@ -116,6 +138,7 @@ export function ScreensPage() {
           любой код из 4 цифр и данные. Переключать шаги можно и чипами. Отдельной страницей: <a className="sc-link" href="#/registration">#/registration</a>.
           Кабинет (Affiliate program) — <a className="sc-link" href="#/account">#/account</a>: меню, Earnings, Promotion tools, история начислений.
           Кабинет (Account details) — <a className="sc-link" href="#/account-details">#/account-details</a>: данные профиля, менять которые можно только через поддержку.
+          Кабинет (Security) — <a className="sc-link" href="#/account-security">#/account-security</a>: смена пароля, 2FA, блокировка аккаунта.
           Кабинет (Notifications) — <a className="sc-link" href="#/account-notifications">#/account-notifications</a>: включение и выключение уведомлений по группам.
         </p>
       </div>
@@ -177,6 +200,26 @@ export function ScreensPage() {
       </div>
       <aside className="sc-card sc-doc sc-screens__doc">
         {DETAILS_DOC.map((b) => (
+          <div key={b.h} className="sc-doc__block">
+            <h4 className="text-label-sm">{b.h}</h4>
+            <ul className="sc-doc__list text-body-xs sc-muted">
+              {b.items.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+          </div>
+        ))}
+      </aside>
+
+      <div className="sc-section">
+        <h2 className="text-heading-h3">Кабинет — Security</h2>
+        <p className="text-body-sm sc-muted">
+          Тестовая сборка по макету «1.3 Account / Security». Данные демонстрационные. Отдельной страницей: <a className="sc-link" href="#/account-security">#/account-security</a>.
+        </p>
+      </div>
+      <div className="sc-screen-frame">
+        <SecurityPage />
+      </div>
+      <aside className="sc-card sc-doc sc-screens__doc">
+        {SECURITY_DOC.map((b) => (
           <div key={b.h} className="sc-doc__block">
             <h4 className="text-label-sm">{b.h}</h4>
             <ul className="sc-doc__list text-body-xs sc-muted">

@@ -1,0 +1,12 @@
+/* Security. Только токены; компоненты — из src/components. */
+
+/* Форма вокруг карточки: карточка тянется на всю высоту ряда (Figma: левая карточка одной высоты с правым столбцом) */
+.scr-security__form { display: flex; min-width: 0; }
+.scr-security__form > .at-form-card { flex: 1 1 auto; }
+
+/* Правый столбец: карточки друг под другом */
+.scr-security__side { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; }
+
+/* «Generate password» — ссылка под полями, по ширине текста, значок вровень с левым краем полей (как в макете).
+   Внутренний отступ link-кнопки оставлен ради области наведения, но снят полем: ссылка занимает свои 24px высоты, а не 56 */
+.scr-security__form .scr-security__generate.at-button { align-self: flex-start; padding: var(--space-xs); margin: calc(var(--space-xs) * -1); }

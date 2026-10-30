@@ -1,12 +1,17 @@
-import { useId, useRef, type InputHTMLAttributes, type ReactNode } from 'react';
+import { useId, useRef, useState, type InputHTMLAttributes, type ReactNode } from 'react';
 import { cn } from '../cn';
 import { Button } from '../Button/Button';
-import { MinusIcon, PlusIcon } from '../Icon/Glyphs';
+import { EyeIcon, EyeSlashIcon, MinusIcon, PlusIcon } from '../Icon/Glyphs';
 import './TextField.css';
 
 export type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> & {
-  /** Figma-ось Type. stepper — число с кнопками −/+ по краям */
-  type?: 'text' | 'stepper';
+  /** Figma-ось Type. stepper — число с кнопками −/+ по краям. password (добавлено в коде, в Figma нет) —
+   *  ввод скрыт, справа кнопка-глазок «показать / скрыть» */
+  type?: 'text' | 'stepper' | 'password';
+  /** password: пароль показан открытым текстом. Без пропа поле помнит выбор само */
+  revealed?: boolean;
+  /** password: пользователь нажал на глазок */
+  onRevealedChange?: (revealed: boolean) => void;
   /** Figma-ось Validation */
   validation?: 'none' | 'error' | 'success';
   /** Figma: label / show-label */
@@ -29,6 +34,8 @@ export function TextField({
   hint,
   leftSlot,
   rightSlot,
+  revealed,
+  onRevealedChange,
   className,
   id,
   disabled,
@@ -38,6 +45,13 @@ export function TextField({
   const inputId = id ?? auto;
   const ref = useRef<HTMLInputElement>(null);
   const stepper = type === 'stepper';
+  const password = type === 'password';
+  const [ownRevealed, setOwnRevealed] = useState(false);
+  const shown = revealed ?? ownRevealed;
+  const toggleReveal = () => {
+    setOwnRevealed(!shown);
+    onRevealedChange?.(!shown);
+  };
 
   // Шаг через нативный stepUp/stepDown + input-событие, чтобы сработал onChange
   const step = (dir: 1 | -1) => {
@@ -63,13 +77,27 @@ export function TextField({
             ref={ref}
             id={inputId}
             disabled={disabled}
-            type={stepper ? 'number' : 'text'}
+            type={stepper ? 'number' : password && !shown ? 'password' : 'text'}
             className="at-textfield__input text-body-sm"
             aria-invalid={validation === 'error' || undefined}
           />
         </span>
         {stepper ? (
           <Button variant="secondary" size="s" iconOnly iconLeft={<PlusIcon />} aria-label="Increase" disabled={disabled} onClick={() => step(1)} className="at-textfield__step" />
+        ) : password ? (
+          <span className="at-textfield__slot">
+            <Button
+              variant="ghost"
+              size="s"
+              density="compact"
+              iconOnly
+              iconLeft={shown ? <EyeSlashIcon /> : <EyeIcon />}
+              aria-label={shown ? 'Hide password' : 'Show password'}
+              aria-pressed={shown}
+              disabled={disabled}
+              onClick={toggleReveal}
+            />
+          </span>
         ) : (
           rightSlot && <span className="at-textfield__slot">{rightSlot}</span>
         )}

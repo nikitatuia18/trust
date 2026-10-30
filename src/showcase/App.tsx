@@ -5,11 +5,11 @@ import { RulesPage } from './RulesPage';
 import { ScreensPage } from './ScreensPage';
 import { AccountCabinet, RegistrationFlow, type AccountSection } from '../screens';
 
-type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-details' | 'account-notifications';
+type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-details' | 'account-security' | 'account-notifications';
 
 /** Разделы кабинета, у которых уже есть страница; остальные пункты меню пока без перехода */
-const ACCOUNT_ROUTES: Partial<Record<AccountSection, Page>> = { details: 'account-details', notifications: 'account-notifications', affiliate: 'account' };
-const ROUTE_SECTIONS: Partial<Record<Page, AccountSection>> = { 'account-details': 'details', 'account-notifications': 'notifications', account: 'affiliate' };
+const ACCOUNT_ROUTES: Partial<Record<AccountSection, Page>> = { details: 'account-details', security: 'account-security', notifications: 'account-notifications', affiliate: 'account' };
+const ROUTE_SECTIONS: Partial<Record<Page, AccountSection>> = { 'account-details': 'details', 'account-security': 'security', 'account-notifications': 'notifications', account: 'affiliate' };
 const goToSection = (section: AccountSection) => {
   const route = ACCOUNT_ROUTES[section];
   if (!route) return;
@@ -28,7 +28,7 @@ const NAV: { id: Page; label: string; ready: boolean }[] = [
 const fromHash = (): Page => {
   const h = window.location.hash.replace('#/', '') as Page;
   // registration и страницы кабинета — отдельные страницы без оболочки витрины, в меню их нет
-  return h === 'registration' || h === 'account' || h === 'account-details' || h === 'account-notifications' || NAV.some((n) => n.id === h) ? h : 'tokens';
+  return h === 'registration' || h === 'account' || h === 'account-details' || h === 'account-security' || h === 'account-notifications' || NAV.some((n) => n.id === h) ? h : 'tokens';
 };
 
 export function App() {
