@@ -35,7 +35,7 @@
     },
     "Button/M/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/lg}"
     },
     "Button/M/stroke": {
       "$type": "F",
@@ -163,7 +163,7 @@
     },
     "Button/S/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/lg}"
     },
     "Button/S/stroke": {
       "$type": "F",
@@ -599,7 +599,7 @@
     },
     "Chip/S/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/sm}"
     },
     "Chip/M/padding-x": {
       "$type": "F",
@@ -611,7 +611,7 @@
     },
     "Chip/M/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/sm}"
     },
     "Chip/M/text-container/padding-x": {
       "$type": "F",
@@ -1031,7 +1031,7 @@
     },
     "Chip/L/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/sm}"
     },
     "Chip/L/min-height": {
       "$type": "F",
@@ -1055,7 +1055,7 @@
     },
     "Chip/pill/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/round}"
+      "$value": "{layout.Radius/sm}"
     },
     "Status/spinner/track": {
       "$type": "C",
