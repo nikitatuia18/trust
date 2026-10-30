@@ -10,10 +10,10 @@ Reuse-first: существующий компонент → свойство/с
 
 ## Маршрут
 1. **Токены (код первичен).** Нужен семантический токен, которого нет → завести в `tools/raw/local.txt` (не примитив, не сырое значение) → `npm run tokens`. Компонентные `--c-*` — секция `## Components`, алиасы на семантику. В Figma не заводим сейчас — это пачкой по `npm run debt`.
-2. **Код.** `src/components/<Name>/<Name>.tsx|css`, экспорт в `src/components/index.ts`. Только токены; состояния — data-атрибуты; focus по образцу Checkbox/Button; disabled через `--opacity-disabled`; icon-only → `aria-label`; reuse (Button, List, ListItem, Divider…).
-3. **Витрина.** Группа в `src/showcase/ComponentsPage.tsx`: `Preview` + `Doc` («Где используется / Отступы (токены) / Почему так»); строка в таблице волн README.
+2. **Заготовка.** `npm run new:component -- Name --group=<группа>` (группы — `src/showcase/components/*.group.tsx`): создаёт `src/components/<Name>/<Name>.tsx|css`, экспорт в `index.ts` и блок Preview + Doc в группе. Дальше заполнить: props, CSS только на токенах; состояния — data-атрибуты; focus по образцу Checkbox/Button; disabled через `--opacity-disabled`; icon-only → `aria-label`; reuse (Button, List, ListItem, Divider…).
+3. **Витрина.** Заполнить TODO в блоке Preview/Doc («Где используется / Отступы (токены) / Почему так»), строка в таблице волн README. Если компонент — шаблон из макета, добавить строку в `tools/component-patterns.txt`.
 4. **Проверка.** `npm run build`; `npm run check`; `npm run shots -- components` и посмотреть PNG (mobile 390 — там же).
-5. **Фиксация.** `npm run debt` обновляет `docs/FIGMA-DEBT.md` (закоммитить). Коммит и пуш сразу.
+5. **Фиксация.** `npm run debt` и `npm run map` обновляют `docs/FIGMA-DEBT.md` и `docs/COMPONENT-MAP.md` (закоммитить). Коммит и пуш сразу.
 
 ## Итог владельцу
 Список вошедшего + явный список решений и допущений («Открыто»).

@@ -11,7 +11,7 @@ description: Собрать экран из макета Figma в репозит
 1. `src/showcase/RulesPage.tsx` — правила.
 2. `docs/SCREEN-BUILD-ERRORS.md` — прошлые ошибки; `PLAN.md` — договорённости.
 3. `src/screens/SiteShell.tsx` и готовый экран (`src/screens/registration/`, `src/screens/account/`) — каркас: шапка, подвал, `PageLayout` берутся оттуда.
-4. `src/components/index.ts` — что уже есть. Если есть `docs/COMPONENT-MAP.md` — сначала он.
+4. `src/components/index.ts` — что уже есть. `docs/COMPONENT-MAP.md` (после `npm run map`) — шаблоны «макет → компонент», props, где используется: основа таблицы шага 2. Если компонент добавлялся после последнего `map` — перегенерировать.
 
 ## Шаг 1. Разобрать макет
 `create_session` с fileKey из ссылки → `get_metadata`, `get_design_context` (скилл `skill://figma/figma-design-to-code/SKILL.md` грузится как MCP-ресурс; по частям, если кадр большой), `get_screenshot`. Для каждого блока: назначение, состояния, данные, действия. Метки владельца в кадре («тестовый», «нового компонента нет») учитывать.

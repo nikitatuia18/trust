@@ -33,6 +33,11 @@ npm install
 npm run dev        # витрина (токены, компоненты, правила)
 npm run tokens     # перегенерировать токены из tools/raw/*.txt
 npm run build      # проверка типов + сборка витрины
+npm run check      # проверка правил (сырые значения, токены, витрина)
+npm run shots -- account   # скриншоты 1440/1100/390 + переполнение
+npm run new:component -- Name --group=input   # заготовка компонента
+npm run map        # docs/COMPONENT-MAP.md
+npm run debt       # docs/FIGMA-DEBT.md
 ```
 
 ## Токены

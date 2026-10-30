@@ -1,0 +1,25 @@
+# Шаблоны макета → компонент системы. Ведётся руками (суждение), читается tools/component-map.mjs.
+# Формат: что видно в макете | компонент(ы) | замечание. Строки с # — комментарии.
+кнопка действия (заливка / контур / текст) | Button | variant primary|secondary|tertiary|ghost|destructive|link; иконка из 06 — Icons, не заглушка макета
+кнопка только с иконкой | Button | обязателен aria-label
+поле с подписью и подсказкой | TextField | stepper-вариант для чисел; ошибка и disabled — состояниями
+поле суммы с валютой | AmountField |
+выбор из списка (страна, сеть) | TextField + List + ListItem | отдельного Select пока нет — см. registration/CountrySelect
+код из ячеек (OTP) | — | компонента нет (локально registration/OtpInput) — предложить владельцу
+флажок «согласен» | Checkbox |
+переключатель вкл/выкл | Switch |
+ряд вкладок / переключатель режима | SegmentedControl | size m для плотных карточек
+пилюля-фильтр или тег-переключатель | Chip | всегда aria-pressed: для действия не подходит
+статус «Received / Pending / Failed» | Badge | variant success|warning|error|brand|neutral
+меню из трёх точек | DropdownMenu | иконка more из 06 — Icons
+карточка формы / окна | FormCard (+ WindowHeader, StepIndicator) | fluid — на всю ширину колонки
+итог операции / строки «ключ — значение» | OrderSummary |
+плитка метрики («0 USDT», подпись) | StatTile | иконка в IconCircle
+иконка в круге | IconCircle |
+хлебные крошки | Breadcrumbs |
+таблица | Table | ячейки — render-функции
+логотип банка / валюты / сети / способа оплаты | BankLogo, CurrencyIcon, NetworkLogo, MethodIcon | буквы-заглушки у BOG и Credo — осознанно
+шапка и подвал страницы | Header, Footer (через SiteShell: PageLayout, SiteHeader, SiteFooter) | не перерисовывать по макету; без аватара и Talk to sales для вошедшего
+разделитель | Divider |
+индикатор шагов | StepIndicator |
+загрузка | Spinner |

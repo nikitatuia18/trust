@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "check": "node tools/check.mjs",
     "shots": "node tools/shots.mjs",
-    "debt": "node tools/figma-debt.mjs"
+    "debt": "node tools/figma-debt.mjs",
+    "new:component": "node tools/new-component.mjs",
+    "map": "node tools/component-map.mjs"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.3.0",

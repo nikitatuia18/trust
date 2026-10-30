@@ -6,7 +6,7 @@
 
 Правила и процесс — в `CLAUDE.md` (загружается автоматически). Коротко: владелец присылает макет → `/build-screen <ссылка> <смысл>` → экран из системы → витрина → коммит и пуш. Новый компонент — `/new-component`. Разработчики забирают готовый код и подключают бэкенд; Code Connect не нужен.
 
-**В работе — оптимизация процесса** (согласовано 2026-10-30): `CLAUDE.md` + skills → `npm run check` / `npm run shots` (готово) → `tools/raw/local.txt` + `npm run debt` (готово; код первичен для новых токенов, Figma догоняем пачкой по `docs/FIGMA-DEBT.md`) → doc-файлы рядом с компонентами и `new:component` → карта компонентов. Детали — в плане сессии; статус обновлять здесь.
+**Оптимизация процесса — готово** (2026-10-30): `CLAUDE.md` + skills `/build-screen`, `/new-component`; `npm run check`, `shots`, `new:component`, `map`, `debt`; `tools/raw/local.txt` (код первичен для новых токенов, Figma догоняется пачкой по `docs/FIGMA-DEBT.md`); витрина компонентов разбита на группы `src/showcase/components/*.group.tsx`. Остаётся: перенести компонентные токены Badge/Breadcrumbs/StatTile/IconCircle/Table в `local.txt` как `--c-*` (см. `docs/FIGMA-DEBT.md`).
 
 ## Что готово
 

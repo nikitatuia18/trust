@@ -1,6 +1,6 @@
 // Проверка правил системы в коде. Запуск: npm run check
 // Ловит: сырые значения в CSS компонентов и экранов, --prim-*, несуществующие токены в var(--x),
-// импорты компонентов мимо src/components, цвет/фон/радиус в inline style экранов.
+// импорты компонентов мимо src/components, цвет/фон/радиус в inline style экранов, компоненты без Preview на витрине.
 // Исключить строку: комментарий /* check-ignore: причина */ в той же строке.
 // Код выхода 1 — есть нарушения.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
@@ -77,6 +77,13 @@ for (const f of tsxFiles) {
       if (/style=\{\{/.test(line) && STYLE_COLOR.test(line)) add(file, n, 'цвет/фон/радиус/шрифт в inline style — только токены в CSS', line);
     }
   });
+}
+
+// ---------- каждый компонент показан на витрине ----------
+const groupsText = walk(join(src, 'showcase/components'), ['.group.tsx']).map((f) => readFileSync(f, 'utf8')).join('\n');
+const previewTitles = [...groupsText.matchAll(/<Preview title="([^"]+)"/g)].map((m) => m[1].toLowerCase().replace(/[^a-z0-9]/g, ''));
+for (const name of readdirSync(join(src, 'components')).filter((n) => statSync(join(src, 'components', n)).isDirectory())) {
+  if (!new RegExp(String.raw`<${name}[\s>/]`).test(groupsText)) violations.push(`src/components/${name}  нет Preview на витрине (src/showcase/components/*.group.tsx)\n    npm run new:component создаёт блок сам`);
 }
 
 // ---------- итог ----------

@@ -29,6 +29,8 @@ React 19 + TypeScript + Vite + чистый CSS с переменными. То�
 npm run dev       # витрина
 npm run build     # tsc --noEmit + vite build — обязательно перед коммитом
 npm run tokens    # tools/raw/*.txt → tokens/*.json + src/styles/tokens.css + src/tokens/registry.json
+npm run new:component -- Name --group=input   # заготовка: код, css, экспорт, Preview+Doc на витрине
+npm run map       # docs/COMPONENT-MAP.md: компоненты, props, шаблоны «макет → компонент» (читать на шаге 2 сборки экрана)
 npm run debt      # docs/FIGMA-DEBT.md: что есть в коде, но ещё не в Figma
 npm run check     # сырые значения, --prim-*, несуществующие var(--x), импорты мимо components, inline-цвета
 npm run shots -- account registration   # PNG 1440/1100/390 в .shots/ + проверка горизонтального переполнения
@@ -40,7 +42,7 @@ npm run shots -- account registration   # PNG 1440/1100/390 в .shots/ + про�
 
 ## Каркас и структура
 
-- `src/components/<Name>/<Name>.tsx|css`, экспорт в `src/components/index.ts`; витрина — `src/showcase/ComponentsPage.tsx` (Preview + Doc: «Где используется / Отступы (токены) / Почему так»).
+- `src/components/<Name>/<Name>.tsx|css`, экспорт в `src/components/index.ts`; витрина — группы `src/showcase/components/*.group.tsx` (каждая экспортирует `meta` и демо: Preview + Doc «Где используется / Отступы (токены) / Почему так»), общие блоки — `doc-kit.tsx`. Страница `ComponentsPage.tsx` собирает группы сама (`import.meta.glob`).
 - `src/screens/` — каркас `SiteShell.tsx` (`PageLayout`, `SiteHeader`, `SiteFooter`) берётся оттуда; экран = папка `src/screens/<name>/` (данные в `<name>Data.ts`, колбэки `onXxx`, props вместо логики бэкенда), страница `#/<name>`, запись во вкладке «Экраны».
 - Шапка только системная (Individual | Business, Resources, Contacts, язык); аватара в шапке нет.
 
