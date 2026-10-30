@@ -83,7 +83,9 @@ for (const f of tsxFiles) {
 const groupsText = walk(join(src, 'showcase/components'), ['.group.tsx']).map((f) => readFileSync(f, 'utf8')).join('\n');
 const previewTitles = [...groupsText.matchAll(/<Preview title="([^"]+)"/g)].map((m) => m[1].toLowerCase().replace(/[^a-z0-9]/g, ''));
 for (const name of readdirSync(join(src, 'components')).filter((n) => statSync(join(src, 'components', n)).isDirectory())) {
-  if (!new RegExp(String.raw`<${name}[\s>/]`).test(groupsText)) violations.push(`src/components/${name}  нет Preview на витрине (src/showcase/components/*.group.tsx)\n    npm run new:component создаёт блок сам`);
+  // составные части (Header Bar, Mega Menu) могут быть показаны в Preview родителя — ищем и по заголовку
+  const shown = new RegExp(String.raw`<${name}[\s>/]`).test(groupsText) || previewTitles.some((t) => t.includes(name.toLowerCase()));
+  if (!shown) violations.push(`src/components/${name}  нет Preview на витрине (src/showcase/components/*.group.tsx)\n    npm run new:component создаёт блок сам`);
 }
 
 // ---------- итог ----------
