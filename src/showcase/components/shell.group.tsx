@@ -37,7 +37,7 @@ export default function ShellDemo() {
           <div className="sc-demo__row sc-demo__row--stack sc-menu-room" style={{ width: '100%' }}>
             <span className="sc-demo__tag text-caption-default sc-muted">mega-menu</span>
             <Header
-              menu={menu} open={open} onClose={() => setOpen(false)}
+              menu={menu} menuLabel="Products" open={open} onClose={() => setOpen(false)}
               modeSwitch={<SegmentedControl aria-label="Режим" value={mode} onChange={setMode} options={[{ value: 'individual', label: 'Individual' }, { value: 'business', label: 'Business' }]} />}
               links={<><Button variant="ghost" size="s" density="compact">Resources</Button><Button variant="ghost" size="s" density="compact">Contacts</Button></>}
               actions={<><LanguageSelector value={lang} onChange={setLang} /><Button size="s">Talk to sales</Button></>}
@@ -58,7 +58,8 @@ export default function ShellDemo() {
         ]}
         why={[
           'Header Bar — слоты (logo, modeSwitch, links, actions): шапка собирается из Logo, Segmented Control, Button и Language Selector без отдельных копий.',
-          'Уже 1024 (планшет по вертикали и телефон) в полосе остаются логотип и бургер (Button ghost S icon-only, иконка menu из «06 — Icons», aria-expanded): режим, ссылки и кнопки прячутся в панель под полосой. Ничего не слетает вниз сама по себе; закрытие по Esc.',
+          'Уже 1024 (планшет по вертикали и телефон) в полосе остаются логотип и бургер (Button ghost S icon-only, иконка menu из «06 — Icons», aria-expanded): режим, ссылки и кнопки прячутся в панель, которая занимает всё место под полосой до низа экрана: страница под ней не видна и не прокручивается (прокручивается сама панель), блокировка снимается при закрытии и при расширении окна. Закрытие — бургером (он становится крестиком) или Esc.',
+          'Mega-menu в бургере — вторая «страница» той же панели: пункт (menuLabel — «Products» в демо, заглушка до решения владельца) открывает её, сверху кнопка «Back», пункты друг под другом одним столбцом (MegaMenu stacked); Esc на этой странице тоже ведёт назад. Выбор пункта закрывает бургер. Под полосой на планшете и телефоне mega-menu не показывается.',
           'Mega Menu абсолютна и не сдвигает страницу; открытием управляет страница (open), закрытие по Esc и клику вне — внутри Header.',
           'Иконка в пункте — круг как у Button secondary S icon-only, но не кнопка: вся строка уже кнопка, вложенных кнопок нет.',
           'Ширина столбца Mega Menu 298 (282 + padding списка) — токена нет, задана локально в CSS осознанно. Ниже 767px столбцы встают друг под друга.',

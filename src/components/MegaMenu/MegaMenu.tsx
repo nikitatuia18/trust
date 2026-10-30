@@ -16,14 +16,16 @@ export type MegaMenuItem = {
 export type MegaMenuProps = {
   /** Figma: Service List — столбцы List со строками List Item */
   columns: MegaMenuItem[][];
+  /** Столбцы встают друг под друга при любой ширине (бургер на планшете и телефоне); по умолчанию — только ниже 767 */
+  stacked?: boolean;
   'aria-label'?: string;
   className?: string;
 };
 
 /** Выпадающая панель шапки (Figma 420:1598): столбцы списков услуг под Header Bar. */
-export function MegaMenu({ columns, className, ...rest }: MegaMenuProps) {
+export function MegaMenu({ columns, stacked = false, className, ...rest }: MegaMenuProps) {
   return (
-    <nav className={cn('at-mega-menu', className)} aria-label={rest['aria-label']}>
+    <nav className={cn('at-mega-menu', className)} data-stacked={stacked || undefined} aria-label={rest['aria-label']}>
       <div className="at-mega-menu__content">
         {columns.map((items, c) => (
           <div key={c} className="at-mega-menu__column">

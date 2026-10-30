@@ -1,3 +1,8 @@
 /* Header — Figma 464:3830. Панель Mega Menu — абсолютная, сразу под полосой, на всю ширину. */
 .at-header { position: relative; width: 100%; }
 .at-header__menu { position: absolute; top: 100%; left: 0; right: 0; z-index: 1; }
+
+/* Ниже 1024 mega-menu живёт внутри бургера (вторая страница панели), а не под полосой */
+@media (max-width: 1023px) {
+  .at-header__menu { display: none; }
+}

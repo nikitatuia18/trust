@@ -8,20 +8,43 @@
 }
 .at-header-bar__content { display: flex; align-items: center; gap: var(--c-header-content-gap); width: 100%; max-width: var(--grid-max-width); }
 .at-header-bar__logo { display: flex; flex: none; align-items: center; }
+/* root — обёртка только для узкой панели: в строке её нет, режим, ссылки и кнопки лежат прямо в collapse */
+.at-header-bar__root { display: contents; }
+.at-header-bar__mega-page, .at-header-bar__mega-trigger { display: none; }
 /* Режим, ссылки и кнопки — одна панель: в строке с логотипом она растягивается, кнопки уходят вправо */
-.at-header-bar__collapse { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: var(--c-header-navigation-gap); min-width: 0; }
-.at-header-bar__menu { display: flex; align-items: center; gap: var(--c-header-navigation-menu-gap); }
+.at-header-bar__collapse { display: flex; flex: 1; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--c-header-navigation-gap); min-width: 0; }
+.at-header-bar__menu { display: flex; flex-wrap: wrap; align-items: center; gap: var(--c-header-navigation-menu-gap); }
 .at-header-bar__links { display: flex; align-items: center; gap: var(--space-none); }
 .at-header-bar__actions { display: flex; flex: none; align-items: center; justify-content: flex-end; gap: var(--c-header-buttons-gap); }
 .at-header-bar__burger { display: none; }
 
-/* Уже 1024 (планшет по вертикали и телефон): в строке остаются логотип и бургер, остальное — панель под ними. В @media нельзя var(), значение зашито.
-   Целиком строка помещается примерно от 830; 1024 — с запасом, чтобы ничего не слетало вниз и не прилипало друг к другу. */
+/* Уже 1024 (планшет по вертикали и телефон): в строке остаются логотип и бургер, остальное — панель на весь экран под ними.
+   В @media нельзя var(), значение зашито (то же число — COLLAPSE_BELOW в HeaderBar.tsx). Целиком строка помещается примерно от 830;
+   1024 — с запасом, чтобы ничего не слетало вниз и не прилипало друг к другу. */
 @media (max-width: 1023px) {
-  .at-header-bar__content { flex-wrap: wrap; gap: var(--space-none); }
+  .at-header-bar { position: relative; }
+  .at-header-bar__content { flex-wrap: nowrap; gap: var(--space-none); }
   .at-header-bar__logo { flex: 1; }
   .at-header-bar__burger { display: inline-flex; }
-  .at-header-bar__collapse { display: none; flex: 1 1 100%; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: var(--space-xl); padding-top: var(--space-xl); }
+  .at-header-bar__mega-trigger { display: inline-flex; }
+  /* Панель занимает всё место под полосой до низа экрана; страница под ней не видна. Прокручивается сама панель, а не страница */
+  .at-header-bar__collapse {
+    display: none; position: absolute; z-index: 2; top: 100%; left: 0; right: 0; height: calc(100dvh - 100%);
+    box-sizing: border-box; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: var(--space-none);
+    padding: var(--space-xl) var(--c-header-main-padding-x);
+    overflow-y: auto; overscroll-behavior: contain;
+    background: var(--c-header-main-bg);
+    border-top: var(--c-header-main-stroke) solid var(--c-header-main-border);
+  }
   .at-header-bar__content[data-open] .at-header-bar__collapse { display: flex; }
+  .at-header-bar__root { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
   .at-header-bar__menu { flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
+  .at-header-bar__links { flex-direction: column; align-items: flex-start; }
+  /* Mega-menu — вторая страница панели: вместо первой, кнопка «Назад» над списком, пункты друг под другом */
+  .at-header-bar__mega-page { flex-direction: column; align-items: stretch; gap: var(--space-xl); }
+  .at-header-bar__collapse[data-view='mega'] > .at-header-bar__root { display: none; }
+  .at-header-bar__collapse[data-view='mega'] > .at-header-bar__mega-page { display: flex; }
+  .at-header-bar__back { align-self: flex-start; }
+  /* у списка внутри панели свой фон и обводка не нужны: панель уже белая и с отступами */
+  .at-header-bar__mega { padding: var(--space-none); border-bottom: 0; background: transparent; }
 }
