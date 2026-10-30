@@ -117,7 +117,7 @@ function Sizes() {
 function Radius() {
   const items = byLayer('layout').filter((t) => /^Radius\//.test(t.name));
   return (
-    <Card title="Radius" note="Контролы — round (pill), контейнеры — по токенам">
+    <Card title="Radius" note="Поля и переключатели — round (pill), кнопка — lg, чип и статус — sm, контейнеры — по токенам">
       <div className="sc-radius">
         {items.map((t) => (
           <div key={t.name} className="sc-radius__item">

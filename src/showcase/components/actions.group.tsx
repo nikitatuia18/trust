@@ -42,7 +42,7 @@ export default function ButtonDemo() {
           'Внутри подписи: text-container padding-x + gap корня.',
         ]}
         why={[
-          'Pill (Radius/round): контролы системы единообразны, контейнеры — по своим радиусам.',
+          'Радиус 16 (Radius/lg) со сглаживанием углов iOS 60% — решение владельца 2026-10-30; поля и переключатели остаются pill. На mobile шкала уменьшает радиус до 12.',
           'Один компонент вместо Select Trigger / Dropdown trigger — reuse-first.',
           'Disabled через opacity-токен, а не отдельные цвета: меньше токенов, одинаково для всех стилей.',
           'Tertiary и Checkbox в Figma без focus — в коде добавлено кольцо (доступность), записано в «Открыто».',

@@ -1,4 +1,4 @@
-/* Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён: заливка на ступень темнее (токены Chip/brand/bg-hover и Chip/neutral/bg-hover, заведены в коде). */
+/* Chip — Figma 502:3270. Радиус 8 (Radius/sm) со сглаживанием. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён: заливка на ступень темнее (токены Chip/brand/bg-hover и Chip/neutral/bg-hover, заведены в коде). */
 .at-chip {
   --_bg: var(--c-chip-brand-bg);
   --_border: var(--c-chip-brand-border);

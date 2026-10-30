@@ -9,7 +9,7 @@ export type BadgeProps = {
   className?: string;
 };
 
-/** Плашка статуса: pill с короткой подписью. Не интерактивна (кликабельная — Chip). */
+/** Плашка статуса: радиус 8 (Radius/sm) со сглаживанием, короткая подпись. Не интерактивна (кликабельная — Chip). */
 export function Badge({ variant = 'success', children, className }: BadgeProps) {
   return (
     <span className={cn('at-badge text-label-sm', className)} data-variant={variant}>

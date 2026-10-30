@@ -61,7 +61,7 @@ for (const f of cssFiles) {
 }
 
 // ---------- сглаживание углов (Правило 18) ----------
-// Контейнер со скруглением крупнее Radius/md (≈12) обязан иметь corner-shape в том же правиле. «Пилюли» (Radius/round), 0 и мелкие радиусы не считаются.
+// Контейнер со скруглением крупнее Radius/md (≈12) обязан иметь corner-shape в том же правиле. «Пилюли» (Radius/round), 0 и мелкие радиусы (≤ Radius/md) не считаются — но чипу и статусу (Radius/sm) corner-shape ставим всё равно (решение владельца).
 // Радиус разрешается по цепочке токенов в src/styles/tokens.css; исключить строку — /* check-ignore: причина */.
 {
   const tokenCss = readFileSync(join(src, 'styles/tokens.css'), 'utf8');

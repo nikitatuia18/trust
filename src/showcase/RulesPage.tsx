@@ -1,6 +1,6 @@
 import { Fragment, useState, type ReactNode } from 'react';
 import {
-  Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
+  Badge, Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
 } from '../components';
 
 type RuleProps = {
@@ -96,10 +96,11 @@ function PillDemo() {
   const [v, setV] = useState('card');
   return (
     <div className="sc-rule__col">
-      <Cell cap="Контролы — pill (Radius/round)">
+      <Cell cap="Кнопка 16, чип и статус 8, переключатель — pill">
         <div className="sc-rule__row">
           <Button size="s">Button</Button>
           <Chip>Chip</Chip>
+          <Badge>Status</Badge>
           <SegmentedControl
             aria-label="Method"
             value={v}
@@ -264,10 +265,10 @@ export function RulesPage() {
         />
         <Rule
           n={8}
-          title="Форма: контролы — pill"
-          text="Button, TextField, Chip, SegmentedControl — полностью скруглены. Контейнеры (карточки, окна, меню) — радиусами по своим токенам."
+          title="Форма контролов: кнопка 16, чип и статус 8, поле и переключатели — pill"
+          text="TextField, Switch, SegmentedControl (и Individual | Business в шапке) — полностью скруглены (Radius/round). Button — Radius/lg (16), Chip и Badge — Radius/sm (8), оба со сглаживанием углов. Контейнеры (карточки, окна, меню) — радиусами по своим токенам."
           demo={<PillDemo />}
-          good={['control: var(--radius-round)']}
+          good={['поле, переключатель: var(--radius-round)', 'кнопка: var(--c-button-m-radius), чип: var(--c-chip-s-radius)']}
           bad={['радиус контрола задан числом']}
         />
         <Rule
@@ -415,8 +416,8 @@ export function RulesPage() {
       <Section title="Скругления окон" note="Контейнеры скругляем со сглаживанием — как в iOS.">
         <Rule
           n={18}
-          title="У окон и карточек со скруглением — Corner smoothing iOS 60%"
-          text="Любая карточка, окно и крупный контейнер с радиусом (Form Card, Modal, список, выпадающее меню, плитка, Amount Field) получает сглаживание углов — в Figma Corner smoothing iOS 60%, в коде corner-shape: superellipse(var(--corner-superellipse)). Не получают его «пилюли» и «таблетки»: кнопка, поле, чип, а также пункт меню / строка List Item — у них радиус почти равен половине высоты, и сглаживание превратило бы овальные концы в скруглённый прямоугольник. Токен один — менять сглаживание можно в одном месте. Сглаженный угол выглядит меньше обычного того же радиуса, поэтому токен подобран так, что радиус 32 выглядит как обычный ≈24. Забытое сглаживание ловит npm run check; осознанное исключение помечается /* check-ignore: причина */."
+          title="У окон, карточек, кнопок, чипов и статусов — Corner smoothing iOS 60%"
+          text="Любая карточка, окно и крупный контейнер с радиусом (Form Card, Modal, список, выпадающее меню, плитка, Amount Field) получает сглаживание углов — в Figma Corner smoothing iOS 60%, в коде corner-shape: superellipse(var(--corner-superellipse)). Со сглаживанием также кнопка (16), чип и статус (8). Не получают его настоящие «пилюли»: поле ввода, Switch, Segment, а также пункт меню / строка List Item — у них радиус почти равен половине высоты, и сглаживание превратило бы овальные концы в скруглённый прямоугольник. Токен один — менять сглаживание можно в одном месте. Сглаженный угол выглядит меньше обычного того же радиуса, поэтому токен подобран так, что радиус 32 выглядит как обычный ≈24. Забытое сглаживание ловит npm run check; осознанное исключение помечается /* check-ignore: причина */."
           demo={
             <div className="sc-rule__row">
               <Cell cap="Без сглаживания: просто радиус"><span className="sc-rule__corner" /></Cell>
