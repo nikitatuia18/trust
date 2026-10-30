@@ -4,6 +4,6 @@
   gap: var(--c-list-gap); padding: var(--c-list-padding-y) var(--c-list-padding-x);
 }
 .at-list[data-variant='card'] {
-  border-radius: var(--c-list-radius); background: var(--c-list-bg);
+  border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse)); background: var(--c-list-bg);
   box-shadow: inset 0 0 0 var(--c-list-stroke) var(--c-list-border);
 }

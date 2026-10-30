@@ -32,7 +32,7 @@ export function PromotionCard({ referralLink, onDownloadQr, onCopyLink, onShareQ
       fluid
       header={
         <div className="scr-card-head" data-stack>
-          <h2 className="scr-card-title text-heading-h4">Promotion tools</h2>
+          <h2 className="at-form-card__title text-heading-h4">Promotion tools</h2>
           <SegmentedControl size="m" className="scr-segment-fill" aria-label="Promotion tools" options={TABS} value={tab} onChange={setTab} />
         </div>
       }

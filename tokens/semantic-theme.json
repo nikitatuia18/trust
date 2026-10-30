@@ -315,7 +315,7 @@
     },
     "Surface/Overlay/modal-scrim": {
       "$type": "C",
-      "$value": "{prim.Colors/Black/alpha-32}"
+      "$value": "{prim.Colors/Black/alpha-8}"
     }
   }
 }

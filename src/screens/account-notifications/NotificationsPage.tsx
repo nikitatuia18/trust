@@ -5,7 +5,7 @@ import { NotificationsSection, type NotificationsSectionProps } from './Notifica
 export type NotificationsPageProps = NotificationsSectionProps & {
   user?: AccountUser;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
 };
 
 /** Кабинет, раздел «Notifications» отдельной страницей. Данные и сохранение — снаружи, экран только раскладывает. */

@@ -1,16 +1,25 @@
-/* Form Card — Figma 618:2210 (Root 522 FIXED → max-width из Size/Form-card/width). Корень без padding, зоны несут Space/2xl; обводка корня — inside, как у остальных контейнеров. */
+/* Form Card — Figma 618:2210 (Root 522 FIXED → max-width из Size/Form-card/width). Корень без padding, зоны несут Space/2xl.
+   Обводка корня — настоящая граница (в Figma INSIDE, места не занимает): так отступ от неё до содержимого одинаков со всех сторон и равен отступу у разделителей. */
 .at-form-card {
   display: flex; flex-direction: column; box-sizing: border-box; width: 100%; max-width: var(--c-form-card-max-width);
   gap: var(--space-none);
-  border-radius: var(--c-form-card-radius); background: var(--c-form-card-bg);
-  box-shadow: inset 0 0 0 var(--c-form-card-stroke) var(--c-form-card-border);
+  border: var(--c-form-card-stroke) solid var(--c-form-card-border);
+  border-radius: var(--c-form-card-radius); corner-shape: superellipse(var(--corner-superellipse)); background: var(--c-form-card-bg);
 }
 .at-form-card__zone { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-none); padding: var(--space-2xl); min-width: 0; }
 .at-form-card__body, .at-form-card__footer { gap: var(--space-xl); }
 /* Зоны разделены линией Form Card/border (как в Figma); overflow не обрезаем — из тела может открываться список */
-.at-form-card__zone + .at-form-card__zone { border-top: var(--stroke-default) solid var(--c-form-card-border); }
+.at-form-card__zone + .at-form-card__zone { border-top: var(--c-form-card-stroke) solid var(--c-form-card-border); }
 .at-form-card__actions { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-sm); }
 .at-form-card__actions > * { align-self: stretch; }
+
+/* Заголовок и описание в шапке: поле вокруг текста считается от верха заглавных до базовой линии, а не от края строки.
+   Иначе «воздуха» сверху и снизу у строки разное, и глаз видит разницу в 2–3px. Нужен text-box (Chrome 133+, Safari 18.2+);
+   там, где его нет, заголовок остаётся с межстрочным полем — оно симметрично, просто отступ чуть просторнее. */
+.at-form-card__title { margin: 0; color: var(--content-primary); text-box: trim-both cap alphabetic; }
+.at-form-card__description { margin: 0; color: var(--content-secondary); text-box: trim-both cap alphabetic; }
+/* Шапка, где заголовок стоит сам или первым (+ описание): равные Space/3xl над заглавными и под базовой линией — высота близка к 80 из Figma */
+.at-form-card__zone:has(> .at-form-card__title) { padding-block: var(--space-3xl); gap: var(--space-lg); }
 
 /* fluid: ширину задаёт родитель; если карточку растянули по высоте, лишнее место берёт тело (подвал остаётся внизу) */
 .at-form-card[data-fluid] { max-width: none; }
@@ -19,9 +28,3 @@
 /* inline: основные кнопки в ряд, поровну */
 .at-form-card[data-actions='inline'] .at-form-card__actions { flex-direction: row; }
 .at-form-card[data-actions='inline'] .at-form-card__actions > * { flex: 1 1 0; min-width: 0; }
-
-/* Window Header как шапка карточки: у него свой отступ Space/2xl и линия снизу — зона отступ не добавляет, а линию рисует граница следующей зоны */
-.at-form-card__zone:has(> .at-window-header) { padding: var(--space-none); }
-.at-form-card__zone > .at-window-header { box-shadow: none; }
-/* Карточка не обрезает содержимое (из тела открываются списки), поэтому заливка шапки сама повторяет верхние углы карточки */
-.at-form-card__zone:first-child > .at-window-header { border-start-start-radius: var(--c-form-card-radius); border-start-end-radius: var(--c-form-card-radius); }

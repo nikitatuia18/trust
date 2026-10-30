@@ -179,7 +179,6 @@
   --prim-letter-spacing-300: -3px;
   --prim-font-weight-regular: 400;
   --prim-font-weight-medium: 500;
-  --prim-color-black-alpha-32: #00000052;
 
   /* ===== Semantic / Theme (Light) ===== */
   --surface-neutral-canvas: var(--prim-color-gray-25);
@@ -260,7 +259,7 @@
   --elevation-overlay-1-shadow: var(--prim-color-black-alpha-4);
   --elevation-overlay-2-shadow: var(--prim-color-black-alpha-8);
   --elevation-control-1-shadow: var(--prim-color-black-alpha-16);
-  --surface-overlay-modal-scrim: var(--prim-color-black-alpha-32);
+  --surface-overlay-modal-scrim: var(--prim-color-black-alpha-8);
 
   /* ===== Semantic / Layout (Desktop) ===== */
   --typography-font-size-xs: var(--prim-font-size-100);
@@ -380,7 +379,8 @@
   --size-indicator-mark: var(--prim-spacing-400);
   --size-form-card-width: var(--prim-spacing-1650);
   --size-min-height-md: var(--prim-spacing-1550);
-  --blur-modal-backdrop: 24px;
+  --blur-modal-backdrop: 16px;
+  --corner-superellipse: 2;
   --size-qr-code-width: 180px;
   --size-account-menu-width: 388px;
 

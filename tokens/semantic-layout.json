@@ -588,8 +588,13 @@
     },
     "Blur/Modal-backdrop": {
       "$type": "F",
-      "desktop": "24",
-      "mobile": "24"
+      "desktop": "16",
+      "mobile": "16"
+    },
+    "Corner/Superellipse": {
+      "$type": "F",
+      "desktop": "2",
+      "mobile": "2"
     },
     "Size/QR-code/width": {
       "$type": "F",

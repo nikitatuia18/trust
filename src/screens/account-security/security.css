@@ -11,5 +11,3 @@
    Внутренний отступ link-кнопки оставлен ради области наведения, но снят полем: ссылка занимает свои 24px высоты, а не 56 */
 .scr-security__form .scr-security__generate.at-button { align-self: flex-start; padding: var(--space-xs); margin: calc(var(--space-xs) * -1); }
 
-/* Текст в окне подтверждения */
-.scr-modal-text { margin: 0; color: var(--content-secondary); }

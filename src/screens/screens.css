@@ -2,7 +2,8 @@
 /* Место под полосу прокрутки занято всегда: у длинной страницы она есть, у короткой нет, и без резерва содержимое сдвигается на её ширину,
    а у кабинета ещё и перестраивается между «меню слева» и «меню сверху» */
 html:has(.scr-page) { scrollbar-gutter: stable; }
-.scr-page { display: flex; flex-direction: column; min-height: 100%; background: var(--surface-neutral-canvas); }
+/* Шапка прижата к верху, подвал к низу окна даже на большом мониторе: страница не ниже окна, а холст между ними растягивается (контент кабинета остаётся сверху, форма auth — по центру) */
+.scr-page { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; background: var(--surface-neutral-canvas); }
 .scr-page__main {
   display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box;
   padding: var(--size-min-width-md) var(--space-6xl);

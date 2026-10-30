@@ -7,7 +7,7 @@ export type AccountDetailsPageProps = {
   user?: AccountUser;
   details?: AccountDetails;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
   /** Нажали на карандаш у телефона или Telegram: здесь разработчики ведут пользователя в поддержку */
   onRequestChange?: (field: ChangeableField) => void;
 };

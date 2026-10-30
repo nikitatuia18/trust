@@ -53,7 +53,7 @@ export function ChangePasswordCard({ onChangePassword, error, onGeneratePassword
     <form className="scr-security__form" onSubmit={submit} noValidate>
       <FormCard
         fluid
-        header={<h2 className="scr-card-title text-heading-h4">Change password</h2>}
+        header={<h2 className="at-form-card__title text-heading-h4">Change password</h2>}
       >
         <TextField
           type="password"

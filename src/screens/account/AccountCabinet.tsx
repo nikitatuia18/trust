@@ -11,7 +11,7 @@ export type AccountCabinetProps = {
   /** Раздел, открытый в меню и показанный справа */
   section: AccountSection;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
   affiliate?: AffiliateSectionProps;
   details?: AccountDetails;
   onRequestChange?: (field: ChangeableField) => void;

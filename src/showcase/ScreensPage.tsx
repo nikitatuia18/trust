@@ -89,8 +89,8 @@ const SECURITY_DOC = [
     items: [
       'Каркас и меню — те же, что у остальных разделов кабинета (общий AccountLayout, раздел переключается внутри AccountCabinet).',
       'Change password: Form Card fluid, три TextField type=password (глазок «показать / скрыть»), Button link с иконкой key («Generate password»). Кнопки Save пока нет (решение владельца): она появится при вводе, с анимацией — позже.',
-      '2FA authentication: Form Card с одной Button primary. Account: Form Card с Button destructive (иконка lock); по нажатию — окно подтверждения: Modal (затемнение 32%, размытие 24) с Form Card и Window Header, «Cancel» в фокусе.',
-      'Из нового: компонент Modal, TextField type=password с глазком, иконки KeyIcon, EyeIcon, EyeSlashIcon (из «06 — Icons»); Window Header теперь можно ставить шапкой в Form Card.',
+      '2FA authentication: Form Card с одной Button primary. Account: Form Card с Button destructive (иконка lock); по нажатию — окно подтверждения: Modal (затемнение 8%, размытие 16) с Form Card: заголовок и пояснение в шапке, без крестика, «Cancel» в фокусе. Выход из аккаунта (красная кнопка в меню) подтверждается тем же окном.',
+      'Из нового: компонент Modal, TextField type=password с глазком, иконки KeyIcon, EyeIcon, EyeSlashIcon (из «06 — Icons»); Form Card получила обводку-границу и класс заголовка .at-form-card__title (равные отступы над заглавными и под базовой линией); у контейнеров — сглаживание углов (Corner/Superellipse).',
     ],
   },
   {

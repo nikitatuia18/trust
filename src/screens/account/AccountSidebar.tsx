@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Button, FormCard, Icon, IconCircle, ListItem, LockIcon, LockOutlineIcon, LogoutIcon, NotificationBoldIcon, NotificationIcon, ProfileBoldIcon, ProfileFilledIcon, ProfileIcon, StarIcon, StarOutlineIcon, VerifyIcon } from '../../components';
-import type { AccountSection, AccountUser } from './accountData';
+import { ConfirmDialog } from './ConfirmDialog';
+import { LOGOUT_TEXT, type AccountSection, type AccountUser } from './accountData';
 
 /** У каждого раздела две иконки из «06 — Icons»: контур, пока пункт не выбран, и залитая, когда выбран */
 const SECTIONS: { id: AccountSection; title: string; description: string; icon: ReactNode; iconSelected: ReactNode }[] = [
@@ -14,12 +15,29 @@ type AccountSidebarProps = {
   user: AccountUser;
   section: AccountSection;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  /** Пользователь подтвердил выход в окне. Промис: на время ответа окно заблокировано, успех закрывает его */
+  onLogout?: () => void | Promise<void>;
 };
 
-/** Меню кабинета: карточка пользователя сверху, разделы списком, выход внизу */
+/** Меню кабинета: карточка пользователя сверху, разделы списком, выход внизу (красной кнопкой, с подтверждением в окне) */
 export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountSidebarProps) {
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [pending, setPending] = useState(false);
+
+  const confirmLogout = async () => {
+    setPending(true);
+    try {
+      await onLogout?.();
+      setConfirmOpen(false);
+    } catch {
+      // окно остаётся открытым: можно повторить или отменить
+    } finally {
+      setPending(false);
+    }
+  };
+
   return (
+    <>
     <FormCard
       fluid
       className="scr-account__side"
@@ -35,7 +53,7 @@ export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountS
           <span className="scr-profile__email text-label-sm">{user.email}</span>
         </div>
       }
-      primaryAction={<Button variant="secondary" iconLeft={<LogoutIcon />} onClick={onLogout}>Log out</Button>}
+      primaryAction={<Button variant="destructive" iconLeft={<LogoutIcon />} onClick={() => setConfirmOpen(true)}>Log out</Button>}
     >
       <nav className="scr-menu" aria-label="Account sections">
         {SECTIONS.map((s) => {
@@ -56,5 +74,17 @@ export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountS
         })}
       </nav>
     </FormCard>
+    <ConfirmDialog
+      open={confirmOpen}
+      pending={pending}
+      title={LOGOUT_TEXT.title}
+      text={LOGOUT_TEXT.body}
+      confirmLabel={LOGOUT_TEXT.confirm}
+      confirmIcon={<LogoutIcon />}
+      cancelLabel={LOGOUT_TEXT.cancel}
+      onConfirm={confirmLogout}
+      onCancel={() => setConfirmOpen(false)}
+    />
+    </>
   );
 }

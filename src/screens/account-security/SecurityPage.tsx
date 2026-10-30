@@ -5,7 +5,7 @@ import { SecuritySection, type SecuritySectionProps } from './SecuritySection';
 export type SecurityPageProps = SecuritySectionProps & {
   user?: AccountUser;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
 };
 
 /** Кабинет, раздел «Security» отдельной страницей. Смена пароля и остальные действия — снаружи, экран только раскладывает. */

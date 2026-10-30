@@ -6,7 +6,7 @@
   gap: var(--c-list-item-main-container-gap);
   padding: var(--c-list-item-main-container-padding-y) var(--c-list-item-main-container-padding-x);
   min-height: var(--c-list-item-large-min-height);
-  border: 0; border-radius: var(--c-list-item-list-radius);
+  border: 0; border-radius: var(--c-list-item-list-radius); corner-shape: superellipse(var(--corner-superellipse));
   background: var(--_bg); color: inherit; font: inherit; text-align: left;
   outline: 0;
 }
@@ -16,6 +16,7 @@ button.at-list-item { cursor: pointer; }
 /* card: свои радиус, боковые отступы Space/xl (как в Figma) и обводка */
 .at-list-item[data-variant='card'] {
   border-radius: var(--c-list-item-card-radius);
+  corner-shape: superellipse(var(--corner-superellipse));
   padding-inline: var(--space-xl);
   box-shadow: inset 0 0 0 var(--c-list-item-stroke) var(--_border);
 }

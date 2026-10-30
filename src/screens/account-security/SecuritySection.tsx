@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Button, FormCard, LockOutlineIcon } from '../../components';
-import { BlockAccountModal } from './BlockAccountModal';
+import { ConfirmDialog } from '../account/ConfirmDialog';
 import { ChangePasswordCard, type ChangePasswordCardProps } from './ChangePasswordCard';
+import { BLOCK_ACCOUNT_TEXT } from './securityData';
 import './security.css';
 
 export type SecuritySectionProps = ChangePasswordCardProps & {
@@ -36,16 +37,26 @@ export function SecuritySection({ onEnableTwoFactor, onBlockAccount, ...password
       <div className="scr-security__side">
         <FormCard
           fluid
-          header={<h2 className="scr-card-title text-heading-h4">2FA authentication</h2>}
+          header={<h2 className="at-form-card__title text-heading-h4">2FA authentication</h2>}
           primaryAction={<Button onClick={onEnableTwoFactor}>Enable</Button>}
         />
         <FormCard
           fluid
-          header={<h2 className="scr-card-title text-heading-h4">Account</h2>}
+          header={<h2 className="at-form-card__title text-heading-h4">Account</h2>}
           primaryAction={<Button variant="destructive" iconLeft={<LockOutlineIcon />} onClick={() => setConfirmOpen(true)}>Block account</Button>}
         />
       </div>
-      <BlockAccountModal open={confirmOpen} pending={blocking} onConfirm={confirmBlock} onCancel={() => setConfirmOpen(false)} />
+      <ConfirmDialog
+        open={confirmOpen}
+        pending={blocking}
+        title={BLOCK_ACCOUNT_TEXT.title}
+        text={BLOCK_ACCOUNT_TEXT.body}
+        confirmLabel={BLOCK_ACCOUNT_TEXT.confirm}
+        confirmIcon={<LockOutlineIcon />}
+        cancelLabel={BLOCK_ACCOUNT_TEXT.cancel}
+        onConfirm={confirmBlock}
+        onCancel={() => setConfirmOpen(false)}
+      />
     </div>
   );
 }

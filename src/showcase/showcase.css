@@ -179,3 +179,10 @@
 .sc-screens__doc { margin-top: var(--space-2xl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl); }
 .sc-link { color: var(--content-brand); }
 @media (max-width: 1280px) { .sc-screens__doc { grid-template-columns: minmax(0, 1fr); } }
+
+/* Экран внутри рамки витрины не тянется до высоты окна браузера (это нужно только настоящей странице) */
+.sc-screen-frame .scr-page { min-height: 0; }
+
+/* Правило 18: два образца — просто радиус и радиус со сглаживанием углов */
+.sc-rule__corner { display: block; width: var(--size-3xl); height: var(--size-3xl); background: var(--surface-brand-default); border-radius: var(--radius-xl); }
+.sc-rule__corner[data-smooth] { corner-shape: superellipse(var(--corner-superellipse)); }

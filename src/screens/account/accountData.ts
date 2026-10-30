@@ -34,6 +34,14 @@ export type AffiliateData = {
   history: ReferralEarning[];
 };
 
+/** Тексты окна подтверждения выхода. Предложены ассистентом, формулировки утверждает владелец. */
+export const LOGOUT_TEXT = {
+  title: 'Log out?',
+  body: 'You will need to sign in again to access your account.',
+  confirm: 'Log out',
+  cancel: 'Cancel',
+} as const;
+
 const pad = (n: number) => String(n).padStart(2, '0');
 
 /** «0 USDT», «12 USDT» */

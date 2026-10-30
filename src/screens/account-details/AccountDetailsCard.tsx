@@ -12,7 +12,7 @@ type AccountDetailsCardProps = {
 export function AccountDetailsCard({ details, onRequestChange }: AccountDetailsCardProps) {
   return (
     <div className="scr-account__row" data-row="top">
-      <FormCard fluid header={<h2 className="scr-card-title text-heading-h4">Edit details</h2>}>
+      <FormCard fluid header={<h2 className="at-form-card__title text-heading-h4">Edit details</h2>}>
         <TextField label="First name" value={details.firstName} disabled readOnly autoComplete="given-name" />
         <TextField label="Last name" value={details.lastName} disabled readOnly autoComplete="family-name" />
         <ContactField label="Phone number" value={details.phone} onRequestChange={() => onRequestChange?.('phone')} />

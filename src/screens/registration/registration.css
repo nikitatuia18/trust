@@ -19,7 +19,7 @@
 .scr-select__list {
   position: absolute; top: calc(100% + var(--space-sm)); left: 0; right: 0; z-index: 1;
   max-height: calc(var(--size-lg) * 6); overflow-y: auto;
-  border-radius: var(--c-list-radius);
+  border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse));
   box-shadow: var(--effect-elevation-overlay);
 }
 .scr-select__tick { display: inline-flex; width: var(--size-icon-md); height: var(--size-icon-md); color: var(--content-brand); }

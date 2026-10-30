@@ -27,7 +27,7 @@ export function HistoryCard({ rows, onSort, onViewAll }: HistoryCardProps) {
       fluid
       header={
         <div className="scr-card-head">
-          <h2 className="scr-card-title text-heading-h4">Earnings history</h2>
+          <h2 className="at-form-card__title text-heading-h4">Earnings history</h2>
           <div className="scr-card-head__actions">
             <Button variant="secondary" size="s" iconOnly iconLeft={<SortIcon />} aria-label="Sort" onClick={onSort} />
             <Button variant="secondary" size="s" onClick={onViewAll}>View all</Button>

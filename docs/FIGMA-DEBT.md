@@ -6,9 +6,9 @@
 
 | Секция | Токен | Тип | Значение |
 |---|---|---|---|
-| Primitives | `Colors/Black/alpha-32` | C | `#00000052` |
-| Theme | `Surface/Overlay/modal-scrim` | C | `@Primitives:Colors/Black/alpha-32` |
-| Layout | `Blur/Modal-backdrop` | F | `24` |
+| Theme | `Surface/Overlay/modal-scrim` | C | `@Primitives:Colors/Black/alpha-8` |
+| Layout | `Blur/Modal-backdrop` | F | `16` |
+| Layout | `Corner/Superellipse` | F | `2` |
 | Layout | `Size/QR-code/width` | F | `180` |
 | Layout | `Size/Account-menu/width` | F | `388` |
 | Components | `Chip/brand/bg-hover` | C | `@T:Surface/Brand/subtle-hover` |

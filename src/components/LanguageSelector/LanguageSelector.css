@@ -2,7 +2,7 @@
 .at-language-selector { position: relative; display: inline-flex; flex: none; }
 .at-language-selector__list {
   position: absolute; top: calc(100% + var(--space-sm)); left: 0; z-index: 1; width: max-content;
-  border-radius: var(--c-list-radius);
+  border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse));
   box-shadow:
     var(--elevation-overlay-2-offset-x) var(--elevation-overlay-2-offset-y) var(--elevation-overlay-2-blur) var(--elevation-overlay-2-spread) var(--elevation-overlay-2-shadow),
     var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);

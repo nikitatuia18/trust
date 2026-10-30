@@ -90,7 +90,7 @@ const compVar = (name) => `--c-${kebab(name)}`;
 
 // ---------- форматирование значений ----------
 const isOpacity = (name) => /^Opacity\//.test(name);
-const unitless = (name) => /^Grid\/columns$|Font-weight/.test(name);
+const unitless = (name) => /^Grid\/columns$|^Corner\/|Font-weight/.test(name);
 function fmtLiteral(name, type, value) {
   if (type === 'C') return value;
   if (type === 'S') {

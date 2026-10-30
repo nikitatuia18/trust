@@ -7,7 +7,7 @@ export type AccountPageProps = AffiliateSectionProps & {
   /** Раздел, открытый в меню. Здесь всегда 'affiliate'; переключение разделов — в AccountCabinet */
   section?: AccountSection;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
 };
 
 /** Кабинет, раздел «Affiliate program» отдельной страницей. Данные и действия — снаружи, экран только раскладывает. */

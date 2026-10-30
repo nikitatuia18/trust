@@ -10,7 +10,7 @@ export type AccountLayoutProps = {
   /** Раздел, подсвеченный в меню */
   section: AccountSection;
   onNavigate?: (section: AccountSection) => void;
-  onLogout?: () => void;
+  onLogout?: () => void | Promise<void>;
   /** Содержимое раздела справа от меню */
   children: ReactNode;
 };

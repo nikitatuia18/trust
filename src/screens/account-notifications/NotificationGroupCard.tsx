@@ -32,7 +32,7 @@ type NotificationGroupCardProps = {
 /** Одна группа уведомлений: заголовок и строки «подпись — переключатель» */
 export function NotificationGroupCard({ group, enabled, pending, onToggle }: NotificationGroupCardProps) {
   return (
-    <FormCard fluid header={<h2 className="scr-card-title text-heading-h4">{group.title}</h2>}>
+    <FormCard fluid header={<h2 className="at-form-card__title text-heading-h4">{group.title}</h2>}>
       {group.settings.map((s) => (
         <SettingRow key={s.id} setting={s} checked={enabled[s.id] ?? s.enabled} pending={pending.has(s.id)} onToggle={onToggle} />
       ))}

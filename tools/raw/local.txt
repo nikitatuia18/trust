@@ -1,12 +1,11 @@
 # Локальные токены: код первичен, в Figma «02 — Tokens» ещё нет. Экспорт из Figma этот файл не трогает.
-# Секции: ## Primitives (имя целиком, например Colors/Black/alpha-32), ## Theme, ## Layout, ## Components. Формат строк — как в одноимённых raw: Theme `name|C|значение`, Layout `name|F|desktop;mobile`, Components `name|F|@L:...`.
+# Секции: ## Primitives (имя целиком, например Colors/Black/alpha-32; сейчас пусто), ## Theme, ## Layout, ## Components. Формат строк — как в одноимённых raw: Theme `name|C|значение`, Layout `name|F|desktop;mobile`, Components `name|F|@L:...`.
 # Когда токен заведён в Figma и попал в экспорт — удалить строку отсюда (генератор подскажет дублем). Список долга: npm run debt.
-## Primitives
-Colors/Black/alpha-32|C|#00000052
 ## Theme
-Surface/Overlay/modal-scrim|C|@Primitives:Colors/Black/alpha-32
+Surface/Overlay/modal-scrim|C|@Primitives:Colors/Black/alpha-8
 ## Layout
-Blur/Modal-backdrop|F|24
+Blur/Modal-backdrop|F|16
+Corner/Superellipse|F|2
 Size/QR-code/width|F|180
 Size/Account-menu/width|F|388
 ## Components

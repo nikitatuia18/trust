@@ -41,12 +41,14 @@ export default function FrameDemo() {
         spacing={[
           'Корень: padding 0, gap Space/none, радиус --c-form-card-radius.',
           'Зоны header/body/footer: Space/2xl; body и footer — gap Space/xl.',
+          'Шапка с заголовком (.at-form-card__title, + .at-form-card__description): Space/3xl над заглавными и под базовой линией, зазор заголовок–пояснение Space/lg.',
           'Кнопки: gap Space/sm.',
         ]}
         why={[
           'Каркас один, содержимое — слоты: reuse-first, без отдельных «карточек входа».',
           'Зона видна, когда слот передан (show-* из Figma).',
           'Зоны разделены линией Form Card/border (как на экранах Figma: между header, body и footer). Корень не обрезает содержимое — из body может открываться список (выбор страны).',
+          'Заголовок шапки — класс .at-form-card__title с text-box: trim-both cap alphabetic: отступ считается от верха заглавных до базовой линии, поэтому сверху и снизу он одинаковый (раньше «воздух» строки давал разницу 2–3px). Обводка — настоящая граница (в Figma INSIDE, места не занимает): так отступ от неё до содержимого равен отступу у разделителей. Углы — со сглаживанием (Правила, п. 18). Отличие от Figma — записать при переносе.',
           'Ширина — не больше 522 (Size/Form-card/width → --c-form-card-max-width), на узком экране ужимается.',
         ]}
       />
@@ -114,7 +116,7 @@ export default function FrameDemo() {
           'Радиус карточки в Figma 24 без токена — в коде токен --c-summary-card-radius (в «Открыто»).',
         ]}
       />
-      <Preview title="Modal" note="open: true | false · окно внутри — Form Card + Window Header">
+      <Preview title="Modal" note="open: true | false · окно внутри — Form Card">
         <div className="sc-demo">
           <div className="sc-demo__row">
             <Button variant="secondary" onClick={() => setModalOpen(true)}>Open modal</Button>
@@ -122,27 +124,30 @@ export default function FrameDemo() {
           <Modal open={modalOpen} onClose={() => setModalOpen(false)} aria-labelledby="modal-demo-title">
             <FormCard
               actions="inline"
-              header={<WindowHeader title={<span id="modal-demo-title">Delete draft?</span>} rightAction={<Button size="s" variant="secondary" iconOnly iconLeft={<CloseIcon />} aria-label="Close" onClick={() => setModalOpen(false)} />} />}
+              header={
+                <>
+                  <h2 id="modal-demo-title" className="at-form-card__title text-heading-h4">Delete draft?</h2>
+                  <p className="at-form-card__description text-body-sm">The draft will be removed from your device.</p>
+                </>
+              }
               primaryAction={<Button variant="destructive" onClick={() => setModalOpen(false)}>Delete</Button>}
               secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setModalOpen(false)}>Cancel</Button>}
-            >
-              <p className="text-body-sm">The draft will be removed from your device.</p>
-            </FormCard>
+            />
           </Modal>
         </div>
       </Preview>
       <Doc
         where={[
           'Подтверждение необратимого действия (блокировка аккаунта), короткая форма или сообщение, на которое нужен ответ до возврата на страницу.',
-          'Окно внутри — Form Card, шапка — Window Header с кнопкой закрытия (Form Card не добавляет ему отступ и линию — они свои у Window Header); для широких форм и потоков — отдельная страница, не модалка.',
+          'Окно внутри — Form Card: заголовок и пояснение в шапке (как у карточек кабинета), в подвале два действия в ряд. Крестика нет — закрывает «Cancel», Esc или клик по затемнению. Для широких форм и потоков — отдельная страница, не модалка.',
         ]}
         spacing={[
-          'Затемнение: --c-modal-scrim → Surface/Overlay/modal-scrim → Black/alpha-32 (32%).',
-          'Размытие страницы под окном: --c-modal-backdrop-blur → Blur/Modal-backdrop = 24.',
+          'Затемнение: --c-modal-scrim → Surface/Overlay/modal-scrim → Black/alpha-8 (8%).',
+          'Размытие страницы под окном: --c-modal-backdrop-blur → Blur/Modal-backdrop = 16.',
           'Поля вокруг окна: --c-modal-padding (Space/xl); окно по центру по обеим осям, ширину держит Form Card.',
         ]}
         why={[
-          'Правило системы: у модального окна задний экран размывается и затемняется (Правила, п. 17). Затемнение 32% и блюр 24 — по решению владельца 2026-10-30, смотрим на практике.',
+          'Правило системы: у модального окна задний экран размывается и затемняется (Правила, п. 17). Затемнение 8% и блюр 16 — по решению владельца 2026-10-30 (сначала было 32% и 24 — слишком темно), смотрим на практике.',
           'Нативный <dialog>: фокус остаётся внутри, страница под окном недоступна, Esc закрывает, фокус возвращается на кнопку, открывшую окно. Состояние держит родитель: open и onClose.',
           'Фокус при открытии — на первом элементе окна; для необратимых действий отметьте безопасную кнопку атрибутом data-autofocus (в примере «Cancel»).',
           'Клик по затемнению закрывает окно; пока оно открыто, страница не прокручивается. Анимации появления нет — добавим вместе с остальными (prefers-reduced-motion учесть).',

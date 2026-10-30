@@ -1,6 +1,6 @@
 import { Fragment, useState, type ReactNode } from 'react';
 import {
-  Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField, WindowHeader,
+  Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
 } from '../components';
 
 type RuleProps = {
@@ -119,18 +119,21 @@ function ModalDemo() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Cell cap="Откройте окно: страница за ним размыта (24) и затемнена (32%)">
+      <Cell cap="Откройте окно: страница за ним размыта (16) и слегка затемнена (8%)">
         <Button size="s" variant="secondary" onClick={() => setOpen(true)}>Open modal</Button>
       </Cell>
       <Modal open={open} onClose={() => setOpen(false)} aria-labelledby="rules-modal-title">
         <FormCard
           actions="inline"
-          header={<WindowHeader title={<span id="rules-modal-title">Are you sure?</span>} rightAction={<Button size="s" variant="secondary" iconOnly iconLeft={<CloseIcon />} aria-label="Close" onClick={() => setOpen(false)} />} />}
+          header={
+            <>
+              <h2 id="rules-modal-title" className="at-form-card__title text-heading-h4">Are you sure?</h2>
+              <p className="at-form-card__description text-body-sm">Everything behind this window is blurred and dimmed.</p>
+            </>
+          }
           primaryAction={<Button variant="destructive" onClick={() => setOpen(false)}>Confirm</Button>}
           secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setOpen(false)}>Cancel</Button>}
-        >
-          <p className="text-body-sm sc-muted">Everything behind this window is blurred and dimmed.</p>
-        </FormCard>
+        />
       </Modal>
     </>
   );
@@ -406,11 +409,28 @@ export function RulesPage() {
         <Rule
           n={17}
           title="У модального окна задний экран размывается и затемняется"
-          text="Всё, что открывается окном поверх страницы (подтверждение, короткая форма), ставится в компонент Modal: страница под ним размыта на 24 и затемнена чёрным 32%. Само окно — Form Card (+ Window Header с кнопкой закрытия), собранный из компонентов и токенов. Значения 24 и 32% — по решению владельца 2026-10-30, смотрим на практике."
+          text="Всё, что открывается окном поверх страницы (подтверждение, короткая форма), ставится в компонент Modal: страница под ним размыта на 16 и слегка затемнена чёрным 8%. Само окно — Form Card: заголовок и пояснение в шапке, два действия в подвале, без крестика. Значения 16 и 8% — по решению владельца 2026-10-30, смотрим на практике."
           demo={<ModalDemo />}
-          good={['<Modal open onClose>…<FormCard/>…</Modal>', 'background: var(--c-modal-scrim)', 'backdrop-filter: blur(var(--c-modal-backdrop-blur))']}
+          good={['<Modal open onClose><FormCard/></Modal>', 'background: var(--c-modal-scrim)', 'backdrop-filter: blur(var(--c-modal-backdrop-blur))']}
           bad={['самодельный fixed-блок с rgba(0,0,0,.5)', 'окно без затемнения и размытия']}
-          note="Токены: Modal/scrim → Surface/Overlay/modal-scrim → Black/alpha-32; Modal/backdrop-blur → Blur/Modal-backdrop = 24. Заведены локально (tools/raw/local.txt), в Figma перенести по npm run debt."
+          note="Токены: Modal/scrim → Surface/Overlay/modal-scrim → Black/alpha-8; Modal/backdrop-blur → Blur/Modal-backdrop = 16 (Black/alpha-8 — примитив из Figma). Заведены локально (tools/raw/local.txt), в Figma перенести по npm run debt."
+        />
+      </Section>
+
+      <Section title="Скругления окон" note="Контейнеры скругляем со сглаживанием — как в iOS.">
+        <Rule
+          n={18}
+          title="У окон и карточек со скруглением — Corner smoothing iOS 60%"
+          text="Любой контейнер с радиусом (карточка, окно, список, меню, плитка) получает сглаживание углов — в Figma Corner smoothing iOS 60%, в коде corner-shape: superellipse(var(--corner-superellipse)). Контролы-«пилюли» (кнопка, поле, чип) не затрагивает: у них радиус полный. Токен один — менять сглаживание можно в одном месте."
+          demo={
+            <div className="sc-rule__row">
+              <Cell cap="Без сглаживания: просто радиус"><span className="sc-rule__corner" /></Cell>
+              <Cell cap="Со сглаживанием: радиус + superellipse"><span className="sc-rule__corner" data-smooth /></Cell>
+            </div>
+          }
+          good={['border-radius: var(--c-form-card-radius); corner-shape: superellipse(var(--corner-superellipse));']}
+          bad={['border-radius: 24px без сглаживания у карточки']}
+          note="Токен Corner/Superellipse = 2 (≈ Figma iOS 60%; подобрано на глаз, подкрутим по слову владельца). Заведён локально (tools/raw/local.txt), в Figma перенести по npm run debt. corner-shape работает в Chrome и Edge 139+; в остальных браузерах углы остаются обычным радиусом."
         />
       </Section>
     </>

@@ -708,10 +708,6 @@
     "Typography/Font-weight/medium": {
       "$type": "S",
       "$value": "500"
-    },
-    "Colors/Black/alpha-32": {
-      "$type": "C",
-      "$value": "#00000052"
     }
   }
 }

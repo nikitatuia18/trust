@@ -28,7 +28,7 @@ export function EarningsCard({ data, onWithdraw, onCopyLink, onHowItWorks }: Ear
   return (
     <FormCard
       fluid
-      header={<h2 className="scr-card-title text-heading-h4">Earnings</h2>}
+      header={<h2 className="at-form-card__title text-heading-h4">Earnings</h2>}
       primaryAction={<Button disabled={!canWithdraw} onClick={onWithdraw}>Withdraw earnings</Button>}
       secondaryAction={<p className="scr-card-note text-body-xs">Minimum withdrawal: {formatUsdt(data.minWithdrawal)}</p>}
     >

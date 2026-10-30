@@ -3,7 +3,7 @@
   --_border: var(--c-amount-field-border);
   display: flex; flex-direction: column; gap: var(--c-amount-field-gap); width: 100%;
   padding: var(--c-amount-field-padding);
-  border-radius: var(--c-amount-field-radius); background: var(--c-amount-field-bg);
+  border-radius: var(--c-amount-field-radius); corner-shape: superellipse(var(--corner-superellipse)); background: var(--c-amount-field-bg);
   box-shadow: inset 0 0 0 var(--c-amount-field-stroke) var(--_border);
 }
 .at-amount[data-error] { --_border: var(--c-amount-field-border-error); }
