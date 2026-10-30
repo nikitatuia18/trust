@@ -64,15 +64,11 @@
 
 /* Earnings */
 .scr-stats { display: flex; flex-wrap: wrap; gap: var(--space-xl); }
-.scr-ref-link {
-  display: flex; align-items: center; gap: var(--space-md);
-  padding: var(--space-sm); border-radius: var(--radius-lg);
-  background: var(--surface-neutral-base);
-  box-shadow: inset 0 0 0 var(--stroke-default) var(--border-neutral-default);
-}
-.scr-ref-link__text { display: flex; flex: 1; flex-direction: column; justify-content: center; min-width: 0; }
-.scr-ref-link__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); color: var(--content-primary); }
-.scr-ref-link__url { overflow: hidden; color: var(--content-secondary); text-overflow: ellipsis; white-space: nowrap; }
+/* Строка со ссылкой — List Item card; зазор иконка–текст такой же, как у пунктов меню кабинета */
+.scr-ref-link { --c-list-item-item-content-gap: var(--space-lg); }
+/* Заголовок не ломается посередине: если чип не помещается рядом, он целиком уходит на следующую строку */
+.scr-ref-link .at-text__row { flex-wrap: wrap; }
+.scr-ref-link .at-text__title { white-space: nowrap; }
 .scr-ref-link .at-button { --_content: var(--content-brand); }
 
 /* Promotion tools */

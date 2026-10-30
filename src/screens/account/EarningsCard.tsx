@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Chip, CopyIcon, ExportIcon, FormCard, IconCircle, LinkIcon, StatTile, TickCircleIcon, UsersIcon, WalletIcon } from '../../components';
+import { Button, Chip, CopyIcon, ExportIcon, FormCard, IconCircle, LinkIcon, ListItem, StatTile, TickCircleIcon, UsersIcon, WalletIcon } from '../../components';
 import { formatReferrals, formatUsdt, type AffiliateData } from './accountData';
 
 type EarningsCardProps = {
@@ -37,23 +37,24 @@ export function EarningsCard({ data, onWithdraw, onCopyLink, onHowItWorks }: Ear
         <StatTile icon={<ExportIcon />} value={formatUsdt(data.availableToWithdraw)} label="Available to withdraw" />
         <StatTile icon={<UsersIcon />} value={formatReferrals(data.referralCount)} label="Referred users" />
       </div>
-      <div className="scr-ref-link">
-        <IconCircle><LinkIcon /></IconCircle>
-        <div className="scr-ref-link__text">
-          <div className="scr-ref-link__head">
-            <span className="text-label-md">My referral link</span>
-            <Chip onClick={onHowItWorks}>How does it work?</Chip>
-          </div>
-          <span className="scr-ref-link__url text-body-xs">{data.referralLink}</span>
-        </div>
-        <Button
-          variant="ghost"
-          iconOnly
-          iconLeft={copied ? <TickCircleIcon /> : <CopyIcon />}
-          aria-label={copied ? 'Link copied' : 'Copy referral link'}
-          onClick={copy}
-        />
-      </div>
+      <ListItem
+        className="scr-ref-link"
+        variant="card"
+        showDivider={false}
+        leftSlot={<IconCircle><LinkIcon /></IconCircle>}
+        title="My referral link"
+        subtitle={<Chip onClick={onHowItWorks}>How does it work?</Chip>}
+        description={data.referralLink}
+        rightSlot={
+          <Button
+            variant="ghost"
+            iconOnly
+            iconLeft={copied ? <TickCircleIcon /> : <CopyIcon />}
+            aria-label={copied ? 'Link copied' : 'Copy referral link'}
+            onClick={copy}
+          />
+        }
+      />
     </FormCard>
   );
 }
