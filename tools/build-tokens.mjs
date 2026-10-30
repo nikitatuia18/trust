@@ -56,10 +56,11 @@ for (const line of raw('local.txt')) {
   if (line.startsWith('## ')) { section = line.slice(3).trim(); continue; }
   if (line.startsWith('#')) continue;
   const [name, t, value] = line.split('|');
-  const target_ = section === 'Theme' ? theme : section === 'Layout' ? layout : section === 'Components' ? comps : null;
+  const target_ = section === 'Primitives' ? prim : section === 'Theme' ? theme : section === 'Layout' ? layout : section === 'Components' ? comps : null;
   if (!target_) { localErrors.push(`local.txt: неизвестная секция "${section}" для ${name}`); continue; }
   if (target_.has(name)) { localErrors.push(`local.txt: ${section}/${name} уже есть в экспорте Figma — удалите строку из local.txt`); continue; }
   if (section === 'Layout') { const [d, m = d] = value.split(';'); layout.set(name, { type: t, desktop: d, mobile: m }); }
+  else if (section === 'Primitives') prim.set(name, { type: t, value: t === 'F' ? Number(value) : value }); // имя целиком: Colors/Black/alpha-32
   else target_.set(name, { type: t, value });
   localKeys.add(`${section.toLowerCase()}:${name}`);
 }

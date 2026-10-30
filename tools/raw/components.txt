@@ -159,7 +159,7 @@ Input/bg-hover|C|@T:Surface/Neutral/canvas
 Form Card/bg|C|@T:Surface/Neutral/base
 Form Card/border|C|@T:Border/Neutral/default
 Form Card/radius|F|@L:Radius/2xl
-Footer/bg|C|@T:Surface/Neutral/canvas
+Footer/bg|C|@T:Surface/Neutral/base
 Footer/divider|C|@T:Border/Neutral/default
 Footer/link|C|@T:Content/secondary
 Footer/link-hover|C|@T:Content/primary

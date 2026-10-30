@@ -12,7 +12,9 @@ export type ChangePasswordCardProps = {
   onGeneratePassword?: () => string;
 };
 
-/** «Change password»: три поля, «Generate password» и Save. Save недоступен, пока поля не заполнены и новый пароль не совпал с повтором. */
+/** «Change password»: три поля и «Generate password». Кнопки Save пока нет (решение владельца): она появится, когда пользователь начнёт вводить,
+ *  и выплывет с анимацией — это позже. Логика сохранения уже здесь: когда кнопка вернётся, она станет type="submit" и будет доступна при canSave
+ *  (поля заполнены, новый пароль совпал с повтором). */
 export function ChangePasswordCard({ onChangePassword, error, onGeneratePassword = generatePassword }: ChangePasswordCardProps) {
   const [current, setCurrent] = useState('');
   const [next, setNext] = useState('');
@@ -52,7 +54,6 @@ export function ChangePasswordCard({ onChangePassword, error, onGeneratePassword
       <FormCard
         fluid
         header={<h2 className="scr-card-title text-heading-h4">Change password</h2>}
-        primaryAction={<Button type="submit" disabled={!canSave}>Save</Button>}
       >
         <TextField
           type="password"

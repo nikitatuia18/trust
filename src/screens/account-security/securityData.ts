@@ -6,6 +6,14 @@ export type PasswordChange = {
   newPassword: string;
 };
 
+/** Тексты окна подтверждения блокировки. Предложены ассистентом, формулировки утверждает владелец. */
+export const BLOCK_ACCOUNT_TEXT = {
+  title: 'Block account?',
+  body: "While your account is blocked, you won't be able to sign in or make exchanges. Are you sure you want to continue?",
+  confirm: 'Block account',
+  cancel: 'Cancel',
+} as const;
+
 /** Символы подсказки из макета «A-Z, 1-9, #-&» */
 const PASSWORD_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789#$%&-';
 

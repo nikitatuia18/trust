@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Chip, Divider, FormCard, List, ListItem, OrderSummary, OrderSummaryNested, Icon, CloseIcon, SegmentedControl, StepIndicator, TextField, WindowHeader, Header } from '../../components';
+import { Button, Chip, Divider, FormCard, List, ListItem, OrderSummary, OrderSummaryNested, Icon, CloseIcon, SegmentedControl, StepIndicator, TextField, WindowHeader, Header, Modal } from '../../components';
 import { Doc, Preview } from './doc-kit';
 
 /** Группа страницы «Компоненты». order — позиция, title/note — заголовок группы. */
@@ -10,6 +10,7 @@ const STEPS = ['Contact Details', 'Data Consent', 'Scan documents', 'Scan face',
 export default function FrameDemo() {
   const [tab, setTab] = useState('signin');
   const [step, setStep] = useState(3);
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       <Preview title="Form Card" note="Actions: stacked | inline · header / body / footer — слоты">
@@ -111,6 +112,41 @@ export default function FrameDemo() {
           'Строки — обычные List Item small: свой «Summary Row» не нужен.',
           'Шеврон — Icon (arrow-right, повёрнут), слот chevron заменяем.',
           'Радиус карточки в Figma 24 без токена — в коде токен --c-summary-card-radius (в «Открыто»).',
+        ]}
+      />
+      <Preview title="Modal" note="open: true | false · окно внутри — Form Card + Window Header">
+        <div className="sc-demo">
+          <div className="sc-demo__row">
+            <Button variant="secondary" onClick={() => setModalOpen(true)}>Open modal</Button>
+          </div>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)} aria-labelledby="modal-demo-title">
+            <FormCard
+              actions="inline"
+              header={<WindowHeader title={<span id="modal-demo-title">Delete draft?</span>} rightAction={<Button size="s" variant="secondary" iconOnly iconLeft={<CloseIcon />} aria-label="Close" onClick={() => setModalOpen(false)} />} />}
+              primaryAction={<Button variant="destructive" onClick={() => setModalOpen(false)}>Delete</Button>}
+              secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setModalOpen(false)}>Cancel</Button>}
+            >
+              <p className="text-body-sm">The draft will be removed from your device.</p>
+            </FormCard>
+          </Modal>
+        </div>
+      </Preview>
+      <Doc
+        where={[
+          'Подтверждение необратимого действия (блокировка аккаунта), короткая форма или сообщение, на которое нужен ответ до возврата на страницу.',
+          'Окно внутри — Form Card, шапка — Window Header с кнопкой закрытия (Form Card не добавляет ему отступ и линию — они свои у Window Header); для широких форм и потоков — отдельная страница, не модалка.',
+        ]}
+        spacing={[
+          'Затемнение: --c-modal-scrim → Surface/Overlay/modal-scrim → Black/alpha-32 (32%).',
+          'Размытие страницы под окном: --c-modal-backdrop-blur → Blur/Modal-backdrop = 24.',
+          'Поля вокруг окна: --c-modal-padding (Space/xl); окно по центру по обеим осям, ширину держит Form Card.',
+        ]}
+        why={[
+          'Правило системы: у модального окна задний экран размывается и затемняется (Правила, п. 17). Затемнение 32% и блюр 24 — по решению владельца 2026-10-30, смотрим на практике.',
+          'Нативный <dialog>: фокус остаётся внутри, страница под окном недоступна, Esc закрывает, фокус возвращается на кнопку, открывшую окно. Состояние держит родитель: open и onClose.',
+          'Фокус при открытии — на первом элементе окна; для необратимых действий отметьте безопасную кнопку атрибутом data-autofocus (в примере «Cancel»).',
+          'Клик по затемнению закрывает окно; пока оно открыто, страница не прокручивается. Анимации появления нет — добавим вместе с остальными (prefers-reduced-motion учесть).',
+          'Для Modal нет компонента в Figma «03 — Components» и токенов в «02 — Tokens» — перенести пачкой по npm run debt.',
         ]}
       />
     </>

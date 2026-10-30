@@ -1,0 +1,15 @@
+/* Modal — токены --c-modal-*. Диалог растянут на весь экран и сам рисует затемнение и размытие того, что под ним;
+   родной ::backdrop прозрачный (на нём переменные работают не во всех браузерах). Само окно — Form Card, ширину держит он. */
+.at-modal {
+  box-sizing: border-box; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0;
+  padding: var(--c-modal-padding);
+  background: var(--c-modal-scrim);
+  -webkit-backdrop-filter: blur(var(--c-modal-backdrop-blur)); backdrop-filter: blur(var(--c-modal-backdrop-blur));
+  color: var(--content-primary);
+}
+.at-modal[open] { display: flex; position: fixed; inset: 0; overflow-y: auto; }
+.at-modal::backdrop { background: transparent; }
+/* auto по обеим осям: окно по центру, а если выше экрана — не обрезается сверху, а прокручивается */
+.at-modal > * { margin: auto; }
+/* Пока окно открыто, страница под ним не прокручивается */
+html:has(.at-modal[open]) { overflow: hidden; }

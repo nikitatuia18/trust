@@ -643,7 +643,7 @@
     },
     "Footer/bg": {
       "$type": "C",
-      "$value": "{theme.Surface/Neutral/canvas}"
+      "$value": "{theme.Surface/Neutral/base}"
     },
     "Footer/divider": {
       "$type": "C",
@@ -1280,6 +1280,18 @@
     "Chip/neutral/bg-hover": {
       "$type": "C",
       "$value": "{theme.Surface/Neutral/hover}"
+    },
+    "Modal/scrim": {
+      "$type": "C",
+      "$value": "{theme.Surface/Overlay/modal-scrim}"
+    },
+    "Modal/backdrop-blur": {
+      "$type": "F",
+      "$value": "{layout.Blur/Modal-backdrop}"
+    },
+    "Modal/padding": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
     }
   }
 }

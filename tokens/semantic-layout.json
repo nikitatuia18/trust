@@ -586,6 +586,11 @@
       "desktop": "{prim.Spacing/Spacing/1550}",
       "mobile": "{prim.Spacing/Spacing/1550}"
     },
+    "Blur/Modal-backdrop": {
+      "$type": "F",
+      "desktop": "24",
+      "mobile": "24"
+    },
     "Size/QR-code/width": {
       "$type": "F",
       "desktop": "180",

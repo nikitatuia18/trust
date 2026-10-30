@@ -1,6 +1,6 @@
 import { Fragment, useState, type ReactNode } from 'react';
 import {
-  Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
+  Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField, WindowHeader,
 } from '../components';
 
 type RuleProps = {
@@ -112,6 +112,27 @@ function PillDemo() {
         <div className="sc-rule__box text-label-md">Card</div>
       </Cell>
     </div>
+  );
+}
+
+function ModalDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Cell cap="Откройте окно: страница за ним размыта (24) и затемнена (32%)">
+        <Button size="s" variant="secondary" onClick={() => setOpen(true)}>Open modal</Button>
+      </Cell>
+      <Modal open={open} onClose={() => setOpen(false)} aria-labelledby="rules-modal-title">
+        <FormCard
+          actions="inline"
+          header={<WindowHeader title={<span id="rules-modal-title">Are you sure?</span>} rightAction={<Button size="s" variant="secondary" iconOnly iconLeft={<CloseIcon />} aria-label="Close" onClick={() => setOpen(false)} />} />}
+          primaryAction={<Button variant="destructive" onClick={() => setOpen(false)}>Confirm</Button>}
+          secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setOpen(false)}>Cancel</Button>}
+        >
+          <p className="text-body-sm sc-muted">Everything behind this window is blurred and dimmed.</p>
+        </FormCard>
+      </Modal>
+    </>
   );
 }
 
@@ -378,6 +399,18 @@ export function RulesPage() {
           }
           good={['допущение в итоге волны: «Открыто»']}
           bad={['тихая подмена значения в коде']}
+        />
+      </Section>
+
+      <Section title="Окна поверх страницы" note="Модальное окно перекрывает страницу — страница это показывает.">
+        <Rule
+          n={17}
+          title="У модального окна задний экран размывается и затемняется"
+          text="Всё, что открывается окном поверх страницы (подтверждение, короткая форма), ставится в компонент Modal: страница под ним размыта на 24 и затемнена чёрным 32%. Само окно — Form Card (+ Window Header с кнопкой закрытия), собранный из компонентов и токенов. Значения 24 и 32% — по решению владельца 2026-10-30, смотрим на практике."
+          demo={<ModalDemo />}
+          good={['<Modal open onClose>…<FormCard/>…</Modal>', 'background: var(--c-modal-scrim)', 'backdrop-filter: blur(var(--c-modal-backdrop-blur))']}
+          bad={['самодельный fixed-блок с rgba(0,0,0,.5)', 'окно без затемнения и размытия']}
+          note="Токены: Modal/scrim → Surface/Overlay/modal-scrim → Black/alpha-32; Modal/backdrop-blur → Blur/Modal-backdrop = 24. Заведены локально (tools/raw/local.txt), в Figma перенести по npm run debt."
         />
       </Section>
     </>

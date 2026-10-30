@@ -179,6 +179,7 @@
   --prim-letter-spacing-300: -3px;
   --prim-font-weight-regular: 400;
   --prim-font-weight-medium: 500;
+  --prim-color-black-alpha-32: #00000052;
 
   /* ===== Semantic / Theme (Light) ===== */
   --surface-neutral-canvas: var(--prim-color-gray-25);
@@ -259,6 +260,7 @@
   --elevation-overlay-1-shadow: var(--prim-color-black-alpha-4);
   --elevation-overlay-2-shadow: var(--prim-color-black-alpha-8);
   --elevation-control-1-shadow: var(--prim-color-black-alpha-16);
+  --surface-overlay-modal-scrim: var(--prim-color-black-alpha-32);
 
   /* ===== Semantic / Layout (Desktop) ===== */
   --typography-font-size-xs: var(--prim-font-size-100);
@@ -378,6 +380,7 @@
   --size-indicator-mark: var(--prim-spacing-400);
   --size-form-card-width: var(--prim-spacing-1650);
   --size-min-height-md: var(--prim-spacing-1550);
+  --blur-modal-backdrop: 24px;
   --size-qr-code-width: 180px;
   --size-account-menu-width: 388px;
 
@@ -542,7 +545,7 @@
   --c-form-card-bg: var(--surface-neutral-base);
   --c-form-card-border: var(--border-neutral-default);
   --c-form-card-radius: var(--radius-2xl);
-  --c-footer-bg: var(--surface-neutral-canvas);
+  --c-footer-bg: var(--surface-neutral-base);
   --c-footer-divider: var(--border-neutral-default);
   --c-footer-link: var(--content-secondary);
   --c-footer-link-hover: var(--content-primary);
@@ -702,6 +705,9 @@
   --c-input-field-padding-x: var(--space-xs);
   --c-chip-brand-bg-hover: var(--surface-brand-subtle-hover);
   --c-chip-neutral-bg-hover: var(--surface-neutral-hover);
+  --c-modal-scrim: var(--surface-overlay-modal-scrim);
+  --c-modal-backdrop-blur: var(--blur-modal-backdrop);
+  --c-modal-padding: var(--space-xl);
 
   /* ===== Effect styles ===== */
   --effect-focus-primary: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);

@@ -88,18 +88,18 @@ const SECURITY_DOC = [
     h: 'Из чего собрано',
     items: [
       'Каркас и меню — те же, что у остальных разделов кабинета (общий AccountLayout, раздел переключается внутри AccountCabinet).',
-      'Change password: Form Card fluid, три TextField type=password (глазок «показать / скрыть»), Button link с иконкой key («Generate password»), Button primary Save в подвале.',
-      '2FA authentication: Form Card с одной Button primary. Account: Form Card с Button destructive (иконка lock).',
-      'Из нового: TextField type=password с глазком, иконки KeyIcon, EyeIcon, EyeSlashIcon (из «06 — Icons»).',
+      'Change password: Form Card fluid, три TextField type=password (глазок «показать / скрыть»), Button link с иконкой key («Generate password»). Кнопки Save пока нет (решение владельца): она появится при вводе, с анимацией — позже.',
+      '2FA authentication: Form Card с одной Button primary. Account: Form Card с Button destructive (иконка lock); по нажатию — окно подтверждения: Modal (затемнение 32%, размытие 24) с Form Card и Window Header, «Cancel» в фокусе.',
+      'Из нового: компонент Modal, TextField type=password с глазком, иконки KeyIcon, EyeIcon, EyeSlashIcon (из «06 — Icons»); Window Header теперь можно ставить шапкой в Form Card.',
     ],
   },
   {
     h: 'Допущения',
     items: [
       'Карточка «Change E-mail» из макета не собрана — по решению владельца e-mail меняется в Account details.',
-      'Save недоступен, пока три поля не заполнены и новый пароль не совпал с повтором (при несовпадении поле «Repeat» краснеет, текста ошибки нет — не придуман). Ошибку сервера показывает проп error под «Current password».',
+      'При несовпадении паролей поле «Repeat» краснеет, текста ошибки нет — не придуман. Ошибку сервера показывает проп error под «Current password». Логика сохранения (onChangePassword, canSave) готова и ждёт кнопку.',
       '«Generate password» заполняет New и Repeat и показывает их открытым текстом; генератор тестовый, подставляется через onGeneratePassword.',
-      'Опечатка макета «Anable» исправлена на «Enable». У 2FA нарисовано только состояние «выключено»; «Block account» без подтверждения — это решают разработчики. Иконка у «Block account» (lock) выбрана владельцем вместо заглушки из макета.',
+      'Опечатка макета «Anable» исправлена на «Enable». У 2FA нарисовано только состояние «выключено» — оставлено как есть. Иконка у «Block account» (lock) выбрана владельцем вместо заглушки из макета. Текст окна подтверждения («Block account?», «While your account is blocked…») предложен ассистентом, формулировки утверждает владелец.',
       'Правила пароля (длина, символы) не заданы: подсказка «A-Z, 1-9, #-&» — как в макете, проверок нет.',
     ],
   },

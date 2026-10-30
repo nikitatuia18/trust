@@ -312,6 +312,10 @@
     "Elevation/Control/1/shadow": {
       "$type": "C",
       "$value": "{prim.Colors/Black/alpha-16}"
+    },
+    "Surface/Overlay/modal-scrim": {
+      "$type": "C",
+      "$value": "{prim.Colors/Black/alpha-32}"
     }
   }
 }
