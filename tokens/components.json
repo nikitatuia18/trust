@@ -211,7 +211,7 @@
     },
     "List Item/card/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/2xl}"
+      "$value": "{layout.Radius/lg}"
     },
     "List Item/large/slot-left": {
       "$type": "F",
@@ -1343,7 +1343,7 @@
     },
     "Icon Circle/radius": {
       "$type": "F",
-      "$value": "{layout.Radius/sm}"
+      "$value": "{layout.Radius/md}"
     }
   }
 }

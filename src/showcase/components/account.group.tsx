@@ -56,7 +56,7 @@ export default function AccountDemo() {
       </Preview>
       <Doc
         where={['Левый слот ListItem в меню кабинета; строка «My referral link».']}
-        spacing={['Плашка Size/xl с радиусом 8 (Icon Circle/radius = Radius/sm) и сглаживанием, иконка Size/icon/md.']}
+        spacing={['Плашка Size/xl с радиусом 12 (Icon Circle/radius = Radius/md) и сглаживанием, иконка Size/icon/md.']}
         why={['Отличие от Method Icon: произвольная иконка, а не способ оплаты. brand — выбранный пункт меню: иконка в нём залитая, в невыбранном — контурная.']}
       />
       <Preview title="Table" note="Ширина колонок по содержимому, одна колонка растягивается; на узком экране прокручивается">

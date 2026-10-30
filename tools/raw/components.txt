@@ -51,7 +51,7 @@ List Item/small/min-height|F|@L:Size/md
 List Item/main-container/padding-y|F|@L:Space/sm
 List Item/main-container/gap|F|@L:Space/none
 List Item/list/radius|F|@L:Radius/xl
-List Item/card/radius|F|@L:Radius/2xl
+List Item/card/radius|F|@L:Radius/lg
 List Item/large/slot-left|F|@L:Size/lg
 List Item/small/slot-left|F|@L:Size/md
 List Item/stroke|F|@L:Stroke/default

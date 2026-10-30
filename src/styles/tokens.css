@@ -437,7 +437,7 @@
   --c-list-item-main-container-padding-y: var(--space-sm);
   --c-list-item-main-container-gap: var(--space-none);
   --c-list-item-list-radius: var(--radius-xl);
-  --c-list-item-card-radius: var(--radius-2xl);
+  --c-list-item-card-radius: var(--radius-lg);
   --c-list-item-large-slot-left: var(--size-lg);
   --c-list-item-small-slot-left: var(--size-md);
   --c-list-item-stroke: var(--stroke-default);
@@ -720,7 +720,7 @@
   --c-modal-body-gap: var(--space-xl);
   --c-form-card-header-padding-y: var(--space-2xl);
   --c-badge-radius: var(--radius-sm);
-  --c-icon-circle-radius: var(--radius-sm);
+  --c-icon-circle-radius: var(--radius-md);
 
   /* ===== Effect styles ===== */
   --effect-focus-primary: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);

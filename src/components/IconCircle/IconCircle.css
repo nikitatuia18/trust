@@ -1,4 +1,4 @@
-/* Icon Circle — из экрана Account (плашка 44 с иконкой 24 в пунктах меню и в строке «My referral link»). Радиус 8 (Radius/sm) со сглаживанием — решение владельца 2026-10-30; имя «Circle» историческое. */
+/* Icon Circle — из экрана Account (плашка 44 с иконкой 24 в пунктах меню и в строке «My referral link»). Радиус 12 (Radius/md) со сглаживанием — решение владельца 2026-10-30; имя «Circle» историческое. */
 .at-icon-circle {
   display: inline-flex; flex: none; align-items: center; justify-content: center; box-sizing: border-box;
   width: var(--size-xl); height: var(--size-xl);

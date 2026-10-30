@@ -15,7 +15,7 @@ button.at-list-item { cursor: pointer; }
 
 /* card: свои радиус, боковые отступы Space/xl (как в Figma) и обводка */
 .at-list-item[data-variant='card'] {
-  border-radius: var(--c-list-item-card-radius); /* check-ignore: пункт меню — «таблетка» (радиус ≥ половины высоты), без сглаживания (Правило 18) */
+  border-radius: var(--c-list-item-card-radius); corner-shape: superellipse(var(--corner-superellipse)); /* card: радиус 16 (Radius/lg, как у кнопки) со сглаживанием — решение владельца 2026-10-30 */
   padding-inline: var(--space-xl);
   box-shadow: inset 0 0 0 var(--c-list-item-stroke) var(--_border);
 }
