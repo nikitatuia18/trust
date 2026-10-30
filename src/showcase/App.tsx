@@ -3,9 +3,16 @@ import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
 import { RulesPage } from './RulesPage';
 import { ScreensPage } from './ScreensPage';
-import { AccountPage, RegistrationFlow } from '../screens';
+import { AccountDetailsPage, AccountPage, RegistrationFlow, type AccountSection } from '../screens';
 
-type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account';
+type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-details';
+
+/** Разделы кабинета, у которых уже есть страница; остальные пункты меню пока без перехода */
+const ACCOUNT_ROUTES: Partial<Record<AccountSection, Page>> = { details: 'account-details', affiliate: 'account' };
+const goToSection = (section: AccountSection) => {
+  const route = ACCOUNT_ROUTES[section];
+  if (route) window.location.hash = `#/${route}`;
+};
 
 const NAV: { id: Page; label: string; ready: boolean }[] = [
   { id: 'tokens', label: 'Токены', ready: true },
@@ -16,8 +23,8 @@ const NAV: { id: Page; label: string; ready: boolean }[] = [
 
 const fromHash = (): Page => {
   const h = window.location.hash.replace('#/', '') as Page;
-  // registration и account — отдельные страницы без оболочки витрины, в меню их нет
-  return h === 'registration' || h === 'account' || NAV.some((n) => n.id === h) ? h : 'tokens';
+  // registration и страницы кабинета — отдельные страницы без оболочки витрины, в меню их нет
+  return h === 'registration' || h === 'account' || h === 'account-details' || NAV.some((n) => n.id === h) ? h : 'tokens';
 };
 
 export function App() {
@@ -37,7 +44,8 @@ export function App() {
   }, [layout]);
 
   if (page === 'registration') return <RegistrationFlow />;
-  if (page === 'account') return <AccountPage />;
+  if (page === 'account') return <AccountPage onNavigate={goToSection} />;
+  if (page === 'account-details') return <AccountDetailsPage onNavigate={goToSection} />;
 
   return (
     <div className="sc-shell">

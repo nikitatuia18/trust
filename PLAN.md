@@ -18,6 +18,8 @@
 
 - **Экран Account / Affiliate program** (`src/screens/account/`, `#/account`) — тестовая сборка по макету «1.1 Account / Affiliate program»; в систему добавлены Badge, Breadcrumbs, StatTile, IconCircle, DropdownMenu, Table и расширения SegmentedControl size m, FormCard fluid. Шапка — системная (как у Auth Page), без аватара и без «Talk to sales».
 
+- **Экран Account details** (`src/screens/account-details/`, `#/account-details`) — по макету «1.2 Account / Account detalis». Общий каркас кабинета вынесен в `AccountLayout` (его же использует Affiliate). Новых компонентов нет: Form Card + 4 Text Field; имя/фамилия — disabled, телефон/Telegram — readOnly с подсказкой «To change, contact support» (текст-заглушка). Кнопки Save нет по решению владельца 2026-10-30: менять данные можно только через поддержку. Меню между разделами переключает `#/account` ↔ `#/account-details`; Security и Notifications ещё без страниц.
+
 ## Следующий шаг (рекомендация)
 
 **Довести регистрацию до рабочей логики.** Владелец уже назвал:

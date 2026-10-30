@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Chip } from '../components';
-import { AccountPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
+import { AccountDetailsPage, AccountPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
 
 const DOC = [
   {
@@ -62,6 +62,25 @@ const ACCOUNT_DOC = [
   },
 ];
 
+const DETAILS_DOC = [
+  {
+    h: 'Из чего собрано',
+    items: [
+      'Каркас и меню — те же, что у Affiliate program (общий AccountLayout): шапка, подвал, Breadcrumbs, Form Card с List Item.',
+      'Edit details: Form Card (ширина окна-формы) и четыре Text Field. Имя и фамилия — disabled; телефон и Telegram — readOnly с подсказкой под полем.',
+      'Новых компонентов и токенов не понадобилось.',
+    ],
+  },
+  {
+    h: 'Допущения',
+    items: [
+      'Менять данные на экране нельзя вовсе: телефон и Telegram — только через поддержку. Поэтому кнопки Save нет (решение владельца), экран ничего не отправляет.',
+      'Текст подсказки «To change, contact support» — заглушка, формулировку утверждает владелец. Ссылки на поддержку в подсказке нет.',
+      'Опечатки макета («detalis», «Login out») исправлены; аватара в шапке нет — шапка системная.',
+    ],
+  },
+];
+
 export function ScreensPage() {
   const [step, setStep] = useState<RegistrationStep>('email');
   const [done, setDone] = useState<Details | null>(null);
@@ -74,6 +93,7 @@ export function ScreensPage() {
           Регистрация — три экрана, собранные из готовых компонентов и токенов, без нового CSS поверх. Это живой флоу: вводите e-mail,
           любой код из 4 цифр и данные. Переключать шаги можно и чипами. Отдельной страницей: <a className="sc-link" href="#/registration">#/registration</a>.
           Кабинет (Affiliate program) — <a className="sc-link" href="#/account">#/account</a>: меню, Earnings, Promotion tools, история начислений.
+          Кабинет (Account details) — <a className="sc-link" href="#/account-details">#/account-details</a>: данные профиля, менять которые можно только через поддержку.
         </p>
       </div>
 
@@ -114,6 +134,26 @@ export function ScreensPage() {
       </div>
       <aside className="sc-card sc-doc sc-screens__doc">
         {ACCOUNT_DOC.map((b) => (
+          <div key={b.h} className="sc-doc__block">
+            <h4 className="text-label-sm">{b.h}</h4>
+            <ul className="sc-doc__list text-body-xs sc-muted">
+              {b.items.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+          </div>
+        ))}
+      </aside>
+
+      <div className="sc-section">
+        <h2 className="text-heading-h3">Кабинет — Account details</h2>
+        <p className="text-body-sm sc-muted">
+          Тестовая сборка по макету «1.2 Account / Account detalis». Данные демонстрационные. Отдельной страницей: <a className="sc-link" href="#/account-details">#/account-details</a>.
+        </p>
+      </div>
+      <div className="sc-screen-frame">
+        <AccountDetailsPage />
+      </div>
+      <aside className="sc-card sc-doc sc-screens__doc">
+        {DETAILS_DOC.map((b) => (
           <div key={b.h} className="sc-doc__block">
             <h4 className="text-label-sm">{b.h}</h4>
             <ul className="sc-doc__list text-body-xs sc-muted">
