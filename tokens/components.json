@@ -1340,6 +1340,10 @@
     "Badge/radius": {
       "$type": "F",
       "$value": "{layout.Radius/sm}"
+    },
+    "Icon Circle/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/sm}"
     }
   }
 }
