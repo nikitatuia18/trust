@@ -1,0 +1,12 @@
+/* Notifications: строка «подпись — переключатель». Только токены. */
+.scr-setting { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
+.scr-setting__label { min-width: 0; color: var(--content-primary); }
+
+/* Три карточки в ряд (Figma: поровну, высота по содержимому); при узком контенте — по две, затем по одной */
+.scr-account__row[data-row='triple'] { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+@container scr-content (max-width: 959px) {
+  .scr-account__row[data-row='triple'] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container scr-content (max-width: 799px) {
+  .scr-account__row[data-row='triple'] { grid-template-columns: minmax(0, 1fr); }
+}

@@ -118,7 +118,7 @@ Props:
 
 ### Chip
 
-Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён.
+Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён: заливка на ступень темнее (токены Chip/brand/bg-hover и Chip/neutral/bg-hover, заведены в коде).
 
 Группа витрины: Контент и списки.
 Где используется: Быстрые фильтры и пресеты: валюта, сумма, период. Подсказка мин. суммы под Amount Field (neutral s).

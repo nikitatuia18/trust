@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Chip } from '../components';
-import { AccountDetailsPage, AccountPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
+import { AccountDetailsPage, AccountPage, NotificationsPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
 
 const DOC = [
   {
@@ -83,6 +83,26 @@ const DETAILS_DOC = [
   },
 ];
 
+const NOTIFICATIONS_DOC = [
+  {
+    h: 'Из чего собрано',
+    items: [
+      'Каркас и меню — те же, что у остальных разделов кабинета (общий AccountLayout, раздел переключается внутри AccountCabinet).',
+      'Три карточки-группы (Security, Transactions, Product updates): Form Card fluid, заголовок — h2 с классом heading-h4, в теле строки «подпись label-md — Switch».',
+      'Новых компонентов и токенов нет.',
+    ],
+  },
+  {
+    h: 'Допущения',
+    items: [
+      'Переключатель сохраняется сразу, кнопки Save нет (в макете её нет). Колбэк onChange может вернуть промис: на время сохранения переключатель заблокирован, при отказе сервера возвращается назад. Сообщения об ошибке в макете нет — не придумано.',
+      'Строка «подпись — Switch» собрана раскладкой экрана, отдельного компонента нет; подпись связана с переключателем через aria-labelledby, клик по самой подписи не переключает.',
+      'В макете Switch нарисован двумя размерами (62×32 и 52×28) — взят системный 52×28.',
+      'Описания пунктов меню в макете («Preferences and push alerts» и т. п.) длиннее принятых в системе — оставлены короткие заглушки.',
+    ],
+  },
+];
+
 export function ScreensPage() {
   const [step, setStep] = useState<RegistrationStep>('email');
   const [done, setDone] = useState<Details | null>(null);
@@ -96,6 +116,7 @@ export function ScreensPage() {
           любой код из 4 цифр и данные. Переключать шаги можно и чипами. Отдельной страницей: <a className="sc-link" href="#/registration">#/registration</a>.
           Кабинет (Affiliate program) — <a className="sc-link" href="#/account">#/account</a>: меню, Earnings, Promotion tools, история начислений.
           Кабинет (Account details) — <a className="sc-link" href="#/account-details">#/account-details</a>: данные профиля, менять которые можно только через поддержку.
+          Кабинет (Notifications) — <a className="sc-link" href="#/account-notifications">#/account-notifications</a>: включение и выключение уведомлений по группам.
         </p>
       </div>
 
@@ -156,6 +177,26 @@ export function ScreensPage() {
       </div>
       <aside className="sc-card sc-doc sc-screens__doc">
         {DETAILS_DOC.map((b) => (
+          <div key={b.h} className="sc-doc__block">
+            <h4 className="text-label-sm">{b.h}</h4>
+            <ul className="sc-doc__list text-body-xs sc-muted">
+              {b.items.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+          </div>
+        ))}
+      </aside>
+
+      <div className="sc-section">
+        <h2 className="text-heading-h3">Кабинет — Notifications</h2>
+        <p className="text-body-sm sc-muted">
+          Тестовая сборка по макету «1.4 Account / Notifications». Данные демонстрационные. Отдельной страницей: <a className="sc-link" href="#/account-notifications">#/account-notifications</a>.
+        </p>
+      </div>
+      <div className="sc-screen-frame">
+        <NotificationsPage />
+      </div>
+      <aside className="sc-card sc-doc sc-screens__doc">
+        {NOTIFICATIONS_DOC.map((b) => (
           <div key={b.h} className="sc-doc__block">
             <h4 className="text-label-sm">{b.h}</h4>
             <ul className="sc-doc__list text-body-xs sc-muted">
