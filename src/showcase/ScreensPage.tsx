@@ -2,6 +2,15 @@ import { useState } from 'react';
 import { Chip } from '../components';
 import { AccountDetailsPage, AccountPage, NotificationsPage, SecurityPage, REGISTRATION_STEPS, RegistrationFlow, type Details, type RegistrationStep } from '../screens';
 
+/** Экраны целиком — отдельными страницами (без оболочки витрины), открываются в новой вкладке */
+const SCREEN_LINKS = [
+  { href: '#/registration', label: 'Регистрация' },
+  { href: '#/account', label: 'Account · Affiliate program' },
+  { href: '#/account-details', label: 'Account · Details' },
+  { href: '#/account-security', label: 'Account · Security' },
+  { href: '#/account-notifications', label: 'Account · Notifications' },
+];
+
 const DOC = [
   {
     h: 'Из чего собрано',
@@ -135,13 +144,16 @@ export function ScreensPage() {
         <h1 className="text-heading-h1">Экраны</h1>
         <p className="text-body-lg sc-muted">
           Регистрация — три экрана, собранные из готовых компонентов и токенов, без нового CSS поверх. Это живой флоу: вводите e-mail,
-          любой код из 4 цифр и данные. Переключать шаги можно и чипами. Отдельной страницей: <a className="sc-link" href="#/registration">#/registration</a>.
-          Кабинет (Affiliate program) — <a className="sc-link" href="#/account">#/account</a>: меню, Earnings, Promotion tools, история начислений.
-          Кабинет (Account details) — <a className="sc-link" href="#/account-details">#/account-details</a>: данные профиля, менять которые можно только через поддержку.
-          Кабинет (Security) — <a className="sc-link" href="#/account-security">#/account-security</a>: смена пароля, 2FA, блокировка аккаунта.
-          Кабинет (Notifications) — <a className="sc-link" href="#/account-notifications">#/account-notifications</a>: включение и выключение уведомлений по группам.
+          любой код из 4 цифр и данные. Переключать шаги можно и чипами. Ниже — кабинет по разделам; каждый экран можно открыть целиком по ссылке выше.
         </p>
       </div>
+
+      <nav className="sc-screen-links" aria-label="Экраны целиком">
+        <span className="text-label-sm sc-muted">Открыть экран целиком:</span>
+        {SCREEN_LINKS.map((l) => (
+          <a key={l.href} className="sc-screen-link text-label-md" href={l.href} target="_blank" rel="noopener">{l.label}</a>
+        ))}
+      </nav>
 
       <div className="sc-demo__row sc-screens__steps" role="group" aria-label="Шаг регистрации">
         {REGISTRATION_STEPS.map((s) => (

@@ -178,6 +178,14 @@
 .sc-screens__status { margin: var(--space-xl) 0 0; }
 .sc-screens__doc { margin-top: var(--space-2xl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl); }
 .sc-link { color: var(--content-brand); }
+/* Ссылки на экраны целиком — вверху страницы «Экраны» */
+.sc-screen-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xl); }
+.sc-screen-link {
+  padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-round);
+  background: var(--surface-brand-subtle); color: var(--content-brand); text-decoration: none;
+}
+.sc-screen-link:hover { background: var(--surface-brand-subtle-hover); }
+.sc-screen-link:focus-visible { outline: var(--stroke-default) solid var(--focus-brand-border); outline-offset: var(--space-2xs); }
 @media (max-width: 1280px) { .sc-screens__doc { grid-template-columns: minmax(0, 1fr); } }
 
 /* Экран внутри рамки витрины не тянется до высоты окна браузера (это нужно только настоящей странице) */
