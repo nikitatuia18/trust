@@ -1293,13 +1293,49 @@
       "$type": "F",
       "$value": "{layout.Space/xl}"
     },
-    "Form Card/header-padding-y": {
+    "Modal/bg": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/base}"
+    },
+    "Modal/border": {
+      "$type": "C",
+      "$value": "{theme.Border/Neutral/default}"
+    },
+    "Modal/stroke": {
+      "$type": "F",
+      "$value": "{layout.Stroke/default}"
+    },
+    "Modal/radius": {
+      "$type": "F",
+      "$value": "{layout.Radius/2xl}"
+    },
+    "Modal/max-width": {
+      "$type": "F",
+      "$value": "{layout.Size/Form-card/width}"
+    },
+    "Modal/zone-padding": {
       "$type": "F",
       "$value": "{layout.Space/2xl}"
     },
-    "Form Card/header-gap": {
+    "Modal/edge-padding": {
+      "$type": "F",
+      "$value": "{layout.Space/5xl}"
+    },
+    "Modal/header-gap": {
       "$type": "F",
       "$value": "{layout.Space/sm}"
+    },
+    "Modal/actions-gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
+    },
+    "Modal/body-gap": {
+      "$type": "F",
+      "$value": "{layout.Space/xl}"
+    },
+    "Form Card/header-padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
     }
   }
 }

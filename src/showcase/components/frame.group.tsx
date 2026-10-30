@@ -41,7 +41,7 @@ export default function FrameDemo() {
         spacing={[
           'Корень: padding 0, gap Space/none, радиус --c-form-card-radius.',
           'Зоны header/body/footer: Space/2xl; body и footer — gap Space/xl.',
-          'Шапка с заголовком (.at-form-card__title, + .at-form-card__description): --c-form-card-header-padding-y (Space/2xl) над заглавными и под базовой линией, зазор заголовок–пояснение --c-form-card-header-gap (Space/sm).',
+          'Шапка с заголовком (.at-form-card__title): --c-form-card-header-padding-y (Space/2xl) над заглавными и под базовой линией.',
           'Кнопки: gap Space/sm.',
         ]}
         why={[
@@ -116,41 +116,37 @@ export default function FrameDemo() {
           'Радиус карточки в Figma 24 без токена — в коде токен --c-summary-card-radius (в «Открыто»).',
         ]}
       />
-      <Preview title="Modal" note="open: true | false · окно внутри — Form Card">
+      <Preview title="Modal" note="open: true | false · слоты: illustration, title, description, body, primaryAction, secondaryAction">
         <div className="sc-demo">
           <div className="sc-demo__row">
             <Button variant="secondary" onClick={() => setModalOpen(true)}>Open modal</Button>
           </div>
-          <Modal open={modalOpen} onClose={() => setModalOpen(false)} aria-labelledby="modal-demo-title">
-            <FormCard
-              actions="inline"
-              header={
-                <>
-                  <h2 id="modal-demo-title" className="at-form-card__title text-heading-h4">Delete draft?</h2>
-                  <p className="at-form-card__description text-body-sm">The draft will be removed from your device.</p>
-                </>
-              }
-              primaryAction={<Button variant="destructive" onClick={() => setModalOpen(false)}>Delete</Button>}
-              secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setModalOpen(false)}>Cancel</Button>}
-            />
-          </Modal>
+          <Modal
+            open={modalOpen}
+            onClose={() => setModalOpen(false)}
+            title="Delete draft?"
+            description="The draft will be removed from your device."
+            primaryAction={<Button variant="destructive" onClick={() => setModalOpen(false)}>Delete</Button>}
+            secondaryAction={<Button variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button>}
+          />
         </div>
       </Preview>
       <Doc
         where={[
-          'Подтверждение необратимого действия (блокировка аккаунта), короткая форма или сообщение, на которое нужен ответ до возврата на страницу.',
-          'Окно внутри — Form Card: заголовок и пояснение в шапке по центру (зазор Space/sm), в подвале два действия в ряд; над заголовком есть место под иллюстрацию (.at-modal__illustration, сами иллюстрации позже). Крестика нет — закрывает «Cancel», Esc или клик по затемнению. Для широких форм и потоков — отдельная страница, не модалка.',
+          'Подтверждение необратимого действия (блокировка аккаунта, выход), короткая форма или сообщение, на которое нужен ответ до возврата на страницу.',
+          'Окно — собственный компонент, не Form Card: заголовок и пояснение по центру, два действия в ряд, над заголовком место под иллюстрацию (слот illustration, сами иллюстрации позже). Крестика нет — закрывает «Cancel», Esc или клик по затемнению. Для широких форм и потоков — отдельная страница, не модалка.',
         ]}
         spacing={[
-          'Затемнение: --c-modal-scrim → Surface/Overlay/modal-scrim → Black/alpha-8 (8%).',
-          'Размытие страницы под окном: --c-modal-backdrop-blur → Blur/Modal-backdrop = 16.',
-          'Поля вокруг окна: --c-modal-padding (Space/xl); окно по центру по обеим осям, ширину держит Form Card.',
+          'Затемнение: --c-modal-scrim → Surface/Overlay/modal-scrim → Black/alpha-8 (8%). Размытие: --c-modal-backdrop-blur → Blur/Modal-backdrop = 16. Поля вокруг окна: --c-modal-padding (Space/xl).',
+          'Окно: ширина --c-modal-max-width (как у Form Card, 522), радиус --c-modal-radius (Radius/2xl) со сглаживанием углов, обводка --c-modal-stroke.',
+          'Зоны (шапка, тело, действия): боковые и внутренние отступы --c-modal-zone-padding (Space/2xl); сверху окна и снизу окна — --c-modal-edge-padding (Space/5xl = 40, на мобильном 36). Зазор заголовок–пояснение --c-modal-header-gap (Space/sm = 8), между действиями --c-modal-actions-gap.',
         ]}
         why={[
-          'Правило системы: содержимое модалки по центру; у модального окна задний экран размывается и затемняется (Правила, п. 17). Затемнение 8% и блюр 16 — по решению владельца 2026-10-30 (сначала было 32% и 24 — слишком темно), смотрим на практике.',
+          'Свой компонент, а не Form Card: у модалки свои отступы, выравнивание по центру и фон за окном; Form Card остаётся «чистым» для карточек страницы (Правила, п. 17).',
+          'Заголовок и пояснение обрезаны по буквам (text-box), поэтому зазор 8 считается от букв: под заголовком с пояснением нижний край — линия выносных элементов (g, p), иначе они почти касались бы текста.',
           'Нативный <dialog>: фокус остаётся внутри, страница под окном недоступна, Esc закрывает, фокус возвращается на кнопку, открывшую окно. Состояние держит родитель: open и onClose.',
-          'Фокус при открытии — на первом элементе окна; для необратимых действий отметьте безопасную кнопку атрибутом data-autofocus (в примере «Cancel»).',
-          'Клик по затемнению закрывает окно; пока оно открыто, страница не прокручивается. Анимации появления нет — добавим вместе с остальными (prefers-reduced-motion учесть).',
+          'Фокус при открытии — на самом окне, не на кнопке: у кнопки висело бы кольцо фокуса (его браузер показывает после нажатия любой клавиши), а случайный Enter не должен подтверждать необратимое действие. Кнопки получают фокус по Tab, кольцо у них остаётся.',
+          'Затемнение 8% и блюр 16 — решение владельца 2026-10-30 (сначала было 32% и 24 — слишком темно). Клик по затемнению закрывает окно; страница не прокручивается. Анимации появления нет — добавим вместе с остальными (prefers-reduced-motion учесть).',
           'Для Modal нет компонента в Figma «03 — Components» и токенов в «02 — Tokens» — перенести пачкой по npm run debt.',
         ]}
       />

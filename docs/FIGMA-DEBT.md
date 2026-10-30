@@ -2,7 +2,7 @@
 
 Генерируется `npm run debt`. Код первичен для новых компонентов и токенов; раз в несколько экранов всё это переносится в Figma одной пачкой (`use_figma`), строки из `tools/raw/local.txt` — в основные raw после следующего экспорта.
 
-## Локальные токены (12)
+## Локальные токены (21)
 
 | Секция | Токен | Тип | Значение |
 |---|---|---|---|
@@ -16,8 +16,17 @@
 | Components | `Modal/scrim` | C | `@T:Surface/Overlay/modal-scrim` |
 | Components | `Modal/backdrop-blur` | F | `@L:Blur/Modal-backdrop` |
 | Components | `Modal/padding` | F | `@L:Space/xl` |
+| Components | `Modal/bg` | C | `@T:Surface/Neutral/base` |
+| Components | `Modal/border` | C | `@T:Border/Neutral/default` |
+| Components | `Modal/stroke` | F | `@L:Stroke/default` |
+| Components | `Modal/radius` | F | `@L:Radius/2xl` |
+| Components | `Modal/max-width` | F | `@L:Size/Form-card/width` |
+| Components | `Modal/zone-padding` | F | `@L:Space/2xl` |
+| Components | `Modal/edge-padding` | F | `@L:Space/5xl` |
+| Components | `Modal/header-gap` | F | `@L:Space/sm` |
+| Components | `Modal/actions-gap` | F | `@L:Space/sm` |
+| Components | `Modal/body-gap` | F | `@L:Space/xl` |
 | Components | `Form Card/header-padding-y` | F | `@L:Space/2xl` |
-| Components | `Form Card/header-gap` | F | `@L:Space/sm` |
 
 ## Компоненты без компонентных токенов `--c-*` (11)
 

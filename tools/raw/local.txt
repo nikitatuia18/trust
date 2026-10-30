@@ -14,5 +14,14 @@ Chip/neutral/bg-hover|C|@T:Surface/Neutral/hover
 Modal/scrim|C|@T:Surface/Overlay/modal-scrim
 Modal/backdrop-blur|F|@L:Blur/Modal-backdrop
 Modal/padding|F|@L:Space/xl
+Modal/bg|C|@T:Surface/Neutral/base
+Modal/border|C|@T:Border/Neutral/default
+Modal/stroke|F|@L:Stroke/default
+Modal/radius|F|@L:Radius/2xl
+Modal/max-width|F|@L:Size/Form-card/width
+Modal/zone-padding|F|@L:Space/2xl
+Modal/edge-padding|F|@L:Space/5xl
+Modal/header-gap|F|@L:Space/sm
+Modal/actions-gap|F|@L:Space/sm
+Modal/body-gap|F|@L:Space/xl
 Form Card/header-padding-y|F|@L:Space/2xl
-Form Card/header-gap|F|@L:Space/sm

@@ -1,5 +1,5 @@
 /* Modal — токены --c-modal-*. Диалог растянут на весь экран и сам рисует затемнение и размытие того, что под ним;
-   родной ::backdrop прозрачный (на нём переменные работают не во всех браузерах). Само окно — Form Card, ширину держит он. */
+   родной ::backdrop прозрачный (на нём переменные работают не во всех браузерах). Окно внутри — свой блок, не Form Card. */
 .at-modal {
   box-sizing: border-box; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0;
   padding: var(--c-modal-padding);
@@ -8,15 +8,33 @@
   color: var(--content-primary);
 }
 .at-modal[open] { display: flex; position: fixed; inset: 0; overflow-y: auto; }
+/* Фокус на самом окне при открытии — без кольца (кольцо у кнопок остаётся, они получают фокус по Tab) */
+.at-modal:focus { outline: 0; }
 .at-modal::backdrop { background: transparent; }
-/* auto по обеим осям: окно по центру, а если выше экрана — не обрезается сверху, а прокручивается */
-.at-modal > * { margin: auto; }
 /* Пока окно открыто, страница под ним не прокручивается */
 html:has(.at-modal[open]) { overflow: hidden; }
 
-/* Содержимое модального окна выровнено по центру: заголовок и пояснение посередине, зазор между ними — Form Card/header-gap (Space/sm).
-   Это правило всех модалок (Правила, п. 17), поэтому оно здесь, а не в экране. */
-.at-modal .at-form-card__zone:has(> .at-form-card__title) { align-items: center; }
-.at-modal .at-form-card__title, .at-modal .at-form-card__description { text-align: center; }
-/* Иллюстрация над заголовком (слот; сами иллюстрации и отступ до заголовка — позже): по центру */
+/* Окно: по центру по обеим осям (auto — если выше экрана, не обрезается сверху, а прокручивается) */
+.at-modal__window {
+  display: flex; flex-direction: column; box-sizing: border-box; width: 100%; max-width: var(--c-modal-max-width); margin: auto;
+  border: var(--c-modal-stroke) solid var(--c-modal-border);
+  border-radius: var(--c-modal-radius); corner-shape: superellipse(var(--corner-superellipse)); background: var(--c-modal-bg);
+}
+.at-modal__zone { display: flex; flex-direction: column; gap: var(--c-modal-body-gap); padding: var(--c-modal-zone-padding); min-width: 0; }
+.at-modal__zone + .at-modal__zone { border-top: var(--c-modal-stroke) solid var(--c-modal-border); }
+/* Сверху и снизу окна — крупнее боковых и внутренних (Space/5xl): окно не «давит» на текст и кнопки */
+.at-modal__window > .at-modal__zone:first-child { padding-top: var(--c-modal-edge-padding); }
+.at-modal__window > .at-modal__zone:last-child { padding-bottom: var(--c-modal-edge-padding); }
+
+/* Шапка: всё по центру, зазор между заголовком и пояснением — Space/sm */
+.at-modal__header { align-items: center; gap: var(--c-modal-header-gap); text-align: center; }
 .at-modal__illustration { display: flex; justify-content: center; }
+/* Заголовок и пояснение обрезаны по буквам (text-box), поэтому зазор — от букв, а не от строки.
+   Под заголовком с пояснением нижний край — линия выносных элементов (g, p): иначе «g» почти касается текста ниже. */
+.at-modal__title { margin: 0; color: var(--content-primary); text-box: trim-both cap alphabetic; }
+.at-modal__window[data-has-description] .at-modal__title { text-box-edge: cap text; }
+.at-modal__description { margin: 0; color: var(--content-secondary); text-box: trim-both cap alphabetic; }
+
+/* Действия: два в ряд, поровну */
+.at-modal__footer { flex-direction: row; gap: var(--c-modal-actions-gap); }
+.at-modal__footer > * { flex: 1 1 0; min-width: 0; }

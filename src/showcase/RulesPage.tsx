@@ -122,19 +122,14 @@ function ModalDemo() {
       <Cell cap="Откройте окно: страница за ним размыта (16) и слегка затемнена (8%)">
         <Button size="s" variant="secondary" onClick={() => setOpen(true)}>Open modal</Button>
       </Cell>
-      <Modal open={open} onClose={() => setOpen(false)} aria-labelledby="rules-modal-title">
-        <FormCard
-          actions="inline"
-          header={
-            <>
-              <h2 id="rules-modal-title" className="at-form-card__title text-heading-h4">Are you sure?</h2>
-              <p className="at-form-card__description text-body-sm">Everything behind this window is blurred and dimmed.</p>
-            </>
-          }
-          primaryAction={<Button variant="destructive" onClick={() => setOpen(false)}>Confirm</Button>}
-          secondaryAction={<Button variant="secondary" data-autofocus onClick={() => setOpen(false)}>Cancel</Button>}
-        />
-      </Modal>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Are you sure?"
+        description="Everything behind this window is blurred and dimmed."
+        primaryAction={<Button variant="destructive" onClick={() => setOpen(false)}>Confirm</Button>}
+        secondaryAction={<Button variant="secondary" onClick={() => setOpen(false)}>Cancel</Button>}
+      />
     </>
   );
 }
@@ -409,9 +404,9 @@ export function RulesPage() {
         <Rule
           n={17}
           title="У модального окна задний экран размывается и затемняется"
-          text="Всё, что открывается окном поверх страницы (подтверждение, короткая форма), ставится в компонент Modal: страница под ним размыта на 16 и слегка затемнена чёрным 8%. Само окно — Form Card: заголовок и пояснение в шапке по центру (зазор между ними Space/sm = 8), два действия в подвале, без крестика. Над заголовком оставлено место под иллюстрацию (слот, сами иллюстрации позже). Значения 16 и 8% — по решению владельца 2026-10-30, смотрим на практике."
+          text="Всё, что открывается окном поверх страницы (подтверждение, короткая форма), ставится в компонент Modal: страница под ним размыта на 16 и слегка затемнена чёрным 8%. Само окно — отдельный компонент Modal (не Form Card: карточка страницы остаётся чистой): заголовок и пояснение по центру (зазор Space/sm = 8, считается от букв), два действия в ряд, без крестика; сверху и снизу окна поля Space/5xl = 40, по бокам 24. Над заголовком место под иллюстрацию (слот, сами иллюстрации позже). Фокус при открытии — на окне, а не на кнопке: иначе у кнопки «зависает» кольцо фокуса. Значения 16 и 8% — по решению владельца 2026-10-30, смотрим на практике."
           demo={<ModalDemo />}
-          good={['<Modal open onClose><FormCard/></Modal>', 'background: var(--c-modal-scrim)', 'backdrop-filter: blur(var(--c-modal-backdrop-blur))']}
+          good={['<Modal open onClose title description primaryAction secondaryAction />', 'background: var(--c-modal-scrim)', 'backdrop-filter: blur(var(--c-modal-backdrop-blur))']}
           bad={['самодельный fixed-блок с rgba(0,0,0,.5)', 'окно без затемнения и размытия']}
           note="Токены: Modal/scrim → Surface/Overlay/modal-scrim → Black/alpha-8; Modal/backdrop-blur → Blur/Modal-backdrop = 16 (Black/alpha-8 — примитив из Figma). Заведены локально (tools/raw/local.txt), в Figma перенести по npm run debt."
         />
@@ -438,7 +433,7 @@ export function RulesPage() {
         <Rule
           n={19}
           title="Заголовок карточки: отступы считаем от букв, а не от строки"
-          text="Заголовок в шапке Form Card — класс .at-form-card__title (+ .at-form-card__description под ним). Поле над заглавными и под базовой линией одинаковое: Form Card/header-padding-y = Space/2xl (24), зазор заголовок–пояснение Form Card/header-gap = Space/sm (8). Свои заголовки в шапке карточки не верстаем."
+          text="Заголовок в шапке Form Card — класс .at-form-card__title. Поле над заглавными и под базовой линией одинаковое: Form Card/header-padding-y = Space/2xl (24). Свои заголовки в шапке карточки не верстаем. У модального окна свои отступы (правило 17)."
           demo={
             <FormCard fluid header={<h2 className="at-form-card__title text-heading-h4">Card title</h2>}>
               <p className="text-body-sm sc-muted">Над заглавными и под базовой линией — по 24.</p>

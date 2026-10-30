@@ -13,13 +13,12 @@
 .at-form-card__actions { display: flex; flex-direction: column; align-self: stretch; gap: var(--space-sm); }
 .at-form-card__actions > * { align-self: stretch; }
 
-/* Заголовок и описание в шапке: поле вокруг текста считается от верха заглавных до базовой линии, а не от края строки.
+/* Заголовок в шапке: поле вокруг текста считается от верха заглавных до базовой линии, а не от края строки.
    Иначе «воздуха» сверху и снизу у строки разное, и глаз видит разницу в 2–3px. Нужен text-box (Chrome 133+, Safari 18.2+);
    там, где его нет, заголовок остаётся с межстрочным полем — оно симметрично, просто отступ чуть просторнее. */
 .at-form-card__title { margin: 0; color: var(--content-primary); text-box: trim-both cap alphabetic; }
-.at-form-card__description { margin: 0; color: var(--content-secondary); text-box: trim-both cap alphabetic; }
-/* Шапка, где заголовок стоит сам или первым (+ описание): --c-form-card-header-padding-y (Space/2xl) над заглавными и под базовой линией, между заголовком и пояснением --c-form-card-header-gap (Space/sm) */
-.at-form-card__zone:has(> .at-form-card__title) { padding-block: var(--c-form-card-header-padding-y); gap: var(--c-form-card-header-gap); }
+/* Шапка с заголовком: --c-form-card-header-padding-y (Space/2xl) над заглавными и под базовой линией */
+.at-form-card__zone:has(> .at-form-card__title) { padding-block: var(--c-form-card-header-padding-y); }
 
 /* fluid: ширину задаёт родитель; если карточку растянули по высоте, лишнее место берёт тело (подвал остаётся внизу) */
 .at-form-card[data-fluid] { max-width: none; }
