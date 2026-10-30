@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
-import { ArrowCircleLeftIcon, Button, FormCard, Icon, IconCircle, ListItem, LockOutlineIcon, NotificationIcon, ProfileFilledIcon, ProfileIcon, StarIcon, VerifyIcon } from '../../components';
+import { Button, FormCard, Icon, IconCircle, ListItem, LockIcon, LockOutlineIcon, LogoutIcon, NotificationBoldIcon, NotificationIcon, ProfileBoldIcon, ProfileFilledIcon, ProfileIcon, StarIcon, StarOutlineIcon, VerifyIcon } from '../../components';
 import type { AccountSection, AccountUser } from './accountData';
 
-const SECTIONS: { id: AccountSection; title: string; description: string; icon: ReactNode }[] = [
-  { id: 'details', title: 'Account details', description: 'Personal info', icon: <ProfileIcon /> },
-  { id: 'security', title: 'Security', description: 'Password and 2FA', icon: <LockOutlineIcon /> },
-  { id: 'notifications', title: 'Notifications', description: 'Alerts and preferences', icon: <NotificationIcon /> },
-  { id: 'affiliate', title: 'Affiliate program', description: 'Invite and earn', icon: <StarIcon /> },
+/** У каждого раздела две иконки из «06 — Icons»: контур, пока пункт не выбран, и залитая, когда выбран */
+const SECTIONS: { id: AccountSection; title: string; description: string; icon: ReactNode; iconSelected: ReactNode }[] = [
+  { id: 'details', title: 'Account details', description: 'Personal info', icon: <ProfileIcon />, iconSelected: <ProfileBoldIcon /> },
+  { id: 'security', title: 'Security', description: 'Password and 2FA', icon: <LockOutlineIcon />, iconSelected: <LockIcon /> },
+  { id: 'notifications', title: 'Notifications', description: 'Alerts and preferences', icon: <NotificationIcon />, iconSelected: <NotificationBoldIcon /> },
+  { id: 'affiliate', title: 'Affiliate program', description: 'Invite and earn', icon: <StarOutlineIcon />, iconSelected: <StarIcon /> },
 ];
 
 type AccountSidebarProps = {
@@ -34,7 +35,7 @@ export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountS
           <span className="scr-profile__email text-label-sm">{user.email}</span>
         </div>
       }
-      primaryAction={<Button variant="secondary" iconLeft={<ArrowCircleLeftIcon />} onClick={onLogout}>Log out</Button>}
+      primaryAction={<Button variant="secondary" iconLeft={<LogoutIcon />} onClick={onLogout}>Log out</Button>}
     >
       <nav className="scr-menu" aria-label="Account sections">
         {SECTIONS.map((s) => {
@@ -45,7 +46,7 @@ export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountS
               variant="card"
               showDivider={false}
               selected={selected}
-              leftSlot={<IconCircle tone={selected ? 'brand' : 'subtle'}>{s.icon}</IconCircle>}
+              leftSlot={<IconCircle tone={selected ? 'brand' : 'subtle'}>{selected ? s.iconSelected : s.icon}</IconCircle>}
               title={s.title}
               description={s.description}
               rightSlot={<span className="scr-menu__chevron"><Icon /></span>}

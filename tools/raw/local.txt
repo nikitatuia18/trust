@@ -4,3 +4,6 @@
 ## Layout
 Size/QR-code/width|F|180
 Size/Account-menu/width|F|388
+## Components
+Chip/brand/bg-hover|C|@T:Surface/Brand/subtle-hover
+Chip/neutral/bg-hover|C|@T:Surface/Neutral/hover

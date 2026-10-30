@@ -1,4 +1,4 @@
-import { Button, Chip, List, ListItem, Icon, Badge, Breadcrumbs, DropdownMenu, CopyIcon, ExportIcon, StatTile, IconCircle, Table, WalletIcon, UsersIcon, LinkIcon, StarIcon, ProfileIcon } from '../../components';
+import { Button, Chip, List, ListItem, Icon, Badge, Breadcrumbs, DropdownMenu, CopyIcon, ExportIcon, StatTile, IconCircle, Table, WalletIcon, UsersIcon, LinkIcon, StarIcon, StarOutlineIcon } from '../../components';
 import { Doc, Preview } from './doc-kit';
 
 /** Группа страницы «Компоненты». order — позиция, title/note — заголовок группы. */
@@ -52,12 +52,12 @@ export default function AccountDemo() {
         why={['Значение — Heading/h4, подпись — Caption. Иконки — currentColor, цвет задаёт плитка.']}
       />
       <Preview title="Icon Circle" note="Tone: subtle | brand">
-        <div className="sc-demo"><div className="sc-demo__row"><IconCircle><ProfileIcon /></IconCircle><IconCircle><LinkIcon /></IconCircle><IconCircle tone="brand"><StarIcon /></IconCircle></div></div>
+        <div className="sc-demo"><div className="sc-demo__row"><IconCircle><StarOutlineIcon /></IconCircle><IconCircle><LinkIcon /></IconCircle><IconCircle tone="brand"><StarIcon /></IconCircle></div></div>
       </Preview>
       <Doc
         where={['Левый слот ListItem в меню кабинета; строка «My referral link».']}
         spacing={['Круг Size/xl, иконка Size/icon/md.']}
-        why={['Отличие от Method Icon: произвольная иконка, а не способ оплаты. brand — выбранный пункт меню.']}
+        why={['Отличие от Method Icon: произвольная иконка, а не способ оплаты. brand — выбранный пункт меню: иконка в нём залитая, в невыбранном — контурная.']}
       />
       <Preview title="Table" note="Ширина колонок по содержимому, одна колонка растягивается; на узком экране прокручивается">
         <div className="sc-demo" style={{ width: '100%' }}>
@@ -80,7 +80,7 @@ export default function AccountDemo() {
           'Настоящий table: заголовки scope=col, подпись для скринридеров. Содержимое ячеек — render-функции (бейджи, цвет).',
           'Ширины колонок не заданы числами: так таблица остаётся адаптивной. Если дизайнеру нужна жёсткая сетка — обсудить токены.',
         ]}
-      />
+      />
     </>
   );
 }

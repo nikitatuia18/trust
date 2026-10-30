@@ -1272,6 +1272,14 @@
     "Input/field/padding-x": {
       "$type": "F",
       "$value": "{layout.Space/xs}"
+    },
+    "Chip/brand/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Brand/subtle-hover}"
+    },
+    "Chip/neutral/bg-hover": {
+      "$type": "C",
+      "$value": "{theme.Surface/Neutral/hover}"
     }
   }
 }

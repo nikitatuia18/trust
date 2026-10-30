@@ -1,8 +1,9 @@
-/* Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён. */
+/* Chip — Figma 502:3270. Контрол: pill. Selected = обводка + focus-эффект (как в Figma). Hover в Figma не заведён: заливка на ступень темнее (токены Chip/brand/bg-hover и Chip/neutral/bg-hover, заведены в коде). */
 .at-chip {
   --_bg: var(--c-chip-brand-bg);
   --_border: var(--c-chip-brand-border);
   --_content: var(--c-chip-brand-content);
+  --_bg-hover: var(--c-chip-brand-bg-hover);
   display: inline-flex; align-items: center; gap: var(--c-chip-s-gap);
   padding: var(--c-chip-s-padding-y) var(--c-chip-s-padding-x);
   border: 0; border-radius: var(--c-chip-s-radius);
@@ -12,7 +13,9 @@
 }
 .at-chip[data-variant='neutral'] {
   --_bg: var(--c-chip-neutral-bg); --_border: var(--c-chip-neutral-border); --_content: var(--c-chip-neutral-content);
+  --_bg-hover: var(--c-chip-neutral-bg-hover);
 }
+.at-chip:hover:not(:disabled) { background: var(--_bg-hover); }
 .at-chip[data-selected] {
   --_border: var(--c-chip-brand-border-selected);
   box-shadow:

@@ -7,7 +7,7 @@ export type ChipProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'
   variant?: 'brand' | 'neutral';
   /** Figma-ось Size */
   size?: 's' | 'l';
-  /** Figma-ось Selected (aria-pressed) */
+  /** Figma-ось Selected. Чип-переключатель: передаём true/false, и тогда есть aria-pressed. Без selected чип — обычная кнопка-действие */
   selected?: boolean;
   /** Figma: label */
   children: ReactNode;
@@ -21,7 +21,7 @@ export type ChipProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 export function Chip({
   variant = 'brand',
   size = 's',
-  selected = false,
+  selected,
   iconLeft,
   leadingSlot,
   trailingSlot,

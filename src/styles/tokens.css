@@ -700,6 +700,8 @@
   --c-checkbox-size: var(--size-indicator-box);
   --c-checkbox-tick-size: var(--size-indicator-mark);
   --c-input-field-padding-x: var(--space-xs);
+  --c-chip-brand-bg-hover: var(--surface-brand-subtle-hover);
+  --c-chip-neutral-bg-hover: var(--surface-neutral-hover);
 
   /* ===== Effect styles ===== */
   --effect-focus-primary: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);

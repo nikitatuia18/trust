@@ -20,6 +20,7 @@ export default function ContentDemo() {
               <Chip key={id} selected={chip.includes(id)} onClick={() => toggle(id)}>{id.toUpperCase()}</Chip>
             ))}
             <Chip disabled>Disabled</Chip>
+            <Chip>Action (no selected)</Chip>
           </div>
           <div className="sc-demo__row">
             <span className="sc-demo__tag text-caption-default sc-muted">neutral s</span>
@@ -47,8 +48,8 @@ export default function ContentDemo() {
         ]}
         why={[
           'Pill, как все контролы выбора.',
-          'Selected: обводка + focus-эффект (как в Figma); hover в Figma не заведён.',
-          'aria-pressed — переключатель, не навигация.',
+          'Selected: обводка + focus-эффект (как в Figma). Hover: заливка на ступень темнее (Chip/*/bg-hover) — в Figma не заведён, добавлено в коде.',
+          'aria-pressed есть, только когда передан selected (чип-переключатель). Без selected чип — кнопка-действие: открывает ссылку или подсказку.',
         ]}
       />
       <Preview title="Divider + Text Container" note="Orientation: horizontal | vertical · Alignment × Size">
