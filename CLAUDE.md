@@ -29,13 +29,14 @@ React 19 + TypeScript + Vite + чистый CSS с переменными. То�
 npm run dev       # витрина
 npm run build     # tsc --noEmit + vite build — обязательно перед коммитом
 npm run tokens    # tools/raw/*.txt → tokens/*.json + src/styles/tokens.css + src/tokens/registry.json
+npm run debt      # docs/FIGMA-DEBT.md: что есть в коде, но ещё не в Figma
 npm run check     # сырые значения, --prim-*, несуществующие var(--x), импорты мимо components, inline-цвета
 npm run shots -- account registration   # PNG 1440/1100/390 в .shots/ + проверка горизонтального переполнения
 ```
 
-## Новые токены
+## Новые токены (код первичен)
 
-Нужного семантического токена нет → заводим (не берём примитив, не пишем сырое). Текущий порядок: Figma «02 — Tokens» (`use_figma`) → строки в `tools/raw/*.txt` → `npm run tokens`. Только в raw нельзя: следующий экспорт из Figma их сотрёт.
+Нужного семантического токена нет → заводим (не берём примитив, не пишем сырое): строка в `tools/raw/local.txt` (секции `## Theme` / `## Layout` / `## Components`, формат как в одноимённых raw) → `npm run tokens`. Экспорт из Figma `local.txt` не стирает; в Figma токены переносим пачкой по `npm run debt` (→ `docs/FIGMA-DEBT.md`), потом строку удалить из `local.txt` (при дубле генератор скажет сам). Раньше было «сначала Figma» — отменено владельцем 2026-10-30.
 
 ## Каркас и структура
 

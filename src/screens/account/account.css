@@ -65,8 +65,8 @@
 .scr-actions-row > .at-button:first-child { flex: 1; min-width: 0; }
 .scr-qr { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-sm); height: 100%; color: var(--content-primary); }
 .scr-qr > p { margin: 0; }
-/* Размер QR взят из макета (180). Токена под него пока нет — решаем вместе с владельцем */
-.scr-qr__image { display: block; width: 180px; max-width: 100%; height: auto; }
+
+.scr-qr__image { display: block; width: var(--size-qr-code-width); max-width: 100%; height: auto; }
 .scr-empty { display: flex; flex: 1; align-items: center; justify-content: center; margin: 0; color: var(--content-secondary); }
 
 /* Earnings history */

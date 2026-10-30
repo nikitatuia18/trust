@@ -163,8 +163,8 @@ export function RulesPage() {
         <Rule
           n={3}
           title="Сгенерированное руками не правим"
-          text="tokens.css, typography.css, tokens/*.json и registry.json генерируются. Правка токена = правка в Figma, новый экспорт в tools/raw, затем скрипт."
-          demo={<Flow steps={['Figma', 'tools/raw', 'npm run tokens', 'tokens.css']} />}
+          text="tokens.css, typography.css, tokens/*.json и registry.json генерируются. Токен из Figma: правка в Figma, новый экспорт в tools/raw, затем скрипт. Новый токен, которого в Figma ещё нет, — строка в tools/raw/local.txt и тот же скрипт."
+          demo={<Flow steps={['Figma или local.txt', 'tools/raw', 'npm run tokens', 'tokens.css']} />}
           good={['npm run tokens']}
           bad={['правка src/styles/tokens.css']}
         />
@@ -348,19 +348,19 @@ export function RulesPage() {
       <Section title="Процесс" note="От Figma до витрины — один путь.">
         <Rule
           n={15}
-          title="Figma → компонент → витрина"
-          text="Источник — Figma. Компонент собирается из токенов, попадает в src/components/<Имя>, экспортируется из index.ts и описывается на витрине: Preview плюс Doc («Где используется / Отступы / Почему так»)."
+          title="Код → витрина → Figma"
+          text="Для новых компонентов и токенов первичен код: токены (локальные — в tools/raw/local.txt), компонент в src/components/<Имя>, экспорт из index.ts и описание на витрине. Figma догоняется пачкой по списку npm run debt. Компонент собирается из токенов, попадает в src/components/<Имя>, экспортируется из index.ts и описывается на витрине: Preview плюс Doc («Где используется / Отступы / Почему так»)."
           demo={
             <>
-              <Flow steps={['Figma', 'Токены', 'Компонент', 'Витрина']} />
+              <Flow steps={['Токены', 'Компонент', 'Витрина', 'Figma (пачкой)']} />
               <FormCard primaryAction={<Button size="s">Continue</Button>}>
                 <TextField label="Email" placeholder="name@example.com" />
               </FormCard>
               <Cap>Так выглядит результат на витрине: компонент из токенов — с Preview и Doc на странице «Компоненты».</Cap>
             </>
           }
-          good={['Figma → токены → компонент → витрина']}
-          bad={['компонент в коде, которого нет в Figma, без записи в «Открыто»']}
+          good={['токены → компонент → витрина → запись в docs/FIGMA-DEBT.md (npm run debt)']}
+          bad={['компонент или токен только в коде и нигде не записан']}
         />
         <Rule
           n={16}

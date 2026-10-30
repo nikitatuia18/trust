@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "check": "node tools/check.mjs",
-    "shots": "node tools/shots.mjs"
+    "shots": "node tools/shots.mjs",
+    "debt": "node tools/figma-debt.mjs"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.3.0",

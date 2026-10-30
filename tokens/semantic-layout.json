@@ -585,6 +585,11 @@
       "$type": "F",
       "desktop": "{prim.Spacing/Spacing/1550}",
       "mobile": "{prim.Spacing/Spacing/1550}"
+    },
+    "Size/QR-code/width": {
+      "$type": "F",
+      "desktop": "180",
+      "mobile": "180"
     }
   }
 }

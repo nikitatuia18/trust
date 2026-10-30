@@ -1,4 +1,5 @@
 // Генератор токенов: tools/raw/*.txt (экспорт из Figma «02 — Tokens») -> tokens/*.json + src/styles/tokens.css + src/tokens/registry.json
+// Локальные токены (код первичен, в Figma ещё нет): tools/raw/local.txt — секции ## Theme / ## Layout / ## Components, формат строк как в одноимённых raw.
 // Запуск: node tools/build-tokens.mjs
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -46,6 +47,23 @@ for (const line of raw('components.txt').slice(1)) {
   comps.set(name, { type: t, value });
 }
 
+// ---------- локальные токены (tools/raw/local.txt) ----------
+// Экспорт из Figma этот файл не затрагивает. Совпадение имени с экспортом Figma — ошибка: строку пора убрать из local.txt.
+const localKeys = new Set(); // "layer:name"
+const localErrors = [];
+let section = '';
+for (const line of raw('local.txt')) {
+  if (line.startsWith('## ')) { section = line.slice(3).trim(); continue; }
+  if (line.startsWith('#')) continue;
+  const [name, t, value] = line.split('|');
+  const target_ = section === 'Theme' ? theme : section === 'Layout' ? layout : section === 'Components' ? comps : null;
+  if (!target_) { localErrors.push(`local.txt: неизвестная секция "${section}" для ${name}`); continue; }
+  if (target_.has(name)) { localErrors.push(`local.txt: ${section}/${name} уже есть в экспорте Figma — удалите строку из local.txt`); continue; }
+  if (section === 'Layout') { const [d, m = d] = value.split(';'); layout.set(name, { type: t, desktop: d, mobile: m }); }
+  else target_.set(name, { type: t, value });
+  localKeys.add(`${section.toLowerCase()}:${name}`);
+}
+
 // ---------- алиасы ----------
 // @Primitives:Colors/Gray/25 | @P:Spacing/Spacing/0 -> prim; @T:name -> theme; @L:name -> layout
 function target(alias) {
@@ -87,7 +105,7 @@ function fmtLiteral(name, type, value) {
 const ref = (a) => { const t = target(a); return `var(${varName(t.layer, t.name)})`; };
 
 // ---------- проверка алиасов ----------
-const errors = [];
+const errors = [...localErrors];
 const check = (where, a) => {
   if (!isAlias(a)) return;
   const t = target(a);
@@ -211,7 +229,7 @@ out('src/styles/typography.css', t.join('\n') + '\n');
 
 // ---------- registry (витрина токенов) ----------
 const reg = [];
-const entry = (layer, name, extra) => reg.push({ layer, name, css: layer === 'comp' ? compVar(name) : varName(layer, name), ...extra });
+const entry = (layer, name, extra) => reg.push({ layer, name, css: layer === 'comp' ? compVar(name) : varName(layer, name), ...(localKeys.has(`${{ primitives: 'primitives', theme: 'theme', layout: 'layout', components: 'components' }[layer]}:${name}`) ? { local: true } : {}), ...extra });
 prim.forEach((v, k) => entry('primitives', k, { type: v.type, group: k.split('/')[0] === 'Colors' ? 'Colors/' + k.split('/')[1] : k.split('/')[0], value: v.type === 'F' ? v.value : v.value }));
 theme.forEach((v, k) => entry('theme', k, { type: v.type, group: k.split('/').slice(0, 2).join('/'), alias: isAlias(v.value) ? v.value.replace(/^@(Primitives:|P:)/, '') : null, value: resolvedOf('theme', k) }));
 layout.forEach((v, k) => entry('layout', k, {
@@ -243,7 +261,7 @@ for (const [k] of theme) {
 }
 
 // ---------- отчёт ----------
-console.log(`prim=${prim.size} theme=${theme.size} layout=${layout.size} (mobile diff ${mobileDiff.length}) comps=${comps.size} text=${textStyles.length} effects=${effectStyles.length}`);
+console.log(`prim=${prim.size} theme=${theme.size} layout=${layout.size} (mobile diff ${mobileDiff.length}) comps=${comps.size} local=${localKeys.size} text=${textStyles.length} effects=${effectStyles.length}`);
 const names = new Map();
 [...theme.keys(), ...layout.keys()].forEach((k) => { const n = varName('theme', k); if (names.has(n)) errors.push(`css name collision ${n}`); names.set(n, k); });
 if (errors.length) { console.error('ОШИБКИ:\n' + errors.join('\n')); process.exitCode = 1; }

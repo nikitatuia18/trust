@@ -378,6 +378,7 @@
   --size-indicator-mark: var(--prim-spacing-400);
   --size-form-card-width: var(--prim-spacing-1650);
   --size-min-height-md: var(--prim-spacing-1550);
+  --size-qr-code-width: 180px;
 
   /* ===== Components ===== */
   --c-button-text-container-m-padding-x: var(--space-xs);
