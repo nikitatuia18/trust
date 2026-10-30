@@ -1,12 +1,12 @@
 import { AccountLayout } from './AccountLayout';
 import { AffiliateSection, type AffiliateSectionProps } from './AffiliateSection';
-import { DEMO_USER, type AccountSection, type AccountUser } from './accountData';
+import { DEMO_USER, type AccountNavTarget, type AccountSection, type AccountUser } from './accountData';
 
 export type AccountPageProps = AffiliateSectionProps & {
   user?: AccountUser;
   /** Раздел, открытый в меню. Здесь всегда 'affiliate'; переключение разделов — в AccountCabinet */
   section?: AccountSection;
-  onNavigate?: (section: AccountSection) => void;
+  onNavigate?: (section: AccountNavTarget) => void;
   onLogout?: () => void | Promise<void>;
 };
 

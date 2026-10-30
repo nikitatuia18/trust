@@ -1,12 +1,12 @@
 import { AccountLayout } from '../account/AccountLayout';
-import { DEMO_USER, type AccountSection, type AccountUser } from '../account/accountData';
+import { DEMO_USER, type AccountNavTarget, type AccountUser } from '../account/accountData';
 import { AccountDetailsCard } from './AccountDetailsCard';
 import { DEMO_DETAILS, type AccountDetails, type ChangeableField } from './accountDetailsData';
 
 export type AccountDetailsPageProps = {
   user?: AccountUser;
   details?: AccountDetails;
-  onNavigate?: (section: AccountSection) => void;
+  onNavigate?: (section: AccountNavTarget) => void;
   onLogout?: () => void | Promise<void>;
   /** Нажали на карандаш у телефона или Telegram: здесь разработчики ведут пользователя в поддержку */
   onRequestChange?: (field: ChangeableField) => void;

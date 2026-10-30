@@ -2,6 +2,17 @@
 
 export type AccountSection = 'details' | 'security' | 'notifications' | 'affiliate';
 
+/** Куда ведёт навигация кабинета: раздел или null — «меню» (на узких экранах это отдельная страница) */
+export type AccountNavTarget = AccountSection | null;
+
+/** Разделы кабинета в порядке меню: название и подпись (иконки — в AccountSidebar) */
+export const ACCOUNT_SECTIONS: { id: AccountSection; title: string; description: string }[] = [
+  { id: 'details', title: 'Account details', description: 'Personal info' },
+  { id: 'security', title: 'Security', description: 'Password and 2FA' },
+  { id: 'notifications', title: 'Notifications', description: 'Alerts and preferences' },
+  { id: 'affiliate', title: 'Affiliate program', description: 'Invite and earn' },
+];
+
 export type AccountUser = {
   name: string;
   email: string;

@@ -1,10 +1,10 @@
 import { AccountLayout } from '../account/AccountLayout';
-import { DEMO_USER, type AccountSection, type AccountUser } from '../account/accountData';
+import { DEMO_USER, type AccountNavTarget, type AccountUser } from '../account/accountData';
 import { SecuritySection, type SecuritySectionProps } from './SecuritySection';
 
 export type SecurityPageProps = SecuritySectionProps & {
   user?: AccountUser;
-  onNavigate?: (section: AccountSection) => void;
+  onNavigate?: (section: AccountNavTarget) => void;
   onLogout?: () => void | Promise<void>;
 };
 

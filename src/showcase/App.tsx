@@ -3,15 +3,15 @@ import { TokensPage } from './TokensPage';
 import { ComponentsPage } from './ComponentsPage';
 import { RulesPage } from './RulesPage';
 import { ScreensPage } from './ScreensPage';
-import { AccountCabinet, RegistrationFlow, type AccountSection } from '../screens';
+import { AccountCabinet, RegistrationFlow, type AccountNavTarget } from '../screens';
 
-type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-details' | 'account-security' | 'account-notifications';
+type Page = 'tokens' | 'components' | 'screens' | 'rules' | 'registration' | 'account' | 'account-menu' | 'account-details' | 'account-security' | 'account-notifications';
 
-/** Разделы кабинета, у которых уже есть страница; остальные пункты меню пока без перехода */
-const ACCOUNT_ROUTES: Partial<Record<AccountSection, Page>> = { details: 'account-details', security: 'account-security', notifications: 'account-notifications', affiliate: 'account' };
-const ROUTE_SECTIONS: Partial<Record<Page, AccountSection>> = { 'account-details': 'details', 'account-security': 'security', 'account-notifications': 'notifications', account: 'affiliate' };
-const goToSection = (section: AccountSection) => {
-  const route = ACCOUNT_ROUTES[section];
+/** Страницы кабинета: раздел или null — меню (отдельная страница на узких экранах; на широких перекидывает на первый раздел) */
+const ROUTE_SECTIONS: Partial<Record<Page, AccountNavTarget>> = { 'account-menu': null, 'account-details': 'details', 'account-security': 'security', 'account-notifications': 'notifications', account: 'affiliate' };
+const ACCOUNT_ROUTES = new Map<AccountNavTarget, Page>(Object.entries(ROUTE_SECTIONS).map(([route, section]) => [section as AccountNavTarget, route as Page]));
+const goToSection = (section: AccountNavTarget) => {
+  const route = ACCOUNT_ROUTES.get(section);
   if (!route) return;
   window.location.hash = `#/${route}`;
   // Новый раздел открывается с верха, как страница: иначе у короткого раздела прокрутка «съезжает» на высоту длинного
@@ -28,7 +28,7 @@ const NAV: { id: Page; label: string; ready: boolean }[] = [
 const fromHash = (): Page => {
   const h = window.location.hash.replace('#/', '') as Page;
   // registration и страницы кабинета — отдельные страницы без оболочки витрины, в меню их нет
-  return h === 'registration' || h === 'account' || h === 'account-details' || h === 'account-security' || h === 'account-notifications' || NAV.some((n) => n.id === h) ? h : 'tokens';
+  return h === 'registration' || h in ROUTE_SECTIONS || NAV.some((n) => n.id === h) ? h : 'tokens';
 };
 
 export function App() {
@@ -50,7 +50,7 @@ export function App() {
   if (page === 'registration') return <RegistrationFlow />;
   // Оба раздела кабинета — один и тот же элемент AccountCabinet: каркас не пересоздаётся, меняется только содержимое
   const cabinetSection = ROUTE_SECTIONS[page];
-  if (cabinetSection) return <AccountCabinet section={cabinetSection} onNavigate={goToSection} />;
+  if (cabinetSection !== undefined) return <AccountCabinet section={cabinetSection} onNavigate={goToSection} />;
 
   return (
     <div className="sc-shell">

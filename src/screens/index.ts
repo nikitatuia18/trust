@@ -9,4 +9,4 @@ export { SecurityPage, type SecurityPageProps } from './account-security/Securit
 export { generatePassword, type PasswordChange } from './account-security/securityData';
 export { DEMO_NOTIFICATIONS, type NotificationGroup, type NotificationSetting } from './account-notifications/notificationsData';
 export { DEMO_DETAILS, type AccountDetails, type ChangeableField } from './account-details/accountDetailsData';
-export { DEMO_AFFILIATE, DEMO_USER, type AccountSection, type AccountUser, type AffiliateData, type EarningStatus, type ReferralEarning } from './account/accountData';
+export { DEMO_AFFILIATE, DEMO_USER, type AccountSection, type AccountNavTarget, type AccountUser, type AffiliateData, type EarningStatus, type ReferralEarning } from './account/accountData';

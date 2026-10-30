@@ -6,7 +6,8 @@
 
 /* Меню слева фиксированной ширины (Figma: 388), контент справа забирает остальное; сетка колонок здесь не нужна */
 .scr-account { display: grid; grid-template-columns: var(--size-account-menu-width) minmax(0, 1fr); gap: var(--space-5xl); align-items: start; }
-.scr-account__side { align-self: start; }
+/* Меню везде одной ширины (388, как на десктопе): на планшете, где оно стоит отдельной страницей, — по центру; на мобильном занимает всю ширину */
+.at-form-card.scr-account__side { align-self: start; width: 100%; max-width: var(--size-account-menu-width); margin-inline: auto; }
 /* Ряды карточек перестраиваются по ширине самого контента: рядом с меню его меньше, чем окна */
 .scr-account__content { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; container: scr-content / inline-size; }
 .scr-account__row { display: grid; gap: var(--space-xl); }

@@ -7,6 +7,7 @@ export type BreadcrumbItem = {
   label: ReactNode;
   /** Нет href — пункт не ссылка (последний — текущая страница) */
   href?: string;
+  /** Переход без перезагрузки: href не открывается, браузер остаётся на месте */
   onClick?: () => void;
 };
 
@@ -27,7 +28,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
               {current ? (
                 <span className="at-breadcrumbs__label text-label-md" aria-current="page">{item.label}</span>
               ) : (
-                <a className="at-breadcrumbs__label at-breadcrumbs__link text-label-md" href={item.href ?? '#'} onClick={item.onClick}>{item.label}</a>
+                <a className="at-breadcrumbs__label at-breadcrumbs__link text-label-md" href={item.href ?? '#'} onClick={item.onClick && ((e) => { e.preventDefault(); item.onClick?.(); })}>{item.label}</a>
               )}
               {!current && <span className="at-breadcrumbs__separator"><Icon /></span>}
             </li>

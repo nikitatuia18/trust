@@ -1,19 +1,20 @@
 import { useState, type ReactNode } from 'react';
 import { Button, FormCard, Icon, IconCircle, ListItem, LockIcon, LockOutlineIcon, LogoutIcon, NotificationBoldIcon, NotificationIcon, ProfileBoldIcon, ProfileFilledIcon, ProfileIcon, StarIcon, StarOutlineIcon, VerifyIcon } from '../../components';
 import { ConfirmDialog } from './ConfirmDialog';
-import { LOGOUT_TEXT, type AccountSection, type AccountUser } from './accountData';
+import { ACCOUNT_SECTIONS, LOGOUT_TEXT, type AccountNavTarget, type AccountSection, type AccountUser } from './accountData';
 
 /** У каждого раздела две иконки из «06 — Icons»: контур, пока пункт не выбран, и залитая, когда выбран */
-const SECTIONS: { id: AccountSection; title: string; description: string; icon: ReactNode; iconSelected: ReactNode }[] = [
-  { id: 'details', title: 'Account details', description: 'Personal info', icon: <ProfileIcon />, iconSelected: <ProfileBoldIcon /> },
-  { id: 'security', title: 'Security', description: 'Password and 2FA', icon: <LockOutlineIcon />, iconSelected: <LockIcon /> },
-  { id: 'notifications', title: 'Notifications', description: 'Alerts and preferences', icon: <NotificationIcon />, iconSelected: <NotificationBoldIcon /> },
-  { id: 'affiliate', title: 'Affiliate program', description: 'Invite and earn', icon: <StarOutlineIcon />, iconSelected: <StarIcon /> },
-];
+const ICONS: Record<AccountSection, { icon: ReactNode; iconSelected: ReactNode }> = {
+  details: { icon: <ProfileIcon />, iconSelected: <ProfileBoldIcon /> },
+  security: { icon: <LockOutlineIcon />, iconSelected: <LockIcon /> },
+  notifications: { icon: <NotificationIcon />, iconSelected: <NotificationBoldIcon /> },
+  affiliate: { icon: <StarOutlineIcon />, iconSelected: <StarIcon /> },
+};
 
 type AccountSidebarProps = {
   user: AccountUser;
-  section: AccountSection;
+  /** Выделенный пункт; null — меню открыто как отдельная страница, ни один раздел не выбран */
+  section: AccountNavTarget;
   onNavigate?: (section: AccountSection) => void;
   /** Пользователь подтвердил выход в окне. Промис: на время ответа окно заблокировано, успех закрывает его */
   onLogout?: () => void | Promise<void>;
@@ -56,15 +57,16 @@ export function AccountSidebar({ user, section, onNavigate, onLogout }: AccountS
       primaryAction={<Button variant="destructive" iconLeft={<LogoutIcon />} onClick={() => setConfirmOpen(true)}>Log out</Button>}
     >
       <nav className="scr-menu" aria-label="Account sections">
-        {SECTIONS.map((s) => {
+        {ACCOUNT_SECTIONS.map((s) => {
           const selected = s.id === section;
+          const { icon, iconSelected } = ICONS[s.id];
           return (
             <ListItem
               key={s.id}
               variant="card"
               showDivider={false}
               selected={selected}
-              leftSlot={<IconCircle tone={selected ? 'brand' : 'subtle'}>{selected ? s.iconSelected : s.icon}</IconCircle>}
+              leftSlot={<IconCircle tone={selected ? 'brand' : 'subtle'}>{selected ? iconSelected : icon}</IconCircle>}
               title={s.title}
               description={s.description}
               rightSlot={<span className="scr-menu__chevron"><Icon /></span>}
