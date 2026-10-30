@@ -38,6 +38,11 @@
   .at-footer__buttons { flex-direction: row; }
 }
 
+/* Бренд и столбцы ссылок в строку требуют ~816: уже — столбиком (иначе на 768–815 подвал вылезал за край на 48) */
+@container (max-width: 839px) {
+  .at-footer__main { flex-direction: column; gap: var(--space-5xl); }
+}
+
 /* Platform=mobile в Figma — заготовка: ниже брейкпоинта всё столбиком */
 @media (max-width: 767px) {
   .at-footer__container, .at-footer__main { flex-direction: column; gap: var(--space-5xl); }

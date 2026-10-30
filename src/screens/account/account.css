@@ -55,10 +55,6 @@
 .scr-menu { display: flex; flex-direction: column; gap: var(--space-sm); }
 /* Иконка в круге отделена от текста: в Figma между ними ~12px, у List Item по умолчанию Space/xs */
 .scr-menu .at-list-item { --c-list-item-item-content-gap: var(--space-lg); }
-/* На телефоне остаются иконка и название, описания скрыты (решение владельца) */
-@media (max-width: 767px) {
-  .scr-menu .at-text__description { display: none; }
-}
 .scr-menu__chevron { display: inline-flex; width: var(--size-icon-xs); height: var(--size-icon-xs); color: var(--content-secondary); }
 .scr-menu__chevron > .at-icon { width: 100%; height: 100%; }
 
