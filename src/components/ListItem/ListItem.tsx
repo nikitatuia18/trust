@@ -65,6 +65,7 @@ export function ListItem({
     className: cn('at-list-item', className),
     'data-size': size,
     'data-variant': variant,
+    'data-has-left': leftSlot ? true : undefined,
     'data-selected': selected || undefined,
     'data-disabled': disabled || undefined,
   };

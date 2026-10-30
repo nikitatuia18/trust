@@ -107,7 +107,7 @@ export default function ContentDemo() {
         ]}
         spacing={[
           'List: --c-list-padding-x/y, gap, radius (только card).',
-          'Item: --c-list-item-main-container-padding-x/y; у card боковые — Space/xl (как в Figma).',
+          'Item: --c-list-item-main-container-padding-x/y; у card боковые — Space/xl (как в Figma), а если слева слот (круг-иконка, логотип) — слева те же Space/sm, что сверху: слот стоит на равных отступах от края.',
           'Слоты: gap --c-list-item-item-content-gap, высота слота — Size/lg (large) или Size/md (small).',
         ]}
         why={[

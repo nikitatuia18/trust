@@ -28,6 +28,8 @@
   box-shadow: inset 0 0 0 var(--c-input-stroke) var(--_border);
 }
 .at-textfield[data-type='stepper'] .at-textfield__shell { padding: var(--space-sm); }
+/* Кнопка-действие в слоте справа: те же Space/sm до края, что сверху и снизу (как у кнопок stepper) */
+.at-textfield__shell:has(> .at-textfield__slot:last-child > .at-button) { padding-inline-end: var(--space-sm); }
 .at-textfield__shell:hover { background: var(--c-input-bg-hover); box-shadow: inset 0 0 0 var(--c-input-stroke) var(--_border-hover); }
 .at-textfield__shell:focus-within {
   background: var(--c-input-bg);
