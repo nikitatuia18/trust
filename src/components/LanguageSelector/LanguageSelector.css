@@ -1,12 +1,8 @@
-/* Language Selector — Figma 377:3689. Список — абсолютный, под кнопкой с зазором Space/sm, тень Elevation/Overlay. */
+/* Language Selector — Figma 377:3689. Список (PopLayer) — абсолютный, под кнопкой с зазором Space/sm; радиус, тень и резиновое появление — у PopLayer. */
 .at-language-selector { position: relative; display: inline-flex; flex: none; }
-.at-language-selector__list {
-  position: absolute; top: calc(100% + var(--space-sm)); left: 0; z-index: 1; width: max-content;
-  border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse));
-  box-shadow:
-    var(--elevation-overlay-2-offset-x) var(--elevation-overlay-2-offset-y) var(--elevation-overlay-2-blur) var(--elevation-overlay-2-spread) var(--elevation-overlay-2-shadow),
-    var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);
-}
+.at-language-selector__list { position: absolute; top: calc(100% + var(--space-sm)); left: 0; }
+/* Кнопка стоит перед списком: он выплывает из-за неё */
+.at-language-selector > .at-button { position: relative; z-index: 2; }
 .at-language-selector__flag { display: block; width: var(--size-md); height: var(--size-md); }
 .at-language-selector__tick { display: inline-flex; width: var(--size-icon-md); height: var(--size-icon-md); color: var(--content-brand); }
 .at-language-selector__tick > .at-icon { width: 100%; height: 100%; }

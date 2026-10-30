@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Icon, List, ListItem, TextField, TickCircleIcon } from '../../components';
+import { Icon, List, ListItem, PopLayer, TextField, TickCircleIcon } from '../../components';
 
 type CountrySelectProps = {
   label: string;
@@ -39,8 +39,8 @@ export function CountrySelect({ label, value, onChange, options, placeholder = '
           if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); }
         }}
       />
-      {open && (
-        <div className="scr-select__list">
+      <PopLayer open={open} className="scr-select__list">
+        <div className="scr-select__scroll">
           <List>
             {options.map((c) => (
               <ListItem
@@ -56,7 +56,7 @@ export function CountrySelect({ label, value, onChange, options, placeholder = '
             ))}
           </List>
         </div>
-      )}
+      </PopLayer>
     </div>
   );
 }

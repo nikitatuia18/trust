@@ -4,6 +4,7 @@ import { Button } from '../Button/Button';
 import { MoreIcon } from '../Icon/Glyphs';
 import { List } from '../List/List';
 import { ListItem } from '../ListItem/ListItem';
+import { PopLayer } from '../PopLayer/PopLayer';
 import './DropdownMenu.css';
 
 export type DropdownMenuItem = {
@@ -29,7 +30,7 @@ export type DropdownMenuProps = {
   className?: string;
 };
 
-/** Меню действий: кнопка с тремя точками и список (List + List Item, как у Language Selector). Закрывается по выбору, Esc и клику снаружи. */
+/** Меню действий: кнопка с тремя точками и список (List + List Item, как у Language Selector). Список выплывает из-за кнопки (PopLayer). Закрывается по выбору, Esc и клику снаружи. */
 export function DropdownMenu({ items, label, align = 'end', placement = 'bottom', variant = 'secondary', size = 'm', className }: DropdownMenuProps) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
@@ -50,22 +51,20 @@ export function DropdownMenu({ items, label, align = 'end', placement = 'bottom'
         aria-label={label} aria-haspopup="menu" aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       />
-      {open && (
-        <div className="at-dropdown-menu__list" data-align={align} data-placement={placement}>
-          <List>
-            {items.map((item) => (
-              <ListItem
-                key={item.id}
-                size="small" variant="list" showDivider={false}
-                disabled={item.disabled}
-                leftSlot={item.icon && <span className="at-dropdown-menu__icon">{item.icon}</span>}
-                title={item.label}
-                onClick={() => { setOpen(false); item.onSelect(); }}
-              />
-            ))}
-          </List>
-        </div>
-      )}
+      <PopLayer open={open} className="at-dropdown-menu__list" data-align={align} data-placement={placement}>
+        <List>
+          {items.map((item) => (
+            <ListItem
+              key={item.id}
+              size="small" variant="list" showDivider={false}
+              disabled={item.disabled}
+              leftSlot={item.icon && <span className="at-dropdown-menu__icon">{item.icon}</span>}
+              title={item.label}
+              onClick={() => { setOpen(false); item.onSelect(); }}
+            />
+          ))}
+        </List>
+      </PopLayer>
     </div>
   );
 }

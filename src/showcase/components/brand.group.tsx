@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, List, Icon, Avatar, EmbedPlaceholder, LanguageSelector, Logo, Spinner, Switch, Footer, Header } from '../../components';
+import { Button, List, Icon, Avatar, DropdownMenu, EmbedPlaceholder, LanguageSelector, Logo, Spinner, Switch, Footer, Header, CopyIcon, ExportIcon } from '../../components';
 import { Doc, Preview } from './doc-kit';
 
 /** Группа страницы «Компоненты». order — позиция, title/note — заголовок группы. */
@@ -71,6 +71,34 @@ export default function BrandDemo() {
           "Собран из Button, List и List Item — своих стилей почти нет, только позиция и тень выпадашки.",
           "Закрывается по выбору, Esc и клику снаружи; кнопка отдаёт aria-expanded.",
           "Флаги EN, RU, GE — бренд-арт вне токенов; другие языки передаются через languages.",
+        ]}
+      />
+      <Preview title="Pop Layer" note="Резиновое появление: слой выплывает из-за кнопки и пружинит, при закрытии втягивается обратно — нажмите на кнопки">
+        <div className="sc-demo sc-demo--col">
+          <div className="sc-demo__row" style={{ minHeight: "calc(var(--size-lg) * 6)", alignItems: "flex-start" }}>
+            <span className="sc-demo__tag text-caption-default sc-muted">language</span>
+            <LanguageSelector value={lang} onChange={setLang} />
+          </div>
+          <div className="sc-demo__row" style={{ minHeight: "calc(var(--size-lg) * 4)", alignItems: "flex-start" }}>
+            <span className="sc-demo__tag text-caption-default sc-muted">dropdown</span>
+            <DropdownMenu label="More actions" align="start" items={[{ id: "c", label: "Copy link", icon: <CopyIcon />, onSelect: () => undefined }, { id: "s", label: "Share", icon: <ExportIcon />, onSelect: () => undefined }]} />
+          </div>
+        </div>
+      </Preview>
+      <Doc
+        where={[
+          "Language Selector, Dropdown Menu, выбор страны (регистрация) — любой список, который открывается из кнопки или поля.",
+          "Любая будущая подсказка и всплывающая плашка: появляются через Pop Layer, а не просто возникают.",
+        ]}
+        spacing={[
+          "Слой стоит сразу после своей кнопки (якорь — предыдущий соседний элемент), зазор до кнопки Space/sm; позицию задаёт компонент-хозяин.",
+          "Радиус — List/radius со сглаживанием, тень — Elevation/Overlay/1+2: на карточке PopLayer, масштабируются вместе со слоем.",
+          "Движение — styles/motion.css: пружины по X (ζ 0.75, ≈3%) и Y (ζ 0.58, ≈11%), 520 и 620 мс, старт с масштаба 0.2; закрытие 180 мс без отскока.",
+        ]}
+        why={[
+          "Растёт из центра кнопки — видно, откуда пришёл слой; у X и Y разная упругость, поэтому он вытягивается и оседает, как резинка.",
+          "Слой всегда в DOM: закрытый скрыт (visibility) и inert — недоступен для фокуса и скринридера. Повторный клик посреди анимации плавно разворачивает её.",
+          "prefers-reduced-motion — только быстрое проявление без масштаба. Новую пружину считает tools/spring.mjs.",
         ]}
       />
       <Preview title="Spinner + Embed Placeholder" note="Embed Placeholder: Size default | compact · title, description">

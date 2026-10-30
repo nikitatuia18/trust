@@ -4,6 +4,7 @@ import { Button } from '../Button/Button';
 import { GlobeIcon, TickCircleIcon } from '../Icon/Glyphs';
 import { List } from '../List/List';
 import { ListItem } from '../ListItem/ListItem';
+import { PopLayer } from '../PopLayer/PopLayer';
 import flagUs from './flags/us.svg';
 import flagRu from './flags/ru.svg';
 import flagGe from './flags/ge.svg';
@@ -59,23 +60,21 @@ export function LanguageSelector({ value, onChange, languages = LANGUAGES, open,
       >
         {value}
       </Button>
-      {isOpen && (
-        <div className="at-language-selector__list">
-          <List>
-            {languages.map((l) => (
-              <ListItem
-                key={l.code}
-                size="small" variant="list" showDivider={false}
-                selected={l.code === value}
-                leftSlot={<img className="at-language-selector__flag" src={l.flag} alt="" />}
-                title={l.label} subtitle={l.code}
-                rightSlot={l.code === value ? <span className="at-language-selector__tick"><TickCircleIcon /></span> : undefined}
-                onClick={() => { onChange(l.code); setInnerOpen(false); }}
-              />
-            ))}
-          </List>
-        </div>
-      )}
+      <PopLayer open={isOpen} className="at-language-selector__list">
+        <List>
+          {languages.map((l) => (
+            <ListItem
+              key={l.code}
+              size="small" variant="list" showDivider={false}
+              selected={l.code === value}
+              leftSlot={<img className="at-language-selector__flag" src={l.flag} alt="" />}
+              title={l.label} subtitle={l.code}
+              rightSlot={l.code === value ? <span className="at-language-selector__tick"><TickCircleIcon /></span> : undefined}
+              onClick={() => { onChange(l.code); setInnerOpen(false); }}
+            />
+          ))}
+        </List>
+      </PopLayer>
     </div>
   );
 }

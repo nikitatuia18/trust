@@ -1,6 +1,6 @@
 import { Fragment, useState, type ReactNode } from 'react';
 import {
-  Badge, Button, Checkbox, Chip, CloseIcon, FormCard, Icon, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
+  Badge, Button, Checkbox, Chip, CloseIcon, FormCard, Icon, LanguageSelector, MinusIcon, Modal, PlusIcon, SearchIcon, SegmentedControl, Spinner, Switch, TextField,
 } from '../components';
 
 type RuleProps = {
@@ -133,6 +133,11 @@ function ModalDemo() {
       />
     </>
   );
+}
+
+function LanguageDemo() {
+  const [lang, setLang] = useState('EN');
+  return <LanguageSelector value={lang} onChange={setLang} />;
 }
 
 /* ——— страница ——— */
@@ -443,6 +448,22 @@ export function RulesPage() {
           good={['<h2 className="at-form-card__title text-heading-h4">']}
           bad={['<h2 style="padding: 32px 0">', 'отступ от края строки, а не от букв']}
           note="Раньше было 32 (Space/3xl) — владелец счёл много, стало 24. Измерять по пикселям: верх заглавных → край карточки, базовая линия → разделитель. text-box: trim-both cap alphabetic работает в Chrome 133+ и Safari 18.2+; в других заголовок чуть просторнее, но симметричен."
+        />
+      </Section>
+
+      <Section title="Движение" note="Всё, что выплывает, появляется из-за своего объекта — плавно и резиново.">
+        <Rule
+          n={20}
+          title="Выплывающее появляется из-за якоря и пружинит"
+          text="Любой слой, который открывается из кнопки или поля — список языков, меню действий, выбор страны, будущие подсказки и всплывающие плашки, — делается компонентом Pop Layer. Слой растёт из центра своего якоря (кнопка стоит перед ним и закрывает его начало): стартовый масштаб 0.2, дальше пружина. По горизонтали она жёсткая (ζ 0.75, перелёт ≈3%, 520 мс), по вертикали мягкая (ζ 0.58, перелёт ≈11%, 620 мс) — слой вытягивается и оседает, как резинка. Закрытие — быстро (180 мс), без отскока, обратно в якорь. Повторный клик посреди анимации плавно её разворачивает. Тень и радиус — на карточке Pop Layer, поэтому масштабируются вместе с ней. Закрытый слой остаётся в DOM скрытым и inert. При prefers-reduced-motion — только быстрое проявление без масштаба. Значения — в src/styles/motion.css (--motion-*); новую пружину считает node tools/spring.mjs. Эталон — выбор языка: нажмите на кнопку."
+          demo={
+            <div className="sc-rule__row" style={{ minHeight: "calc(var(--size-lg) * 6)", alignItems: "flex-start" }}>
+              <LanguageDemo />
+            </div>
+          }
+          good={["<PopLayer open={open} className=\"my-menu__list\">…</PopLayer> сразу после кнопки", "var(--motion-spring-x), var(--motion-spring-y) из motion.css"]}
+          bad={["{open && <div className=\"list\">…</div>} — слой просто возникает", "свой transition: opacity без пружины и без якоря"]}
+          note="Решение владельца 2026-10-30: «всё, что выплывает, — из-за объекта и резиновое, плавно и аккуратно». Вне правила: модальное окно (у него нет якоря, правило 17), mega-menu и панель бургера — они крепятся к полосе шапки целиком, а не к объекту."
         />
       </Section>
     </>

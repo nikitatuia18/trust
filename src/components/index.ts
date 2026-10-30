@@ -38,3 +38,4 @@ export { IconCircle, type IconCircleProps } from './IconCircle/IconCircle';
 export { DropdownMenu, type DropdownMenuProps, type DropdownMenuItem } from './DropdownMenu/DropdownMenu';
 export { Table, type TableProps, type TableColumn } from './Table/Table';
 export { Modal, type ModalProps } from './Modal/Modal';
+export { PopLayer, type PopLayerProps } from './PopLayer/PopLayer';

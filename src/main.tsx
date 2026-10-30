@@ -6,6 +6,7 @@ import '@fontsource/geist-mono/400.css';
 import './styles/tokens.css';
 import './styles/typography.css';
 import './styles/base.css';
+import './styles/motion.css';
 import './showcase/showcase.css';
 import { App } from './showcase/App';
 

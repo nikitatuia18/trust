@@ -13,14 +13,14 @@
 .scr-otp__cell { flex: 1 1 0; min-width: 0; }
 .scr-otp .at-textfield__input { text-align: center; }
 
-/* Выбор страны: список под полем, поверх контента */
+/* Выбор страны: список (PopLayer) под полем, поверх контента; поле стоит перед ним */
 .scr-select { position: relative; }
 .scr-select .at-textfield__input { cursor: pointer; }
-.scr-select__list {
-  position: absolute; top: calc(100% + var(--space-sm)); left: 0; right: 0; z-index: 1;
+.scr-select > .at-textfield { position: relative; z-index: 2; }
+.scr-select .scr-select__list { position: absolute; top: calc(100% + var(--space-sm)); left: 0; right: 0; width: auto; }
+.scr-select__scroll {
   max-height: calc(var(--size-lg) * 6); overflow-y: auto;
   border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse));
-  box-shadow: var(--effect-elevation-overlay);
 }
 .scr-select__tick { display: inline-flex; width: var(--size-icon-md); height: var(--size-icon-md); color: var(--content-brand); }
 .scr-select__tick > .at-icon { width: 100%; height: 100%; }

@@ -1,0 +1,39 @@
+/* Pop Layer — резиновое появление из якоря. Внешний слой тянется по X, карточка внутри — по Y, у каждой оси своя пружина
+   (--motion-spring-x / -y из styles/motion.css): слой вытягивается и оседает. Тень и радиус — у карточки, чтобы масштабироваться вместе с ней. */
+.at-pop {
+  --pop-origin-x: 0px; --pop-origin-y: 0px;
+  z-index: 1; width: max-content;
+  transform-origin: var(--pop-origin-x) var(--pop-origin-y);
+  transform: scaleX(var(--motion-pop-from));
+  opacity: 0; visibility: hidden;
+  transition:
+    transform var(--motion-pop-out) var(--motion-ease-in),
+    opacity var(--motion-pop-out) linear,
+    visibility 0s linear var(--motion-pop-out);
+}
+.at-pop__card {
+  transform-origin: var(--pop-origin-x) var(--pop-origin-y);
+  transform: scaleY(var(--motion-pop-from));
+  border-radius: var(--c-list-radius); corner-shape: superellipse(var(--corner-superellipse));
+  box-shadow:
+    var(--elevation-overlay-2-offset-x) var(--elevation-overlay-2-offset-y) var(--elevation-overlay-2-blur) var(--elevation-overlay-2-spread) var(--elevation-overlay-2-shadow),
+    var(--elevation-overlay-1-offset-x) var(--elevation-overlay-1-offset-y) var(--elevation-overlay-1-blur) var(--elevation-overlay-1-spread) var(--elevation-overlay-1-shadow);
+  transition: transform var(--motion-pop-out) var(--motion-ease-in);
+}
+.at-pop[data-state='open'] {
+  transform: none; opacity: 1; visibility: visible;
+  transition:
+    transform var(--motion-pop-in-x) var(--motion-spring-x),
+    opacity var(--motion-pop-fade-in) linear,
+    visibility 0s;
+}
+.at-pop[data-state='open'] > .at-pop__card {
+  transform: none;
+  transition: transform var(--motion-pop-in-y) var(--motion-spring-y);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-pop, .at-pop[data-state='open'] { transform: none; transition: opacity var(--motion-pop-fade-in) linear, visibility 0s linear var(--motion-pop-fade-in); }
+  .at-pop[data-state='open'] { transition: opacity var(--motion-pop-fade-in) linear, visibility 0s; }
+  .at-pop__card, .at-pop[data-state='open'] > .at-pop__card { transform: none; transition: none; }
+}
