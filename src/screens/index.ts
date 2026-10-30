@@ -3,5 +3,5 @@ export { RegistrationFlow, REGISTRATION_STEPS, type RegistrationStep } from './r
 export type { Details } from './registration/DetailsStep';
 export { AccountPage, type AccountPageProps } from './account/AccountPage';
 export { AccountDetailsPage, type AccountDetailsPageProps } from './account-details/AccountDetailsPage';
-export { DEMO_DETAILS, type AccountDetails } from './account-details/accountDetailsData';
+export { DEMO_DETAILS, type AccountDetails, type ChangeableField } from './account-details/accountDetailsData';
 export { DEMO_AFFILIATE, DEMO_USER, type AccountSection, type AccountUser, type AffiliateData, type EarningStatus, type ReferralEarning } from './account/accountData';

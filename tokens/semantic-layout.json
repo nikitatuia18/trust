@@ -590,6 +590,11 @@
       "$type": "F",
       "desktop": "180",
       "mobile": "180"
+    },
+    "Size/Account-menu/width": {
+      "$type": "F",
+      "desktop": "388",
+      "mobile": "388"
     }
   }
 }

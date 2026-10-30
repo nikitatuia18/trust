@@ -1,14 +1,20 @@
 import { FormCard, TextField } from '../../components';
-import { SUPPORT_HINT, type AccountDetails } from './accountDetailsData';
+import type { AccountDetails, ChangeableField } from './accountDetailsData';
+import { ContactField } from './ContactField';
 
-/** «Edit details»: имя и фамилия не меняются (disabled), телефон и Telegram видны, но меняются только через поддержку (readOnly + подсказка) */
-export function AccountDetailsCard({ details }: { details: AccountDetails }) {
+type AccountDetailsCardProps = {
+  details: AccountDetails;
+  onRequestChange?: (field: ChangeableField) => void;
+};
+
+/** «Edit details»: имя и фамилия не меняются (disabled), телефон и Telegram меняются только через поддержку (карандаш → подсказка) */
+export function AccountDetailsCard({ details, onRequestChange }: AccountDetailsCardProps) {
   return (
     <FormCard header={<h2 className="scr-card-title text-heading-h4">Edit details</h2>}>
       <TextField label="First name" value={details.firstName} disabled readOnly autoComplete="given-name" />
       <TextField label="Last name" value={details.lastName} disabled readOnly autoComplete="family-name" />
-      <TextField label="Phone number" value={details.phone} readOnly hint={SUPPORT_HINT} autoComplete="tel" />
-      <TextField label="Telegram" value={details.telegram} readOnly hint={SUPPORT_HINT} autoComplete="off" />
+      <ContactField label="Phone number" value={details.phone} onRequestChange={() => onRequestChange?.('phone')} />
+      <ContactField label="Telegram" value={details.telegram} onRequestChange={() => onRequestChange?.('telegram')} />
     </FormCard>
   );
 }

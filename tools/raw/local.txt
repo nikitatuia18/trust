@@ -3,3 +3,4 @@
 # Когда токен заведён в Figma и попал в экспорт — удалить строку отсюда (генератор подскажет дублем). Список долга: npm run debt.
 ## Layout
 Size/QR-code/width|F|180
+Size/Account-menu/width|F|388

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AmountField, Button, Checkbox, Chip, List, Icon, CloseIcon, SearchIcon, SegmentedControl, TextField } from '../../components';
+import { AmountField, Button, Checkbox, Chip, List, Icon, CloseIcon, EditIcon, SearchIcon, SegmentedControl, TextField } from '../../components';
 import { Doc, Preview } from './doc-kit';
 
 /** Группа страницы «Компоненты». order — позиция, title/note — заголовок группы. */
@@ -24,6 +24,12 @@ export default function InputDemo() {
             onChange={(e) => setQty(e.target.value)}
           />
           <TextField label="With slots" placeholder="Search" leftSlot={<SearchIcon />} rightSlot={<CloseIcon />} />
+          <TextField
+            label="Slot with action"
+            defaultValue="+7 (950) 907-22-48"
+            readOnly
+            rightSlot={<Button variant="ghost" size="s" density="compact" iconOnly iconLeft={<EditIcon />} aria-label="Edit phone number" />}
+          />
         </div>
       </Preview>
       <Doc
@@ -42,6 +48,7 @@ export default function InputDemo() {
           'Подсказка (placeholder) — --c-input-placeholder → Content/tertiary (Gray/400), светлее введённого текста (Content/primary): пустое поле не похоже на заполненное. Контраст ≈3.7 — осознанно слабее нормы, как у остальных tertiary.',
           'Состояния error/success — меняют границу и фокус-кольцо одним переключателем data-validation.',
           'Stepper = Button secondary s icon-only: нет отдельного компонента для кнопок.',
+          'Слот может держать кнопку-действие (Button ghost s icon-only, например карандаш «изменить»): она сохраняет свои 40×40, высота поля не растёт (8 + 40 + 8 = 56). В Figma слот рассчитан на иконку 24 — расширение записано в «Открыто».',
         ]}
       />
       <Preview title="Amount Field" note="State: default | focus | error — фокус определяется вводом">

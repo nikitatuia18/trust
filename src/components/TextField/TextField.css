@@ -41,6 +41,9 @@
   width: var(--c-input-icon-size); height: var(--c-input-icon-size);
 }
 .at-textfield__slot > * { width: 100%; height: 100%; }
+/* В слот можно положить кнопку-действие (карандаш «изменить»): она держит свой размер, а не сжимается до иконки */
+.at-textfield__slot:has(> .at-button) { width: auto; height: auto; }
+.at-textfield__slot > .at-button { width: auto; height: auto; }
 .at-textfield:has(.at-textfield__input:not(:placeholder-shown)) .at-textfield__slot { color: var(--c-input-content); }
 
 .at-textfield__field { flex: 1; min-width: 0; display: flex; align-items: center; min-height: var(--size-lg); padding-inline: var(--c-input-field-padding-x); }

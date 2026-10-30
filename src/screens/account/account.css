@@ -4,20 +4,29 @@
 .scr-account-wrap { container-type: inline-size; width: 100%; }
 .scr-account-page { display: flex; flex-direction: column; gap: var(--space-5xl); width: 100%; max-width: var(--grid-max-width); margin-inline: auto; }
 
-/* Меню слева (1/4) и контент справа (3/4) */
-.scr-account { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: var(--space-5xl); align-items: start; }
+/* Меню слева фиксированной ширины (Figma: 388), контент справа забирает остальное; сетка колонок здесь не нужна */
+.scr-account { display: grid; grid-template-columns: var(--size-account-menu-width) minmax(0, 1fr); gap: var(--space-5xl); align-items: start; }
 .scr-account__side { align-self: start; }
-.scr-account__content { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; }
+/* Ряды карточек перестраиваются по ширине самого контента: рядом с меню его меньше, чем окна */
+.scr-account__content { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; container: scr-content / inline-size; }
 .scr-account__row { display: grid; gap: var(--space-xl); }
 .scr-account__row[data-row='top'] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .scr-account__row[data-row='bottom'] { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
 .scr-account__info { display: grid; grid-auto-rows: 1fr; min-width: 0; gap: var(--space-xl); }
 
-@container (max-width: 1099px) {
+@container (max-width: 1279px) {
   .scr-account { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
 }
-@container (max-width: 799px) {
+/* История и карточки-подсказки: таблице нужна ширина, поэтому при узком контенте они встают друг под друга, подсказки — парой */
+@container scr-content (max-width: 959px) {
+  .scr-account__row[data-row='bottom'] { grid-template-columns: minmax(0, 1fr); }
+  .scr-account__info { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container scr-content (max-width: 799px) {
   .scr-account__row[data-row] { grid-template-columns: minmax(0, 1fr); }
+}
+@container scr-content (max-width: 599px) {
+  .scr-account__info { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Заголовки карточек */
@@ -44,6 +53,12 @@
 
 /* Меню: пункты */
 .scr-menu { display: flex; flex-direction: column; gap: var(--space-sm); }
+/* Иконка в круге отделена от текста: в Figma между ними ~12px, у List Item по умолчанию Space/xs */
+.scr-menu .at-list-item { --c-list-item-item-content-gap: var(--space-lg); }
+/* На телефоне остаются иконка и название, описания скрыты (решение владельца) */
+@media (max-width: 767px) {
+  .scr-menu .at-text__description { display: none; }
+}
 .scr-menu__chevron { display: inline-flex; width: var(--size-icon-xs); height: var(--size-icon-xs); color: var(--content-secondary); }
 .scr-menu__chevron > .at-icon { width: 100%; height: 100%; }
 

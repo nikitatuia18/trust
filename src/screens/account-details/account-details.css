@@ -1,0 +1,8 @@
+/* Account details. Только токены; компоненты — из src/components. */
+
+/* Карандаш в поле: виден при наведении и фокусе. Остаётся в порядке Tab — при фокусе на нём поле получает :focus-within */
+.scr-editable:not(:hover):not(:focus-within) .at-textfield__slot > .at-button { opacity: 0; }
+/* На тач-экранах наведения нет — карандаш виден всегда */
+@media (hover: none) {
+  .scr-editable .at-textfield__slot > .at-button { opacity: 1; }
+}

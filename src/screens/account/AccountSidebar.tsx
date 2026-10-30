@@ -3,10 +3,10 @@ import { ArrowCircleLeftIcon, Button, FormCard, Icon, IconCircle, ListItem, Lock
 import type { AccountSection, AccountUser } from './accountData';
 
 const SECTIONS: { id: AccountSection; title: string; description: string; icon: ReactNode }[] = [
-  { id: 'details', title: 'Account details', description: 'Personal info and email settings', icon: <ProfileIcon /> },
-  { id: 'security', title: 'Security', description: 'Password, 2FA and active sessions', icon: <LockOutlineIcon /> },
-  { id: 'notifications', title: 'Notifications', description: 'Preferences and push alerts', icon: <NotificationIcon /> },
-  { id: 'affiliate', title: 'Affiliate program', description: 'Invite friends and earn rewards', icon: <StarIcon /> },
+  { id: 'details', title: 'Account details', description: 'Personal info', icon: <ProfileIcon /> },
+  { id: 'security', title: 'Security', description: 'Password and 2FA', icon: <LockOutlineIcon /> },
+  { id: 'notifications', title: 'Notifications', description: 'Alerts and preferences', icon: <NotificationIcon /> },
+  { id: 'affiliate', title: 'Affiliate program', description: 'Invite and earn', icon: <StarIcon /> },
 ];
 
 type AccountSidebarProps = {
