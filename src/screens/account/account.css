@@ -69,7 +69,12 @@
 /* Заголовок не ломается посередине: если чип не помещается рядом, он целиком уходит на следующую строку */
 .scr-ref-link .at-text__row { flex-wrap: wrap; }
 .scr-ref-link .at-text__title { white-space: nowrap; }
-.scr-ref-link .at-button { --_content: var(--content-brand); }
+/* Кнопка копирования — просто иконка без круга (ни в покое, ни при наведении); отступ вокруг иконки Space/md, как у иконки слева внутри круга, поэтому от края плашки справа и слева одинаково */
+.scr-ref-link .at-button[data-icon-only] {
+  --_content: var(--content-brand);
+  --_bg-hover: transparent; --_bg-active: transparent;
+  padding: var(--space-md);
+}
 
 /* Promotion tools */
 .scr-actions-row { display: flex; gap: var(--space-sm); }

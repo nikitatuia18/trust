@@ -5,7 +5,8 @@
   --_content: var(--c-chip-brand-content);
   --_bg-hover: var(--c-chip-brand-bg-hover);
   display: inline-flex; align-items: center; gap: var(--c-chip-s-gap);
-  padding: var(--c-chip-s-padding-y) var(--c-chip-s-padding-x);
+  /* Вертикальный отступ Space/2xs вместо Chip/S/padding-y (Space/xs): чип ниже, меньше «выпуклости» (решение владельца 2026-10-30) */
+  padding: var(--space-2xs) var(--c-chip-s-padding-x);
   border: 0; border-radius: var(--c-chip-s-radius);
   background: var(--_bg); color: var(--_content);
   box-shadow: inset 0 0 0 var(--c-chip-stroke) var(--_border);
@@ -30,7 +31,8 @@
 }
 .at-chip__icon { display: inline-flex; flex: none; width: var(--size-icon-xs); height: var(--size-icon-xs); }
 .at-chip__icon > *, .at-chip__slot > * { max-width: 100%; max-height: 100%; }
-.at-chip__text { display: inline-flex; padding: var(--space-none) var(--c-chip-s-text-container-padding-x); }
+/* Боковой отступ подписи Space/2xs вместо Chip/S/text-container/padding-x (Space/xs): в сумме по бокам на 2px меньше */
+.at-chip__text { display: inline-flex; padding: var(--space-none) var(--space-2xs); }
 .at-chip__slot { display: inline-flex; flex: none; }
 .at-chip__slot > .at-icon { width: var(--size-icon-xs); height: var(--size-icon-xs); }
 
