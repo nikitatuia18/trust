@@ -380,7 +380,7 @@
   --size-form-card-width: var(--prim-spacing-1650);
   --size-min-height-md: var(--prim-spacing-1550);
   --blur-modal-backdrop: 16px;
-  --corner-superellipse: 2;
+  --corner-superellipse: 1.5;
   --size-qr-code-width: 180px;
   --size-account-menu-width: 388px;
 
@@ -708,6 +708,8 @@
   --c-modal-scrim: var(--surface-overlay-modal-scrim);
   --c-modal-backdrop-blur: var(--blur-modal-backdrop);
   --c-modal-padding: var(--space-xl);
+  --c-form-card-header-padding-y: var(--space-2xl);
+  --c-form-card-header-gap: var(--space-sm);
 
   /* ===== Effect styles ===== */
   --effect-focus-primary: var(--focus-offset-x) var(--focus-offset-y) var(--focus-blur) var(--focus-ring-width) var(--focus-brand-ring);

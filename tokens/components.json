@@ -1292,6 +1292,14 @@
     "Modal/padding": {
       "$type": "F",
       "$value": "{layout.Space/xl}"
+    },
+    "Form Card/header-padding-y": {
+      "$type": "F",
+      "$value": "{layout.Space/2xl}"
+    },
+    "Form Card/header-gap": {
+      "$type": "F",
+      "$value": "{layout.Space/sm}"
     }
   }
 }

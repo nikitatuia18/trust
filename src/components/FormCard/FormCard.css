@@ -18,8 +18,8 @@
    там, где его нет, заголовок остаётся с межстрочным полем — оно симметрично, просто отступ чуть просторнее. */
 .at-form-card__title { margin: 0; color: var(--content-primary); text-box: trim-both cap alphabetic; }
 .at-form-card__description { margin: 0; color: var(--content-secondary); text-box: trim-both cap alphabetic; }
-/* Шапка, где заголовок стоит сам или первым (+ описание): равные Space/3xl над заглавными и под базовой линией — высота близка к 80 из Figma */
-.at-form-card__zone:has(> .at-form-card__title) { padding-block: var(--space-3xl); gap: var(--space-lg); }
+/* Шапка, где заголовок стоит сам или первым (+ описание): --c-form-card-header-padding-y (Space/2xl) над заглавными и под базовой линией, между заголовком и пояснением --c-form-card-header-gap (Space/sm) */
+.at-form-card__zone:has(> .at-form-card__title) { padding-block: var(--c-form-card-header-padding-y); gap: var(--c-form-card-header-gap); }
 
 /* fluid: ширину задаёт родитель; если карточку растянули по высоте, лишнее место берёт тело (подвал остаётся внизу) */
 .at-form-card[data-fluid] { max-width: none; }

@@ -593,8 +593,8 @@
     },
     "Corner/Superellipse": {
       "$type": "F",
-      "desktop": "2",
-      "mobile": "2"
+      "desktop": "1.5",
+      "mobile": "1.5"
     },
     "Size/QR-code/width": {
       "$type": "F",

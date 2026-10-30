@@ -13,3 +13,10 @@
 .at-modal > * { margin: auto; }
 /* Пока окно открыто, страница под ним не прокручивается */
 html:has(.at-modal[open]) { overflow: hidden; }
+
+/* Содержимое модального окна выровнено по центру: заголовок и пояснение посередине, зазор между ними — Form Card/header-gap (Space/sm).
+   Это правило всех модалок (Правила, п. 17), поэтому оно здесь, а не в экране. */
+.at-modal .at-form-card__zone:has(> .at-form-card__title) { align-items: center; }
+.at-modal .at-form-card__title, .at-modal .at-form-card__description { text-align: center; }
+/* Иллюстрация над заголовком (слот; сами иллюстрации и отступ до заголовка — позже): по центру */
+.at-modal__illustration { display: flex; justify-content: center; }

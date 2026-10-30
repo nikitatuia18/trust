@@ -60,6 +60,36 @@ for (const f of cssFiles) {
   });
 }
 
+// ---------- сглаживание углов (Правило 18) ----------
+// Контейнер со скруглением крупнее Radius/md (≈12) обязан иметь corner-shape в том же правиле. «Пилюли» (Radius/round), 0 и мелкие радиусы не считаются.
+// Радиус разрешается по цепочке токенов в src/styles/tokens.css; исключить строку — /* check-ignore: причина */.
+{
+  const tokenCss = readFileSync(join(src, 'styles/tokens.css'), 'utf8');
+  const tokenVal = new Map();
+  for (const m of tokenCss.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) if (!tokenVal.has(m[1])) tokenVal.set(m[1], m[2].trim());
+  const SMALL = new Set(['--radius-xs', '--radius-sm', '--radius-md', '--radius-none', '--radius-round', '--prim-radius-round', '--prim-radius-0']);
+  const smallOrRound = (name, depth = 0) => {
+    if (SMALL.has(name)) return true;
+    const v = tokenVal.get(name);
+    if (!v || depth > 8) return false;
+    const next = v.match(/^var\((--[\w-]+)\)$/);
+    if (next) return smallOrRound(next[1], depth + 1);
+    return /^0(px)?$/.test(v) || parseFloat(v) >= 9999;
+  };
+  for (const f of cssFiles) {
+    const file = rel(f);
+    const text = readFileSync(f, 'utf8').replace(/\/\*(?!\s*check-ignore)[\s\S]*?\*\//g, (c) => c.replace(/[^\n]/g, ' '));
+    for (const m of text.matchAll(/border-radius\s*:\s*var\((--[\w-]+)\)/g)) {
+      const start = text.lastIndexOf('{', m.index), end = text.indexOf('}', m.index);
+      const block = text.slice(start, end);
+      const lineStart = text.lastIndexOf('\n', m.index) + 1;
+      const line = text.slice(lineStart, text.indexOf('\n', m.index));
+      if (/check-ignore/.test(line) || /corner-shape/.test(block) || smallOrRound(m[1])) continue;
+      add(file, text.slice(0, m.index).split('\n').length, `контейнер с радиусом ${m[1]} без corner-shape: superellipse(var(--corner-superellipse)) — Правило 18 (пилюле/мелкому элементу — /* check-ignore: причина */)`, line);
+    }
+  }
+}
+
 // ---------- TSX компонентов и экранов ----------
 const tsxFiles = [...walk(join(src, 'components'), ['.tsx']), ...walk(join(src, 'screens'), ['.tsx'])];
 const STYLE_COLOR = /\b(color|background(?:Color)?|borderRadius|border(?:Color)?|boxShadow|fontSize|fontFamily)\s*:/;

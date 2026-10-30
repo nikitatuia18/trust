@@ -2,13 +2,13 @@
 
 Генерируется `npm run debt`. Код первичен для новых компонентов и токенов; раз в несколько экранов всё это переносится в Figma одной пачкой (`use_figma`), строки из `tools/raw/local.txt` — в основные raw после следующего экспорта.
 
-## Локальные токены (10)
+## Локальные токены (12)
 
 | Секция | Токен | Тип | Значение |
 |---|---|---|---|
 | Theme | `Surface/Overlay/modal-scrim` | C | `@Primitives:Colors/Black/alpha-8` |
 | Layout | `Blur/Modal-backdrop` | F | `16` |
-| Layout | `Corner/Superellipse` | F | `2` |
+| Layout | `Corner/Superellipse` | F | `1.5` |
 | Layout | `Size/QR-code/width` | F | `180` |
 | Layout | `Size/Account-menu/width` | F | `388` |
 | Components | `Chip/brand/bg-hover` | C | `@T:Surface/Brand/subtle-hover` |
@@ -16,6 +16,8 @@
 | Components | `Modal/scrim` | C | `@T:Surface/Overlay/modal-scrim` |
 | Components | `Modal/backdrop-blur` | F | `@L:Blur/Modal-backdrop` |
 | Components | `Modal/padding` | F | `@L:Space/xl` |
+| Components | `Form Card/header-padding-y` | F | `@L:Space/2xl` |
+| Components | `Form Card/header-gap` | F | `@L:Space/sm` |
 
 ## Компоненты без компонентных токенов `--c-*` (11)
 
