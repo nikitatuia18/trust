@@ -22,12 +22,10 @@ html:has(.at-modal[open]) { overflow: hidden; }
 }
 .at-modal__zone { display: flex; flex-direction: column; gap: var(--c-modal-body-gap); padding: var(--c-modal-zone-padding); min-width: 0; }
 .at-modal__zone + .at-modal__zone { border-top: var(--c-modal-stroke) solid var(--c-modal-border); }
-/* Сверху и снизу окна — крупнее боковых и внутренних (Space/5xl): окно не «давит» на текст и кнопки */
-.at-modal__window > .at-modal__zone:first-child { padding-top: var(--c-modal-edge-padding); }
-.at-modal__window > .at-modal__zone:last-child { padding-bottom: var(--c-modal-edge-padding); }
 
-/* Шапка: всё по центру, зазор между заголовком и пояснением — Space/sm */
-.at-modal__header { align-items: center; gap: var(--c-modal-header-gap); text-align: center; }
+/* Шапка (контейнер текста: заголовок + пояснение): всё по центру; над заголовком и под пояснением — Space/6xl (48), зазор между заголовком и пояснением — Space/xl (16).
+   Зона с кнопками остаётся с обычными Space/2xl (24) */
+.at-modal__header { align-items: center; gap: var(--c-modal-header-gap); padding-block: var(--c-modal-header-padding-y); text-align: center; }
 .at-modal__illustration { display: flex; justify-content: center; }
 /* Заголовок и пояснение обрезаны по буквам (text-box), поэтому зазор — от букв, а не от строки.
    Под заголовком с пояснением нижний край — линия выносных элементов (g, p): иначе «g» почти касается текста ниже. */

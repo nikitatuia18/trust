@@ -22,8 +22,8 @@
 | Components | `Modal/radius` | F | `@L:Radius/2xl` |
 | Components | `Modal/max-width` | F | `@L:Size/Form-card/width` |
 | Components | `Modal/zone-padding` | F | `@L:Space/2xl` |
-| Components | `Modal/edge-padding` | F | `@L:Space/5xl` |
-| Components | `Modal/header-gap` | F | `@L:Space/sm` |
+| Components | `Modal/header-padding-y` | F | `@L:Space/6xl` |
+| Components | `Modal/header-gap` | F | `@L:Space/xl` |
 | Components | `Modal/actions-gap` | F | `@L:Space/sm` |
 | Components | `Modal/body-gap` | F | `@L:Space/xl` |
 | Components | `Form Card/header-padding-y` | F | `@L:Space/2xl` |

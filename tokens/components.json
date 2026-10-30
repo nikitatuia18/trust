@@ -1317,13 +1317,13 @@
       "$type": "F",
       "$value": "{layout.Space/2xl}"
     },
-    "Modal/edge-padding": {
+    "Modal/header-padding-y": {
       "$type": "F",
-      "$value": "{layout.Space/5xl}"
+      "$value": "{layout.Space/6xl}"
     },
     "Modal/header-gap": {
       "$type": "F",
-      "$value": "{layout.Space/sm}"
+      "$value": "{layout.Space/xl}"
     },
     "Modal/actions-gap": {
       "$type": "F",

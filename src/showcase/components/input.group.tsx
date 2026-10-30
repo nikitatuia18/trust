@@ -50,7 +50,7 @@ export default function InputDemo() {
           'Подсказка (placeholder) — --c-input-placeholder → Content/tertiary (Gray/400), светлее введённого текста (Content/primary): пустое поле не похоже на заполненное. Контраст ≈3.7 — осознанно слабее нормы, как у остальных tertiary.',
           'Состояния error/success — меняют границу и фокус-кольцо одним переключателем data-validation.',
           'Stepper = Button secondary s icon-only: нет отдельного компонента для кнопок.',
-          'Password: ввод скрыт (type=password), справа глазок — Button ghost s compact icon-only с иконками eye / eye-slash из «06 — Icons» и aria-pressed. Открытость можно задать снаружи (revealed, onRevealedChange) — так «Generate password» показывает сгенерированный пароль. В Figma оси Password и глазка нет — добавлено в коде по решению владельца 2026-10-30, перенести в Figma по npm run debt.',
+          'Password: ввод скрыт (type=password), справа глазок — Button ghost s compact icon-only с иконками eye / eye-slash из «06 — Icons» и aria-pressed. Открытость можно задать снаружи (revealed, onRevealedChange) — так «Generate password» показывает сгенерированный пароль. Ось добавлена в коде по решению владельца 2026-10-30.',
           'Слот может держать кнопку-действие (Button ghost s icon-only, например карандаш «изменить»): она сохраняет свои 40×40, высота поля не растёт (8 + 40 + 8 = 56), а до правого края те же Space/sm (8), что сверху и снизу. В Figma слот рассчитан на иконку 24 — расширение записано в «Открыто».',
         ]}
       />

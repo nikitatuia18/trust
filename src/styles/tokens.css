@@ -714,8 +714,8 @@
   --c-modal-radius: var(--radius-2xl);
   --c-modal-max-width: var(--size-form-card-width);
   --c-modal-zone-padding: var(--space-2xl);
-  --c-modal-edge-padding: var(--space-5xl);
-  --c-modal-header-gap: var(--space-sm);
+  --c-modal-header-padding-y: var(--space-6xl);
+  --c-modal-header-gap: var(--space-xl);
   --c-modal-actions-gap: var(--space-sm);
   --c-modal-body-gap: var(--space-xl);
   --c-form-card-header-padding-y: var(--space-2xl);
