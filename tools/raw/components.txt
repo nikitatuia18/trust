@@ -7,7 +7,7 @@ Button/M/padding-y|F|@L:Space/xl
 Button/M/icon-padding-x|F|@L:Space/xl
 Button/M/icon-padding-y|F|@L:Space/xl
 Button/M/gap|F|@L:Space/xs
-Button/M/radius|F|@L:Radius/round
+Button/M/radius|F|@L:Radius/lg
 Button/M/stroke|F|@L:Stroke/default
 Button/M/min-width|F|@L:Size/Min-width/md
 Button/M/icon-size|F|@L:Size/Icon/md
@@ -39,7 +39,7 @@ Button/S/padding-y|F|@L:Space/md
 Button/S/icon-padding-x|F|@L:Space/md
 Button/S/icon-padding-y|F|@L:Space/md
 Button/S/gap|F|@L:Space/none
-Button/S/radius|F|@L:Radius/round
+Button/S/radius|F|@L:Radius/lg
 Button/S/stroke|F|@L:Stroke/default
 Button/S/min-width|F|@L:Size/Min-width/sm
 Button/S/icon-size|F|@L:Size/Icon/sm
@@ -148,10 +148,10 @@ Chip/brand/content|C|@T:Content/brand
 Chip/stroke|F|@L:Stroke/default
 Chip/S/padding-x|F|@L:Space/sm
 Chip/S/padding-y|F|@L:Space/xs
-Chip/S/radius|F|@L:Radius/round
+Chip/S/radius|F|@L:Radius/sm
 Chip/M/padding-x|F|@L:Space/sm
 Chip/M/padding-y|F|@L:Space/sm
-Chip/M/radius|F|@L:Radius/round
+Chip/M/radius|F|@L:Radius/sm
 Chip/M/text-container/padding-x|F|@L:Space/xs
 Input/slot/radius|F|@L:Radius/round
 Input/description/content|C|@T:Content/secondary
@@ -256,13 +256,13 @@ Chip/neutral/border-selected|C|@T:Border/Brand/default
 Chip/neutral/content|C|@T:Content/primary
 Chip/L/padding|F|@L:Space/sm
 Chip/L/gap|F|@L:Space/xs
-Chip/L/radius|F|@L:Radius/round
+Chip/L/radius|F|@L:Radius/sm
 Chip/L/min-height|F|@L:Size/2xl
 Chip/L/icon-size|F|@L:Size/Icon/md
 Chip/brand/border-selected|C|@T:Border/Brand/default
 Chip/pill/padding-x|F|@L:Space/sm
 Chip/pill/padding-y|F|@L:Space/xs
-Chip/pill/radius|F|@L:Radius/round
+Chip/pill/radius|F|@L:Radius/sm
 Status/spinner/track|C|@T:Surface/Neutral/canvas
 Status/spinner/indicator|C|@T:Surface/Brand/default
 Select Trigger/S/min-height|F|@L:Size/lg

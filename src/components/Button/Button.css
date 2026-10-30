@@ -14,7 +14,7 @@
   display: inline-flex; align-items: center; justify-content: center;
   gap: var(--c-button-m-gap);
   padding: var(--c-button-m-padding-y) var(--c-button-m-padding-x);
-  border: 0; border-radius: var(--c-button-m-radius);
+  border: 0; border-radius: var(--c-button-m-radius); corner-shape: superellipse(var(--corner-superellipse));
   background: var(--_bg); color: var(--_content);
   /* Обводка «внутри» (как INSIDE в Figma): размер не меняется */
   box-shadow: inset 0 0 0 var(--c-button-m-stroke) var(--_border);
@@ -24,7 +24,7 @@
 .at-button[data-size='s'] {
   gap: var(--c-button-s-gap);
   padding: var(--c-button-s-padding-y) var(--c-button-s-padding-x);
-  border-radius: var(--c-button-s-radius);
+  border-radius: var(--c-button-s-radius); corner-shape: superellipse(var(--corner-superellipse));
   box-shadow: inset 0 0 0 var(--c-button-s-stroke) var(--_border);
 }
 .at-button[data-density='compact'] { padding-inline: var(--c-button-m-padding-x-compact); }

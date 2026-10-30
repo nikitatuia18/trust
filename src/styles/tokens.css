@@ -393,7 +393,7 @@
   --c-button-m-icon-padding-x: var(--space-xl);
   --c-button-m-icon-padding-y: var(--space-xl);
   --c-button-m-gap: var(--space-xs);
-  --c-button-m-radius: var(--radius-round);
+  --c-button-m-radius: var(--radius-lg);
   --c-button-m-stroke: var(--stroke-default);
   --c-button-m-min-width: var(--size-min-width-md);
   --c-button-m-icon-size: var(--size-icon-md);
@@ -425,7 +425,7 @@
   --c-button-s-icon-padding-x: var(--space-md);
   --c-button-s-icon-padding-y: var(--space-md);
   --c-button-s-gap: var(--space-none);
-  --c-button-s-radius: var(--radius-round);
+  --c-button-s-radius: var(--radius-lg);
   --c-button-s-stroke: var(--stroke-default);
   --c-button-s-min-width: var(--size-min-width-sm);
   --c-button-s-icon-size: var(--size-icon-sm);
@@ -534,10 +534,10 @@
   --c-chip-stroke: var(--stroke-default);
   --c-chip-s-padding-x: var(--space-sm);
   --c-chip-s-padding-y: var(--space-xs);
-  --c-chip-s-radius: var(--radius-round);
+  --c-chip-s-radius: var(--radius-sm);
   --c-chip-m-padding-x: var(--space-sm);
   --c-chip-m-padding-y: var(--space-sm);
-  --c-chip-m-radius: var(--radius-round);
+  --c-chip-m-radius: var(--radius-sm);
   --c-chip-m-text-container-padding-x: var(--space-xs);
   --c-input-slot-radius: var(--radius-round);
   --c-input-description-content: var(--content-secondary);
@@ -642,13 +642,13 @@
   --c-chip-neutral-content: var(--content-primary);
   --c-chip-l-padding: var(--space-sm);
   --c-chip-l-gap: var(--space-xs);
-  --c-chip-l-radius: var(--radius-round);
+  --c-chip-l-radius: var(--radius-sm);
   --c-chip-l-min-height: var(--size-2xl);
   --c-chip-l-icon-size: var(--size-icon-md);
   --c-chip-brand-border-selected: var(--border-brand-default);
   --c-chip-pill-padding-x: var(--space-sm);
   --c-chip-pill-padding-y: var(--space-xs);
-  --c-chip-pill-radius: var(--radius-round);
+  --c-chip-pill-radius: var(--radius-sm);
   --c-status-spinner-track: var(--surface-neutral-canvas);
   --c-status-spinner-indicator: var(--surface-brand-default);
   --c-select-trigger-s-min-height: var(--size-lg);

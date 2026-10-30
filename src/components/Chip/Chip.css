@@ -7,7 +7,7 @@
   display: inline-flex; align-items: center; gap: var(--c-chip-s-gap);
   /* Вертикальный отступ Space/2xs вместо Chip/S/padding-y (Space/xs): чип ниже, меньше «выпуклости» (решение владельца 2026-10-30) */
   padding: var(--space-2xs) var(--c-chip-s-padding-x);
-  border: 0; border-radius: var(--c-chip-s-radius);
+  border: 0; border-radius: var(--c-chip-s-radius); corner-shape: superellipse(var(--corner-superellipse));
   background: var(--_bg); color: var(--_content);
   box-shadow: inset 0 0 0 var(--c-chip-stroke) var(--_border);
   cursor: pointer; outline: 0; white-space: nowrap;
@@ -38,7 +38,7 @@
 
 .at-chip[data-size='l'] {
   gap: var(--c-chip-l-gap); min-height: var(--c-chip-l-min-height);
-  padding: var(--c-chip-l-padding); border-radius: var(--c-chip-l-radius);
+  padding: var(--c-chip-l-padding); border-radius: var(--c-chip-l-radius); corner-shape: superellipse(var(--corner-superellipse));
 }
 .at-chip[data-size='l'] .at-chip__icon { width: var(--c-chip-l-icon-size); height: var(--c-chip-l-icon-size); }
 .at-chip[data-size='l'] .at-chip__text { padding-inline: var(--c-chip-l-text-container-padding-x); }
@@ -46,7 +46,7 @@
 /* Content=with-slots: токены Chip/M/*, зазор 0 (слоты несут свои отступы) */
 .at-chip[data-content='slots'] {
   gap: var(--space-none);
-  padding: var(--c-chip-m-padding-y) var(--c-chip-m-padding-x); border-radius: var(--c-chip-m-radius);
+  padding: var(--c-chip-m-padding-y) var(--c-chip-m-padding-x); border-radius: var(--c-chip-m-radius); corner-shape: superellipse(var(--corner-superellipse));
 }
 .at-chip[data-content='slots'] .at-chip__text { padding-inline: var(--c-chip-m-text-container-padding-x); }
 
